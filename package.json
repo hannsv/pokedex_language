@@ -4,6 +4,7 @@
   "description": "포켓몬 도감 다국어 버전",
   "main": "index.js",
   "scripts": {
+    "start": "cd pokedex && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
