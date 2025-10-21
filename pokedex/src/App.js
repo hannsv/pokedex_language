@@ -1,10 +1,12 @@
 import "./App.css";
-import Pokedex from "./pages/Pokedex";
+import TopNavBar from "./components/nav/TopNavBar";
+import PokedexMainScreen from "./pages/main/PokedexMainScreen";
 
 function App() {
   return (
     <div className="App">
-      <Pokedex />
+      <TopNavBar />
+      <PokedexMainScreen />
     </div>
   );
 }

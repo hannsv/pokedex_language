@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PokedexMainScreenPokeList from "./PokedexMainScreenPokeList";
 
-export default function Pokedex() {
+export default function PokedexMainScreen() {
   // const [pokemonData, setPokemonData] = useState([]);
   // useEffect(() => {
   //   const fetData = async () => {
@@ -23,5 +24,10 @@ export default function Pokedex() {
   //   fetData();
   // }, []);
 
-  return <div>pokedex</div>;
+  return (
+    <div>
+      Pokedex Main Screen
+      <PokedexMainScreenPokeList />
+    </div>
+  );
 }
