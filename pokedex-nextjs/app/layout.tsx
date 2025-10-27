@@ -29,17 +29,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* 상단 내비게이션 바 */}
         <TopNavBar />
 
         {children}
-        <footer className="flex h-24 w-full items-center justify-center border-t">
+
+        {/* 저작권 표기 */}
+        <footer className="flex h-24 w-full items-center justify-center ">
           <a
             className="flex items-center justify-center gap-2"
-            // href="https://kkul.tech"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Powered by KKUL
+            <p className="text-gray-400 text-sm text-center">
+              Pokémon, 포켓몬, 포켓몬스터는 ©2021 Pokémon과 ©1995-2021
+              Nintendo/Creatures Inc./GAME FREAK inc.의 저작권 및 상표입니다.
+            </p>
           </a>
         </footer>
       </body>

@@ -20,7 +20,12 @@
 }
 
 body {
-  background: var(--background);
+  align-items: center;
+  justify-content: center;
+
+  max-width: 777px;
+
+  /* background: var(--background); */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
