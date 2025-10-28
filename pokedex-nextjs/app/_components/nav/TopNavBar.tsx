@@ -6,8 +6,8 @@ export default function TopNavBar() {
     { name: "포켓몬", href: "/pokemon" },
   ];
   return (
-    <div className="w-full bg-amber-50 min-h-18">
-      <nav className="flex space-x-4 justify-center center items-center  h-18 p-4">
+    <div className="w-full bg-amber-50 min-h-18 sticky">
+      <nav className="flex space-x-4 justify-center center items-center  h-18 p-4  max-w-11/12">
         <ul className="flex space-x-4 w-full justify-around">
           {menuItems.map((item) => (
             <Link
@@ -21,7 +21,7 @@ export default function TopNavBar() {
         </ul>
         <input
           name="search"
-          className="text-xs text-gray-600 border bg-white border-gray-300 rounded-md px-2 py-1 outline-orange-400"
+          className="text-sm text-gray-800 border bg-white border-gray-400 rounded-md h-10 w-6/12 px-2 py-1 outline-orange-400"
           type="text"
           placeholder="포켓몬이름, 도감번호"
           title="a"

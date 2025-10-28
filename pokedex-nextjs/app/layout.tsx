@@ -26,14 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className=" {`${geistSans.variable} ${geistMono.variable} antialiased`}">
         {/* 상단 내비게이션 바 */}
         <TopNavBar />
-
-        {children}
-
+        {/* 메인 컨텐츠 */}
+        <main className="flex min-h-screen justify-center bg-zinc-50 font-sans dark:bg-red-600">
+          {children}
+        </main>
         {/* 저작권 표기 */}
         <footer className="flex h-24 w-full items-center justify-center ">
           <a
@@ -41,8 +40,8 @@ export default function RootLayout({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p className="text-gray-400 text-sm text-center">
-              Pokémon, 포켓몬, 포켓몬스터는 ©2021 Pokémon과 ©1995-2021
+            <p className="text-gray-400 text-sm text-center pl-6 pr-6">
+              Pokémon, 포켓몬스터는 ©2021 Pokémon과 ©1995-2021
               Nintendo/Creatures Inc./GAME FREAK inc.의 저작권 및 상표입니다.
             </p>
           </a>
