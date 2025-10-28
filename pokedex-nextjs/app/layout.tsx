@@ -30,7 +30,7 @@ export default function RootLayout({
         {/* 상단 내비게이션 바 */}
         <TopNavBar />
         {/* 메인 컨텐츠 */}
-        <main className="flex min-h-screen justify-center bg-zinc-50 font-sans dark:bg-red-600">
+        <main className="flex min-h-screen justify-center font-sans dark:bg-red-600">
           {children}
         </main>
         {/* 저작권 표기 */}

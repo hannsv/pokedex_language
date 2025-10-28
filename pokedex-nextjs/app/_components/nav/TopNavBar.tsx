@@ -6,7 +6,7 @@ export default function TopNavBar() {
     { name: "포켓몬", href: "/pokemon" },
   ];
   return (
-    <div className="w-full bg-amber-50 min-h-18 sticky">
+    <div className="w-full bg-amber-50 min-h-18 sticky top-0 z-50 shadow-md">
       <nav className="flex space-x-4 justify-center center items-center  h-18 p-4  max-w-11/12">
         <ul className="flex space-x-4 w-full justify-around">
           {menuItems.map((item) => (
