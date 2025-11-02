@@ -21,7 +21,7 @@ export default function RandomPokemonCard() {
         ).name || pokeName;
       console.log("포켓몬 한국어 이름:", response);
       return result;
-    } catch (error) {
+    } catch (error: any) {
       if (error.response && error.response.status === 404) {
         console.log("데이터가 없는 포켓몬입니다.");
         return pokeName;
@@ -33,20 +33,28 @@ export default function RandomPokemonCard() {
   };
 
   return (
-    <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px flex flex-col items-center justify-center bg-white m-2">
-      {/* 도감번호 */}
-      <div className="text-sm text-gray-600">No.{randomNumber}</div>
-      {/* 포켓몬 이름 */}
-      <div className=" font-bold mb-2">
-        {pokemonKoreanName(randomNumber, "Pokémon Name")}
-      </div>
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomNumber}.png`}
-        alt="오늘의 포켓몬"
-      />
+    <div className="flex items-center justify-center">
+      <button className="text-white-500 font-bold cursor-pointer hover:bg-green-500 bg bg-green-800 w-32 h-10 flex items-center justify-center rounded-md mb-4">
+        Left
+      </button>
+      <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
+        {/* 도감번호 */}
+        <div className="text-sm text-gray-600">No.{randomNumber}</div>
+        {/* 포켓몬 이름 */}
+        <div className=" font-bold mb-2">
+          {pokemonKoreanName(randomNumber, "Pokémon Name")}
+        </div>
+        <img
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomNumber}.png`}
+          alt="오늘의 포켓몬"
+        />
 
-      {/* 포켓몬 타입 */}
-      <div className="text-gray-600 text-sm">Type:</div>
+        {/* 포켓몬 타입 */}
+        <div className="text-gray-600 text-sm">Type:</div>
+      </div>
+      <button className="text-white-500 font-bold cursor-pointer hover:bg-green-500 bg bg-green-800 w-32 h-10 flex items-center justify-center rounded-md mb-4">
+        Right
+      </button>
     </div>
   );
 }
