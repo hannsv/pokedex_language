@@ -11,29 +11,25 @@ const typeFilter = (num: number) => {
   });
 };
 
-const typeKorean = [
-  { type: "common", korean: "공통" },
-  { type: "normal", korean: "노말" },
-  { type: "fighting", korean: "격투" },
-  { type: "flying", korean: "비행" },
-  { type: "poison", korean: "독" },
-  { type: "ground", korean: "땅" },
-  { type: "rock", korean: "바위" },
-  { type: "bug", korean: "벌레" },
-  { type: "ghost", korean: "고스트" },
-  { type: "steel", korean: "강철" },
-  { type: "fire", korean: "불꽃" },
-  { type: "water", korean: "물" },
-  { type: "grass", korean: "풀" },
-  { type: "electric", korean: "전기" },
-  { type: "psychic", korean: "에스퍼" },
-  { type: "ice", korean: "얼음" },
-  { type: "dragon", korean: "드래곤" },
-  { type: "dark", korean: "악" },
-  { type: "fairy", korean: "페어리" },
-  { type: "stellar", korean: "별자리" },
-  { type: "shadow", korean: "그림자" },
-  { type: "unknown", korean: "알 수 없음" },
+export const pokemonTypes = [
+  { name: "노말", en: "normal", color: "#A8A77A" },
+  { name: "불꽃", en: "fire", color: "#EE8130" },
+  { name: "물", en: "water", color: "#6390F0" },
+  { name: "전기", en: "electric", color: "#F7D02C" },
+  { name: "풀", en: "grass", color: "#7AC74C" },
+  { name: "얼음", en: "ice", color: "#96D9D6" },
+  { name: "격투", en: "fighting", color: "#C22E28" },
+  { name: "독", en: "poison", color: "#A33EA1" },
+  { name: "땅", en: "ground", color: "#E2BF65" },
+  { name: "비행", en: "flying", color: "#A98FF3" },
+  { name: "에스퍼", en: "psychic", color: "#F95587" },
+  { name: "벌레", en: "bug", color: "#A6B91A" },
+  { name: "바위", en: "rock", color: "#B6A136" },
+  { name: "고스트", en: "ghost", color: "#735797" },
+  { name: "드래곤", en: "dragon", color: "#6F35FC" },
+  { name: "악", en: "dark", color: "#705746" },
+  { name: "강철", en: "steel", color: "#B7B7CE" },
+  { name: "페어리", en: "fairy", color: "#D685AD" },
 ];
 
 const typeNameToKorean = (num: number) => {

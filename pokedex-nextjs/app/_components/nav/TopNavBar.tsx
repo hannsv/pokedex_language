@@ -7,7 +7,7 @@ export default function TopNavBar() {
   ];
   return (
     <div className="w-full bg-amber-50 min-h-18 sticky top-0 z-50 shadow-md">
-      <nav className="flex space-x-8 justify-center center items-center  h-18 p-4  max-w-11/12">
+      <nav className="flex space-x-8 justify-center center items-center h-18 p-4  max-w-11/12">
         <img
           src="https://w7.pngwing.com/pngs/402/653/png-transparent-ball-pocket-pocket-monster-poke-poke-ball-set-icon.png"
           alt="Logo"
