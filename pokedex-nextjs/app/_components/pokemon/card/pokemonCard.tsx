@@ -4,8 +4,12 @@
  * @description 포켓몬 메인페이지 카드 컴포넌트. 도감번호, 이름, 이미지, 타입 순으로 세로 정렬 배치
  */
 
+interface PokemonCardProps {
+  indexId: number;
+}
+
 //pokeapi.co/api/v2/pokemon/1/
-export default function PokemonCard(indexId: number) {
+export default function PokemonCard({ indexId }: PokemonCardProps) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${indexId || 25}/`).then(
     (response) => {
       console.log("포켓몬 데이터:", response);
