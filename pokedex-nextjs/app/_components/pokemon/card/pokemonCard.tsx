@@ -4,8 +4,19 @@
  * @description 포켓몬 메인페이지 카드 컴포넌트. 도감번호, 이름, 이미지, 타입 순으로 세로 정렬 배치
  */
 
-export default function PokemonCard(indexId?: number) {
-  indexId = indexId || 25; // 기본값으로 피카츄 도감번호 설정
+//pokeapi.co/api/v2/pokemon/1/
+export default function PokemonCard(indexId: number) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${indexId || 25}/`).then(
+    (response) => {
+      console.log("포켓몬 데이터:", response);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    }
+  );
+
+  https: indexId = indexId || 25; // 기본값으로 피카츄 도감번호 설정
 
   return (
     <div className="border border-gray-300 p-2 rounded-lg shadow-lg h-80px flex flex-col items-center justify-center bg-white m-2">

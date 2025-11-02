@@ -7,43 +7,7 @@ import axios from "axios";
  */
 export default function RandomPokemonCard() {
   "use client";
-
-  interface PokemonCard {
-    id: number;
-    name: string;
-    types: { type: { name: string } }[];
-  }
-
   const randomNumber = Math.floor(Math.random() * 1000) + 1;
-
-  const typeNames = {
-    normal: "https://pokeapi.co/api/v2/type/1/",
-    fighting: "https://pokeapi.co/api/v2/type/2/",
-    flying: "https://pokeapi.co/api/v2/type/3/",
-    poison: "https://pokeapi.co/api/v2/type/4/",
-    ground: "https://pokeapi.co/api/v2/type/5/",
-    rock: "https://pokeapi.co/api/v2/type/6/",
-    bug: "https://pokeapi.co/api/v2/type/7/",
-    ghost: "https://pokeapi.co/api/v2/type/8/",
-    steel: "https://pokeapi.co/api/v2/type/9/",
-    fire: "https://pokeapi.co/api/v2/type/10/",
-    water: "https://pokeapi.co/api/v2/type/11/",
-    grass: "https://pokeapi.co/api/v2/type/12/",
-    electric: "https://pokeapi.co/api/v2/type/13/",
-    psychic: "https://pokeapi.co/api/v2/type/14/",
-    ice: "https://pokeapi.co/api/v2/type/15/",
-    dragon: "https://pokeapi.co/api/v2/type/16/",
-    dark: "https://pokeapi.co/api/v2/type/17/",
-    fairy: "https://pokeapi.co/api/v2/type/18/",
-    stellar: "https://pokeapi.co/api/v2/type/19/",
-    shadow: "https://pokeapi.co/api/v2/type/20/",
-    unknown: "https://pokeapi.co/api/v2/type/10001/",
-  };
-
-  const types = {
-    1: "",
-    2: "",
-  };
 
   const pokemonKoreanName = async (pokeNum: number, pokeName: string) => {
     try {
@@ -79,14 +43,10 @@ export default function RandomPokemonCard() {
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomNumber}.png`}
         alt="오늘의 포켓몬"
-        width={100}
-        height={100}
       />
 
       {/* 포켓몬 타입 */}
-      <div className="text-gray-600">
-        Type: {Object.values(types).join(", ")}
-      </div>
+      <div className="text-gray-600 text-sm">Type:</div>
     </div>
   );
 }
