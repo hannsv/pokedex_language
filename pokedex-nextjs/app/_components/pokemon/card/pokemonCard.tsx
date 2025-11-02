@@ -1,10 +1,16 @@
+/**
+ *
+ * @component
+ * @description 포켓몬 메인페이지 카드 컴포넌트. 도감번호, 이름, 이미지, 타입 순으로 세로 정렬 배치
+ */
+
 export default function PokemonCard(indexId?: number) {
   indexId = indexId || 25; // 기본값으로 피카츄 도감번호 설정
 
   return (
     <div className="border border-gray-300 p-2 rounded-lg shadow-lg h-80px flex flex-col items-center justify-center bg-white m-2">
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
         alt="Pokémon Image"
         className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer"
       />
