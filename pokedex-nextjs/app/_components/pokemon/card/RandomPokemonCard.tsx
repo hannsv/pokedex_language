@@ -1,4 +1,9 @@
+"use client";
+
+import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
+import { getKoreanName } from "@/app/lib/api/pokemon-to-language";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 /**
  *
@@ -6,7 +11,35 @@ import axios from "axios";
  * @description 랜덤 포켓몬 카드 컴포넌트
  */
 export default function RandomPokemonCard() {
-  "use client";
+  const [pokemonNumber, setPokemonNumber] = useState(
+    Math.floor(Math.random() * 1000) + 1
+  );
+
+  const [pokemonName, setPokemonName] = useState("로딩 중...");
+  const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPokemonData = async () => {
+      try {
+        setIsLoading(true);
+        // const pokemon = await getPokemonByNumber(pokemonNumber);
+        // console.log("포켓몬 번호:", pokemon);
+        const koreanName = await getKoreanName(pokemonNumber);
+        setPokemonName(koreanName);
+        // const types = data.types.map(
+        //   (typeInfo: { type: { name: string } }) => typeInfo.type.name
+        // );
+        // setPokemonTypes(types);
+      } catch (error) {
+        console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchPokemonData();
+  }, [pokemonNumber]);
+
   const randomNumber = Math.floor(Math.random() * 1000) + 1;
 
   const pokemonKoreanName = async (pokeNum: number, pokeName: string) => {
@@ -32,26 +65,62 @@ export default function RandomPokemonCard() {
     }
   };
 
+  // 이전 포켓몬
+  const handlePrevious = () => {
+    setPokemonNumber((prev) => (prev > 1 ? prev - 1 : 1000));
+  };
+
+  // 다음 포켓몬
+  const handleNext = () => {
+    setPokemonNumber((prev) => (prev < 1000 ? prev + 1 : 1));
+  };
+
+  // 랜덤 포켓몬
+  const handleRandom = () => {
+    setPokemonNumber(Math.floor(Math.random() * 1000) + 1);
+  };
+
   return (
     <div className="flex items-center justify-center">
-      <button className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4">
+      <button
+        onClick={handlePrevious}
+        className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4"
+      >
         <span className="m-3">◀</span>
       </button>
       <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
-        {/* 도감번호 */}
-        <div className="text-sm text-gray-600">No.{randomNumber}</div>
-        {/* 포켓몬 이름 */}
-        <div className=" font-bold mb-2">
-          {pokemonKoreanName(randomNumber, "Pokémon Name")}
-        </div>
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomNumber}.png`}
-          alt="오늘의 포켓몬"
-        />
-        {/* 포켓몬 타입 */}
-        <div className="text-gray-600 text-sm">Type:</div>
+        {isLoading ? (
+          <div className="h-[140px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
+            <img
+              src="skeleton-monsterball.png"
+              alt="loading"
+              className="h-[50px] w-[50px]"
+            />
+          </div>
+        ) : (
+          <>
+            <div className="h-[140px] w-[100px]">
+              <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+              <div className=" font-bold mb-2">
+                {pokemonName}
+                {/* {pokemonKoreanName(randomNumber, "Pokémon Name")} */}
+              </div>
+              <img
+                className="w-full fit-contain"
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
+                alt="오늘의 포켓몬"
+              />
+              <div className="text-gray-600 text-sm">
+                {/* Type: {pokemonTypes.join(", ")} */}
+              </div>
+            </div>
+          </>
+        )}
       </div>
-      <button className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4">
+      <button
+        onClick={handleNext}
+        className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4"
+      >
         <span className="m-3">▶</span>
       </button>
     </div>
