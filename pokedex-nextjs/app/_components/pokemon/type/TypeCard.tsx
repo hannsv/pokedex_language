@@ -1,38 +1,30 @@
+import React from "react";
+import { pokemonTypes } from "../../../lib/api/pokemonTypes";
+import { typeStyleMap } from "../../../lib/api/pokemonTypes";
+
 interface TypeCardProps {
-  typeName: string;
+  firstType: string;
   secondType: string | undefined;
 
+  typeNames: string;
   typeNameKorean: string;
 }
 
-const typeFilter = (num: number) => {
-  return Object.entries(typeNames).find(([key, value]) => {
-    return value === `https://pokeapi.co/api/v2/type/${num}/`;
-  });
-};
+// const typeFilter = (num: number) => {
+//   return Object.entries(typeNames).find(([key, value]) => {
+//     return value === `https://pokeapi.co/api/v2/type/${num}/`;
+//   });
+// };
 
-export const pokemonTypes = [
-  { name: "노말", en: "normal", color: "#A8A77A" },
-  { name: "불꽃", en: "fire", color: "#EE8130" },
-  { name: "물", en: "water", color: "#6390F0" },
-  { name: "전기", en: "electric", color: "#F7D02C" },
-  { name: "풀", en: "grass", color: "#7AC74C" },
-  { name: "얼음", en: "ice", color: "#96D9D6" },
-  { name: "격투", en: "fighting", color: "#C22E28" },
-  { name: "독", en: "poison", color: "#A33EA1" },
-  { name: "땅", en: "ground", color: "#E2BF65" },
-  { name: "비행", en: "flying", color: "#A98FF3" },
-  { name: "에스퍼", en: "psychic", color: "#F95587" },
-  { name: "벌레", en: "bug", color: "#A6B91A" },
-  { name: "바위", en: "rock", color: "#B6A136" },
-  { name: "고스트", en: "ghost", color: "#735797" },
-  { name: "드래곤", en: "dragon", color: "#6F35FC" },
-  { name: "악", en: "dark", color: "#705746" },
-  { name: "강철", en: "steel", color: "#B7B7CE" },
-  { name: "페어리", en: "fairy", color: "#D685AD" },
-];
+function enToColor(englishName: string) {
+  const type = pokemonTypes.find((t) => t.en === englishName);
+  console.log("type:", type);
+  console.log("en:", englishName);
+  console.log("colorName:", type?.colorName);
+  return type ? type.colorName : "gray"; // 기본 색상
+}
 
-const typeNames = {
+const typeNames1 = {
   common: "https://pokeapi.co/api/v2/type/",
   normal: "https://pokeapi.co/api/v2/type/1/",
   fighting: "https://pokeapi.co/api/v2/type/2/",
@@ -57,12 +49,21 @@ const typeNames = {
   unknown: "https://pokeapi.co/api/v2/type/10001/",
 };
 
-export default function TypeCard({ typeName, secondType }: TypeCardProps) {
-  // console.log("타입 한글:", typeKorean[1]);
+export default function TypeCard({ typeNames }: TypeCardProps) {
+  console.log("타입:", typeNames);
+
+  const { bg, text } = typeStyleMap[typeNames] || {
+    bg: "bg-gray-300",
+    text: "text-black",
+  };
 
   return (
-    <div className="border border-gray-300 p-2 rounded-lg shadow-lg h-80px flex flex-col items-center justify-center bg-white m-2">
-      <div className=" font-bold mb-2">Type Name</div>
+    <div className="border rounded-md border-black-300 items-center justify-center m-1">
+      <div
+        className={`text-center flex-row px-2 rounded-md ${bg} ${text} text-xs`}
+      >
+        {typeNames}
+      </div>
     </div>
   );
 }

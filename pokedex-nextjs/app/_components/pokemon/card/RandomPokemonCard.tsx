@@ -4,6 +4,7 @@ import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
 import { getKoreanName } from "@/app/lib/api/pokemon-to-language";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import TypeCard from "../type/TypeCard";
 
 /**
  *
@@ -23,14 +24,14 @@ export default function RandomPokemonCard() {
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
-        // const pokemon = await getPokemonByNumber(pokemonNumber);
-        // console.log("포켓몬 번호:", pokemon);
+        const pokemonData = await getPokemonByNumber(pokemonNumber);
+        const types = pokemonData.types.map(
+          (typeInfo: any) => typeInfo.type.name
+        );
+        setPokemonTypes(types);
+        console.log("포켓몬 타입:", types);
         const koreanName = await getKoreanName(pokemonNumber);
         setPokemonName(koreanName);
-        // const types = data.types.map(
-        //   (typeInfo: { type: { name: string } }) => typeInfo.type.name
-        // );
-        // setPokemonTypes(types);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
       } finally {
@@ -90,7 +91,7 @@ export default function RandomPokemonCard() {
       </button>
       <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
         {isLoading ? (
-          <div className="h-[140px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
+          <div className="h-[180px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
             <img
               src="skeleton-monsterball.png"
               alt="loading"
@@ -99,7 +100,7 @@ export default function RandomPokemonCard() {
           </div>
         ) : (
           <>
-            <div className="h-[140px] w-[100px]">
+            <div className="h-[180px] w-[100px]">
               <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
               <div className=" font-bold mb-2">
                 {pokemonName}
@@ -108,10 +109,12 @@ export default function RandomPokemonCard() {
               <img
                 className="w-full fit-contain"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
-                alt="오늘의 포켓몬"
+                alt="랜덤포켓몬"
               />
-              <div className="text-gray-600 text-sm">
-                {/* Type: {pokemonTypes.join(", ")} */}
+              <div className="text-gray-600 text-sm flex flex-row justify-center">
+                {pokemonTypes.map((type) => (
+                  <TypeCard key={type} typeNames={type} />
+                ))}
               </div>
             </div>
           </>
