@@ -10,7 +10,7 @@ export async function getPokemonByNumber(number: number) {
   return res.json();
 }
 
-//포켓몬 이름으로 찾기
+//포켓몬 이름으로 찾기 : en name to korean name
 export async function getPokemonByName(name: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   if (!res.ok) throw new Error("Not found");

@@ -1,11 +1,12 @@
 "use client";
 
-import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
-import { getKoreanName } from "@/app/lib/api/pokemon-to-language";
-import axios from "axios";
 import { useState, useEffect } from "react";
+
 import TypeCard from "../type/TypeCard";
 import CardSelectButton from "./CardSelectButton";
+
+import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
+import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
 
 /**
  *
@@ -31,7 +32,7 @@ export default function RandomPokemonCard() {
         );
         setPokemonTypes(types);
         console.log("포켓몬 타입:", types);
-        const koreanName = await getKoreanName(pokemonNumber);
+        const koreanName = await getPokemonKoreanName(pokemonNumber);
         setPokemonName(koreanName);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
@@ -43,29 +44,6 @@ export default function RandomPokemonCard() {
   }, [pokemonNumber]);
 
   const randomNumber = Math.floor(Math.random() * 1000) + 1;
-
-  const pokemonKoreanName = async (pokeNum: number, pokeName: string) => {
-    try {
-      const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon-species/${randomNumber}`
-      );
-      const result =
-        response.data.names.find(
-          (name: { language: { name: string }; name: string }) =>
-            name.language.name === "ko"
-        ).name || pokeName;
-      console.log("포켓몬 한국어 이름:", response);
-      return result;
-    } catch (error: any) {
-      if (error.response && error.response.status === 404) {
-        console.log("데이터가 없는 포켓몬입니다.");
-        return pokeName;
-      } else {
-        console.log("데이터를  가져오는 중 오류가 발생했습니다.");
-        return;
-      }
-    }
-  };
 
   // 이전 포켓몬
   const handlePrevious = () => {
