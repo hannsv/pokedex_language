@@ -5,6 +5,7 @@ import { getKoreanName } from "@/app/lib/api/pokemon-to-language";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import TypeCard from "../type/TypeCard";
+import CardSelectButton from "./CardSelectButton";
 
 /**
  *
@@ -83,12 +84,7 @@ export default function RandomPokemonCard() {
 
   return (
     <div className="flex items-center justify-center">
-      <button
-        onClick={handlePrevious}
-        className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4"
-      >
-        <span className="m-3">◀</span>
-      </button>
+      <CardSelectButton string="◀" onClick={handlePrevious} />
       <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
         {isLoading ? (
           <div className="h-[180px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
@@ -112,20 +108,15 @@ export default function RandomPokemonCard() {
                 alt="랜덤포켓몬"
               />
               <div className="text-gray-600 text-sm flex flex-row justify-center">
-                {pokemonTypes.map((type) => (
-                  <TypeCard key={type} typeNames={type} />
+                {pokemonTypes.map((type, index) => (
+                  <TypeCard key={index} typeNames={type} />
                 ))}
               </div>
             </div>
           </>
         )}
       </div>
-      <button
-        onClick={handleNext}
-        className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4"
-      >
-        <span className="m-3">▶</span>
-      </button>
+      <CardSelectButton string="▶" onClick={handleNext} />
     </div>
   );
 }
