@@ -29,8 +29,9 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         );
         const pokemonData = await data.json();
         setPokemonData(pokemonData);
-        const pokemonName = await getPokemonKoreanName(pokemonData.name);
-        setPokemonName(pokemonName.name);
+        const koname = await getPokemonKoreanName(indexId || 25);
+        setPokemonName(koname);
+        console.log("포켓몬 이름:", koname);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
       } finally {

@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export const getPokemonKoreanName = async (id: number) => {
   const resp = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
   const data = await resp.json();
