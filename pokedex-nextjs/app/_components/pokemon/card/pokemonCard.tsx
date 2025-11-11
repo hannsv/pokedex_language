@@ -65,16 +65,17 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         </div>
       ) : (
         <>
+          {/* 도감번호 */}
           <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
-
+          {/* 포켓몬 이름 */}
+          <div className=" font-bold mb-2">{pokemonName}</div>
           {/* 포켓몬 이미지 */}
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
             alt="Pokémon Image"
             className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer"
           />
-          {/* 포켓몬 이름 */}
-          <div className=" font-bold mb-2">{pokemonName}</div>
+
           {/* 포켓몬 타입 */}
           <div className="text-gray-600 text-sm flex flex-row justify-center">
             {pokemonTypes.map((pokemonType, index) => (
