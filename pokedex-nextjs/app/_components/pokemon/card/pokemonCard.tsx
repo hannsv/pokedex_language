@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
 import TypeCard from "../type/TypeCard";
+import Link from "next/link";
 
 interface PokemonCardProps {
   indexId: number;
@@ -70,11 +71,13 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
           {/* 포켓몬 이름 */}
           <div className=" font-bold mb-2">{pokemonName}</div>
           {/* 포켓몬 이미지 */}
-          <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
-            alt="Pokémon Image"
-            className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer"
-          />
+          <Link href={`/pokemon/detail/${indexId}`}>
+            <img
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
+              alt="Pokémon Image"
+              className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer"
+            />
+          </Link>
 
           {/* 포켓몬 타입 */}
           <div className="text-gray-600 text-sm flex flex-row justify-center">
