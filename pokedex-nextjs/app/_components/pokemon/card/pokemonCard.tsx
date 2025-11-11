@@ -18,14 +18,17 @@ interface PokemonCardProps {
 //pokeapi.co/api/v2/pokemon/1/
 export default function PokemonCard({ indexId }: PokemonCardProps) {
   const [isLoading, setIsLoading] = useState(true);
+
   const [pokemonData, setPokemonData] = useState<any>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
+  const [pokemonNumber, setPokemonNumber] = useState<number>(indexId);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
+        setPokemonNumber(indexId);
         // 포켓몬 데이터 가져오기
         const data = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${indexId || 25}/`
@@ -62,6 +65,8 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         </div>
       ) : (
         <>
+          <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+
           {/* 포켓몬 이미지 */}
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
@@ -71,7 +76,7 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
           {/* 포켓몬 이름 */}
           <div className=" font-bold mb-2">{pokemonName}</div>
           {/* 포켓몬 타입 */}
-          <div className="text-gray-600">
+          <div className="text-gray-600 text-sm flex flex-row justify-center">
             {pokemonTypes.map((pokemonType, index) => (
               <TypeCard key={index} typeNames={pokemonType} />
             ))}

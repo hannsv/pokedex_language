@@ -76,10 +76,7 @@ export default function RandomPokemonCard() {
           <>
             <div className="h-[180px] w-[100px]">
               <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
-              <div className=" font-bold mb-2">
-                {pokemonName}
-                {/* {pokemonKoreanName(randomNumber, "Pokémon Name")} */}
-              </div>
+              <div className=" font-bold mb-2">{pokemonName}</div>
               <img
                 className="w-full fit-contain"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
