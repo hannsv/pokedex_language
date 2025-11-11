@@ -9,6 +9,7 @@
 import { useEffect, useState } from "react";
 
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
+import TypeCard from "../type/TypeCard";
 
 interface PokemonCardProps {
   indexId: number;
@@ -19,19 +20,27 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [pokemonData, setPokemonData] = useState<any>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
+  const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
+        // 포켓몬 데이터 가져오기
         const data = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${indexId || 25}/`
         );
         const pokemonData = await data.json();
+        // 한글이름 가져오기
         setPokemonData(pokemonData);
         const koname = await getPokemonKoreanName(indexId || 25);
         setPokemonName(koname);
-        console.log("포켓몬 이름:", koname);
+        //타입 가져오기
+        const types = pokemonData.types.map(
+          (typeInfo: any) => typeInfo.type.name
+        );
+        setPokemonTypes(types);
+        console.log("포켓몬 타입:", types);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
       } finally {
@@ -62,7 +71,11 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
           {/* 포켓몬 이름 */}
           <div className=" font-bold mb-2">{pokemonName}</div>
           {/* 포켓몬 타입 */}
-          <div className="text-gray-600">Type: Electric</div>
+          <div className="text-gray-600">
+            {pokemonTypes.map((pokemonType, index) => (
+              <TypeCard key={index} typeNames={pokemonType} />
+            ))}
+          </div>
         </>
       )}
     </div>
