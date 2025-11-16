@@ -17,7 +17,6 @@ export default function RandomPokemonCard() {
   const [pokemonNumber, setPokemonNumber] = useState(
     Math.floor(Math.random() * 1000) + 1
   );
-
   const [pokemonName, setPokemonName] = useState("로딩 중...");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +30,6 @@ export default function RandomPokemonCard() {
           (typeInfo: any) => typeInfo.type.name
         );
         setPokemonTypes(types);
-        console.log("포켓몬 타입:", types);
         const koreanName = await getPokemonKoreanName(pokemonNumber);
         setPokemonName(koreanName);
       } catch (error) {
