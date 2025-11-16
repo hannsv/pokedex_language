@@ -82,7 +82,7 @@ export default function PokemonDetailPage({
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`}
               alt={pokemonData.name}
-              className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer hover:scale-105 transition-transform"
+              className="h-48 mb-2 border border-gray-200 rounded-lg cursor-pointer hover:scale-105 transition-transform"
             />
           </div>
           <div className="flex justify-center items-center mt-4">
