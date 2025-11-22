@@ -30,3 +30,19 @@ export async function getPokemonByGeneration(generation: string) {
   if (!res.ok) throw new Error("Not found");
   return res.json();
 }
+
+//포켓몬 진화 가져오기
+export async function getEvolutionChain(pokemonId: number) {
+  // 1. species 정보 가져오기
+  const speciesRes = await fetch(
+    `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`
+  );
+  const speciesData = await speciesRes.json();
+
+  // 2. evolution_chain URL 추출
+  const evoUrl = speciesData.evolution_chain.url;
+
+  // 3. 실제 진화 체인 가져오기
+  const evoRes = await fetch(evoUrl);
+  return await evoRes.json();
+}

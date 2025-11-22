@@ -50,8 +50,6 @@ const typeNames1 = {
 };
 
 export default function TypeCard({ typeNames }: TypeCardProps) {
-  console.log("타입:", typeNames);
-
   const { bg, text } = typeStyleMap[typeNames] || {
     bg: "bg-gray-300",
     text: "text-black",

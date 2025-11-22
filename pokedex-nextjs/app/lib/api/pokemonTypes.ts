@@ -24,7 +24,7 @@ export const typeStyleMap: Record<string, { bg: string; text: string }> = {
   fire: { bg: "bg-red-500", text: "text-white" },
   water: { bg: "bg-blue-500", text: "text-white" },
   electric: { bg: "bg-yellow-400", text: "text-black" },
-  grass: { bg: "bg-green-500", text: "text-white" },
+  grass: { bg: "bg-green-500", text: "text-black" },
   ice: { bg: "bg-cyan-300", text: "text-black" },
   fighting: { bg: "bg-red-700", text: "text-white" },
   poison: { bg: "bg-purple-500", text: "text-white" },
