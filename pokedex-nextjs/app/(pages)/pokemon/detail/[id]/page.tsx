@@ -62,20 +62,23 @@ export default function PokemonDetailPage({
   }, [params]);
 
   return (
-    <div className="p-4">
+    <div className=" p-4 rounded-lg">
       {isLoading ? (
-        <div>
+        <div className="">
           <img
-            className="w-2/12 h-10/12 object-contain animate-spin mx-auto"
+            className="w-2/12 object-contain animate-spin mx-auto"
             src="/skeleton-monsterball.png"
             alt="loading"
           />
         </div>
       ) : pokemonData ? (
         <div>
-          <h1 className="text-2xl font-bold mb-4">{pokemonName}</h1>
-          <p>No. {pokemonData.id}</p>
-          <p> {pokemonData.name}</p>
+          <p className="text-gray-600">No. {pokemonData.id}</p>
+
+          <div className="flex flex-row gap-2">
+            <h1 className="text-2xl font-bold">{pokemonName}</h1>
+            <p className="text-sm text-gray-600 mt-2"> {pokemonData.name}</p>
+          </div>
 
           <div className="mt-4 items-center justify-around flex">
             <img
