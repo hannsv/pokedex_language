@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import TypeCard from "../type/TypeCard";
 import CardSelectButton from "./CardSelectButton";
 
-import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
+import { PokemonData } from "@/app/lib/types/types";
+import { getPokemonByNumber } from "@/app/lib/api/pokemon";
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
 import Link from "next/link";
 
@@ -26,10 +27,10 @@ export default function RandomPokemonCard() {
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
-        const pokemonData = await getPokemonByNumber(pokemonNumber);
-        const types = pokemonData.types.map(
-          (typeInfo: any) => typeInfo.type.name
+        const pokemonData: PokemonData = await getPokemonByNumber(
+          pokemonNumber
         );
+        const types = pokemonData.types.map((typeInfo) => typeInfo.type.name);
         setPokemonTypes(types);
         const koreanName = await getPokemonKoreanName(pokemonNumber);
         setPokemonName(koreanName);
@@ -42,8 +43,6 @@ export default function RandomPokemonCard() {
     fetchPokemonData();
   }, [pokemonNumber]);
 
-  const randomNumber = Math.floor(Math.random() * 1000) + 1;
-
   // 이전 포켓몬
   const handlePrevious = () => {
     setPokemonNumber((prev) => (prev > 1 ? prev - 1 : 1000));
@@ -52,11 +51,6 @@ export default function RandomPokemonCard() {
   // 다음 포켓몬
   const handleNext = () => {
     setPokemonNumber((prev) => (prev < 1000 ? prev + 1 : 1));
-  };
-
-  // 랜덤 포켓몬
-  const handleRandom = () => {
-    setPokemonNumber(Math.floor(Math.random() * 1000) + 1);
   };
 
   return (

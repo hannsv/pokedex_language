@@ -15,6 +15,7 @@ import {
 import TypeCard from "../type/TypeCard";
 import Link from "next/link";
 import PokemonImgCard from "./PokemonImgCard";
+import { PokemonData } from "@/app/lib/types/types";
 
 interface PokemonCardProps {
   indexId: number;
@@ -24,7 +25,6 @@ interface PokemonCardProps {
 export default function PokemonCard({ indexId }: PokemonCardProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [pokemonData, setPokemonData] = useState<any>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
   const [pokemonNumber, setPokemonNumber] = useState<number>(indexId);
@@ -38,9 +38,7 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         const data = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${indexId || 25}/`
         );
-        const pokemonData = await data.json();
-        // 한글이름 가져오기
-        setPokemonData(pokemonData);
+        const pokemonData: PokemonData = await data.json();
 
         // species url에서 id 추출하여 한글 이름 가져오기
         const speciesUrl = pokemonData.species.url;
@@ -56,9 +54,7 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
 
         setPokemonName(koname);
         //타입 가져오기
-        const types = pokemonData.types.map(
-          (typeInfo: any) => typeInfo.type.name
-        );
+        const types = pokemonData.types.map((typeInfo) => typeInfo.type.name);
         setPokemonTypes(types);
         console.log("포켓몬 타입:", types);
       } catch (error) {

@@ -1,12 +1,81 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { pokemonTypes } from "@/app/lib/api/pokemonTypes";
+import { ALL_POKEMON } from "@/app/lib/pokemonSpecies";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState<
+    { name: string; url?: string; type?: string; en?: string }[]
+  >([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const router = useRouter();
+  const wrapperRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setShowSuggestions(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [wrapperRef]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (value.length > 0) {
+      const lowerValue = value.toLowerCase();
+
+      // 포켓몬 이름 검색 (영문)
+      const filteredPokemon = ALL_POKEMON.filter((p) =>
+        p.name.toLowerCase().includes(lowerValue)
+      )
+        .slice(0, 5)
+        .map((p) => ({ ...p, type: "pokemon" }));
+
+      // 타입 검색 (한글 또는 영문)
+      const filteredTypes = pokemonTypes
+        .filter(
+          (t) =>
+            t.name.includes(value) || t.en.toLowerCase().includes(lowerValue)
+        )
+        .map((t) => ({ name: `${t.name} (${t.en})`, en: t.en, type: "type" }));
+
+      setSuggestions([...filteredTypes, ...filteredPokemon]);
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSuggestionClick = (item: {
+    name: string;
+    url?: string;
+    type?: string;
+    en?: string;
+  }) => {
+    if (item.type === "pokemon" && item.url) {
+      const id = item.url.split("/").filter(Boolean).pop();
+      setSearchTerm(item.name);
+      setShowSuggestions(false);
+      router.push(`/pokemon/detail/${id}`);
+    } else if (item.type === "type" && item.en) {
+      setSearchTerm(item.name);
+      setShowSuggestions(false);
+      router.push(`/type?type=${item.en}`);
+    }
+  };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +93,7 @@ export default function SearchBar() {
         // 검색어가 있으면 상세 페이지로 이동
         router.push(`/pokemon/detail/${term.toLowerCase()}`);
       }
+      setShowSuggestions(false);
     }
   };
 
@@ -31,6 +101,7 @@ export default function SearchBar() {
     <form
       onSubmit={handleSearch}
       className="relative flex items-center w-full max-w-[300px]"
+      ref={wrapperRef}
     >
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -53,9 +124,12 @@ export default function SearchBar() {
         <input
           type="search"
           className="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-          placeholder="포켓몬 이름, 번호..."
+          placeholder="이름, 타입..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleInputChange}
+          onFocus={() => {
+            if (searchTerm) setShowSuggestions(true);
+          }}
           required
         />
         <button
@@ -64,6 +138,26 @@ export default function SearchBar() {
         >
           검색
         </button>
+
+        {/* 연관 검색어 목록 */}
+        {showSuggestions && suggestions.length > 0 && (
+          <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg top-full mt-1 max-h-60 overflow-y-auto">
+            {suggestions.map((item, index) => (
+              <li
+                key={index}
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex justify-between items-center"
+                onClick={() => handleSuggestionClick(item)}
+              >
+                <span className="text-xs text-gray-500 uppercase">
+                  {item.name}
+                </span>
+                <span className="text-xs text-gray-500 uppercase">
+                  {item.type === "type" ? "타입" : "포켓몬"}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </form>
   );
