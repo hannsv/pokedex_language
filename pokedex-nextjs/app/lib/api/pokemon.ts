@@ -46,3 +46,11 @@ export async function getEvolutionChain(pokemonId: number) {
   const evoRes = await fetch(evoUrl);
   return await evoRes.json();
 }
+
+export async function getEvolutionChainBySpeciesUrl(speciesUrl: string) {
+  const speciesRes = await fetch(speciesUrl);
+  const speciesData = await speciesRes.json();
+  const evoUrl = speciesData.evolution_chain.url;
+  const evoRes = await fetch(evoUrl);
+  return await evoRes.json();
+}

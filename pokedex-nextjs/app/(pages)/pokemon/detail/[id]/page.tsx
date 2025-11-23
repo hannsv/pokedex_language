@@ -2,7 +2,11 @@
 "use client";
 
 import TypeCard from "@/app/_components/pokemon/type/TypeCard";
+import PokemonEvolutionChain from "@/app/_components/pokemon/detail/PokemonEvolutionChain";
+import PokemonMoves from "@/app/_components/pokemon/detail/PokemonMoves";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
+import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
+import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
 
 // params 타입을 올바르게 정의
@@ -10,29 +14,6 @@ interface PokeDetailProps {
   params: {
     id: string; // 디렉토리 이름과 일치시키기
   };
-}
-
-interface PokemonData {
-  id: number;
-  name: string;
-  types: Array<{
-    type: {
-      name: string;
-    };
-  }>;
-  height: number;
-  weight: number;
-  abilities: Array<{
-    ability: {
-      name: string;
-    };
-  }>;
-  stats: Array<{
-    base_stat: number;
-    stat: {
-      name: string;
-    };
-  }>;
 }
 
 // 포켓몬 상세페이지 컴포넌트
@@ -85,16 +66,22 @@ export default function PokemonDetailPage({
         setPokemonAbilities(abilities);
 
         // Species 데이터 가져오기 (이름, 설명)
-        const speciesResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon-species/${pokeNum}/`
-        );
+        // pokemonData.species.url을 사용하여 정확한 species 정보 가져오기
+        const speciesResponse = await fetch(data.species.url);
         const speciesData = await speciesResponse.json();
 
-        const koreanName =
+        let koreanName =
           speciesData.names.find(
             (n: { language: { name: string }; name: string }) =>
               n.language.name === "ko"
           )?.name || data.name;
+
+        // 10000번대 이상인 경우 폼 이름 추가
+        if (pokeNum > 10000) {
+          const formName = getFormKoreanName(data.name);
+          koreanName += formName;
+        }
+
         setPokemonName(koreanName);
 
         const koreanFlavorText =
@@ -126,9 +113,15 @@ export default function PokemonDetailPage({
         <div className="flex flex-col items-center">
           <div className="w-full flex justify-between items-center px-4 mb-4">
             <h1 className="text-3xl font-bold text-gray-800">{pokemonName}</h1>
-            <span className="text-xl text-gray-500 font-mono">
-              No.{String(pokemonData.id).padStart(4, "0")}
-            </span>
+            {pokemonData.id <= 10000 ? (
+              <span className="text-xl text-gray-500 font-mono">
+                No.{String(pokemonData.id).padStart(4, "0")}
+              </span>
+            ) : (
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
+                Special
+              </span>
+            )}
           </div>
 
           <div className="relative w-64 h-64 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
@@ -190,7 +183,7 @@ export default function PokemonDetailPage({
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full mb-6">
             <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
               특성
             </h2>
@@ -205,6 +198,12 @@ export default function PokemonDetailPage({
               ))}
             </div>
           </div>
+
+          {/* 진화 정보 */}
+          <PokemonEvolutionChain speciesUrl={pokemonData.species.url} />
+
+          {/* 기술 정보 */}
+          <PokemonMoves moves={pokemonData.moves} />
         </div>
       ) : (
         <div className="text-center text-gray-500 py-10">
