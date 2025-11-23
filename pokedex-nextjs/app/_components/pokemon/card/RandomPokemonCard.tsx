@@ -7,6 +7,7 @@ import CardSelectButton from "./CardSelectButton";
 
 import { getPokemonByNumber, getPokemonByType } from "@/app/lib/api/pokemon";
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
+import Link from "next/link";
 
 /**
  *
@@ -72,20 +73,22 @@ export default function RandomPokemonCard() {
           </div>
         ) : (
           <>
-            <div className="w-[150px] h-[240px]">
-              <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
-              <div className=" font-bold mb-2">{pokemonName}</div>
-              <img
-                className="w-full fit-contain"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
-                alt="랜덤포켓몬"
-              />
-              <div className="text-gray-600 text-sm flex flex-row justify-center">
-                {pokemonTypes.map((type, index) => (
-                  <TypeCard key={index} typeNames={type} />
-                ))}
+            <Link href={`/pokemon/detail/${pokemonNumber}`}>
+              <div className="w-[150px] h-[240px]">
+                <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+                <div className=" font-bold mb-2">{pokemonName}</div>
+                <img
+                  className="w-full fit-contain"
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
+                  alt="랜덤포켓몬"
+                />
+                <div className="text-gray-600 text-sm flex flex-row justify-center">
+                  {pokemonTypes.map((type, index) => (
+                    <TypeCard key={index} typeNames={type} />
+                  ))}
+                </div>
               </div>
-            </div>
+            </Link>
           </>
         )}
       </div>
