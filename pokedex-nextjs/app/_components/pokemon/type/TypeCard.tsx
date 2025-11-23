@@ -5,7 +5,7 @@ import { typeStyleMap } from "../../../lib/api/pokemonTypes";
 interface TypeCardProps {
   typeNames: string;
 }
-
+//
 // const typeFilter = (num: number) => {
 //   return Object.entries(typeNames).find(([key, value]) => {
 //     return value === `https://pokeapi.co/api/v2/type/${num}/`;
