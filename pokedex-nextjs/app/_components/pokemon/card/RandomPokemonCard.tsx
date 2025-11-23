@@ -63,7 +63,7 @@ export default function RandomPokemonCard() {
       <CardSelectButton string="◀" onClick={handlePrevious} />
       <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
         {isLoading ? (
-          <div className="h-[180px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
+          <div className="w-[150px] h-[240px] animate-pulse rounded-md flex items-center justify-center">
             <img
               src="skeleton-monsterball.png"
               alt="loading"
@@ -72,7 +72,7 @@ export default function RandomPokemonCard() {
           </div>
         ) : (
           <>
-            <div className="h-[180px] w-[100px]">
+            <div className="w-[150px] h-[240px]">
               <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
               <div className=" font-bold mb-2">{pokemonName}</div>
               <img
