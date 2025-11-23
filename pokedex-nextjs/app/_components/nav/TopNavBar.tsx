@@ -9,36 +9,30 @@ export default function TopNavBar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header className="sticky top-0 z-50 w-full shadow-md">
+      {/* Red Top Section */}
+      <div className="bg-red-600 w-full h-16 relative flex items-center justify-center px-4">
+        <div className="max-w-7xl w-full flex justify-between items-center">
           {/* Logo */}
-          <div className="shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center z-10">
             <Link href="/" className="flex items-center gap-2 group">
-              <svg
-                className="w-8 h-8 text-red-600 group-hover:rotate-180 transition-transform duration-500"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" />
-                <path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" />
-                <circle cx="12" cy="12" r="2" />
-                <path d="M2 12H22" stroke="currentColor" strokeWidth="2" />
-              </svg>
-              <span className="font-bold text-xl tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">
+              <div className="relative w-10 h-10 bg-white rounded-full border-4 border-gray-800 flex items-center justify-center overflow-hidden shadow-sm group-hover:rotate-12 transition-transform duration-300">
+                <div className="absolute top-0 w-full h-1/2 bg-red-500 border-b-4 border-gray-800"></div>
+                <div className="absolute w-3 h-3 bg-white rounded-full border-2 border-gray-800 z-10"></div>
+              </div>
+              <span className="font-bold text-xl tracking-tight text-white drop-shadow-md group-hover:text-yellow-300 transition-colors">
                 Pokedex
               </span>
             </Link>
           </div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-1">
+          <nav className="hidden md:flex space-x-2 z-10">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-full text-sm font-bold transition-all"
+                className="text-white hover:text-yellow-300 hover:bg-red-700/50 px-4 py-2 rounded-full text-sm font-bold transition-all border-2 border-transparent hover:border-yellow-300/50"
               >
                 {item.name}
               </Link>
@@ -46,8 +40,17 @@ export default function TopNavBar() {
           </nav>
 
           {/* Search */}
-          <div className="flex items-center">
+          <div className="flex items-center z-10">
             <SearchBar />
+          </div>
+        </div>
+      </div>
+
+      {/* Black Line & Center Circle (Pokeball Design) */}
+      <div className="relative w-full h-2 bg-gray-800">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full border-4 border-gray-800 flex items-center justify-center">
+          <div className="w-8 h-8 bg-white rounded-full border-2 border-gray-800 flex items-center justify-center">
+            <div className="w-6 h-6 bg-white/50 rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>
