@@ -3,11 +3,15 @@
 interface DropDownFilterProps {
   selectedType: string;
   onSelectType: (type: string) => void;
+  selectedForm: string;
+  onSelectForm: (form: string) => void;
 }
 
 export default function DropDownFilter({
   selectedType,
   onSelectType,
+  selectedForm,
+  onSelectForm,
 }: DropDownFilterProps) {
   const typeKorean = [
     { type: "all", korean: "전체" },
@@ -31,26 +35,61 @@ export default function DropDownFilter({
     { type: "fairy", korean: "페어리" },
   ];
 
+  const formKorean = [
+    { type: "all", korean: "기본" },
+    { type: "mega", korean: "메가진화" },
+    { type: "gmax", korean: "거다이맥스" },
+    { type: "alola", korean: "알로라" },
+    { type: "galar", korean: "가라르" },
+    { type: "hisui", korean: "히스이" },
+    { type: "paldea", korean: "팔데아" },
+  ];
+
   return (
-    <div className="w-full mb-4">
-      <div className="flex items-center gap-2 mb-2">
-        <span className="font-bold text-sm">타입 필터</span>
+    <div className="w-full mb-2 flex flex-col lg:flex-row justify-between items-start gap-4">
+      {/* 타입 필터 */}
+      <div className="flex items-start gap-3 flex-1">
+        <span className="font-bold text-xs text-gray-500 mt-1 shrink-0">
+          타입
+        </span>
+        <ul className="flex flex-wrap gap-1.5 justify-start">
+          {typeKorean.map((type) => (
+            <li
+              key={type.type}
+              onClick={() => onSelectType(type.type)}
+              className={`cursor-pointer px-2.5 py-0.5 text-[11px] rounded-full border transition-colors ${
+                selectedType === type.type
+                  ? "bg-blue-500 text-white border-blue-500"
+                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              {type.korean}
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="flex flex-wrap gap-2 justify-center">
-        {typeKorean.map((type) => (
-          <li
-            key={type.type}
-            onClick={() => onSelectType(type.type)}
-            className={`cursor-pointer px-3 py-1 text-xs rounded-full border transition-colors ${
-              selectedType === type.type
-                ? "bg-blue-500 text-white border-blue-500"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-            }`}
-          >
-            {type.korean}
-          </li>
-        ))}
-      </ul>
+
+      {/* 폼 필터 */}
+      <div className="flex items-start gap-3 shrink-0 lg:border-l lg:pl-4 border-gray-200">
+        <span className="font-bold text-xs text-gray-500 mt-1 shrink-0">
+          폼
+        </span>
+        <ul className="flex flex-wrap gap-1.5 justify-start lg:justify-end max-w-[300px]">
+          {formKorean.map((form) => (
+            <li
+              key={form.type}
+              onClick={() => onSelectForm(form.type)}
+              className={`cursor-pointer px-2.5 py-0.5 text-[11px] rounded-full border transition-colors ${
+                selectedForm === form.type
+                  ? "bg-purple-500 text-white border-purple-500"
+                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              {form.korean}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

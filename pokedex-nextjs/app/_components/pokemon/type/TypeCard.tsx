@@ -4,6 +4,7 @@ import { typeStyleMap } from "../../../lib/api/pokemonTypes";
 
 interface TypeCardProps {
   typeNames: string;
+  size?: "small" | "medium";
 }
 //
 // const typeFilter = (num: number) => {
@@ -14,9 +15,9 @@ interface TypeCardProps {
 
 function enToColor(englishName: string) {
   const type = pokemonTypes.find((t) => t.en === englishName);
-  console.log("type:", type);
-  console.log("en:", englishName);
-  console.log("colorName:", type?.colorName);
+  // console.log("type:", type);
+  // console.log("en:", englishName);
+  // console.log("colorName:", type?.colorName);
   return type ? type.colorName : "gray"; // 기본 색상
 }
 
@@ -45,7 +46,10 @@ const typeNames1 = {
   unknown: "https://pokeapi.co/api/v2/type/10001/",
 };
 
-export default function TypeCard({ typeNames }: TypeCardProps) {
+export default function TypeCard({
+  typeNames,
+  size = "medium",
+}: TypeCardProps) {
   const { bg, text } = typeStyleMap[typeNames] || {
     bg: "bg-gray-300",
     text: "text-black",
@@ -54,9 +58,12 @@ export default function TypeCard({ typeNames }: TypeCardProps) {
   const koreanName =
     pokemonTypes.find((t) => t.en === typeNames)?.name || typeNames;
 
+  const sizeClasses =
+    size === "small" ? "px-2 py-0.5 text-[10px]" : "px-3 py-1 text-sm";
+
   return (
     <div
-      className={`px-3 py-1 rounded-full ${bg} ${text} text-sm font-bold shadow-sm`}
+      className={`${sizeClasses} rounded-full ${bg} ${text} font-bold shadow-sm whitespace-nowrap`}
     >
       {koreanName}
     </div>

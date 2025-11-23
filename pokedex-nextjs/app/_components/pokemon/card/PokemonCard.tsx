@@ -74,7 +74,7 @@ export default function PokemonCard({
     <div
       className={`border border-gray-300 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl ${
         viewMode === "grid"
-          ? "flex flex-col items-center justify-center p-4 h-full"
+          ? "flex flex-col items-center justify-center p-2 h-full"
           : "flex flex-row items-center justify-between p-4 w-full h-auto"
       }`}
     >
@@ -92,21 +92,26 @@ export default function PokemonCard({
             // Grid View Layout
             <>
               {pokemonNumber <= 10000 ? (
-                <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+                <div className="text-xs text-gray-500 mb-1">
+                  No.{pokemonNumber}
+                </div>
               ) : (
-                <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full mb-1">
+                <div className="text-[10px] font-bold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded-full mb-1">
                   Special
                 </div>
               )}
-              <div className="font-bold mb-2 text-center break-keep text-lg">
+              <div className="font-bold mb-1 text-center break-keep text-sm h-10 flex items-center justify-center w-full leading-tight">
                 {pokemonName}
               </div>
-              <Link href={`/pokemon/detail/${indexId}`}>
+              <Link
+                href={`/pokemon/detail/${indexId}`}
+                className="w-full flex justify-center"
+              >
                 <PokemonImgCard indexId={indexId} />
               </Link>
-              <div className="text-gray-600 text-sm flex flex-wrap justify-center gap-1 mt-2">
+              <div className="flex flex-wrap justify-center gap-1 mt-1 w-full">
                 {pokemonTypes.map((pokemonType, index) => (
-                  <TypeCard key={index} typeNames={pokemonType} />
+                  <TypeCard key={index} typeNames={pokemonType} size="small" />
                 ))}
               </div>
             </>
@@ -138,7 +143,7 @@ export default function PokemonCard({
               </div>
               <div className="flex gap-1">
                 {pokemonTypes.map((pokemonType, index) => (
-                  <TypeCard key={index} typeNames={pokemonType} />
+                  <TypeCard key={index} typeNames={pokemonType} size="medium" />
                 ))}
               </div>
             </>
