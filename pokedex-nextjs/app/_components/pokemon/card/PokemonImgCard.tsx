@@ -7,9 +7,9 @@ export default function PokemonImgCard({ indexId }: PokemonImgCardProps) {
 
   return (
     <img
-      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexId}.png`}
+      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`}
       alt="Pokémon Image"
-      className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer"
+      className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer object-contain p-2"
     />
   );
 }

@@ -3,11 +3,7 @@ import { pokemonTypes } from "../../../lib/api/pokemonTypes";
 import { typeStyleMap } from "../../../lib/api/pokemonTypes";
 
 interface TypeCardProps {
-  firstType: string;
-  secondType: string | undefined;
-
   typeNames: string;
-  typeNameKorean: string | null;
 }
 
 // const typeFilter = (num: number) => {
@@ -55,13 +51,14 @@ export default function TypeCard({ typeNames }: TypeCardProps) {
     text: "text-black",
   };
 
+  const koreanName =
+    pokemonTypes.find((t) => t.en === typeNames)?.name || typeNames;
+
   return (
-    <div className="border rounded-md border-black-300 items-center justify-center m-1">
-      <div
-        className={`text-center flex-row px-2 rounded-md ${bg} ${text} text-xs`}
-      >
-        {typeNames}
-      </div>
+    <div
+      className={`px-3 py-1 rounded-full ${bg} ${text} text-sm font-bold shadow-sm`}
+    >
+      {koreanName}
     </div>
   );
 }
