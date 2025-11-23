@@ -3,12 +3,13 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { getEvolutionChain } from "@/app/lib/api/pokemon";
+import { getEvolutionChain, getEvolutionChainBySpeciesUrl } from "@/app/lib/api/pokemon";
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
 import { EvolutionNode } from "@/app/lib/types/types";
 
 interface PokemonEvolutionChainProps {
-  pokemonId: number;
+  pokemonId?: number;
+  speciesUrl?: string;
 }
 
 function getEvolutionSpecies(
@@ -28,6 +29,7 @@ function getEvolutionSpecies(
 
 export default function PokemonEvolutionChain({
   pokemonId,
+  speciesUrl,
 }: PokemonEvolutionChainProps) {
   const [evolutionChain, setEvolutionChain] = useState<
     { name: string; id: string; koreanName?: string }[]
@@ -36,7 +38,15 @@ export default function PokemonEvolutionChain({
   useEffect(() => {
     const fetchEvolutionData = async () => {
       try {
-        const evoData = await getEvolutionChain(pokemonId);
+        let evoData;
+        if (speciesUrl) {
+          evoData = await getEvolutionChainBySpeciesUrl(speciesUrl);
+        } else if (pokemonId) {
+          evoData = await getEvolutionChain(pokemonId);
+        } else {
+          return;
+        }
+
         const evoList = getEvolutionSpecies(evoData.chain);
         const evoListWithKorean = await Promise.all(
           evoList.map(async (p) => {
@@ -51,7 +61,7 @@ export default function PokemonEvolutionChain({
     };
 
     fetchEvolutionData();
-  }, [pokemonId]);
+  }, [pokemonId, speciesUrl]);
 
   if (evolutionChain.length === 0) {
     return null;

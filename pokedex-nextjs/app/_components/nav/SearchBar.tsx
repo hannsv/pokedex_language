@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { pokemonTypes } from "@/app/lib/api/pokemonTypes";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,9 +11,19 @@ export default function SearchBar() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      // 검색어가 있으면 상세 페이지로 이동 (임시)
-      // 실제로는 검색 결과 페이지나, 유효성 검사 후 이동하는 것이 좋음
-      router.push(`/pokemon/detail/${searchTerm.toLowerCase()}`);
+      const term = searchTerm.trim();
+      
+      // 타입 검색 확인 (한글 이름 또는 영문 이름)
+      const matchedType = pokemonTypes.find(
+        (t) => t.name === term || t.en === term.toLowerCase()
+      );
+
+      if (matchedType) {
+        router.push(`/type?type=${matchedType.en}`);
+      } else {
+        // 검색어가 있으면 상세 페이지로 이동
+        router.push(`/pokemon/detail/${term.toLowerCase()}`);
+      }
     }
   };
 

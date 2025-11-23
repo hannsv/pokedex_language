@@ -8,7 +8,7 @@
 
 import { useEffect, useState } from "react";
 
-import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
+import { getPokemonKoreanName, getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
 import TypeCard from "../type/TypeCard";
 import Link from "next/link";
 import PokemonImgCard from "./PokemonImgCard";
@@ -38,7 +38,19 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         const pokemonData = await data.json();
         // 한글이름 가져오기
         setPokemonData(pokemonData);
-        const koname = await getPokemonKoreanName(indexId || 25);
+
+        // species url에서 id 추출하여 한글 이름 가져오기
+        const speciesUrl = pokemonData.species.url;
+        const speciesId = speciesUrl.split("/").filter(Boolean).pop();
+        
+        let koname = await getPokemonKoreanName(Number(speciesId));
+        
+        // 10000번대 이상인 경우 폼 이름 추가
+        if (indexId > 10000) {
+          const formName = getFormKoreanName(pokemonData.name);
+          koname += formName;
+        }
+
         setPokemonName(koname);
         //타입 가져오기
         const types = pokemonData.types.map(
@@ -62,15 +74,21 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
           <img
             src="skeleton-monsterball.png"
             alt="loading"
-            className="h-[48px] w-[50px]"
+            className="h-12 w-[50px]"
           />
         </div>
       ) : (
         <>
           {/* 도감번호 */}
-          <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+          {pokemonNumber <= 10000 ? (
+            <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+          ) : (
+            <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full mb-1">
+              Special Form
+            </div>
+          )}
           {/* 포켓몬 이름 */}
-          <div className=" font-bold mb-2">{pokemonName}</div>
+          <div className=" font-bold mb-2 text-center break-keep">{pokemonName}</div>
           {/* 포켓몬 이미지 */}
           <Link href={`/pokemon/detail/${indexId}`}>
             <PokemonImgCard indexId={indexId} />

@@ -35,6 +35,10 @@ export interface PokemonData {
       };
     }>;
   }>;
+  species: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface EvolutionNode {

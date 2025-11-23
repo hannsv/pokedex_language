@@ -5,6 +5,7 @@ import TypeCard from "@/app/_components/pokemon/type/TypeCard";
 import PokemonEvolutionChain from "@/app/_components/pokemon/detail/PokemonEvolutionChain";
 import PokemonMoves from "@/app/_components/pokemon/detail/PokemonMoves";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
+import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
 import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
 
@@ -65,16 +66,22 @@ export default function PokemonDetailPage({
         setPokemonAbilities(abilities);
 
         // Species 데이터 가져오기 (이름, 설명)
-        const speciesResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon-species/${pokeNum}/`
-        );
+        // pokemonData.species.url을 사용하여 정확한 species 정보 가져오기
+        const speciesResponse = await fetch(data.species.url);
         const speciesData = await speciesResponse.json();
 
-        const koreanName =
+        let koreanName =
           speciesData.names.find(
             (n: { language: { name: string }; name: string }) =>
               n.language.name === "ko"
           )?.name || data.name;
+
+        // 10000번대 이상인 경우 폼 이름 추가
+        if (pokeNum > 10000) {
+          const formName = getFormKoreanName(data.name);
+          koreanName += formName;
+        }
+
         setPokemonName(koreanName);
 
         const koreanFlavorText =
@@ -106,9 +113,15 @@ export default function PokemonDetailPage({
         <div className="flex flex-col items-center">
           <div className="w-full flex justify-between items-center px-4 mb-4">
             <h1 className="text-3xl font-bold text-gray-800">{pokemonName}</h1>
-            <span className="text-xl text-gray-500 font-mono">
-              No.{String(pokemonData.id).padStart(4, "0")}
-            </span>
+            {pokemonData.id <= 10000 ? (
+              <span className="text-xl text-gray-500 font-mono">
+                No.{String(pokemonData.id).padStart(4, "0")}
+              </span>
+            ) : (
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
+                Special Form
+              </span>
+            )}
           </div>
 
           <div className="relative w-64 h-64 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
@@ -187,7 +200,7 @@ export default function PokemonDetailPage({
           </div>
 
           {/* 진화 정보 */}
-          <PokemonEvolutionChain pokemonId={pokemonData.id} />
+          <PokemonEvolutionChain speciesUrl={pokemonData.species.url} />
 
           {/* 기술 정보 */}
           <PokemonMoves moves={pokemonData.moves} />
