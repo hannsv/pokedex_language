@@ -12,7 +12,7 @@ export default function SearchBar() {
     e.preventDefault();
     if (searchTerm.trim()) {
       const term = searchTerm.trim();
-      
+
       // 타입 검색 확인 (한글 이름 또는 영문 이름)
       const matchedType = pokemonTypes.find(
         (t) => t.name === term || t.en === term.toLowerCase()

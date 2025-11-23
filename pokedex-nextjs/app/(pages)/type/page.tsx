@@ -52,12 +52,17 @@ function TypePageContent() {
       {/* Type Selector */}
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {pokemonTypes.map((t) => {
-          const style = typeStyleMap[t.en] || { bg: "bg-gray-200", text: "text-black" };
+          const style = typeStyleMap[t.en] || {
+            bg: "bg-gray-200",
+            text: "text-black",
+          };
           return (
             <button
               key={t.en}
               onClick={() => handleTypeClick(t.en)}
-              className={`px-4 py-2 rounded-full text-sm font-bold transition-all shadow-sm ${style.bg} ${style.text} ${
+              className={`px-4 py-2 rounded-full text-sm font-bold transition-all shadow-sm ${
+                style.bg
+              } ${style.text} ${
                 currentType === t.en
                   ? "ring-4 ring-offset-2 ring-blue-400 scale-110"
                   : "opacity-80 hover:opacity-100 hover:scale-105"

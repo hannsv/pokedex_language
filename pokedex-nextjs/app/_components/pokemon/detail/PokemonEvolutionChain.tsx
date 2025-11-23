@@ -3,7 +3,10 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { getEvolutionChain, getEvolutionChainBySpeciesUrl } from "@/app/lib/api/pokemon";
+import {
+  getEvolutionChain,
+  getEvolutionChainBySpeciesUrl,
+} from "@/app/lib/api/pokemon";
 import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
 import { EvolutionNode } from "@/app/lib/types/types";
 

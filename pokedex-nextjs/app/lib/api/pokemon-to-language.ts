@@ -18,6 +18,6 @@ export const getFormKoreanName = (name: string): string => {
   if (name.includes("-gmax")) return " (거다이맥스)";
   if (name.includes("-origin")) return " (오리진폼)";
   if (name.includes("-therian")) return " (영물폼)";
-  
+
   return "";
 };
