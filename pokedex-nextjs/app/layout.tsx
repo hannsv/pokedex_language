@@ -32,8 +32,8 @@ export default function RootLayout({
         {/* 상단 내비게이션 바 */}
         <TopNavBar />
         {/* 메인 컨텐츠 */}
-        <main className="flex justify-center font-sans py-10 px-4 min-h-[calc(100vh-80px)]">
-          <div className="w-full max-w-7xl rounded-2xl shadow-xl bg-white text-black p-6 md:p-8 border border-gray-100">
+        <main className="flex justify-center font-sans pt-0 pb-4 px-2 md:py-10 md:px-4 min-h-[calc(100vh-80px)]">
+          <div className="w-full max-w-7xl rounded-2xl shadow-xl bg-white text-black p-2 md:p-8 border border-gray-100">
             {children}
           </div>
         </main>

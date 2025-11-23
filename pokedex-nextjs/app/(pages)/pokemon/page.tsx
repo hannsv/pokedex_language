@@ -23,6 +23,27 @@ export default function PokemonListPage() {
   const [displayedCount, setDisplayedCount] = useState(20);
   const loaderRef = useRef<HTMLDivElement>(null);
 
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Scroll to top handler
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Filter pokemon based on selected type and form
   const filteredPokemon = useMemo(() => {
     let filtered = pokemonData;
@@ -86,15 +107,24 @@ export default function PokemonListPage() {
     viewMode === "list"
       ? "grid-cols-1"
       : itemsPerRow === 3
-      ? "grid-cols-3"
+      ? "grid-cols-2 md:grid-cols-3"
       : itemsPerRow === 4
-      ? "grid-cols-4"
+      ? "grid-cols-2 md:grid-cols-4"
       : itemsPerRow === 5
-      ? "grid-cols-5"
-      : "grid-cols-6";
+      ? "grid-cols-2 md:grid-cols-5"
+      : "grid-cols-2 md:grid-cols-6";
+
+  const gapClass =
+    itemsPerRow >= 6
+      ? "gap-1.5"
+      : itemsPerRow >= 5
+      ? "gap-2"
+      : itemsPerRow === 4
+      ? "gap-3"
+      : "gap-4";
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-4">
+    <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-2 md:px-4">
       {/* 필터 메뉴 */}
       <DropDownFilter
         selectedType={selectedType}
@@ -194,7 +224,7 @@ export default function PokemonListPage() {
 
       {/* 포켓몬 리스트 */}
       <div
-        className={`grid ${gridColsClass} rounded-lg w-full bg-white text-black gap-4 p-4`}
+        className={`grid ${gridColsClass} rounded-lg w-full bg-white text-black ${gapClass} p-2 md:p-4`}
       >
         {displayedPokemon.map((pokemon) => {
           const id = getPokemonId(pokemon.url);
@@ -215,6 +245,31 @@ export default function PokemonListPage() {
           해당 타입의 포켓몬이 없습니다.
         </div>
       )}
+
+      {/* Scroll To Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 p-3 bg-white text-gray-600 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:bg-gray-50 active:scale-95 ${
+          showScrollTop
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10 pointer-events-none"
+        }`}
+        title="맨 위로"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </button>
     </div>
   );
 }
