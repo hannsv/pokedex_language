@@ -3,12 +3,24 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { pokemonTypes } from "@/app/lib/api/pokemonTypes";
-import { ALL_POKEMON } from "@/app/lib/pokemonSpecies";
+import pokemonData from "@/data/pokemon.json";
+
+interface Pokemon {
+  name: string;
+  url: string;
+  korean_name?: string;
+}
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<
-    { name: string; url?: string; type?: string; en?: string }[]
+    {
+      name: string;
+      url?: string;
+      type?: string;
+      en?: string;
+      korean_name?: string;
+    }[]
   >([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const router = useRouter();
@@ -36,10 +48,13 @@ export default function SearchBar() {
     if (value.length > 0) {
       const lowerValue = value.toLowerCase();
 
-      // 포켓몬 이름 검색 (영문)
-      const filteredPokemon = ALL_POKEMON.filter((p) =>
-        p.name.toLowerCase().includes(lowerValue)
-      )
+      // 포켓몬 이름 검색 (영문 또는 한글)
+      const filteredPokemon = (pokemonData as Pokemon[])
+        .filter(
+          (p) =>
+            p.name.toLowerCase().includes(lowerValue) ||
+            (p.korean_name && p.korean_name.includes(value))
+        )
         .slice(0, 5)
         .map((p) => ({ ...p, type: "pokemon" }));
 
@@ -64,10 +79,11 @@ export default function SearchBar() {
     url?: string;
     type?: string;
     en?: string;
+    korean_name?: string;
   }) => {
     if (item.type === "pokemon" && item.url) {
       const id = item.url.split("/").filter(Boolean).pop();
-      setSearchTerm(item.name);
+      setSearchTerm(item.korean_name || item.name);
       setShowSuggestions(false);
       router.push(`/pokemon/detail/${id}`);
     } else if (item.type === "type" && item.en) {
@@ -89,8 +105,21 @@ export default function SearchBar() {
 
       if (matchedType) {
         router.push(`/type?type=${matchedType.en}`);
+        setShowSuggestions(false);
+        return;
+      }
+
+      // 포켓몬 검색 (한글 이름 또는 영문 이름)
+      const matchedPokemon = (pokemonData as Pokemon[]).find(
+        (p) =>
+          p.name.toLowerCase() === term.toLowerCase() || p.korean_name === term
+      );
+
+      if (matchedPokemon) {
+        const id = matchedPokemon.url.split("/").filter(Boolean).pop();
+        router.push(`/pokemon/detail/${id}`);
       } else {
-        // 검색어가 있으면 상세 페이지로 이동
+        // 검색어가 있으면 상세 페이지로 이동 (fallback)
         router.push(`/pokemon/detail/${term.toLowerCase()}`);
       }
       setShowSuggestions(false);
@@ -149,7 +178,9 @@ export default function SearchBar() {
                 onClick={() => handleSuggestionClick(item)}
               >
                 <span className="text-xs text-gray-500 uppercase">
-                  {item.name}
+                  {item.korean_name
+                    ? `${item.korean_name} (${item.name})`
+                    : item.name}
                 </span>
                 <span className="text-xs text-gray-500 uppercase">
                   {item.type === "type" ? "타입" : "포켓몬"}

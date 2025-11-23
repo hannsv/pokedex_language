@@ -1,0 +1,6397 @@
+[
+  {
+    "name": "bulbasaur",
+    "url": "https://pokeapi.co/api/v2/pokemon/1/",
+    "korean_name": "이상해씨"
+  },
+  {
+    "name": "ivysaur",
+    "url": "https://pokeapi.co/api/v2/pokemon/2/",
+    "korean_name": "이상해풀"
+  },
+  {
+    "name": "venusaur",
+    "url": "https://pokeapi.co/api/v2/pokemon/3/",
+    "korean_name": "이상해꽃"
+  },
+  {
+    "name": "charmander",
+    "url": "https://pokeapi.co/api/v2/pokemon/4/",
+    "korean_name": "파이리"
+  },
+  {
+    "name": "charmeleon",
+    "url": "https://pokeapi.co/api/v2/pokemon/5/",
+    "korean_name": "리자드"
+  },
+  {
+    "name": "charizard",
+    "url": "https://pokeapi.co/api/v2/pokemon/6/",
+    "korean_name": "리자몽"
+  },
+  {
+    "name": "squirtle",
+    "url": "https://pokeapi.co/api/v2/pokemon/7/",
+    "korean_name": "꼬부기"
+  },
+  {
+    "name": "wartortle",
+    "url": "https://pokeapi.co/api/v2/pokemon/8/",
+    "korean_name": "어니부기"
+  },
+  {
+    "name": "blastoise",
+    "url": "https://pokeapi.co/api/v2/pokemon/9/",
+    "korean_name": "거북왕"
+  },
+  {
+    "name": "caterpie",
+    "url": "https://pokeapi.co/api/v2/pokemon/10/",
+    "korean_name": "캐터피"
+  },
+  {
+    "name": "metapod",
+    "url": "https://pokeapi.co/api/v2/pokemon/11/",
+    "korean_name": "단데기"
+  },
+  {
+    "name": "butterfree",
+    "url": "https://pokeapi.co/api/v2/pokemon/12/",
+    "korean_name": "버터플"
+  },
+  {
+    "name": "weedle",
+    "url": "https://pokeapi.co/api/v2/pokemon/13/",
+    "korean_name": "뿔충이"
+  },
+  {
+    "name": "kakuna",
+    "url": "https://pokeapi.co/api/v2/pokemon/14/",
+    "korean_name": "딱충이"
+  },
+  {
+    "name": "beedrill",
+    "url": "https://pokeapi.co/api/v2/pokemon/15/",
+    "korean_name": "독침붕"
+  },
+  {
+    "name": "pidgey",
+    "url": "https://pokeapi.co/api/v2/pokemon/16/",
+    "korean_name": "구구"
+  },
+  {
+    "name": "pidgeotto",
+    "url": "https://pokeapi.co/api/v2/pokemon/17/",
+    "korean_name": "피죤"
+  },
+  {
+    "name": "pidgeot",
+    "url": "https://pokeapi.co/api/v2/pokemon/18/",
+    "korean_name": "피죤투"
+  },
+  {
+    "name": "rattata",
+    "url": "https://pokeapi.co/api/v2/pokemon/19/",
+    "korean_name": "꼬렛"
+  },
+  {
+    "name": "raticate",
+    "url": "https://pokeapi.co/api/v2/pokemon/20/",
+    "korean_name": "레트라"
+  },
+  {
+    "name": "spearow",
+    "url": "https://pokeapi.co/api/v2/pokemon/21/",
+    "korean_name": "깨비참"
+  },
+  {
+    "name": "fearow",
+    "url": "https://pokeapi.co/api/v2/pokemon/22/",
+    "korean_name": "깨비드릴조"
+  },
+  {
+    "name": "ekans",
+    "url": "https://pokeapi.co/api/v2/pokemon/23/",
+    "korean_name": "아보"
+  },
+  {
+    "name": "arbok",
+    "url": "https://pokeapi.co/api/v2/pokemon/24/",
+    "korean_name": "아보크"
+  },
+  {
+    "name": "pikachu",
+    "url": "https://pokeapi.co/api/v2/pokemon/25/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "raichu",
+    "url": "https://pokeapi.co/api/v2/pokemon/26/",
+    "korean_name": "라이츄"
+  },
+  {
+    "name": "sandshrew",
+    "url": "https://pokeapi.co/api/v2/pokemon/27/",
+    "korean_name": "모래두지"
+  },
+  {
+    "name": "sandslash",
+    "url": "https://pokeapi.co/api/v2/pokemon/28/",
+    "korean_name": "고지"
+  },
+  {
+    "name": "nidoran-f",
+    "url": "https://pokeapi.co/api/v2/pokemon/29/",
+    "korean_name": "니드런♀"
+  },
+  {
+    "name": "nidorina",
+    "url": "https://pokeapi.co/api/v2/pokemon/30/",
+    "korean_name": "니드리나"
+  },
+  {
+    "name": "nidoqueen",
+    "url": "https://pokeapi.co/api/v2/pokemon/31/",
+    "korean_name": "니드퀸"
+  },
+  {
+    "name": "nidoran-m",
+    "url": "https://pokeapi.co/api/v2/pokemon/32/",
+    "korean_name": "니드런♂"
+  },
+  {
+    "name": "nidorino",
+    "url": "https://pokeapi.co/api/v2/pokemon/33/",
+    "korean_name": "니드리노"
+  },
+  {
+    "name": "nidoking",
+    "url": "https://pokeapi.co/api/v2/pokemon/34/",
+    "korean_name": "니드킹"
+  },
+  {
+    "name": "clefairy",
+    "url": "https://pokeapi.co/api/v2/pokemon/35/",
+    "korean_name": "삐삐"
+  },
+  {
+    "name": "clefable",
+    "url": "https://pokeapi.co/api/v2/pokemon/36/",
+    "korean_name": "픽시"
+  },
+  {
+    "name": "vulpix",
+    "url": "https://pokeapi.co/api/v2/pokemon/37/",
+    "korean_name": "식스테일"
+  },
+  {
+    "name": "ninetales",
+    "url": "https://pokeapi.co/api/v2/pokemon/38/",
+    "korean_name": "나인테일"
+  },
+  {
+    "name": "jigglypuff",
+    "url": "https://pokeapi.co/api/v2/pokemon/39/",
+    "korean_name": "푸린"
+  },
+  {
+    "name": "wigglytuff",
+    "url": "https://pokeapi.co/api/v2/pokemon/40/",
+    "korean_name": "푸크린"
+  },
+  {
+    "name": "zubat",
+    "url": "https://pokeapi.co/api/v2/pokemon/41/",
+    "korean_name": "주뱃"
+  },
+  {
+    "name": "golbat",
+    "url": "https://pokeapi.co/api/v2/pokemon/42/",
+    "korean_name": "골뱃"
+  },
+  {
+    "name": "oddish",
+    "url": "https://pokeapi.co/api/v2/pokemon/43/",
+    "korean_name": "뚜벅쵸"
+  },
+  {
+    "name": "gloom",
+    "url": "https://pokeapi.co/api/v2/pokemon/44/",
+    "korean_name": "냄새꼬"
+  },
+  {
+    "name": "vileplume",
+    "url": "https://pokeapi.co/api/v2/pokemon/45/",
+    "korean_name": "라플레시아"
+  },
+  {
+    "name": "paras",
+    "url": "https://pokeapi.co/api/v2/pokemon/46/",
+    "korean_name": "파라스"
+  },
+  {
+    "name": "parasect",
+    "url": "https://pokeapi.co/api/v2/pokemon/47/",
+    "korean_name": "파라섹트"
+  },
+  {
+    "name": "venonat",
+    "url": "https://pokeapi.co/api/v2/pokemon/48/",
+    "korean_name": "콘팡"
+  },
+  {
+    "name": "venomoth",
+    "url": "https://pokeapi.co/api/v2/pokemon/49/",
+    "korean_name": "도나리"
+  },
+  {
+    "name": "diglett",
+    "url": "https://pokeapi.co/api/v2/pokemon/50/",
+    "korean_name": "디그다"
+  },
+  {
+    "name": "dugtrio",
+    "url": "https://pokeapi.co/api/v2/pokemon/51/",
+    "korean_name": "닥트리오"
+  },
+  {
+    "name": "meowth",
+    "url": "https://pokeapi.co/api/v2/pokemon/52/",
+    "korean_name": "나옹"
+  },
+  {
+    "name": "persian",
+    "url": "https://pokeapi.co/api/v2/pokemon/53/",
+    "korean_name": "페르시온"
+  },
+  {
+    "name": "psyduck",
+    "url": "https://pokeapi.co/api/v2/pokemon/54/",
+    "korean_name": "고라파덕"
+  },
+  {
+    "name": "golduck",
+    "url": "https://pokeapi.co/api/v2/pokemon/55/",
+    "korean_name": "골덕"
+  },
+  {
+    "name": "mankey",
+    "url": "https://pokeapi.co/api/v2/pokemon/56/",
+    "korean_name": "망키"
+  },
+  {
+    "name": "primeape",
+    "url": "https://pokeapi.co/api/v2/pokemon/57/",
+    "korean_name": "성원숭"
+  },
+  {
+    "name": "growlithe",
+    "url": "https://pokeapi.co/api/v2/pokemon/58/",
+    "korean_name": "가디"
+  },
+  {
+    "name": "arcanine",
+    "url": "https://pokeapi.co/api/v2/pokemon/59/",
+    "korean_name": "윈디"
+  },
+  {
+    "name": "poliwag",
+    "url": "https://pokeapi.co/api/v2/pokemon/60/",
+    "korean_name": "발챙이"
+  },
+  {
+    "name": "poliwhirl",
+    "url": "https://pokeapi.co/api/v2/pokemon/61/",
+    "korean_name": "슈륙챙이"
+  },
+  {
+    "name": "poliwrath",
+    "url": "https://pokeapi.co/api/v2/pokemon/62/",
+    "korean_name": "강챙이"
+  },
+  {
+    "name": "abra",
+    "url": "https://pokeapi.co/api/v2/pokemon/63/",
+    "korean_name": "캐이시"
+  },
+  {
+    "name": "kadabra",
+    "url": "https://pokeapi.co/api/v2/pokemon/64/",
+    "korean_name": "윤겔라"
+  },
+  {
+    "name": "alakazam",
+    "url": "https://pokeapi.co/api/v2/pokemon/65/",
+    "korean_name": "후딘"
+  },
+  {
+    "name": "machop",
+    "url": "https://pokeapi.co/api/v2/pokemon/66/",
+    "korean_name": "알통몬"
+  },
+  {
+    "name": "machoke",
+    "url": "https://pokeapi.co/api/v2/pokemon/67/",
+    "korean_name": "근육몬"
+  },
+  {
+    "name": "machamp",
+    "url": "https://pokeapi.co/api/v2/pokemon/68/",
+    "korean_name": "괴력몬"
+  },
+  {
+    "name": "bellsprout",
+    "url": "https://pokeapi.co/api/v2/pokemon/69/",
+    "korean_name": "모다피"
+  },
+  {
+    "name": "weepinbell",
+    "url": "https://pokeapi.co/api/v2/pokemon/70/",
+    "korean_name": "우츠동"
+  },
+  {
+    "name": "victreebel",
+    "url": "https://pokeapi.co/api/v2/pokemon/71/",
+    "korean_name": "우츠보트"
+  },
+  {
+    "name": "tentacool",
+    "url": "https://pokeapi.co/api/v2/pokemon/72/",
+    "korean_name": "왕눈해"
+  },
+  {
+    "name": "tentacruel",
+    "url": "https://pokeapi.co/api/v2/pokemon/73/",
+    "korean_name": "독파리"
+  },
+  {
+    "name": "geodude",
+    "url": "https://pokeapi.co/api/v2/pokemon/74/",
+    "korean_name": "꼬마돌"
+  },
+  {
+    "name": "graveler",
+    "url": "https://pokeapi.co/api/v2/pokemon/75/",
+    "korean_name": "데구리"
+  },
+  {
+    "name": "golem",
+    "url": "https://pokeapi.co/api/v2/pokemon/76/",
+    "korean_name": "딱구리"
+  },
+  {
+    "name": "ponyta",
+    "url": "https://pokeapi.co/api/v2/pokemon/77/",
+    "korean_name": "포니타"
+  },
+  {
+    "name": "rapidash",
+    "url": "https://pokeapi.co/api/v2/pokemon/78/",
+    "korean_name": "날쌩마"
+  },
+  {
+    "name": "slowpoke",
+    "url": "https://pokeapi.co/api/v2/pokemon/79/",
+    "korean_name": "야돈"
+  },
+  {
+    "name": "slowbro",
+    "url": "https://pokeapi.co/api/v2/pokemon/80/",
+    "korean_name": "야도란"
+  },
+  {
+    "name": "magnemite",
+    "url": "https://pokeapi.co/api/v2/pokemon/81/",
+    "korean_name": "코일"
+  },
+  {
+    "name": "magneton",
+    "url": "https://pokeapi.co/api/v2/pokemon/82/",
+    "korean_name": "레어코일"
+  },
+  {
+    "name": "farfetchd",
+    "url": "https://pokeapi.co/api/v2/pokemon/83/",
+    "korean_name": "파오리"
+  },
+  {
+    "name": "doduo",
+    "url": "https://pokeapi.co/api/v2/pokemon/84/",
+    "korean_name": "두두"
+  },
+  {
+    "name": "dodrio",
+    "url": "https://pokeapi.co/api/v2/pokemon/85/",
+    "korean_name": "두트리오"
+  },
+  {
+    "name": "seel",
+    "url": "https://pokeapi.co/api/v2/pokemon/86/",
+    "korean_name": "쥬쥬"
+  },
+  {
+    "name": "dewgong",
+    "url": "https://pokeapi.co/api/v2/pokemon/87/",
+    "korean_name": "쥬레곤"
+  },
+  {
+    "name": "grimer",
+    "url": "https://pokeapi.co/api/v2/pokemon/88/",
+    "korean_name": "질퍽이"
+  },
+  {
+    "name": "muk",
+    "url": "https://pokeapi.co/api/v2/pokemon/89/",
+    "korean_name": "질뻐기"
+  },
+  {
+    "name": "shellder",
+    "url": "https://pokeapi.co/api/v2/pokemon/90/",
+    "korean_name": "셀러"
+  },
+  {
+    "name": "cloyster",
+    "url": "https://pokeapi.co/api/v2/pokemon/91/",
+    "korean_name": "파르셀"
+  },
+  {
+    "name": "gastly",
+    "url": "https://pokeapi.co/api/v2/pokemon/92/",
+    "korean_name": "고오스"
+  },
+  {
+    "name": "haunter",
+    "url": "https://pokeapi.co/api/v2/pokemon/93/",
+    "korean_name": "고우스트"
+  },
+  {
+    "name": "gengar",
+    "url": "https://pokeapi.co/api/v2/pokemon/94/",
+    "korean_name": "팬텀"
+  },
+  {
+    "name": "onix",
+    "url": "https://pokeapi.co/api/v2/pokemon/95/",
+    "korean_name": "롱스톤"
+  },
+  {
+    "name": "drowzee",
+    "url": "https://pokeapi.co/api/v2/pokemon/96/",
+    "korean_name": "슬리프"
+  },
+  {
+    "name": "hypno",
+    "url": "https://pokeapi.co/api/v2/pokemon/97/",
+    "korean_name": "슬리퍼"
+  },
+  {
+    "name": "krabby",
+    "url": "https://pokeapi.co/api/v2/pokemon/98/",
+    "korean_name": "크랩"
+  },
+  {
+    "name": "kingler",
+    "url": "https://pokeapi.co/api/v2/pokemon/99/",
+    "korean_name": "킹크랩"
+  },
+  {
+    "name": "voltorb",
+    "url": "https://pokeapi.co/api/v2/pokemon/100/",
+    "korean_name": "찌리리공"
+  },
+  {
+    "name": "electrode",
+    "url": "https://pokeapi.co/api/v2/pokemon/101/",
+    "korean_name": "붐볼"
+  },
+  {
+    "name": "exeggcute",
+    "url": "https://pokeapi.co/api/v2/pokemon/102/",
+    "korean_name": "아라리"
+  },
+  {
+    "name": "exeggutor",
+    "url": "https://pokeapi.co/api/v2/pokemon/103/",
+    "korean_name": "나시"
+  },
+  {
+    "name": "cubone",
+    "url": "https://pokeapi.co/api/v2/pokemon/104/",
+    "korean_name": "탕구리"
+  },
+  {
+    "name": "marowak",
+    "url": "https://pokeapi.co/api/v2/pokemon/105/",
+    "korean_name": "텅구리"
+  },
+  {
+    "name": "hitmonlee",
+    "url": "https://pokeapi.co/api/v2/pokemon/106/",
+    "korean_name": "시라소몬"
+  },
+  {
+    "name": "hitmonchan",
+    "url": "https://pokeapi.co/api/v2/pokemon/107/",
+    "korean_name": "홍수몬"
+  },
+  {
+    "name": "lickitung",
+    "url": "https://pokeapi.co/api/v2/pokemon/108/",
+    "korean_name": "내루미"
+  },
+  {
+    "name": "koffing",
+    "url": "https://pokeapi.co/api/v2/pokemon/109/",
+    "korean_name": "또가스"
+  },
+  {
+    "name": "weezing",
+    "url": "https://pokeapi.co/api/v2/pokemon/110/",
+    "korean_name": "또도가스"
+  },
+  {
+    "name": "rhyhorn",
+    "url": "https://pokeapi.co/api/v2/pokemon/111/",
+    "korean_name": "뿔카노"
+  },
+  {
+    "name": "rhydon",
+    "url": "https://pokeapi.co/api/v2/pokemon/112/",
+    "korean_name": "코뿌리"
+  },
+  {
+    "name": "chansey",
+    "url": "https://pokeapi.co/api/v2/pokemon/113/",
+    "korean_name": "럭키"
+  },
+  {
+    "name": "tangela",
+    "url": "https://pokeapi.co/api/v2/pokemon/114/",
+    "korean_name": "덩쿠리"
+  },
+  {
+    "name": "kangaskhan",
+    "url": "https://pokeapi.co/api/v2/pokemon/115/",
+    "korean_name": "캥카"
+  },
+  {
+    "name": "horsea",
+    "url": "https://pokeapi.co/api/v2/pokemon/116/",
+    "korean_name": "쏘드라"
+  },
+  {
+    "name": "seadra",
+    "url": "https://pokeapi.co/api/v2/pokemon/117/",
+    "korean_name": "시드라"
+  },
+  {
+    "name": "goldeen",
+    "url": "https://pokeapi.co/api/v2/pokemon/118/",
+    "korean_name": "콘치"
+  },
+  {
+    "name": "seaking",
+    "url": "https://pokeapi.co/api/v2/pokemon/119/",
+    "korean_name": "왕콘치"
+  },
+  {
+    "name": "staryu",
+    "url": "https://pokeapi.co/api/v2/pokemon/120/",
+    "korean_name": "별가사리"
+  },
+  {
+    "name": "starmie",
+    "url": "https://pokeapi.co/api/v2/pokemon/121/",
+    "korean_name": "아쿠스타"
+  },
+  {
+    "name": "mr-mime",
+    "url": "https://pokeapi.co/api/v2/pokemon/122/",
+    "korean_name": "마임맨"
+  },
+  {
+    "name": "scyther",
+    "url": "https://pokeapi.co/api/v2/pokemon/123/",
+    "korean_name": "스라크"
+  },
+  {
+    "name": "jynx",
+    "url": "https://pokeapi.co/api/v2/pokemon/124/",
+    "korean_name": "루주라"
+  },
+  {
+    "name": "electabuzz",
+    "url": "https://pokeapi.co/api/v2/pokemon/125/",
+    "korean_name": "에레브"
+  },
+  {
+    "name": "magmar",
+    "url": "https://pokeapi.co/api/v2/pokemon/126/",
+    "korean_name": "마그마"
+  },
+  {
+    "name": "pinsir",
+    "url": "https://pokeapi.co/api/v2/pokemon/127/",
+    "korean_name": "쁘사이저"
+  },
+  {
+    "name": "tauros",
+    "url": "https://pokeapi.co/api/v2/pokemon/128/",
+    "korean_name": "켄타로스"
+  },
+  {
+    "name": "magikarp",
+    "url": "https://pokeapi.co/api/v2/pokemon/129/",
+    "korean_name": "잉어킹"
+  },
+  {
+    "name": "gyarados",
+    "url": "https://pokeapi.co/api/v2/pokemon/130/",
+    "korean_name": "갸라도스"
+  },
+  {
+    "name": "lapras",
+    "url": "https://pokeapi.co/api/v2/pokemon/131/",
+    "korean_name": "라프라스"
+  },
+  {
+    "name": "ditto",
+    "url": "https://pokeapi.co/api/v2/pokemon/132/",
+    "korean_name": "메타몽"
+  },
+  {
+    "name": "eevee",
+    "url": "https://pokeapi.co/api/v2/pokemon/133/",
+    "korean_name": "이브이"
+  },
+  {
+    "name": "vaporeon",
+    "url": "https://pokeapi.co/api/v2/pokemon/134/",
+    "korean_name": "샤미드"
+  },
+  {
+    "name": "jolteon",
+    "url": "https://pokeapi.co/api/v2/pokemon/135/",
+    "korean_name": "쥬피썬더"
+  },
+  {
+    "name": "flareon",
+    "url": "https://pokeapi.co/api/v2/pokemon/136/",
+    "korean_name": "부스터"
+  },
+  {
+    "name": "porygon",
+    "url": "https://pokeapi.co/api/v2/pokemon/137/",
+    "korean_name": "폴리곤"
+  },
+  {
+    "name": "omanyte",
+    "url": "https://pokeapi.co/api/v2/pokemon/138/",
+    "korean_name": "암나이트"
+  },
+  {
+    "name": "omastar",
+    "url": "https://pokeapi.co/api/v2/pokemon/139/",
+    "korean_name": "암스타"
+  },
+  {
+    "name": "kabuto",
+    "url": "https://pokeapi.co/api/v2/pokemon/140/",
+    "korean_name": "투구"
+  },
+  {
+    "name": "kabutops",
+    "url": "https://pokeapi.co/api/v2/pokemon/141/",
+    "korean_name": "투구푸스"
+  },
+  {
+    "name": "aerodactyl",
+    "url": "https://pokeapi.co/api/v2/pokemon/142/",
+    "korean_name": "프테라"
+  },
+  {
+    "name": "snorlax",
+    "url": "https://pokeapi.co/api/v2/pokemon/143/",
+    "korean_name": "잠만보"
+  },
+  {
+    "name": "articuno",
+    "url": "https://pokeapi.co/api/v2/pokemon/144/",
+    "korean_name": "프리져"
+  },
+  {
+    "name": "zapdos",
+    "url": "https://pokeapi.co/api/v2/pokemon/145/",
+    "korean_name": "썬더"
+  },
+  {
+    "name": "moltres",
+    "url": "https://pokeapi.co/api/v2/pokemon/146/",
+    "korean_name": "파이어"
+  },
+  {
+    "name": "dratini",
+    "url": "https://pokeapi.co/api/v2/pokemon/147/",
+    "korean_name": "미뇽"
+  },
+  {
+    "name": "dragonair",
+    "url": "https://pokeapi.co/api/v2/pokemon/148/",
+    "korean_name": "신뇽"
+  },
+  {
+    "name": "dragonite",
+    "url": "https://pokeapi.co/api/v2/pokemon/149/",
+    "korean_name": "망나뇽"
+  },
+  {
+    "name": "mewtwo",
+    "url": "https://pokeapi.co/api/v2/pokemon/150/",
+    "korean_name": "뮤츠"
+  },
+  {
+    "name": "mew",
+    "url": "https://pokeapi.co/api/v2/pokemon/151/",
+    "korean_name": "뮤"
+  },
+  {
+    "name": "chikorita",
+    "url": "https://pokeapi.co/api/v2/pokemon/152/",
+    "korean_name": "치코리타"
+  },
+  {
+    "name": "bayleef",
+    "url": "https://pokeapi.co/api/v2/pokemon/153/",
+    "korean_name": "베이리프"
+  },
+  {
+    "name": "meganium",
+    "url": "https://pokeapi.co/api/v2/pokemon/154/",
+    "korean_name": "메가니움"
+  },
+  {
+    "name": "cyndaquil",
+    "url": "https://pokeapi.co/api/v2/pokemon/155/",
+    "korean_name": "브케인"
+  },
+  {
+    "name": "quilava",
+    "url": "https://pokeapi.co/api/v2/pokemon/156/",
+    "korean_name": "마그케인"
+  },
+  {
+    "name": "typhlosion",
+    "url": "https://pokeapi.co/api/v2/pokemon/157/",
+    "korean_name": "블레이범"
+  },
+  {
+    "name": "totodile",
+    "url": "https://pokeapi.co/api/v2/pokemon/158/",
+    "korean_name": "리아코"
+  },
+  {
+    "name": "croconaw",
+    "url": "https://pokeapi.co/api/v2/pokemon/159/",
+    "korean_name": "엘리게이"
+  },
+  {
+    "name": "feraligatr",
+    "url": "https://pokeapi.co/api/v2/pokemon/160/",
+    "korean_name": "장크로다일"
+  },
+  {
+    "name": "sentret",
+    "url": "https://pokeapi.co/api/v2/pokemon/161/",
+    "korean_name": "꼬리선"
+  },
+  {
+    "name": "furret",
+    "url": "https://pokeapi.co/api/v2/pokemon/162/",
+    "korean_name": "다꼬리"
+  },
+  {
+    "name": "hoothoot",
+    "url": "https://pokeapi.co/api/v2/pokemon/163/",
+    "korean_name": "부우부"
+  },
+  {
+    "name": "noctowl",
+    "url": "https://pokeapi.co/api/v2/pokemon/164/",
+    "korean_name": "야부엉"
+  },
+  {
+    "name": "ledyba",
+    "url": "https://pokeapi.co/api/v2/pokemon/165/",
+    "korean_name": "레디바"
+  },
+  {
+    "name": "ledian",
+    "url": "https://pokeapi.co/api/v2/pokemon/166/",
+    "korean_name": "레디안"
+  },
+  {
+    "name": "spinarak",
+    "url": "https://pokeapi.co/api/v2/pokemon/167/",
+    "korean_name": "페이검"
+  },
+  {
+    "name": "ariados",
+    "url": "https://pokeapi.co/api/v2/pokemon/168/",
+    "korean_name": "아리아도스"
+  },
+  {
+    "name": "crobat",
+    "url": "https://pokeapi.co/api/v2/pokemon/169/",
+    "korean_name": "크로뱃"
+  },
+  {
+    "name": "chinchou",
+    "url": "https://pokeapi.co/api/v2/pokemon/170/",
+    "korean_name": "초라기"
+  },
+  {
+    "name": "lanturn",
+    "url": "https://pokeapi.co/api/v2/pokemon/171/",
+    "korean_name": "랜턴"
+  },
+  {
+    "name": "pichu",
+    "url": "https://pokeapi.co/api/v2/pokemon/172/",
+    "korean_name": "피츄"
+  },
+  {
+    "name": "cleffa",
+    "url": "https://pokeapi.co/api/v2/pokemon/173/",
+    "korean_name": "삐"
+  },
+  {
+    "name": "igglybuff",
+    "url": "https://pokeapi.co/api/v2/pokemon/174/",
+    "korean_name": "푸푸린"
+  },
+  {
+    "name": "togepi",
+    "url": "https://pokeapi.co/api/v2/pokemon/175/",
+    "korean_name": "토게피"
+  },
+  {
+    "name": "togetic",
+    "url": "https://pokeapi.co/api/v2/pokemon/176/",
+    "korean_name": "토게틱"
+  },
+  {
+    "name": "natu",
+    "url": "https://pokeapi.co/api/v2/pokemon/177/",
+    "korean_name": "네이티"
+  },
+  {
+    "name": "xatu",
+    "url": "https://pokeapi.co/api/v2/pokemon/178/",
+    "korean_name": "네이티오"
+  },
+  {
+    "name": "mareep",
+    "url": "https://pokeapi.co/api/v2/pokemon/179/",
+    "korean_name": "메리프"
+  },
+  {
+    "name": "flaaffy",
+    "url": "https://pokeapi.co/api/v2/pokemon/180/",
+    "korean_name": "보송송"
+  },
+  {
+    "name": "ampharos",
+    "url": "https://pokeapi.co/api/v2/pokemon/181/",
+    "korean_name": "전룡"
+  },
+  {
+    "name": "bellossom",
+    "url": "https://pokeapi.co/api/v2/pokemon/182/",
+    "korean_name": "아르코"
+  },
+  {
+    "name": "marill",
+    "url": "https://pokeapi.co/api/v2/pokemon/183/",
+    "korean_name": "마릴"
+  },
+  {
+    "name": "azumarill",
+    "url": "https://pokeapi.co/api/v2/pokemon/184/",
+    "korean_name": "마릴리"
+  },
+  {
+    "name": "sudowoodo",
+    "url": "https://pokeapi.co/api/v2/pokemon/185/",
+    "korean_name": "꼬지모"
+  },
+  {
+    "name": "politoed",
+    "url": "https://pokeapi.co/api/v2/pokemon/186/",
+    "korean_name": "왕구리"
+  },
+  {
+    "name": "hoppip",
+    "url": "https://pokeapi.co/api/v2/pokemon/187/",
+    "korean_name": "통통코"
+  },
+  {
+    "name": "skiploom",
+    "url": "https://pokeapi.co/api/v2/pokemon/188/",
+    "korean_name": "두코"
+  },
+  {
+    "name": "jumpluff",
+    "url": "https://pokeapi.co/api/v2/pokemon/189/",
+    "korean_name": "솜솜코"
+  },
+  {
+    "name": "aipom",
+    "url": "https://pokeapi.co/api/v2/pokemon/190/",
+    "korean_name": "에이팜"
+  },
+  {
+    "name": "sunkern",
+    "url": "https://pokeapi.co/api/v2/pokemon/191/",
+    "korean_name": "해너츠"
+  },
+  {
+    "name": "sunflora",
+    "url": "https://pokeapi.co/api/v2/pokemon/192/",
+    "korean_name": "해루미"
+  },
+  {
+    "name": "yanma",
+    "url": "https://pokeapi.co/api/v2/pokemon/193/",
+    "korean_name": "왕자리"
+  },
+  {
+    "name": "wooper",
+    "url": "https://pokeapi.co/api/v2/pokemon/194/",
+    "korean_name": "우파"
+  },
+  {
+    "name": "quagsire",
+    "url": "https://pokeapi.co/api/v2/pokemon/195/",
+    "korean_name": "누오"
+  },
+  {
+    "name": "espeon",
+    "url": "https://pokeapi.co/api/v2/pokemon/196/",
+    "korean_name": "에브이"
+  },
+  {
+    "name": "umbreon",
+    "url": "https://pokeapi.co/api/v2/pokemon/197/",
+    "korean_name": "블래키"
+  },
+  {
+    "name": "murkrow",
+    "url": "https://pokeapi.co/api/v2/pokemon/198/",
+    "korean_name": "니로우"
+  },
+  {
+    "name": "slowking",
+    "url": "https://pokeapi.co/api/v2/pokemon/199/",
+    "korean_name": "야도킹"
+  },
+  {
+    "name": "misdreavus",
+    "url": "https://pokeapi.co/api/v2/pokemon/200/",
+    "korean_name": "무우마"
+  },
+  {
+    "name": "unown",
+    "url": "https://pokeapi.co/api/v2/pokemon/201/",
+    "korean_name": "안농"
+  },
+  {
+    "name": "wobbuffet",
+    "url": "https://pokeapi.co/api/v2/pokemon/202/",
+    "korean_name": "마자용"
+  },
+  {
+    "name": "girafarig",
+    "url": "https://pokeapi.co/api/v2/pokemon/203/",
+    "korean_name": "키링키"
+  },
+  {
+    "name": "pineco",
+    "url": "https://pokeapi.co/api/v2/pokemon/204/",
+    "korean_name": "피콘"
+  },
+  {
+    "name": "forretress",
+    "url": "https://pokeapi.co/api/v2/pokemon/205/",
+    "korean_name": "쏘콘"
+  },
+  {
+    "name": "dunsparce",
+    "url": "https://pokeapi.co/api/v2/pokemon/206/",
+    "korean_name": "노고치"
+  },
+  {
+    "name": "gligar",
+    "url": "https://pokeapi.co/api/v2/pokemon/207/",
+    "korean_name": "글라이거"
+  },
+  {
+    "name": "steelix",
+    "url": "https://pokeapi.co/api/v2/pokemon/208/",
+    "korean_name": "강철톤"
+  },
+  {
+    "name": "snubbull",
+    "url": "https://pokeapi.co/api/v2/pokemon/209/",
+    "korean_name": "블루"
+  },
+  {
+    "name": "granbull",
+    "url": "https://pokeapi.co/api/v2/pokemon/210/",
+    "korean_name": "그랑블루"
+  },
+  {
+    "name": "qwilfish",
+    "url": "https://pokeapi.co/api/v2/pokemon/211/",
+    "korean_name": "침바루"
+  },
+  {
+    "name": "scizor",
+    "url": "https://pokeapi.co/api/v2/pokemon/212/",
+    "korean_name": "핫삼"
+  },
+  {
+    "name": "shuckle",
+    "url": "https://pokeapi.co/api/v2/pokemon/213/",
+    "korean_name": "단단지"
+  },
+  {
+    "name": "heracross",
+    "url": "https://pokeapi.co/api/v2/pokemon/214/",
+    "korean_name": "헤라크로스"
+  },
+  {
+    "name": "sneasel",
+    "url": "https://pokeapi.co/api/v2/pokemon/215/",
+    "korean_name": "포푸니"
+  },
+  {
+    "name": "teddiursa",
+    "url": "https://pokeapi.co/api/v2/pokemon/216/",
+    "korean_name": "깜지곰"
+  },
+  {
+    "name": "ursaring",
+    "url": "https://pokeapi.co/api/v2/pokemon/217/",
+    "korean_name": "링곰"
+  },
+  {
+    "name": "slugma",
+    "url": "https://pokeapi.co/api/v2/pokemon/218/",
+    "korean_name": "마그마그"
+  },
+  {
+    "name": "magcargo",
+    "url": "https://pokeapi.co/api/v2/pokemon/219/",
+    "korean_name": "마그카르고"
+  },
+  {
+    "name": "swinub",
+    "url": "https://pokeapi.co/api/v2/pokemon/220/",
+    "korean_name": "꾸꾸리"
+  },
+  {
+    "name": "piloswine",
+    "url": "https://pokeapi.co/api/v2/pokemon/221/",
+    "korean_name": "메꾸리"
+  },
+  {
+    "name": "corsola",
+    "url": "https://pokeapi.co/api/v2/pokemon/222/",
+    "korean_name": "코산호"
+  },
+  {
+    "name": "remoraid",
+    "url": "https://pokeapi.co/api/v2/pokemon/223/",
+    "korean_name": "총어"
+  },
+  {
+    "name": "octillery",
+    "url": "https://pokeapi.co/api/v2/pokemon/224/",
+    "korean_name": "대포무노"
+  },
+  {
+    "name": "delibird",
+    "url": "https://pokeapi.co/api/v2/pokemon/225/",
+    "korean_name": "딜리버드"
+  },
+  {
+    "name": "mantine",
+    "url": "https://pokeapi.co/api/v2/pokemon/226/",
+    "korean_name": "만타인"
+  },
+  {
+    "name": "skarmory",
+    "url": "https://pokeapi.co/api/v2/pokemon/227/",
+    "korean_name": "무장조"
+  },
+  {
+    "name": "houndour",
+    "url": "https://pokeapi.co/api/v2/pokemon/228/",
+    "korean_name": "델빌"
+  },
+  {
+    "name": "houndoom",
+    "url": "https://pokeapi.co/api/v2/pokemon/229/",
+    "korean_name": "헬가"
+  },
+  {
+    "name": "kingdra",
+    "url": "https://pokeapi.co/api/v2/pokemon/230/",
+    "korean_name": "킹드라"
+  },
+  {
+    "name": "phanpy",
+    "url": "https://pokeapi.co/api/v2/pokemon/231/",
+    "korean_name": "코코리"
+  },
+  {
+    "name": "donphan",
+    "url": "https://pokeapi.co/api/v2/pokemon/232/",
+    "korean_name": "코리갑"
+  },
+  {
+    "name": "porygon2",
+    "url": "https://pokeapi.co/api/v2/pokemon/233/",
+    "korean_name": "폴리곤2"
+  },
+  {
+    "name": "stantler",
+    "url": "https://pokeapi.co/api/v2/pokemon/234/",
+    "korean_name": "노라키"
+  },
+  {
+    "name": "smeargle",
+    "url": "https://pokeapi.co/api/v2/pokemon/235/",
+    "korean_name": "루브도"
+  },
+  {
+    "name": "tyrogue",
+    "url": "https://pokeapi.co/api/v2/pokemon/236/",
+    "korean_name": "배루키"
+  },
+  {
+    "name": "hitmontop",
+    "url": "https://pokeapi.co/api/v2/pokemon/237/",
+    "korean_name": "카포에라"
+  },
+  {
+    "name": "smoochum",
+    "url": "https://pokeapi.co/api/v2/pokemon/238/",
+    "korean_name": "뽀뽀라"
+  },
+  {
+    "name": "elekid",
+    "url": "https://pokeapi.co/api/v2/pokemon/239/",
+    "korean_name": "에레키드"
+  },
+  {
+    "name": "magby",
+    "url": "https://pokeapi.co/api/v2/pokemon/240/",
+    "korean_name": "마그비"
+  },
+  {
+    "name": "miltank",
+    "url": "https://pokeapi.co/api/v2/pokemon/241/",
+    "korean_name": "밀탱크"
+  },
+  {
+    "name": "blissey",
+    "url": "https://pokeapi.co/api/v2/pokemon/242/",
+    "korean_name": "해피너스"
+  },
+  {
+    "name": "raikou",
+    "url": "https://pokeapi.co/api/v2/pokemon/243/",
+    "korean_name": "라이코"
+  },
+  {
+    "name": "entei",
+    "url": "https://pokeapi.co/api/v2/pokemon/244/",
+    "korean_name": "앤테이"
+  },
+  {
+    "name": "suicune",
+    "url": "https://pokeapi.co/api/v2/pokemon/245/",
+    "korean_name": "스이쿤"
+  },
+  {
+    "name": "larvitar",
+    "url": "https://pokeapi.co/api/v2/pokemon/246/",
+    "korean_name": "애버라스"
+  },
+  {
+    "name": "pupitar",
+    "url": "https://pokeapi.co/api/v2/pokemon/247/",
+    "korean_name": "데기라스"
+  },
+  {
+    "name": "tyranitar",
+    "url": "https://pokeapi.co/api/v2/pokemon/248/",
+    "korean_name": "마기라스"
+  },
+  {
+    "name": "lugia",
+    "url": "https://pokeapi.co/api/v2/pokemon/249/",
+    "korean_name": "루기아"
+  },
+  {
+    "name": "ho-oh",
+    "url": "https://pokeapi.co/api/v2/pokemon/250/",
+    "korean_name": "칠색조"
+  },
+  {
+    "name": "celebi",
+    "url": "https://pokeapi.co/api/v2/pokemon/251/",
+    "korean_name": "세레비"
+  },
+  {
+    "name": "treecko",
+    "url": "https://pokeapi.co/api/v2/pokemon/252/",
+    "korean_name": "나무지기"
+  },
+  {
+    "name": "grovyle",
+    "url": "https://pokeapi.co/api/v2/pokemon/253/",
+    "korean_name": "나무돌이"
+  },
+  {
+    "name": "sceptile",
+    "url": "https://pokeapi.co/api/v2/pokemon/254/",
+    "korean_name": "나무킹"
+  },
+  {
+    "name": "torchic",
+    "url": "https://pokeapi.co/api/v2/pokemon/255/",
+    "korean_name": "아차모"
+  },
+  {
+    "name": "combusken",
+    "url": "https://pokeapi.co/api/v2/pokemon/256/",
+    "korean_name": "영치코"
+  },
+  {
+    "name": "blaziken",
+    "url": "https://pokeapi.co/api/v2/pokemon/257/",
+    "korean_name": "번치코"
+  },
+  {
+    "name": "mudkip",
+    "url": "https://pokeapi.co/api/v2/pokemon/258/",
+    "korean_name": "물짱이"
+  },
+  {
+    "name": "marshtomp",
+    "url": "https://pokeapi.co/api/v2/pokemon/259/",
+    "korean_name": "늪짱이"
+  },
+  {
+    "name": "swampert",
+    "url": "https://pokeapi.co/api/v2/pokemon/260/",
+    "korean_name": "대짱이"
+  },
+  {
+    "name": "poochyena",
+    "url": "https://pokeapi.co/api/v2/pokemon/261/",
+    "korean_name": "포챠나"
+  },
+  {
+    "name": "mightyena",
+    "url": "https://pokeapi.co/api/v2/pokemon/262/",
+    "korean_name": "그라에나"
+  },
+  {
+    "name": "zigzagoon",
+    "url": "https://pokeapi.co/api/v2/pokemon/263/",
+    "korean_name": "지그제구리"
+  },
+  {
+    "name": "linoone",
+    "url": "https://pokeapi.co/api/v2/pokemon/264/",
+    "korean_name": "직구리"
+  },
+  {
+    "name": "wurmple",
+    "url": "https://pokeapi.co/api/v2/pokemon/265/",
+    "korean_name": "개무소"
+  },
+  {
+    "name": "silcoon",
+    "url": "https://pokeapi.co/api/v2/pokemon/266/",
+    "korean_name": "실쿤"
+  },
+  {
+    "name": "beautifly",
+    "url": "https://pokeapi.co/api/v2/pokemon/267/",
+    "korean_name": "뷰티플라이"
+  },
+  {
+    "name": "cascoon",
+    "url": "https://pokeapi.co/api/v2/pokemon/268/",
+    "korean_name": "카스쿤"
+  },
+  {
+    "name": "dustox",
+    "url": "https://pokeapi.co/api/v2/pokemon/269/",
+    "korean_name": "독케일"
+  },
+  {
+    "name": "lotad",
+    "url": "https://pokeapi.co/api/v2/pokemon/270/",
+    "korean_name": "연꽃몬"
+  },
+  {
+    "name": "lombre",
+    "url": "https://pokeapi.co/api/v2/pokemon/271/",
+    "korean_name": "로토스"
+  },
+  {
+    "name": "ludicolo",
+    "url": "https://pokeapi.co/api/v2/pokemon/272/",
+    "korean_name": "로파파"
+  },
+  {
+    "name": "seedot",
+    "url": "https://pokeapi.co/api/v2/pokemon/273/",
+    "korean_name": "도토링"
+  },
+  {
+    "name": "nuzleaf",
+    "url": "https://pokeapi.co/api/v2/pokemon/274/",
+    "korean_name": "잎새코"
+  },
+  {
+    "name": "shiftry",
+    "url": "https://pokeapi.co/api/v2/pokemon/275/",
+    "korean_name": "다탱구"
+  },
+  {
+    "name": "taillow",
+    "url": "https://pokeapi.co/api/v2/pokemon/276/",
+    "korean_name": "테일로"
+  },
+  {
+    "name": "swellow",
+    "url": "https://pokeapi.co/api/v2/pokemon/277/",
+    "korean_name": "스왈로"
+  },
+  {
+    "name": "wingull",
+    "url": "https://pokeapi.co/api/v2/pokemon/278/",
+    "korean_name": "갈모매"
+  },
+  {
+    "name": "pelipper",
+    "url": "https://pokeapi.co/api/v2/pokemon/279/",
+    "korean_name": "패리퍼"
+  },
+  {
+    "name": "ralts",
+    "url": "https://pokeapi.co/api/v2/pokemon/280/",
+    "korean_name": "랄토스"
+  },
+  {
+    "name": "kirlia",
+    "url": "https://pokeapi.co/api/v2/pokemon/281/",
+    "korean_name": "킬리아"
+  },
+  {
+    "name": "gardevoir",
+    "url": "https://pokeapi.co/api/v2/pokemon/282/",
+    "korean_name": "가디안"
+  },
+  {
+    "name": "surskit",
+    "url": "https://pokeapi.co/api/v2/pokemon/283/",
+    "korean_name": "비구술"
+  },
+  {
+    "name": "masquerain",
+    "url": "https://pokeapi.co/api/v2/pokemon/284/",
+    "korean_name": "비나방"
+  },
+  {
+    "name": "shroomish",
+    "url": "https://pokeapi.co/api/v2/pokemon/285/",
+    "korean_name": "버섯꼬"
+  },
+  {
+    "name": "breloom",
+    "url": "https://pokeapi.co/api/v2/pokemon/286/",
+    "korean_name": "버섯모"
+  },
+  {
+    "name": "slakoth",
+    "url": "https://pokeapi.co/api/v2/pokemon/287/",
+    "korean_name": "게을로"
+  },
+  {
+    "name": "vigoroth",
+    "url": "https://pokeapi.co/api/v2/pokemon/288/",
+    "korean_name": "발바로"
+  },
+  {
+    "name": "slaking",
+    "url": "https://pokeapi.co/api/v2/pokemon/289/",
+    "korean_name": "게을킹"
+  },
+  {
+    "name": "nincada",
+    "url": "https://pokeapi.co/api/v2/pokemon/290/",
+    "korean_name": "토중몬"
+  },
+  {
+    "name": "ninjask",
+    "url": "https://pokeapi.co/api/v2/pokemon/291/",
+    "korean_name": "아이스크"
+  },
+  {
+    "name": "shedinja",
+    "url": "https://pokeapi.co/api/v2/pokemon/292/",
+    "korean_name": "껍질몬"
+  },
+  {
+    "name": "whismur",
+    "url": "https://pokeapi.co/api/v2/pokemon/293/",
+    "korean_name": "소곤룡"
+  },
+  {
+    "name": "loudred",
+    "url": "https://pokeapi.co/api/v2/pokemon/294/",
+    "korean_name": "노공룡"
+  },
+  {
+    "name": "exploud",
+    "url": "https://pokeapi.co/api/v2/pokemon/295/",
+    "korean_name": "폭음룡"
+  },
+  {
+    "name": "makuhita",
+    "url": "https://pokeapi.co/api/v2/pokemon/296/",
+    "korean_name": "마크탕"
+  },
+  {
+    "name": "hariyama",
+    "url": "https://pokeapi.co/api/v2/pokemon/297/",
+    "korean_name": "하리뭉"
+  },
+  {
+    "name": "azurill",
+    "url": "https://pokeapi.co/api/v2/pokemon/298/",
+    "korean_name": "루리리"
+  },
+  {
+    "name": "nosepass",
+    "url": "https://pokeapi.co/api/v2/pokemon/299/",
+    "korean_name": "코코파스"
+  },
+  {
+    "name": "skitty",
+    "url": "https://pokeapi.co/api/v2/pokemon/300/",
+    "korean_name": "에나비"
+  },
+  {
+    "name": "delcatty",
+    "url": "https://pokeapi.co/api/v2/pokemon/301/",
+    "korean_name": "델케티"
+  },
+  {
+    "name": "sableye",
+    "url": "https://pokeapi.co/api/v2/pokemon/302/",
+    "korean_name": "깜까미"
+  },
+  {
+    "name": "mawile",
+    "url": "https://pokeapi.co/api/v2/pokemon/303/",
+    "korean_name": "입치트"
+  },
+  {
+    "name": "aron",
+    "url": "https://pokeapi.co/api/v2/pokemon/304/",
+    "korean_name": "가보리"
+  },
+  {
+    "name": "lairon",
+    "url": "https://pokeapi.co/api/v2/pokemon/305/",
+    "korean_name": "갱도라"
+  },
+  {
+    "name": "aggron",
+    "url": "https://pokeapi.co/api/v2/pokemon/306/",
+    "korean_name": "보스로라"
+  },
+  {
+    "name": "meditite",
+    "url": "https://pokeapi.co/api/v2/pokemon/307/",
+    "korean_name": "요가랑"
+  },
+  {
+    "name": "medicham",
+    "url": "https://pokeapi.co/api/v2/pokemon/308/",
+    "korean_name": "요가램"
+  },
+  {
+    "name": "electrike",
+    "url": "https://pokeapi.co/api/v2/pokemon/309/",
+    "korean_name": "썬더라이"
+  },
+  {
+    "name": "manectric",
+    "url": "https://pokeapi.co/api/v2/pokemon/310/",
+    "korean_name": "썬더볼트"
+  },
+  {
+    "name": "plusle",
+    "url": "https://pokeapi.co/api/v2/pokemon/311/",
+    "korean_name": "플러시"
+  },
+  {
+    "name": "minun",
+    "url": "https://pokeapi.co/api/v2/pokemon/312/",
+    "korean_name": "마이농"
+  },
+  {
+    "name": "volbeat",
+    "url": "https://pokeapi.co/api/v2/pokemon/313/",
+    "korean_name": "볼비트"
+  },
+  {
+    "name": "illumise",
+    "url": "https://pokeapi.co/api/v2/pokemon/314/",
+    "korean_name": "네오비트"
+  },
+  {
+    "name": "roselia",
+    "url": "https://pokeapi.co/api/v2/pokemon/315/",
+    "korean_name": "로젤리아"
+  },
+  {
+    "name": "gulpin",
+    "url": "https://pokeapi.co/api/v2/pokemon/316/",
+    "korean_name": "꼴깍몬"
+  },
+  {
+    "name": "swalot",
+    "url": "https://pokeapi.co/api/v2/pokemon/317/",
+    "korean_name": "꿀꺽몬"
+  },
+  {
+    "name": "carvanha",
+    "url": "https://pokeapi.co/api/v2/pokemon/318/",
+    "korean_name": "샤프니아"
+  },
+  {
+    "name": "sharpedo",
+    "url": "https://pokeapi.co/api/v2/pokemon/319/",
+    "korean_name": "샤크니아"
+  },
+  {
+    "name": "wailmer",
+    "url": "https://pokeapi.co/api/v2/pokemon/320/",
+    "korean_name": "고래왕자"
+  },
+  {
+    "name": "wailord",
+    "url": "https://pokeapi.co/api/v2/pokemon/321/",
+    "korean_name": "고래왕"
+  },
+  {
+    "name": "numel",
+    "url": "https://pokeapi.co/api/v2/pokemon/322/",
+    "korean_name": "둔타"
+  },
+  {
+    "name": "camerupt",
+    "url": "https://pokeapi.co/api/v2/pokemon/323/",
+    "korean_name": "폭타"
+  },
+  {
+    "name": "torkoal",
+    "url": "https://pokeapi.co/api/v2/pokemon/324/",
+    "korean_name": "코터스"
+  },
+  {
+    "name": "spoink",
+    "url": "https://pokeapi.co/api/v2/pokemon/325/",
+    "korean_name": "피그점프"
+  },
+  {
+    "name": "grumpig",
+    "url": "https://pokeapi.co/api/v2/pokemon/326/",
+    "korean_name": "피그킹"
+  },
+  {
+    "name": "spinda",
+    "url": "https://pokeapi.co/api/v2/pokemon/327/",
+    "korean_name": "얼루기"
+  },
+  {
+    "name": "trapinch",
+    "url": "https://pokeapi.co/api/v2/pokemon/328/",
+    "korean_name": "톱치"
+  },
+  {
+    "name": "vibrava",
+    "url": "https://pokeapi.co/api/v2/pokemon/329/",
+    "korean_name": "비브라바"
+  },
+  {
+    "name": "flygon",
+    "url": "https://pokeapi.co/api/v2/pokemon/330/",
+    "korean_name": "플라이곤"
+  },
+  {
+    "name": "cacnea",
+    "url": "https://pokeapi.co/api/v2/pokemon/331/",
+    "korean_name": "선인왕"
+  },
+  {
+    "name": "cacturne",
+    "url": "https://pokeapi.co/api/v2/pokemon/332/",
+    "korean_name": "밤선인"
+  },
+  {
+    "name": "swablu",
+    "url": "https://pokeapi.co/api/v2/pokemon/333/",
+    "korean_name": "파비코"
+  },
+  {
+    "name": "altaria",
+    "url": "https://pokeapi.co/api/v2/pokemon/334/",
+    "korean_name": "파비코리"
+  },
+  {
+    "name": "zangoose",
+    "url": "https://pokeapi.co/api/v2/pokemon/335/",
+    "korean_name": "쟝고"
+  },
+  {
+    "name": "seviper",
+    "url": "https://pokeapi.co/api/v2/pokemon/336/",
+    "korean_name": "세비퍼"
+  },
+  {
+    "name": "lunatone",
+    "url": "https://pokeapi.co/api/v2/pokemon/337/",
+    "korean_name": "루나톤"
+  },
+  {
+    "name": "solrock",
+    "url": "https://pokeapi.co/api/v2/pokemon/338/",
+    "korean_name": "솔록"
+  },
+  {
+    "name": "barboach",
+    "url": "https://pokeapi.co/api/v2/pokemon/339/",
+    "korean_name": "미꾸리"
+  },
+  {
+    "name": "whiscash",
+    "url": "https://pokeapi.co/api/v2/pokemon/340/",
+    "korean_name": "메깅"
+  },
+  {
+    "name": "corphish",
+    "url": "https://pokeapi.co/api/v2/pokemon/341/",
+    "korean_name": "가재군"
+  },
+  {
+    "name": "crawdaunt",
+    "url": "https://pokeapi.co/api/v2/pokemon/342/",
+    "korean_name": "가재장군"
+  },
+  {
+    "name": "baltoy",
+    "url": "https://pokeapi.co/api/v2/pokemon/343/",
+    "korean_name": "오뚝군"
+  },
+  {
+    "name": "claydol",
+    "url": "https://pokeapi.co/api/v2/pokemon/344/",
+    "korean_name": "점토도리"
+  },
+  {
+    "name": "lileep",
+    "url": "https://pokeapi.co/api/v2/pokemon/345/",
+    "korean_name": "릴링"
+  },
+  {
+    "name": "cradily",
+    "url": "https://pokeapi.co/api/v2/pokemon/346/",
+    "korean_name": "릴리요"
+  },
+  {
+    "name": "anorith",
+    "url": "https://pokeapi.co/api/v2/pokemon/347/",
+    "korean_name": "아노딥스"
+  },
+  {
+    "name": "armaldo",
+    "url": "https://pokeapi.co/api/v2/pokemon/348/",
+    "korean_name": "아말도"
+  },
+  {
+    "name": "feebas",
+    "url": "https://pokeapi.co/api/v2/pokemon/349/",
+    "korean_name": "빈티나"
+  },
+  {
+    "name": "milotic",
+    "url": "https://pokeapi.co/api/v2/pokemon/350/",
+    "korean_name": "밀로틱"
+  },
+  {
+    "name": "castform",
+    "url": "https://pokeapi.co/api/v2/pokemon/351/",
+    "korean_name": "캐스퐁"
+  },
+  {
+    "name": "kecleon",
+    "url": "https://pokeapi.co/api/v2/pokemon/352/",
+    "korean_name": "켈리몬"
+  },
+  {
+    "name": "shuppet",
+    "url": "https://pokeapi.co/api/v2/pokemon/353/",
+    "korean_name": "어둠대신"
+  },
+  {
+    "name": "banette",
+    "url": "https://pokeapi.co/api/v2/pokemon/354/",
+    "korean_name": "다크펫"
+  },
+  {
+    "name": "duskull",
+    "url": "https://pokeapi.co/api/v2/pokemon/355/",
+    "korean_name": "해골몽"
+  },
+  {
+    "name": "dusclops",
+    "url": "https://pokeapi.co/api/v2/pokemon/356/",
+    "korean_name": "미라몽"
+  },
+  {
+    "name": "tropius",
+    "url": "https://pokeapi.co/api/v2/pokemon/357/",
+    "korean_name": "트로피우스"
+  },
+  {
+    "name": "chimecho",
+    "url": "https://pokeapi.co/api/v2/pokemon/358/",
+    "korean_name": "치렁"
+  },
+  {
+    "name": "absol",
+    "url": "https://pokeapi.co/api/v2/pokemon/359/",
+    "korean_name": "앱솔"
+  },
+  {
+    "name": "wynaut",
+    "url": "https://pokeapi.co/api/v2/pokemon/360/",
+    "korean_name": "마자"
+  },
+  {
+    "name": "snorunt",
+    "url": "https://pokeapi.co/api/v2/pokemon/361/",
+    "korean_name": "눈꼬마"
+  },
+  {
+    "name": "glalie",
+    "url": "https://pokeapi.co/api/v2/pokemon/362/",
+    "korean_name": "얼음귀신"
+  },
+  {
+    "name": "spheal",
+    "url": "https://pokeapi.co/api/v2/pokemon/363/",
+    "korean_name": "대굴레오"
+  },
+  {
+    "name": "sealeo",
+    "url": "https://pokeapi.co/api/v2/pokemon/364/",
+    "korean_name": "씨레오"
+  },
+  {
+    "name": "walrein",
+    "url": "https://pokeapi.co/api/v2/pokemon/365/",
+    "korean_name": "씨카이저"
+  },
+  {
+    "name": "clamperl",
+    "url": "https://pokeapi.co/api/v2/pokemon/366/",
+    "korean_name": "진주몽"
+  },
+  {
+    "name": "huntail",
+    "url": "https://pokeapi.co/api/v2/pokemon/367/",
+    "korean_name": "헌테일"
+  },
+  {
+    "name": "gorebyss",
+    "url": "https://pokeapi.co/api/v2/pokemon/368/",
+    "korean_name": "분홍장이"
+  },
+  {
+    "name": "relicanth",
+    "url": "https://pokeapi.co/api/v2/pokemon/369/",
+    "korean_name": "시라칸"
+  },
+  {
+    "name": "luvdisc",
+    "url": "https://pokeapi.co/api/v2/pokemon/370/",
+    "korean_name": "사랑동이"
+  },
+  {
+    "name": "bagon",
+    "url": "https://pokeapi.co/api/v2/pokemon/371/",
+    "korean_name": "아공이"
+  },
+  {
+    "name": "shelgon",
+    "url": "https://pokeapi.co/api/v2/pokemon/372/",
+    "korean_name": "쉘곤"
+  },
+  {
+    "name": "salamence",
+    "url": "https://pokeapi.co/api/v2/pokemon/373/",
+    "korean_name": "보만다"
+  },
+  {
+    "name": "beldum",
+    "url": "https://pokeapi.co/api/v2/pokemon/374/",
+    "korean_name": "메탕"
+  },
+  {
+    "name": "metang",
+    "url": "https://pokeapi.co/api/v2/pokemon/375/",
+    "korean_name": "메탕구"
+  },
+  {
+    "name": "metagross",
+    "url": "https://pokeapi.co/api/v2/pokemon/376/",
+    "korean_name": "메타그로스"
+  },
+  {
+    "name": "regirock",
+    "url": "https://pokeapi.co/api/v2/pokemon/377/",
+    "korean_name": "레지락"
+  },
+  {
+    "name": "regice",
+    "url": "https://pokeapi.co/api/v2/pokemon/378/",
+    "korean_name": "레지아이스"
+  },
+  {
+    "name": "registeel",
+    "url": "https://pokeapi.co/api/v2/pokemon/379/",
+    "korean_name": "레지스틸"
+  },
+  {
+    "name": "latias",
+    "url": "https://pokeapi.co/api/v2/pokemon/380/",
+    "korean_name": "라티아스"
+  },
+  {
+    "name": "latios",
+    "url": "https://pokeapi.co/api/v2/pokemon/381/",
+    "korean_name": "라티오스"
+  },
+  {
+    "name": "kyogre",
+    "url": "https://pokeapi.co/api/v2/pokemon/382/",
+    "korean_name": "가이오가"
+  },
+  {
+    "name": "groudon",
+    "url": "https://pokeapi.co/api/v2/pokemon/383/",
+    "korean_name": "그란돈"
+  },
+  {
+    "name": "rayquaza",
+    "url": "https://pokeapi.co/api/v2/pokemon/384/",
+    "korean_name": "레쿠쟈"
+  },
+  {
+    "name": "jirachi",
+    "url": "https://pokeapi.co/api/v2/pokemon/385/",
+    "korean_name": "지라치"
+  },
+  {
+    "name": "deoxys-normal",
+    "url": "https://pokeapi.co/api/v2/pokemon/386/",
+    "korean_name": "테오키스"
+  },
+  {
+    "name": "turtwig",
+    "url": "https://pokeapi.co/api/v2/pokemon/387/",
+    "korean_name": "모부기"
+  },
+  {
+    "name": "grotle",
+    "url": "https://pokeapi.co/api/v2/pokemon/388/",
+    "korean_name": "수풀부기"
+  },
+  {
+    "name": "torterra",
+    "url": "https://pokeapi.co/api/v2/pokemon/389/",
+    "korean_name": "토대부기"
+  },
+  {
+    "name": "chimchar",
+    "url": "https://pokeapi.co/api/v2/pokemon/390/",
+    "korean_name": "불꽃숭이"
+  },
+  {
+    "name": "monferno",
+    "url": "https://pokeapi.co/api/v2/pokemon/391/",
+    "korean_name": "파이숭이"
+  },
+  {
+    "name": "infernape",
+    "url": "https://pokeapi.co/api/v2/pokemon/392/",
+    "korean_name": "초염몽"
+  },
+  {
+    "name": "piplup",
+    "url": "https://pokeapi.co/api/v2/pokemon/393/",
+    "korean_name": "팽도리"
+  },
+  {
+    "name": "prinplup",
+    "url": "https://pokeapi.co/api/v2/pokemon/394/",
+    "korean_name": "팽태자"
+  },
+  {
+    "name": "empoleon",
+    "url": "https://pokeapi.co/api/v2/pokemon/395/",
+    "korean_name": "엠페르트"
+  },
+  {
+    "name": "starly",
+    "url": "https://pokeapi.co/api/v2/pokemon/396/",
+    "korean_name": "찌르꼬"
+  },
+  {
+    "name": "staravia",
+    "url": "https://pokeapi.co/api/v2/pokemon/397/",
+    "korean_name": "찌르버드"
+  },
+  {
+    "name": "staraptor",
+    "url": "https://pokeapi.co/api/v2/pokemon/398/",
+    "korean_name": "찌르호크"
+  },
+  {
+    "name": "bidoof",
+    "url": "https://pokeapi.co/api/v2/pokemon/399/",
+    "korean_name": "비버니"
+  },
+  {
+    "name": "bibarel",
+    "url": "https://pokeapi.co/api/v2/pokemon/400/",
+    "korean_name": "비버통"
+  },
+  {
+    "name": "kricketot",
+    "url": "https://pokeapi.co/api/v2/pokemon/401/",
+    "korean_name": "귀뚤뚜기"
+  },
+  {
+    "name": "kricketune",
+    "url": "https://pokeapi.co/api/v2/pokemon/402/",
+    "korean_name": "귀뚤톡크"
+  },
+  {
+    "name": "shinx",
+    "url": "https://pokeapi.co/api/v2/pokemon/403/",
+    "korean_name": "꼬링크"
+  },
+  {
+    "name": "luxio",
+    "url": "https://pokeapi.co/api/v2/pokemon/404/",
+    "korean_name": "럭시오"
+  },
+  {
+    "name": "luxray",
+    "url": "https://pokeapi.co/api/v2/pokemon/405/",
+    "korean_name": "렌트라"
+  },
+  {
+    "name": "budew",
+    "url": "https://pokeapi.co/api/v2/pokemon/406/",
+    "korean_name": "꼬몽울"
+  },
+  {
+    "name": "roserade",
+    "url": "https://pokeapi.co/api/v2/pokemon/407/",
+    "korean_name": "로즈레이드"
+  },
+  {
+    "name": "cranidos",
+    "url": "https://pokeapi.co/api/v2/pokemon/408/",
+    "korean_name": "두개도스"
+  },
+  {
+    "name": "rampardos",
+    "url": "https://pokeapi.co/api/v2/pokemon/409/",
+    "korean_name": "램펄드"
+  },
+  {
+    "name": "shieldon",
+    "url": "https://pokeapi.co/api/v2/pokemon/410/",
+    "korean_name": "방패톱스"
+  },
+  {
+    "name": "bastiodon",
+    "url": "https://pokeapi.co/api/v2/pokemon/411/",
+    "korean_name": "바리톱스"
+  },
+  {
+    "name": "burmy",
+    "url": "https://pokeapi.co/api/v2/pokemon/412/",
+    "korean_name": "도롱충이"
+  },
+  {
+    "name": "wormadam-plant",
+    "url": "https://pokeapi.co/api/v2/pokemon/413/",
+    "korean_name": "도롱마담"
+  },
+  {
+    "name": "mothim",
+    "url": "https://pokeapi.co/api/v2/pokemon/414/",
+    "korean_name": "나메일"
+  },
+  {
+    "name": "combee",
+    "url": "https://pokeapi.co/api/v2/pokemon/415/",
+    "korean_name": "세꿀버리"
+  },
+  {
+    "name": "vespiquen",
+    "url": "https://pokeapi.co/api/v2/pokemon/416/",
+    "korean_name": "비퀸"
+  },
+  {
+    "name": "pachirisu",
+    "url": "https://pokeapi.co/api/v2/pokemon/417/",
+    "korean_name": "파치리스"
+  },
+  {
+    "name": "buizel",
+    "url": "https://pokeapi.co/api/v2/pokemon/418/",
+    "korean_name": "브이젤"
+  },
+  {
+    "name": "floatzel",
+    "url": "https://pokeapi.co/api/v2/pokemon/419/",
+    "korean_name": "플로젤"
+  },
+  {
+    "name": "cherubi",
+    "url": "https://pokeapi.co/api/v2/pokemon/420/",
+    "korean_name": "체리버"
+  },
+  {
+    "name": "cherrim",
+    "url": "https://pokeapi.co/api/v2/pokemon/421/",
+    "korean_name": "체리꼬"
+  },
+  {
+    "name": "shellos",
+    "url": "https://pokeapi.co/api/v2/pokemon/422/",
+    "korean_name": "깝질무"
+  },
+  {
+    "name": "gastrodon",
+    "url": "https://pokeapi.co/api/v2/pokemon/423/",
+    "korean_name": "트리토돈"
+  },
+  {
+    "name": "ambipom",
+    "url": "https://pokeapi.co/api/v2/pokemon/424/",
+    "korean_name": "겟핸보숭"
+  },
+  {
+    "name": "drifloon",
+    "url": "https://pokeapi.co/api/v2/pokemon/425/",
+    "korean_name": "흔들풍손"
+  },
+  {
+    "name": "drifblim",
+    "url": "https://pokeapi.co/api/v2/pokemon/426/",
+    "korean_name": "둥실라이드"
+  },
+  {
+    "name": "buneary",
+    "url": "https://pokeapi.co/api/v2/pokemon/427/",
+    "korean_name": "이어롤"
+  },
+  {
+    "name": "lopunny",
+    "url": "https://pokeapi.co/api/v2/pokemon/428/",
+    "korean_name": "이어롭"
+  },
+  {
+    "name": "mismagius",
+    "url": "https://pokeapi.co/api/v2/pokemon/429/",
+    "korean_name": "무우마직"
+  },
+  {
+    "name": "honchkrow",
+    "url": "https://pokeapi.co/api/v2/pokemon/430/",
+    "korean_name": "돈크로우"
+  },
+  {
+    "name": "glameow",
+    "url": "https://pokeapi.co/api/v2/pokemon/431/",
+    "korean_name": "나옹마"
+  },
+  {
+    "name": "purugly",
+    "url": "https://pokeapi.co/api/v2/pokemon/432/",
+    "korean_name": "몬냥이"
+  },
+  {
+    "name": "chingling",
+    "url": "https://pokeapi.co/api/v2/pokemon/433/",
+    "korean_name": "랑딸랑"
+  },
+  {
+    "name": "stunky",
+    "url": "https://pokeapi.co/api/v2/pokemon/434/",
+    "korean_name": "스컹뿡"
+  },
+  {
+    "name": "skuntank",
+    "url": "https://pokeapi.co/api/v2/pokemon/435/",
+    "korean_name": "스컹탱크"
+  },
+  {
+    "name": "bronzor",
+    "url": "https://pokeapi.co/api/v2/pokemon/436/",
+    "korean_name": "동미러"
+  },
+  {
+    "name": "bronzong",
+    "url": "https://pokeapi.co/api/v2/pokemon/437/",
+    "korean_name": "동탁군"
+  },
+  {
+    "name": "bonsly",
+    "url": "https://pokeapi.co/api/v2/pokemon/438/",
+    "korean_name": "꼬지지"
+  },
+  {
+    "name": "mime-jr",
+    "url": "https://pokeapi.co/api/v2/pokemon/439/",
+    "korean_name": "흉내내"
+  },
+  {
+    "name": "happiny",
+    "url": "https://pokeapi.co/api/v2/pokemon/440/",
+    "korean_name": "핑복"
+  },
+  {
+    "name": "chatot",
+    "url": "https://pokeapi.co/api/v2/pokemon/441/",
+    "korean_name": "페라페"
+  },
+  {
+    "name": "spiritomb",
+    "url": "https://pokeapi.co/api/v2/pokemon/442/",
+    "korean_name": "화강돌"
+  },
+  {
+    "name": "gible",
+    "url": "https://pokeapi.co/api/v2/pokemon/443/",
+    "korean_name": "딥상어동"
+  },
+  {
+    "name": "gabite",
+    "url": "https://pokeapi.co/api/v2/pokemon/444/",
+    "korean_name": "한바이트"
+  },
+  {
+    "name": "garchomp",
+    "url": "https://pokeapi.co/api/v2/pokemon/445/",
+    "korean_name": "한카리아스"
+  },
+  {
+    "name": "munchlax",
+    "url": "https://pokeapi.co/api/v2/pokemon/446/",
+    "korean_name": "먹고자"
+  },
+  {
+    "name": "riolu",
+    "url": "https://pokeapi.co/api/v2/pokemon/447/",
+    "korean_name": "리오르"
+  },
+  {
+    "name": "lucario",
+    "url": "https://pokeapi.co/api/v2/pokemon/448/",
+    "korean_name": "루카리오"
+  },
+  {
+    "name": "hippopotas",
+    "url": "https://pokeapi.co/api/v2/pokemon/449/",
+    "korean_name": "히포포타스"
+  },
+  {
+    "name": "hippowdon",
+    "url": "https://pokeapi.co/api/v2/pokemon/450/",
+    "korean_name": "하마돈"
+  },
+  {
+    "name": "skorupi",
+    "url": "https://pokeapi.co/api/v2/pokemon/451/",
+    "korean_name": "스콜피"
+  },
+  {
+    "name": "drapion",
+    "url": "https://pokeapi.co/api/v2/pokemon/452/",
+    "korean_name": "드래피온"
+  },
+  {
+    "name": "croagunk",
+    "url": "https://pokeapi.co/api/v2/pokemon/453/",
+    "korean_name": "삐딱구리"
+  },
+  {
+    "name": "toxicroak",
+    "url": "https://pokeapi.co/api/v2/pokemon/454/",
+    "korean_name": "독개굴"
+  },
+  {
+    "name": "carnivine",
+    "url": "https://pokeapi.co/api/v2/pokemon/455/",
+    "korean_name": "무스틈니"
+  },
+  {
+    "name": "finneon",
+    "url": "https://pokeapi.co/api/v2/pokemon/456/",
+    "korean_name": "형광어"
+  },
+  {
+    "name": "lumineon",
+    "url": "https://pokeapi.co/api/v2/pokemon/457/",
+    "korean_name": "네오라이트"
+  },
+  {
+    "name": "mantyke",
+    "url": "https://pokeapi.co/api/v2/pokemon/458/",
+    "korean_name": "타만타"
+  },
+  {
+    "name": "snover",
+    "url": "https://pokeapi.co/api/v2/pokemon/459/",
+    "korean_name": "눈쓰개"
+  },
+  {
+    "name": "abomasnow",
+    "url": "https://pokeapi.co/api/v2/pokemon/460/",
+    "korean_name": "눈설왕"
+  },
+  {
+    "name": "weavile",
+    "url": "https://pokeapi.co/api/v2/pokemon/461/",
+    "korean_name": "포푸니라"
+  },
+  {
+    "name": "magnezone",
+    "url": "https://pokeapi.co/api/v2/pokemon/462/",
+    "korean_name": "자포코일"
+  },
+  {
+    "name": "lickilicky",
+    "url": "https://pokeapi.co/api/v2/pokemon/463/",
+    "korean_name": "내룸벨트"
+  },
+  {
+    "name": "rhyperior",
+    "url": "https://pokeapi.co/api/v2/pokemon/464/",
+    "korean_name": "거대코뿌리"
+  },
+  {
+    "name": "tangrowth",
+    "url": "https://pokeapi.co/api/v2/pokemon/465/",
+    "korean_name": "덩쿠림보"
+  },
+  {
+    "name": "electivire",
+    "url": "https://pokeapi.co/api/v2/pokemon/466/",
+    "korean_name": "에레키블"
+  },
+  {
+    "name": "magmortar",
+    "url": "https://pokeapi.co/api/v2/pokemon/467/",
+    "korean_name": "마그마번"
+  },
+  {
+    "name": "togekiss",
+    "url": "https://pokeapi.co/api/v2/pokemon/468/",
+    "korean_name": "토게키스"
+  },
+  {
+    "name": "yanmega",
+    "url": "https://pokeapi.co/api/v2/pokemon/469/",
+    "korean_name": "메가자리"
+  },
+  {
+    "name": "leafeon",
+    "url": "https://pokeapi.co/api/v2/pokemon/470/",
+    "korean_name": "리피아"
+  },
+  {
+    "name": "glaceon",
+    "url": "https://pokeapi.co/api/v2/pokemon/471/",
+    "korean_name": "글레이시아"
+  },
+  {
+    "name": "gliscor",
+    "url": "https://pokeapi.co/api/v2/pokemon/472/",
+    "korean_name": "글라이온"
+  },
+  {
+    "name": "mamoswine",
+    "url": "https://pokeapi.co/api/v2/pokemon/473/",
+    "korean_name": "맘모꾸리"
+  },
+  {
+    "name": "porygon-z",
+    "url": "https://pokeapi.co/api/v2/pokemon/474/",
+    "korean_name": "폴리곤Z"
+  },
+  {
+    "name": "gallade",
+    "url": "https://pokeapi.co/api/v2/pokemon/475/",
+    "korean_name": "엘레이드"
+  },
+  {
+    "name": "probopass",
+    "url": "https://pokeapi.co/api/v2/pokemon/476/",
+    "korean_name": "대코파스"
+  },
+  {
+    "name": "dusknoir",
+    "url": "https://pokeapi.co/api/v2/pokemon/477/",
+    "korean_name": "야느와르몽"
+  },
+  {
+    "name": "froslass",
+    "url": "https://pokeapi.co/api/v2/pokemon/478/",
+    "korean_name": "눈여아"
+  },
+  {
+    "name": "rotom",
+    "url": "https://pokeapi.co/api/v2/pokemon/479/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "uxie",
+    "url": "https://pokeapi.co/api/v2/pokemon/480/",
+    "korean_name": "유크시"
+  },
+  {
+    "name": "mesprit",
+    "url": "https://pokeapi.co/api/v2/pokemon/481/",
+    "korean_name": "엠라이트"
+  },
+  {
+    "name": "azelf",
+    "url": "https://pokeapi.co/api/v2/pokemon/482/",
+    "korean_name": "아그놈"
+  },
+  {
+    "name": "dialga",
+    "url": "https://pokeapi.co/api/v2/pokemon/483/",
+    "korean_name": "디아루가"
+  },
+  {
+    "name": "palkia",
+    "url": "https://pokeapi.co/api/v2/pokemon/484/",
+    "korean_name": "펄기아"
+  },
+  {
+    "name": "heatran",
+    "url": "https://pokeapi.co/api/v2/pokemon/485/",
+    "korean_name": "히드런"
+  },
+  {
+    "name": "regigigas",
+    "url": "https://pokeapi.co/api/v2/pokemon/486/",
+    "korean_name": "레지기가스"
+  },
+  {
+    "name": "giratina-altered",
+    "url": "https://pokeapi.co/api/v2/pokemon/487/",
+    "korean_name": "기라티나"
+  },
+  {
+    "name": "cresselia",
+    "url": "https://pokeapi.co/api/v2/pokemon/488/",
+    "korean_name": "크레세리아"
+  },
+  {
+    "name": "phione",
+    "url": "https://pokeapi.co/api/v2/pokemon/489/",
+    "korean_name": "피오네"
+  },
+  {
+    "name": "manaphy",
+    "url": "https://pokeapi.co/api/v2/pokemon/490/",
+    "korean_name": "마나피"
+  },
+  {
+    "name": "darkrai",
+    "url": "https://pokeapi.co/api/v2/pokemon/491/",
+    "korean_name": "다크라이"
+  },
+  {
+    "name": "shaymin-land",
+    "url": "https://pokeapi.co/api/v2/pokemon/492/",
+    "korean_name": "쉐이미"
+  },
+  {
+    "name": "arceus",
+    "url": "https://pokeapi.co/api/v2/pokemon/493/",
+    "korean_name": "아르세우스"
+  },
+  {
+    "name": "victini",
+    "url": "https://pokeapi.co/api/v2/pokemon/494/",
+    "korean_name": "비크티니"
+  },
+  {
+    "name": "snivy",
+    "url": "https://pokeapi.co/api/v2/pokemon/495/",
+    "korean_name": "주리비얀"
+  },
+  {
+    "name": "servine",
+    "url": "https://pokeapi.co/api/v2/pokemon/496/",
+    "korean_name": "샤비"
+  },
+  {
+    "name": "serperior",
+    "url": "https://pokeapi.co/api/v2/pokemon/497/",
+    "korean_name": "샤로다"
+  },
+  {
+    "name": "tepig",
+    "url": "https://pokeapi.co/api/v2/pokemon/498/",
+    "korean_name": "뚜꾸리"
+  },
+  {
+    "name": "pignite",
+    "url": "https://pokeapi.co/api/v2/pokemon/499/",
+    "korean_name": "차오꿀"
+  },
+  {
+    "name": "emboar",
+    "url": "https://pokeapi.co/api/v2/pokemon/500/",
+    "korean_name": "염무왕"
+  },
+  {
+    "name": "oshawott",
+    "url": "https://pokeapi.co/api/v2/pokemon/501/",
+    "korean_name": "수댕이"
+  },
+  {
+    "name": "dewott",
+    "url": "https://pokeapi.co/api/v2/pokemon/502/",
+    "korean_name": "쌍검자비"
+  },
+  {
+    "name": "samurott",
+    "url": "https://pokeapi.co/api/v2/pokemon/503/",
+    "korean_name": "대검귀"
+  },
+  {
+    "name": "patrat",
+    "url": "https://pokeapi.co/api/v2/pokemon/504/",
+    "korean_name": "보르쥐"
+  },
+  {
+    "name": "watchog",
+    "url": "https://pokeapi.co/api/v2/pokemon/505/",
+    "korean_name": "보르그"
+  },
+  {
+    "name": "lillipup",
+    "url": "https://pokeapi.co/api/v2/pokemon/506/",
+    "korean_name": "요테리"
+  },
+  {
+    "name": "herdier",
+    "url": "https://pokeapi.co/api/v2/pokemon/507/",
+    "korean_name": "하데리어"
+  },
+  {
+    "name": "stoutland",
+    "url": "https://pokeapi.co/api/v2/pokemon/508/",
+    "korean_name": "바랜드"
+  },
+  {
+    "name": "purrloin",
+    "url": "https://pokeapi.co/api/v2/pokemon/509/",
+    "korean_name": "쌔비냥"
+  },
+  {
+    "name": "liepard",
+    "url": "https://pokeapi.co/api/v2/pokemon/510/",
+    "korean_name": "레파르다스"
+  },
+  {
+    "name": "pansage",
+    "url": "https://pokeapi.co/api/v2/pokemon/511/",
+    "korean_name": "야나프"
+  },
+  {
+    "name": "simisage",
+    "url": "https://pokeapi.co/api/v2/pokemon/512/",
+    "korean_name": "야나키"
+  },
+  {
+    "name": "pansear",
+    "url": "https://pokeapi.co/api/v2/pokemon/513/",
+    "korean_name": "바오프"
+  },
+  {
+    "name": "simisear",
+    "url": "https://pokeapi.co/api/v2/pokemon/514/",
+    "korean_name": "바오키"
+  },
+  {
+    "name": "panpour",
+    "url": "https://pokeapi.co/api/v2/pokemon/515/",
+    "korean_name": "앗차프"
+  },
+  {
+    "name": "simipour",
+    "url": "https://pokeapi.co/api/v2/pokemon/516/",
+    "korean_name": "앗차키"
+  },
+  {
+    "name": "munna",
+    "url": "https://pokeapi.co/api/v2/pokemon/517/",
+    "korean_name": "몽나"
+  },
+  {
+    "name": "musharna",
+    "url": "https://pokeapi.co/api/v2/pokemon/518/",
+    "korean_name": "몽얌나"
+  },
+  {
+    "name": "pidove",
+    "url": "https://pokeapi.co/api/v2/pokemon/519/",
+    "korean_name": "콩둘기"
+  },
+  {
+    "name": "tranquill",
+    "url": "https://pokeapi.co/api/v2/pokemon/520/",
+    "korean_name": "유토브"
+  },
+  {
+    "name": "unfezant",
+    "url": "https://pokeapi.co/api/v2/pokemon/521/",
+    "korean_name": "켄호로우"
+  },
+  {
+    "name": "blitzle",
+    "url": "https://pokeapi.co/api/v2/pokemon/522/",
+    "korean_name": "줄뮤마"
+  },
+  {
+    "name": "zebstrika",
+    "url": "https://pokeapi.co/api/v2/pokemon/523/",
+    "korean_name": "제브라이카"
+  },
+  {
+    "name": "roggenrola",
+    "url": "https://pokeapi.co/api/v2/pokemon/524/",
+    "korean_name": "단굴"
+  },
+  {
+    "name": "boldore",
+    "url": "https://pokeapi.co/api/v2/pokemon/525/",
+    "korean_name": "암트르"
+  },
+  {
+    "name": "gigalith",
+    "url": "https://pokeapi.co/api/v2/pokemon/526/",
+    "korean_name": "기가이어스"
+  },
+  {
+    "name": "woobat",
+    "url": "https://pokeapi.co/api/v2/pokemon/527/",
+    "korean_name": "또르박쥐"
+  },
+  {
+    "name": "swoobat",
+    "url": "https://pokeapi.co/api/v2/pokemon/528/",
+    "korean_name": "맘박쥐"
+  },
+  {
+    "name": "drilbur",
+    "url": "https://pokeapi.co/api/v2/pokemon/529/",
+    "korean_name": "두더류"
+  },
+  {
+    "name": "excadrill",
+    "url": "https://pokeapi.co/api/v2/pokemon/530/",
+    "korean_name": "몰드류"
+  },
+  {
+    "name": "audino",
+    "url": "https://pokeapi.co/api/v2/pokemon/531/",
+    "korean_name": "다부니"
+  },
+  {
+    "name": "timburr",
+    "url": "https://pokeapi.co/api/v2/pokemon/532/",
+    "korean_name": "으랏차"
+  },
+  {
+    "name": "gurdurr",
+    "url": "https://pokeapi.co/api/v2/pokemon/533/",
+    "korean_name": "토쇠골"
+  },
+  {
+    "name": "conkeldurr",
+    "url": "https://pokeapi.co/api/v2/pokemon/534/",
+    "korean_name": "노보청"
+  },
+  {
+    "name": "tympole",
+    "url": "https://pokeapi.co/api/v2/pokemon/535/",
+    "korean_name": "동챙이"
+  },
+  {
+    "name": "palpitoad",
+    "url": "https://pokeapi.co/api/v2/pokemon/536/",
+    "korean_name": "두까비"
+  },
+  {
+    "name": "seismitoad",
+    "url": "https://pokeapi.co/api/v2/pokemon/537/",
+    "korean_name": "두빅굴"
+  },
+  {
+    "name": "throh",
+    "url": "https://pokeapi.co/api/v2/pokemon/538/",
+    "korean_name": "던지미"
+  },
+  {
+    "name": "sawk",
+    "url": "https://pokeapi.co/api/v2/pokemon/539/",
+    "korean_name": "타격귀"
+  },
+  {
+    "name": "sewaddle",
+    "url": "https://pokeapi.co/api/v2/pokemon/540/",
+    "korean_name": "두르보"
+  },
+  {
+    "name": "swadloon",
+    "url": "https://pokeapi.co/api/v2/pokemon/541/",
+    "korean_name": "두르쿤"
+  },
+  {
+    "name": "leavanny",
+    "url": "https://pokeapi.co/api/v2/pokemon/542/",
+    "korean_name": "모아머"
+  },
+  {
+    "name": "venipede",
+    "url": "https://pokeapi.co/api/v2/pokemon/543/",
+    "korean_name": "마디네"
+  },
+  {
+    "name": "whirlipede",
+    "url": "https://pokeapi.co/api/v2/pokemon/544/",
+    "korean_name": "휠구"
+  },
+  {
+    "name": "scolipede",
+    "url": "https://pokeapi.co/api/v2/pokemon/545/",
+    "korean_name": "펜드라"
+  },
+  {
+    "name": "cottonee",
+    "url": "https://pokeapi.co/api/v2/pokemon/546/",
+    "korean_name": "소미안"
+  },
+  {
+    "name": "whimsicott",
+    "url": "https://pokeapi.co/api/v2/pokemon/547/",
+    "korean_name": "엘풍"
+  },
+  {
+    "name": "petilil",
+    "url": "https://pokeapi.co/api/v2/pokemon/548/",
+    "korean_name": "치릴리"
+  },
+  {
+    "name": "lilligant",
+    "url": "https://pokeapi.co/api/v2/pokemon/549/",
+    "korean_name": "드레디어"
+  },
+  {
+    "name": "basculin-red-striped",
+    "url": "https://pokeapi.co/api/v2/pokemon/550/",
+    "korean_name": "배쓰나이"
+  },
+  {
+    "name": "sandile",
+    "url": "https://pokeapi.co/api/v2/pokemon/551/",
+    "korean_name": "깜눈크"
+  },
+  {
+    "name": "krokorok",
+    "url": "https://pokeapi.co/api/v2/pokemon/552/",
+    "korean_name": "악비르"
+  },
+  {
+    "name": "krookodile",
+    "url": "https://pokeapi.co/api/v2/pokemon/553/",
+    "korean_name": "악비아르"
+  },
+  {
+    "name": "darumaka",
+    "url": "https://pokeapi.co/api/v2/pokemon/554/",
+    "korean_name": "달막화"
+  },
+  {
+    "name": "darmanitan-standard",
+    "url": "https://pokeapi.co/api/v2/pokemon/555/",
+    "korean_name": "불비달마"
+  },
+  {
+    "name": "maractus",
+    "url": "https://pokeapi.co/api/v2/pokemon/556/",
+    "korean_name": "마라카치"
+  },
+  {
+    "name": "dwebble",
+    "url": "https://pokeapi.co/api/v2/pokemon/557/",
+    "korean_name": "돌살이"
+  },
+  {
+    "name": "crustle",
+    "url": "https://pokeapi.co/api/v2/pokemon/558/",
+    "korean_name": "암팰리스"
+  },
+  {
+    "name": "scraggy",
+    "url": "https://pokeapi.co/api/v2/pokemon/559/",
+    "korean_name": "곤율랭"
+  },
+  {
+    "name": "scrafty",
+    "url": "https://pokeapi.co/api/v2/pokemon/560/",
+    "korean_name": "곤율거니"
+  },
+  {
+    "name": "sigilyph",
+    "url": "https://pokeapi.co/api/v2/pokemon/561/",
+    "korean_name": "심보러"
+  },
+  {
+    "name": "yamask",
+    "url": "https://pokeapi.co/api/v2/pokemon/562/",
+    "korean_name": "데스마스"
+  },
+  {
+    "name": "cofagrigus",
+    "url": "https://pokeapi.co/api/v2/pokemon/563/",
+    "korean_name": "데스니칸"
+  },
+  {
+    "name": "tirtouga",
+    "url": "https://pokeapi.co/api/v2/pokemon/564/",
+    "korean_name": "프로토가"
+  },
+  {
+    "name": "carracosta",
+    "url": "https://pokeapi.co/api/v2/pokemon/565/",
+    "korean_name": "늑골라"
+  },
+  {
+    "name": "archen",
+    "url": "https://pokeapi.co/api/v2/pokemon/566/",
+    "korean_name": "아켄"
+  },
+  {
+    "name": "archeops",
+    "url": "https://pokeapi.co/api/v2/pokemon/567/",
+    "korean_name": "아케오스"
+  },
+  {
+    "name": "trubbish",
+    "url": "https://pokeapi.co/api/v2/pokemon/568/",
+    "korean_name": "깨봉이"
+  },
+  {
+    "name": "garbodor",
+    "url": "https://pokeapi.co/api/v2/pokemon/569/",
+    "korean_name": "더스트나"
+  },
+  {
+    "name": "zorua",
+    "url": "https://pokeapi.co/api/v2/pokemon/570/",
+    "korean_name": "조로아"
+  },
+  {
+    "name": "zoroark",
+    "url": "https://pokeapi.co/api/v2/pokemon/571/",
+    "korean_name": "조로아크"
+  },
+  {
+    "name": "minccino",
+    "url": "https://pokeapi.co/api/v2/pokemon/572/",
+    "korean_name": "치라미"
+  },
+  {
+    "name": "cinccino",
+    "url": "https://pokeapi.co/api/v2/pokemon/573/",
+    "korean_name": "치라치노"
+  },
+  {
+    "name": "gothita",
+    "url": "https://pokeapi.co/api/v2/pokemon/574/",
+    "korean_name": "고디탱"
+  },
+  {
+    "name": "gothorita",
+    "url": "https://pokeapi.co/api/v2/pokemon/575/",
+    "korean_name": "고디보미"
+  },
+  {
+    "name": "gothitelle",
+    "url": "https://pokeapi.co/api/v2/pokemon/576/",
+    "korean_name": "고디모아젤"
+  },
+  {
+    "name": "solosis",
+    "url": "https://pokeapi.co/api/v2/pokemon/577/",
+    "korean_name": "유니란"
+  },
+  {
+    "name": "duosion",
+    "url": "https://pokeapi.co/api/v2/pokemon/578/",
+    "korean_name": "듀란"
+  },
+  {
+    "name": "reuniclus",
+    "url": "https://pokeapi.co/api/v2/pokemon/579/",
+    "korean_name": "란쿨루스"
+  },
+  {
+    "name": "ducklett",
+    "url": "https://pokeapi.co/api/v2/pokemon/580/",
+    "korean_name": "꼬지보리"
+  },
+  {
+    "name": "swanna",
+    "url": "https://pokeapi.co/api/v2/pokemon/581/",
+    "korean_name": "스완나"
+  },
+  {
+    "name": "vanillite",
+    "url": "https://pokeapi.co/api/v2/pokemon/582/",
+    "korean_name": "바닐프티"
+  },
+  {
+    "name": "vanillish",
+    "url": "https://pokeapi.co/api/v2/pokemon/583/",
+    "korean_name": "바닐리치"
+  },
+  {
+    "name": "vanilluxe",
+    "url": "https://pokeapi.co/api/v2/pokemon/584/",
+    "korean_name": "배바닐라"
+  },
+  {
+    "name": "deerling",
+    "url": "https://pokeapi.co/api/v2/pokemon/585/",
+    "korean_name": "사철록"
+  },
+  {
+    "name": "sawsbuck",
+    "url": "https://pokeapi.co/api/v2/pokemon/586/",
+    "korean_name": "바라철록"
+  },
+  {
+    "name": "emolga",
+    "url": "https://pokeapi.co/api/v2/pokemon/587/",
+    "korean_name": "에몽가"
+  },
+  {
+    "name": "karrablast",
+    "url": "https://pokeapi.co/api/v2/pokemon/588/",
+    "korean_name": "딱정곤"
+  },
+  {
+    "name": "escavalier",
+    "url": "https://pokeapi.co/api/v2/pokemon/589/",
+    "korean_name": "슈바르고"
+  },
+  {
+    "name": "foongus",
+    "url": "https://pokeapi.co/api/v2/pokemon/590/",
+    "korean_name": "깜놀버슬"
+  },
+  {
+    "name": "amoonguss",
+    "url": "https://pokeapi.co/api/v2/pokemon/591/",
+    "korean_name": "뽀록나"
+  },
+  {
+    "name": "frillish",
+    "url": "https://pokeapi.co/api/v2/pokemon/592/",
+    "korean_name": "탱그릴"
+  },
+  {
+    "name": "jellicent",
+    "url": "https://pokeapi.co/api/v2/pokemon/593/",
+    "korean_name": "탱탱겔"
+  },
+  {
+    "name": "alomomola",
+    "url": "https://pokeapi.co/api/v2/pokemon/594/",
+    "korean_name": "맘복치"
+  },
+  {
+    "name": "joltik",
+    "url": "https://pokeapi.co/api/v2/pokemon/595/",
+    "korean_name": "파쪼옥"
+  },
+  {
+    "name": "galvantula",
+    "url": "https://pokeapi.co/api/v2/pokemon/596/",
+    "korean_name": "전툴라"
+  },
+  {
+    "name": "ferroseed",
+    "url": "https://pokeapi.co/api/v2/pokemon/597/",
+    "korean_name": "철시드"
+  },
+  {
+    "name": "ferrothorn",
+    "url": "https://pokeapi.co/api/v2/pokemon/598/",
+    "korean_name": "너트령"
+  },
+  {
+    "name": "klink",
+    "url": "https://pokeapi.co/api/v2/pokemon/599/",
+    "korean_name": "기어르"
+  },
+  {
+    "name": "klang",
+    "url": "https://pokeapi.co/api/v2/pokemon/600/",
+    "korean_name": "기기어르"
+  },
+  {
+    "name": "klinklang",
+    "url": "https://pokeapi.co/api/v2/pokemon/601/",
+    "korean_name": "기기기어르"
+  },
+  {
+    "name": "tynamo",
+    "url": "https://pokeapi.co/api/v2/pokemon/602/",
+    "korean_name": "저리어"
+  },
+  {
+    "name": "eelektrik",
+    "url": "https://pokeapi.co/api/v2/pokemon/603/",
+    "korean_name": "저리릴"
+  },
+  {
+    "name": "eelektross",
+    "url": "https://pokeapi.co/api/v2/pokemon/604/",
+    "korean_name": "저리더프"
+  },
+  {
+    "name": "elgyem",
+    "url": "https://pokeapi.co/api/v2/pokemon/605/",
+    "korean_name": "리그레"
+  },
+  {
+    "name": "beheeyem",
+    "url": "https://pokeapi.co/api/v2/pokemon/606/",
+    "korean_name": "벰크"
+  },
+  {
+    "name": "litwick",
+    "url": "https://pokeapi.co/api/v2/pokemon/607/",
+    "korean_name": "불켜미"
+  },
+  {
+    "name": "lampent",
+    "url": "https://pokeapi.co/api/v2/pokemon/608/",
+    "korean_name": "램프라"
+  },
+  {
+    "name": "chandelure",
+    "url": "https://pokeapi.co/api/v2/pokemon/609/",
+    "korean_name": "샹델라"
+  },
+  {
+    "name": "axew",
+    "url": "https://pokeapi.co/api/v2/pokemon/610/",
+    "korean_name": "터검니"
+  },
+  {
+    "name": "fraxure",
+    "url": "https://pokeapi.co/api/v2/pokemon/611/",
+    "korean_name": "액슨도"
+  },
+  {
+    "name": "haxorus",
+    "url": "https://pokeapi.co/api/v2/pokemon/612/",
+    "korean_name": "액스라이즈"
+  },
+  {
+    "name": "cubchoo",
+    "url": "https://pokeapi.co/api/v2/pokemon/613/",
+    "korean_name": "코고미"
+  },
+  {
+    "name": "beartic",
+    "url": "https://pokeapi.co/api/v2/pokemon/614/",
+    "korean_name": "툰베어"
+  },
+  {
+    "name": "cryogonal",
+    "url": "https://pokeapi.co/api/v2/pokemon/615/",
+    "korean_name": "프리지오"
+  },
+  {
+    "name": "shelmet",
+    "url": "https://pokeapi.co/api/v2/pokemon/616/",
+    "korean_name": "쪼마리"
+  },
+  {
+    "name": "accelgor",
+    "url": "https://pokeapi.co/api/v2/pokemon/617/",
+    "korean_name": "어지리더"
+  },
+  {
+    "name": "stunfisk",
+    "url": "https://pokeapi.co/api/v2/pokemon/618/",
+    "korean_name": "메더"
+  },
+  {
+    "name": "mienfoo",
+    "url": "https://pokeapi.co/api/v2/pokemon/619/",
+    "korean_name": "비조푸"
+  },
+  {
+    "name": "mienshao",
+    "url": "https://pokeapi.co/api/v2/pokemon/620/",
+    "korean_name": "비조도"
+  },
+  {
+    "name": "druddigon",
+    "url": "https://pokeapi.co/api/v2/pokemon/621/",
+    "korean_name": "크리만"
+  },
+  {
+    "name": "golett",
+    "url": "https://pokeapi.co/api/v2/pokemon/622/",
+    "korean_name": "골비람"
+  },
+  {
+    "name": "golurk",
+    "url": "https://pokeapi.co/api/v2/pokemon/623/",
+    "korean_name": "골루그"
+  },
+  {
+    "name": "pawniard",
+    "url": "https://pokeapi.co/api/v2/pokemon/624/",
+    "korean_name": "자망칼"
+  },
+  {
+    "name": "bisharp",
+    "url": "https://pokeapi.co/api/v2/pokemon/625/",
+    "korean_name": "절각참"
+  },
+  {
+    "name": "bouffalant",
+    "url": "https://pokeapi.co/api/v2/pokemon/626/",
+    "korean_name": "버프론"
+  },
+  {
+    "name": "rufflet",
+    "url": "https://pokeapi.co/api/v2/pokemon/627/",
+    "korean_name": "수리둥보"
+  },
+  {
+    "name": "braviary",
+    "url": "https://pokeapi.co/api/v2/pokemon/628/",
+    "korean_name": "워글"
+  },
+  {
+    "name": "vullaby",
+    "url": "https://pokeapi.co/api/v2/pokemon/629/",
+    "korean_name": "벌차이"
+  },
+  {
+    "name": "mandibuzz",
+    "url": "https://pokeapi.co/api/v2/pokemon/630/",
+    "korean_name": "버랜지나"
+  },
+  {
+    "name": "heatmor",
+    "url": "https://pokeapi.co/api/v2/pokemon/631/",
+    "korean_name": "앤티골"
+  },
+  {
+    "name": "durant",
+    "url": "https://pokeapi.co/api/v2/pokemon/632/",
+    "korean_name": "아이앤트"
+  },
+  {
+    "name": "deino",
+    "url": "https://pokeapi.co/api/v2/pokemon/633/",
+    "korean_name": "모노두"
+  },
+  {
+    "name": "zweilous",
+    "url": "https://pokeapi.co/api/v2/pokemon/634/",
+    "korean_name": "디헤드"
+  },
+  {
+    "name": "hydreigon",
+    "url": "https://pokeapi.co/api/v2/pokemon/635/",
+    "korean_name": "삼삼드래"
+  },
+  {
+    "name": "larvesta",
+    "url": "https://pokeapi.co/api/v2/pokemon/636/",
+    "korean_name": "활화르바"
+  },
+  {
+    "name": "volcarona",
+    "url": "https://pokeapi.co/api/v2/pokemon/637/",
+    "korean_name": "불카모스"
+  },
+  {
+    "name": "cobalion",
+    "url": "https://pokeapi.co/api/v2/pokemon/638/",
+    "korean_name": "코바르온"
+  },
+  {
+    "name": "terrakion",
+    "url": "https://pokeapi.co/api/v2/pokemon/639/",
+    "korean_name": "테라키온"
+  },
+  {
+    "name": "virizion",
+    "url": "https://pokeapi.co/api/v2/pokemon/640/",
+    "korean_name": "비리디온"
+  },
+  {
+    "name": "tornadus-incarnate",
+    "url": "https://pokeapi.co/api/v2/pokemon/641/",
+    "korean_name": "토네로스"
+  },
+  {
+    "name": "thundurus-incarnate",
+    "url": "https://pokeapi.co/api/v2/pokemon/642/",
+    "korean_name": "볼트로스"
+  },
+  {
+    "name": "reshiram",
+    "url": "https://pokeapi.co/api/v2/pokemon/643/",
+    "korean_name": "레시라무"
+  },
+  {
+    "name": "zekrom",
+    "url": "https://pokeapi.co/api/v2/pokemon/644/",
+    "korean_name": "제크로무"
+  },
+  {
+    "name": "landorus-incarnate",
+    "url": "https://pokeapi.co/api/v2/pokemon/645/",
+    "korean_name": "랜드로스"
+  },
+  {
+    "name": "kyurem",
+    "url": "https://pokeapi.co/api/v2/pokemon/646/",
+    "korean_name": "큐레무"
+  },
+  {
+    "name": "keldeo-ordinary",
+    "url": "https://pokeapi.co/api/v2/pokemon/647/",
+    "korean_name": "케르디오"
+  },
+  {
+    "name": "meloetta-aria",
+    "url": "https://pokeapi.co/api/v2/pokemon/648/",
+    "korean_name": "메로엣타"
+  },
+  {
+    "name": "genesect",
+    "url": "https://pokeapi.co/api/v2/pokemon/649/",
+    "korean_name": "게노세크트"
+  },
+  {
+    "name": "chespin",
+    "url": "https://pokeapi.co/api/v2/pokemon/650/",
+    "korean_name": "도치마론"
+  },
+  {
+    "name": "quilladin",
+    "url": "https://pokeapi.co/api/v2/pokemon/651/",
+    "korean_name": "도치보구"
+  },
+  {
+    "name": "chesnaught",
+    "url": "https://pokeapi.co/api/v2/pokemon/652/",
+    "korean_name": "브리가론"
+  },
+  {
+    "name": "fennekin",
+    "url": "https://pokeapi.co/api/v2/pokemon/653/",
+    "korean_name": "푸호꼬"
+  },
+  {
+    "name": "braixen",
+    "url": "https://pokeapi.co/api/v2/pokemon/654/",
+    "korean_name": "테르나"
+  },
+  {
+    "name": "delphox",
+    "url": "https://pokeapi.co/api/v2/pokemon/655/",
+    "korean_name": "마폭시"
+  },
+  {
+    "name": "froakie",
+    "url": "https://pokeapi.co/api/v2/pokemon/656/",
+    "korean_name": "개구마르"
+  },
+  {
+    "name": "frogadier",
+    "url": "https://pokeapi.co/api/v2/pokemon/657/",
+    "korean_name": "개굴반장"
+  },
+  {
+    "name": "greninja",
+    "url": "https://pokeapi.co/api/v2/pokemon/658/",
+    "korean_name": "개굴닌자"
+  },
+  {
+    "name": "bunnelby",
+    "url": "https://pokeapi.co/api/v2/pokemon/659/",
+    "korean_name": "파르빗"
+  },
+  {
+    "name": "diggersby",
+    "url": "https://pokeapi.co/api/v2/pokemon/660/",
+    "korean_name": "파르토"
+  },
+  {
+    "name": "fletchling",
+    "url": "https://pokeapi.co/api/v2/pokemon/661/",
+    "korean_name": "화살꼬빈"
+  },
+  {
+    "name": "fletchinder",
+    "url": "https://pokeapi.co/api/v2/pokemon/662/",
+    "korean_name": "불화살빈"
+  },
+  {
+    "name": "talonflame",
+    "url": "https://pokeapi.co/api/v2/pokemon/663/",
+    "korean_name": "파이어로"
+  },
+  {
+    "name": "scatterbug",
+    "url": "https://pokeapi.co/api/v2/pokemon/664/",
+    "korean_name": "분이벌레"
+  },
+  {
+    "name": "spewpa",
+    "url": "https://pokeapi.co/api/v2/pokemon/665/",
+    "korean_name": "분떠도리"
+  },
+  {
+    "name": "vivillon",
+    "url": "https://pokeapi.co/api/v2/pokemon/666/",
+    "korean_name": "비비용"
+  },
+  {
+    "name": "litleo",
+    "url": "https://pokeapi.co/api/v2/pokemon/667/",
+    "korean_name": "레오꼬"
+  },
+  {
+    "name": "pyroar",
+    "url": "https://pokeapi.co/api/v2/pokemon/668/",
+    "korean_name": "화염레오"
+  },
+  {
+    "name": "flabebe",
+    "url": "https://pokeapi.co/api/v2/pokemon/669/",
+    "korean_name": "플라베베"
+  },
+  {
+    "name": "floette",
+    "url": "https://pokeapi.co/api/v2/pokemon/670/",
+    "korean_name": "플라엣테"
+  },
+  {
+    "name": "florges",
+    "url": "https://pokeapi.co/api/v2/pokemon/671/",
+    "korean_name": "플라제스"
+  },
+  {
+    "name": "skiddo",
+    "url": "https://pokeapi.co/api/v2/pokemon/672/",
+    "korean_name": "메이클"
+  },
+  {
+    "name": "gogoat",
+    "url": "https://pokeapi.co/api/v2/pokemon/673/",
+    "korean_name": "고고트"
+  },
+  {
+    "name": "pancham",
+    "url": "https://pokeapi.co/api/v2/pokemon/674/",
+    "korean_name": "판짱"
+  },
+  {
+    "name": "pangoro",
+    "url": "https://pokeapi.co/api/v2/pokemon/675/",
+    "korean_name": "부란다"
+  },
+  {
+    "name": "furfrou",
+    "url": "https://pokeapi.co/api/v2/pokemon/676/",
+    "korean_name": "트리미앙"
+  },
+  {
+    "name": "espurr",
+    "url": "https://pokeapi.co/api/v2/pokemon/677/",
+    "korean_name": "냐스퍼"
+  },
+  {
+    "name": "meowstic-male",
+    "url": "https://pokeapi.co/api/v2/pokemon/678/",
+    "korean_name": "냐오닉스"
+  },
+  {
+    "name": "honedge",
+    "url": "https://pokeapi.co/api/v2/pokemon/679/",
+    "korean_name": "단칼빙"
+  },
+  {
+    "name": "doublade",
+    "url": "https://pokeapi.co/api/v2/pokemon/680/",
+    "korean_name": "쌍검킬"
+  },
+  {
+    "name": "aegislash-shield",
+    "url": "https://pokeapi.co/api/v2/pokemon/681/",
+    "korean_name": "킬가르도"
+  },
+  {
+    "name": "spritzee",
+    "url": "https://pokeapi.co/api/v2/pokemon/682/",
+    "korean_name": "슈쁘"
+  },
+  {
+    "name": "aromatisse",
+    "url": "https://pokeapi.co/api/v2/pokemon/683/",
+    "korean_name": "프레프티르"
+  },
+  {
+    "name": "swirlix",
+    "url": "https://pokeapi.co/api/v2/pokemon/684/",
+    "korean_name": "나룸퍼프"
+  },
+  {
+    "name": "slurpuff",
+    "url": "https://pokeapi.co/api/v2/pokemon/685/",
+    "korean_name": "나루림"
+  },
+  {
+    "name": "inkay",
+    "url": "https://pokeapi.co/api/v2/pokemon/686/",
+    "korean_name": "오케이징"
+  },
+  {
+    "name": "malamar",
+    "url": "https://pokeapi.co/api/v2/pokemon/687/",
+    "korean_name": "칼라마네로"
+  },
+  {
+    "name": "binacle",
+    "url": "https://pokeapi.co/api/v2/pokemon/688/",
+    "korean_name": "거북손손"
+  },
+  {
+    "name": "barbaracle",
+    "url": "https://pokeapi.co/api/v2/pokemon/689/",
+    "korean_name": "거북손데스"
+  },
+  {
+    "name": "skrelp",
+    "url": "https://pokeapi.co/api/v2/pokemon/690/",
+    "korean_name": "수레기"
+  },
+  {
+    "name": "dragalge",
+    "url": "https://pokeapi.co/api/v2/pokemon/691/",
+    "korean_name": "드래캄"
+  },
+  {
+    "name": "clauncher",
+    "url": "https://pokeapi.co/api/v2/pokemon/692/",
+    "korean_name": "완철포"
+  },
+  {
+    "name": "clawitzer",
+    "url": "https://pokeapi.co/api/v2/pokemon/693/",
+    "korean_name": "블로스터"
+  },
+  {
+    "name": "helioptile",
+    "url": "https://pokeapi.co/api/v2/pokemon/694/",
+    "korean_name": "목도리키텔"
+  },
+  {
+    "name": "heliolisk",
+    "url": "https://pokeapi.co/api/v2/pokemon/695/",
+    "korean_name": "일레도리자드"
+  },
+  {
+    "name": "tyrunt",
+    "url": "https://pokeapi.co/api/v2/pokemon/696/",
+    "korean_name": "티고라스"
+  },
+  {
+    "name": "tyrantrum",
+    "url": "https://pokeapi.co/api/v2/pokemon/697/",
+    "korean_name": "견고라스"
+  },
+  {
+    "name": "amaura",
+    "url": "https://pokeapi.co/api/v2/pokemon/698/",
+    "korean_name": "아마루스"
+  },
+  {
+    "name": "aurorus",
+    "url": "https://pokeapi.co/api/v2/pokemon/699/",
+    "korean_name": "아마루르가"
+  },
+  {
+    "name": "sylveon",
+    "url": "https://pokeapi.co/api/v2/pokemon/700/",
+    "korean_name": "님피아"
+  },
+  {
+    "name": "hawlucha",
+    "url": "https://pokeapi.co/api/v2/pokemon/701/",
+    "korean_name": "루차불"
+  },
+  {
+    "name": "dedenne",
+    "url": "https://pokeapi.co/api/v2/pokemon/702/",
+    "korean_name": "데덴네"
+  },
+  {
+    "name": "carbink",
+    "url": "https://pokeapi.co/api/v2/pokemon/703/",
+    "korean_name": "멜리시"
+  },
+  {
+    "name": "goomy",
+    "url": "https://pokeapi.co/api/v2/pokemon/704/",
+    "korean_name": "미끄메라"
+  },
+  {
+    "name": "sliggoo",
+    "url": "https://pokeapi.co/api/v2/pokemon/705/",
+    "korean_name": "미끄네일"
+  },
+  {
+    "name": "goodra",
+    "url": "https://pokeapi.co/api/v2/pokemon/706/",
+    "korean_name": "미끄래곤"
+  },
+  {
+    "name": "klefki",
+    "url": "https://pokeapi.co/api/v2/pokemon/707/",
+    "korean_name": "클레피"
+  },
+  {
+    "name": "phantump",
+    "url": "https://pokeapi.co/api/v2/pokemon/708/",
+    "korean_name": "나목령"
+  },
+  {
+    "name": "trevenant",
+    "url": "https://pokeapi.co/api/v2/pokemon/709/",
+    "korean_name": "대로트"
+  },
+  {
+    "name": "pumpkaboo-average",
+    "url": "https://pokeapi.co/api/v2/pokemon/710/",
+    "korean_name": "호바귀"
+  },
+  {
+    "name": "gourgeist-average",
+    "url": "https://pokeapi.co/api/v2/pokemon/711/",
+    "korean_name": "펌킨인"
+  },
+  {
+    "name": "bergmite",
+    "url": "https://pokeapi.co/api/v2/pokemon/712/",
+    "korean_name": "꽁어름"
+  },
+  {
+    "name": "avalugg",
+    "url": "https://pokeapi.co/api/v2/pokemon/713/",
+    "korean_name": "크레베이스"
+  },
+  {
+    "name": "noibat",
+    "url": "https://pokeapi.co/api/v2/pokemon/714/",
+    "korean_name": "음뱃"
+  },
+  {
+    "name": "noivern",
+    "url": "https://pokeapi.co/api/v2/pokemon/715/",
+    "korean_name": "음번"
+  },
+  {
+    "name": "xerneas",
+    "url": "https://pokeapi.co/api/v2/pokemon/716/",
+    "korean_name": "제르네아스"
+  },
+  {
+    "name": "yveltal",
+    "url": "https://pokeapi.co/api/v2/pokemon/717/",
+    "korean_name": "이벨타르"
+  },
+  {
+    "name": "zygarde-50",
+    "url": "https://pokeapi.co/api/v2/pokemon/718/",
+    "korean_name": "지가르데"
+  },
+  {
+    "name": "diancie",
+    "url": "https://pokeapi.co/api/v2/pokemon/719/",
+    "korean_name": "디안시"
+  },
+  {
+    "name": "hoopa",
+    "url": "https://pokeapi.co/api/v2/pokemon/720/",
+    "korean_name": "후파"
+  },
+  {
+    "name": "volcanion",
+    "url": "https://pokeapi.co/api/v2/pokemon/721/",
+    "korean_name": "볼케니온"
+  },
+  {
+    "name": "rowlet",
+    "url": "https://pokeapi.co/api/v2/pokemon/722/",
+    "korean_name": "나몰빼미"
+  },
+  {
+    "name": "dartrix",
+    "url": "https://pokeapi.co/api/v2/pokemon/723/",
+    "korean_name": "빼미스로우"
+  },
+  {
+    "name": "decidueye",
+    "url": "https://pokeapi.co/api/v2/pokemon/724/",
+    "korean_name": "모크나이퍼"
+  },
+  {
+    "name": "litten",
+    "url": "https://pokeapi.co/api/v2/pokemon/725/",
+    "korean_name": "냐오불"
+  },
+  {
+    "name": "torracat",
+    "url": "https://pokeapi.co/api/v2/pokemon/726/",
+    "korean_name": "냐오히트"
+  },
+  {
+    "name": "incineroar",
+    "url": "https://pokeapi.co/api/v2/pokemon/727/",
+    "korean_name": "어흥염"
+  },
+  {
+    "name": "popplio",
+    "url": "https://pokeapi.co/api/v2/pokemon/728/",
+    "korean_name": "누리공"
+  },
+  {
+    "name": "brionne",
+    "url": "https://pokeapi.co/api/v2/pokemon/729/",
+    "korean_name": "키요공"
+  },
+  {
+    "name": "primarina",
+    "url": "https://pokeapi.co/api/v2/pokemon/730/",
+    "korean_name": "누리레느"
+  },
+  {
+    "name": "pikipek",
+    "url": "https://pokeapi.co/api/v2/pokemon/731/",
+    "korean_name": "콕코구리"
+  },
+  {
+    "name": "trumbeak",
+    "url": "https://pokeapi.co/api/v2/pokemon/732/",
+    "korean_name": "크라파"
+  },
+  {
+    "name": "toucannon",
+    "url": "https://pokeapi.co/api/v2/pokemon/733/",
+    "korean_name": "왕큰부리"
+  },
+  {
+    "name": "yungoos",
+    "url": "https://pokeapi.co/api/v2/pokemon/734/",
+    "korean_name": "영구스"
+  },
+  {
+    "name": "gumshoos",
+    "url": "https://pokeapi.co/api/v2/pokemon/735/",
+    "korean_name": "형사구스"
+  },
+  {
+    "name": "grubbin",
+    "url": "https://pokeapi.co/api/v2/pokemon/736/",
+    "korean_name": "턱지충이"
+  },
+  {
+    "name": "charjabug",
+    "url": "https://pokeapi.co/api/v2/pokemon/737/",
+    "korean_name": "전지충이"
+  },
+  {
+    "name": "vikavolt",
+    "url": "https://pokeapi.co/api/v2/pokemon/738/",
+    "korean_name": "투구뿌논"
+  },
+  {
+    "name": "crabrawler",
+    "url": "https://pokeapi.co/api/v2/pokemon/739/",
+    "korean_name": "오기지게"
+  },
+  {
+    "name": "crabominable",
+    "url": "https://pokeapi.co/api/v2/pokemon/740/",
+    "korean_name": "모단단게"
+  },
+  {
+    "name": "oricorio-baile",
+    "url": "https://pokeapi.co/api/v2/pokemon/741/",
+    "korean_name": "춤추새"
+  },
+  {
+    "name": "cutiefly",
+    "url": "https://pokeapi.co/api/v2/pokemon/742/",
+    "korean_name": "에블리"
+  },
+  {
+    "name": "ribombee",
+    "url": "https://pokeapi.co/api/v2/pokemon/743/",
+    "korean_name": "에리본"
+  },
+  {
+    "name": "rockruff",
+    "url": "https://pokeapi.co/api/v2/pokemon/744/",
+    "korean_name": "암멍이"
+  },
+  {
+    "name": "lycanroc-midday",
+    "url": "https://pokeapi.co/api/v2/pokemon/745/",
+    "korean_name": "루가루암"
+  },
+  {
+    "name": "wishiwashi-solo",
+    "url": "https://pokeapi.co/api/v2/pokemon/746/",
+    "korean_name": "약어리"
+  },
+  {
+    "name": "mareanie",
+    "url": "https://pokeapi.co/api/v2/pokemon/747/",
+    "korean_name": "시마사리"
+  },
+  {
+    "name": "toxapex",
+    "url": "https://pokeapi.co/api/v2/pokemon/748/",
+    "korean_name": "더시마사리"
+  },
+  {
+    "name": "mudbray",
+    "url": "https://pokeapi.co/api/v2/pokemon/749/",
+    "korean_name": "머드나기"
+  },
+  {
+    "name": "mudsdale",
+    "url": "https://pokeapi.co/api/v2/pokemon/750/",
+    "korean_name": "만마드"
+  },
+  {
+    "name": "dewpider",
+    "url": "https://pokeapi.co/api/v2/pokemon/751/",
+    "korean_name": "물거미"
+  },
+  {
+    "name": "araquanid",
+    "url": "https://pokeapi.co/api/v2/pokemon/752/",
+    "korean_name": "깨비물거미"
+  },
+  {
+    "name": "fomantis",
+    "url": "https://pokeapi.co/api/v2/pokemon/753/",
+    "korean_name": "짜랑랑"
+  },
+  {
+    "name": "lurantis",
+    "url": "https://pokeapi.co/api/v2/pokemon/754/",
+    "korean_name": "라란티스"
+  },
+  {
+    "name": "morelull",
+    "url": "https://pokeapi.co/api/v2/pokemon/755/",
+    "korean_name": "자마슈"
+  },
+  {
+    "name": "shiinotic",
+    "url": "https://pokeapi.co/api/v2/pokemon/756/",
+    "korean_name": "마셰이드"
+  },
+  {
+    "name": "salandit",
+    "url": "https://pokeapi.co/api/v2/pokemon/757/",
+    "korean_name": "야도뇽"
+  },
+  {
+    "name": "salazzle",
+    "url": "https://pokeapi.co/api/v2/pokemon/758/",
+    "korean_name": "염뉴트"
+  },
+  {
+    "name": "stufful",
+    "url": "https://pokeapi.co/api/v2/pokemon/759/",
+    "korean_name": "포곰곰"
+  },
+  {
+    "name": "bewear",
+    "url": "https://pokeapi.co/api/v2/pokemon/760/",
+    "korean_name": "이븐곰"
+  },
+  {
+    "name": "bounsweet",
+    "url": "https://pokeapi.co/api/v2/pokemon/761/",
+    "korean_name": "달콤아"
+  },
+  {
+    "name": "steenee",
+    "url": "https://pokeapi.co/api/v2/pokemon/762/",
+    "korean_name": "달무리나"
+  },
+  {
+    "name": "tsareena",
+    "url": "https://pokeapi.co/api/v2/pokemon/763/",
+    "korean_name": "달코퀸"
+  },
+  {
+    "name": "comfey",
+    "url": "https://pokeapi.co/api/v2/pokemon/764/",
+    "korean_name": "큐아링"
+  },
+  {
+    "name": "oranguru",
+    "url": "https://pokeapi.co/api/v2/pokemon/765/",
+    "korean_name": "하랑우탄"
+  },
+  {
+    "name": "passimian",
+    "url": "https://pokeapi.co/api/v2/pokemon/766/",
+    "korean_name": "내던숭이"
+  },
+  {
+    "name": "wimpod",
+    "url": "https://pokeapi.co/api/v2/pokemon/767/",
+    "korean_name": "꼬시레"
+  },
+  {
+    "name": "golisopod",
+    "url": "https://pokeapi.co/api/v2/pokemon/768/",
+    "korean_name": "갑주무사"
+  },
+  {
+    "name": "sandygast",
+    "url": "https://pokeapi.co/api/v2/pokemon/769/",
+    "korean_name": "모래꿍"
+  },
+  {
+    "name": "palossand",
+    "url": "https://pokeapi.co/api/v2/pokemon/770/",
+    "korean_name": "모래성이당"
+  },
+  {
+    "name": "pyukumuku",
+    "url": "https://pokeapi.co/api/v2/pokemon/771/",
+    "korean_name": "해무기"
+  },
+  {
+    "name": "type-null",
+    "url": "https://pokeapi.co/api/v2/pokemon/772/",
+    "korean_name": "타입:널"
+  },
+  {
+    "name": "silvally",
+    "url": "https://pokeapi.co/api/v2/pokemon/773/",
+    "korean_name": "실버디"
+  },
+  {
+    "name": "minior-red-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/774/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "komala",
+    "url": "https://pokeapi.co/api/v2/pokemon/775/",
+    "korean_name": "자말라"
+  },
+  {
+    "name": "turtonator",
+    "url": "https://pokeapi.co/api/v2/pokemon/776/",
+    "korean_name": "폭거북스"
+  },
+  {
+    "name": "togedemaru",
+    "url": "https://pokeapi.co/api/v2/pokemon/777/",
+    "korean_name": "토게데마루"
+  },
+  {
+    "name": "mimikyu-disguised",
+    "url": "https://pokeapi.co/api/v2/pokemon/778/",
+    "korean_name": "따라큐"
+  },
+  {
+    "name": "bruxish",
+    "url": "https://pokeapi.co/api/v2/pokemon/779/",
+    "korean_name": "치갈기"
+  },
+  {
+    "name": "drampa",
+    "url": "https://pokeapi.co/api/v2/pokemon/780/",
+    "korean_name": "할비롱"
+  },
+  {
+    "name": "dhelmise",
+    "url": "https://pokeapi.co/api/v2/pokemon/781/",
+    "korean_name": "타타륜"
+  },
+  {
+    "name": "jangmo-o",
+    "url": "https://pokeapi.co/api/v2/pokemon/782/",
+    "korean_name": "짜랑꼬"
+  },
+  {
+    "name": "hakamo-o",
+    "url": "https://pokeapi.co/api/v2/pokemon/783/",
+    "korean_name": "짜랑고우"
+  },
+  {
+    "name": "kommo-o",
+    "url": "https://pokeapi.co/api/v2/pokemon/784/",
+    "korean_name": "짜랑고우거"
+  },
+  {
+    "name": "tapu-koko",
+    "url": "https://pokeapi.co/api/v2/pokemon/785/",
+    "korean_name": "카푸꼬꼬꼭"
+  },
+  {
+    "name": "tapu-lele",
+    "url": "https://pokeapi.co/api/v2/pokemon/786/",
+    "korean_name": "카푸나비나"
+  },
+  {
+    "name": "tapu-bulu",
+    "url": "https://pokeapi.co/api/v2/pokemon/787/",
+    "korean_name": "카푸브루루"
+  },
+  {
+    "name": "tapu-fini",
+    "url": "https://pokeapi.co/api/v2/pokemon/788/",
+    "korean_name": "카푸느지느"
+  },
+  {
+    "name": "cosmog",
+    "url": "https://pokeapi.co/api/v2/pokemon/789/",
+    "korean_name": "코스모그"
+  },
+  {
+    "name": "cosmoem",
+    "url": "https://pokeapi.co/api/v2/pokemon/790/",
+    "korean_name": "코스모움"
+  },
+  {
+    "name": "solgaleo",
+    "url": "https://pokeapi.co/api/v2/pokemon/791/",
+    "korean_name": "솔가레오"
+  },
+  {
+    "name": "lunala",
+    "url": "https://pokeapi.co/api/v2/pokemon/792/",
+    "korean_name": "루나아라"
+  },
+  {
+    "name": "nihilego",
+    "url": "https://pokeapi.co/api/v2/pokemon/793/",
+    "korean_name": "텅비드"
+  },
+  {
+    "name": "buzzwole",
+    "url": "https://pokeapi.co/api/v2/pokemon/794/",
+    "korean_name": "매시붕"
+  },
+  {
+    "name": "pheromosa",
+    "url": "https://pokeapi.co/api/v2/pokemon/795/",
+    "korean_name": "페로코체"
+  },
+  {
+    "name": "xurkitree",
+    "url": "https://pokeapi.co/api/v2/pokemon/796/",
+    "korean_name": "전수목"
+  },
+  {
+    "name": "celesteela",
+    "url": "https://pokeapi.co/api/v2/pokemon/797/",
+    "korean_name": "철화구야"
+  },
+  {
+    "name": "kartana",
+    "url": "https://pokeapi.co/api/v2/pokemon/798/",
+    "korean_name": "종이신도"
+  },
+  {
+    "name": "guzzlord",
+    "url": "https://pokeapi.co/api/v2/pokemon/799/",
+    "korean_name": "악식킹"
+  },
+  {
+    "name": "necrozma",
+    "url": "https://pokeapi.co/api/v2/pokemon/800/",
+    "korean_name": "네크로즈마"
+  },
+  {
+    "name": "magearna",
+    "url": "https://pokeapi.co/api/v2/pokemon/801/",
+    "korean_name": "마기아나"
+  },
+  {
+    "name": "marshadow",
+    "url": "https://pokeapi.co/api/v2/pokemon/802/",
+    "korean_name": "마샤도"
+  },
+  {
+    "name": "poipole",
+    "url": "https://pokeapi.co/api/v2/pokemon/803/",
+    "korean_name": "베베놈"
+  },
+  {
+    "name": "naganadel",
+    "url": "https://pokeapi.co/api/v2/pokemon/804/",
+    "korean_name": "아고용"
+  },
+  {
+    "name": "stakataka",
+    "url": "https://pokeapi.co/api/v2/pokemon/805/",
+    "korean_name": "차곡차곡"
+  },
+  {
+    "name": "blacephalon",
+    "url": "https://pokeapi.co/api/v2/pokemon/806/",
+    "korean_name": "두파팡"
+  },
+  {
+    "name": "zeraora",
+    "url": "https://pokeapi.co/api/v2/pokemon/807/",
+    "korean_name": "제라오라"
+  },
+  {
+    "name": "meltan",
+    "url": "https://pokeapi.co/api/v2/pokemon/808/",
+    "korean_name": "멜탄"
+  },
+  {
+    "name": "melmetal",
+    "url": "https://pokeapi.co/api/v2/pokemon/809/",
+    "korean_name": "멜메탈"
+  },
+  {
+    "name": "grookey",
+    "url": "https://pokeapi.co/api/v2/pokemon/810/",
+    "korean_name": "흥나숭"
+  },
+  {
+    "name": "thwackey",
+    "url": "https://pokeapi.co/api/v2/pokemon/811/",
+    "korean_name": "채키몽"
+  },
+  {
+    "name": "rillaboom",
+    "url": "https://pokeapi.co/api/v2/pokemon/812/",
+    "korean_name": "고릴타"
+  },
+  {
+    "name": "scorbunny",
+    "url": "https://pokeapi.co/api/v2/pokemon/813/",
+    "korean_name": "염버니"
+  },
+  {
+    "name": "raboot",
+    "url": "https://pokeapi.co/api/v2/pokemon/814/",
+    "korean_name": "래비풋"
+  },
+  {
+    "name": "cinderace",
+    "url": "https://pokeapi.co/api/v2/pokemon/815/",
+    "korean_name": "에이스번"
+  },
+  {
+    "name": "sobble",
+    "url": "https://pokeapi.co/api/v2/pokemon/816/",
+    "korean_name": "울머기"
+  },
+  {
+    "name": "drizzile",
+    "url": "https://pokeapi.co/api/v2/pokemon/817/",
+    "korean_name": "누겔레온"
+  },
+  {
+    "name": "inteleon",
+    "url": "https://pokeapi.co/api/v2/pokemon/818/",
+    "korean_name": "인텔리레온"
+  },
+  {
+    "name": "skwovet",
+    "url": "https://pokeapi.co/api/v2/pokemon/819/",
+    "korean_name": "탐리스"
+  },
+  {
+    "name": "greedent",
+    "url": "https://pokeapi.co/api/v2/pokemon/820/",
+    "korean_name": "요씽리스"
+  },
+  {
+    "name": "rookidee",
+    "url": "https://pokeapi.co/api/v2/pokemon/821/",
+    "korean_name": "파라꼬"
+  },
+  {
+    "name": "corvisquire",
+    "url": "https://pokeapi.co/api/v2/pokemon/822/",
+    "korean_name": "파크로우"
+  },
+  {
+    "name": "corviknight",
+    "url": "https://pokeapi.co/api/v2/pokemon/823/",
+    "korean_name": "아머까오"
+  },
+  {
+    "name": "blipbug",
+    "url": "https://pokeapi.co/api/v2/pokemon/824/",
+    "korean_name": "두루지벌레"
+  },
+  {
+    "name": "dottler",
+    "url": "https://pokeapi.co/api/v2/pokemon/825/",
+    "korean_name": "레돔벌레"
+  },
+  {
+    "name": "orbeetle",
+    "url": "https://pokeapi.co/api/v2/pokemon/826/",
+    "korean_name": "이올브"
+  },
+  {
+    "name": "nickit",
+    "url": "https://pokeapi.co/api/v2/pokemon/827/",
+    "korean_name": "훔처우"
+  },
+  {
+    "name": "thievul",
+    "url": "https://pokeapi.co/api/v2/pokemon/828/",
+    "korean_name": "폭슬라이"
+  },
+  {
+    "name": "gossifleur",
+    "url": "https://pokeapi.co/api/v2/pokemon/829/",
+    "korean_name": "꼬모카"
+  },
+  {
+    "name": "eldegoss",
+    "url": "https://pokeapi.co/api/v2/pokemon/830/",
+    "korean_name": "백솜모카"
+  },
+  {
+    "name": "wooloo",
+    "url": "https://pokeapi.co/api/v2/pokemon/831/",
+    "korean_name": "우르"
+  },
+  {
+    "name": "dubwool",
+    "url": "https://pokeapi.co/api/v2/pokemon/832/",
+    "korean_name": "배우르"
+  },
+  {
+    "name": "chewtle",
+    "url": "https://pokeapi.co/api/v2/pokemon/833/",
+    "korean_name": "깨물부기"
+  },
+  {
+    "name": "drednaw",
+    "url": "https://pokeapi.co/api/v2/pokemon/834/",
+    "korean_name": "갈가부기"
+  },
+  {
+    "name": "yamper",
+    "url": "https://pokeapi.co/api/v2/pokemon/835/",
+    "korean_name": "멍파치"
+  },
+  {
+    "name": "boltund",
+    "url": "https://pokeapi.co/api/v2/pokemon/836/",
+    "korean_name": "펄스멍"
+  },
+  {
+    "name": "rolycoly",
+    "url": "https://pokeapi.co/api/v2/pokemon/837/",
+    "korean_name": "탄동"
+  },
+  {
+    "name": "carkol",
+    "url": "https://pokeapi.co/api/v2/pokemon/838/",
+    "korean_name": "탄차곤"
+  },
+  {
+    "name": "coalossal",
+    "url": "https://pokeapi.co/api/v2/pokemon/839/",
+    "korean_name": "석탄산"
+  },
+  {
+    "name": "applin",
+    "url": "https://pokeapi.co/api/v2/pokemon/840/",
+    "korean_name": "과사삭벌레"
+  },
+  {
+    "name": "flapple",
+    "url": "https://pokeapi.co/api/v2/pokemon/841/",
+    "korean_name": "애프룡"
+  },
+  {
+    "name": "appletun",
+    "url": "https://pokeapi.co/api/v2/pokemon/842/",
+    "korean_name": "단지래플"
+  },
+  {
+    "name": "silicobra",
+    "url": "https://pokeapi.co/api/v2/pokemon/843/",
+    "korean_name": "모래뱀"
+  },
+  {
+    "name": "sandaconda",
+    "url": "https://pokeapi.co/api/v2/pokemon/844/",
+    "korean_name": "사다이사"
+  },
+  {
+    "name": "cramorant",
+    "url": "https://pokeapi.co/api/v2/pokemon/845/",
+    "korean_name": "윽우지"
+  },
+  {
+    "name": "arrokuda",
+    "url": "https://pokeapi.co/api/v2/pokemon/846/",
+    "korean_name": "찌로꼬치"
+  },
+  {
+    "name": "barraskewda",
+    "url": "https://pokeapi.co/api/v2/pokemon/847/",
+    "korean_name": "꼬치조"
+  },
+  {
+    "name": "toxel",
+    "url": "https://pokeapi.co/api/v2/pokemon/848/",
+    "korean_name": "일레즌"
+  },
+  {
+    "name": "toxtricity-amped",
+    "url": "https://pokeapi.co/api/v2/pokemon/849/",
+    "korean_name": "스트린더"
+  },
+  {
+    "name": "sizzlipede",
+    "url": "https://pokeapi.co/api/v2/pokemon/850/",
+    "korean_name": "태우지네"
+  },
+  {
+    "name": "centiskorch",
+    "url": "https://pokeapi.co/api/v2/pokemon/851/",
+    "korean_name": "다태우지네"
+  },
+  {
+    "name": "clobbopus",
+    "url": "https://pokeapi.co/api/v2/pokemon/852/",
+    "korean_name": "때때무노"
+  },
+  {
+    "name": "grapploct",
+    "url": "https://pokeapi.co/api/v2/pokemon/853/",
+    "korean_name": "케오퍼스"
+  },
+  {
+    "name": "sinistea",
+    "url": "https://pokeapi.co/api/v2/pokemon/854/",
+    "korean_name": "데인차"
+  },
+  {
+    "name": "polteageist",
+    "url": "https://pokeapi.co/api/v2/pokemon/855/",
+    "korean_name": "포트데스"
+  },
+  {
+    "name": "hatenna",
+    "url": "https://pokeapi.co/api/v2/pokemon/856/",
+    "korean_name": "몸지브림"
+  },
+  {
+    "name": "hattrem",
+    "url": "https://pokeapi.co/api/v2/pokemon/857/",
+    "korean_name": "손지브림"
+  },
+  {
+    "name": "hatterene",
+    "url": "https://pokeapi.co/api/v2/pokemon/858/",
+    "korean_name": "브리무음"
+  },
+  {
+    "name": "impidimp",
+    "url": "https://pokeapi.co/api/v2/pokemon/859/",
+    "korean_name": "메롱꿍"
+  },
+  {
+    "name": "morgrem",
+    "url": "https://pokeapi.co/api/v2/pokemon/860/",
+    "korean_name": "쏘겨모"
+  },
+  {
+    "name": "grimmsnarl",
+    "url": "https://pokeapi.co/api/v2/pokemon/861/",
+    "korean_name": "오롱털"
+  },
+  {
+    "name": "obstagoon",
+    "url": "https://pokeapi.co/api/v2/pokemon/862/",
+    "korean_name": "가로막구리"
+  },
+  {
+    "name": "perrserker",
+    "url": "https://pokeapi.co/api/v2/pokemon/863/",
+    "korean_name": "나이킹"
+  },
+  {
+    "name": "cursola",
+    "url": "https://pokeapi.co/api/v2/pokemon/864/",
+    "korean_name": "산호르곤"
+  },
+  {
+    "name": "sirfetchd",
+    "url": "https://pokeapi.co/api/v2/pokemon/865/",
+    "korean_name": "창파나이트"
+  },
+  {
+    "name": "mr-rime",
+    "url": "https://pokeapi.co/api/v2/pokemon/866/",
+    "korean_name": "마임꽁꽁"
+  },
+  {
+    "name": "runerigus",
+    "url": "https://pokeapi.co/api/v2/pokemon/867/",
+    "korean_name": "데스판"
+  },
+  {
+    "name": "milcery",
+    "url": "https://pokeapi.co/api/v2/pokemon/868/",
+    "korean_name": "마빌크"
+  },
+  {
+    "name": "alcremie",
+    "url": "https://pokeapi.co/api/v2/pokemon/869/",
+    "korean_name": "마휘핑"
+  },
+  {
+    "name": "falinks",
+    "url": "https://pokeapi.co/api/v2/pokemon/870/",
+    "korean_name": "대여르"
+  },
+  {
+    "name": "pincurchin",
+    "url": "https://pokeapi.co/api/v2/pokemon/871/",
+    "korean_name": "찌르성게"
+  },
+  {
+    "name": "snom",
+    "url": "https://pokeapi.co/api/v2/pokemon/872/",
+    "korean_name": "누니머기"
+  },
+  {
+    "name": "frosmoth",
+    "url": "https://pokeapi.co/api/v2/pokemon/873/",
+    "korean_name": "모스노우"
+  },
+  {
+    "name": "stonjourner",
+    "url": "https://pokeapi.co/api/v2/pokemon/874/",
+    "korean_name": "돌헨진"
+  },
+  {
+    "name": "eiscue-ice",
+    "url": "https://pokeapi.co/api/v2/pokemon/875/",
+    "korean_name": "빙큐보"
+  },
+  {
+    "name": "indeedee-male",
+    "url": "https://pokeapi.co/api/v2/pokemon/876/",
+    "korean_name": "indeedee-male"
+  },
+  {
+    "name": "morpeko-full-belly",
+    "url": "https://pokeapi.co/api/v2/pokemon/877/",
+    "korean_name": "모르페코"
+  },
+  {
+    "name": "cufant",
+    "url": "https://pokeapi.co/api/v2/pokemon/878/",
+    "korean_name": "끼리동"
+  },
+  {
+    "name": "copperajah",
+    "url": "https://pokeapi.co/api/v2/pokemon/879/",
+    "korean_name": "대왕끼리동"
+  },
+  {
+    "name": "dracozolt",
+    "url": "https://pokeapi.co/api/v2/pokemon/880/",
+    "korean_name": "파치래곤"
+  },
+  {
+    "name": "arctozolt",
+    "url": "https://pokeapi.co/api/v2/pokemon/881/",
+    "korean_name": "파치르돈"
+  },
+  {
+    "name": "dracovish",
+    "url": "https://pokeapi.co/api/v2/pokemon/882/",
+    "korean_name": "어래곤"
+  },
+  {
+    "name": "arctovish",
+    "url": "https://pokeapi.co/api/v2/pokemon/883/",
+    "korean_name": "어치르돈"
+  },
+  {
+    "name": "duraludon",
+    "url": "https://pokeapi.co/api/v2/pokemon/884/",
+    "korean_name": "두랄루돈"
+  },
+  {
+    "name": "dreepy",
+    "url": "https://pokeapi.co/api/v2/pokemon/885/",
+    "korean_name": "드라꼰"
+  },
+  {
+    "name": "drakloak",
+    "url": "https://pokeapi.co/api/v2/pokemon/886/",
+    "korean_name": "드래런치"
+  },
+  {
+    "name": "dragapult",
+    "url": "https://pokeapi.co/api/v2/pokemon/887/",
+    "korean_name": "드래펄트"
+  },
+  {
+    "name": "zacian",
+    "url": "https://pokeapi.co/api/v2/pokemon/888/",
+    "korean_name": "자시안"
+  },
+  {
+    "name": "zamazenta",
+    "url": "https://pokeapi.co/api/v2/pokemon/889/",
+    "korean_name": "자마젠타"
+  },
+  {
+    "name": "eternatus",
+    "url": "https://pokeapi.co/api/v2/pokemon/890/",
+    "korean_name": "무한다이노"
+  },
+  {
+    "name": "kubfu",
+    "url": "https://pokeapi.co/api/v2/pokemon/891/",
+    "korean_name": "치고마"
+  },
+  {
+    "name": "urshifu-single-strike",
+    "url": "https://pokeapi.co/api/v2/pokemon/892/",
+    "korean_name": "우라오스"
+  },
+  {
+    "name": "zarude",
+    "url": "https://pokeapi.co/api/v2/pokemon/893/",
+    "korean_name": "자루도"
+  },
+  {
+    "name": "regieleki",
+    "url": "https://pokeapi.co/api/v2/pokemon/894/",
+    "korean_name": "레지에레키"
+  },
+  {
+    "name": "regidrago",
+    "url": "https://pokeapi.co/api/v2/pokemon/895/",
+    "korean_name": "레지드래고"
+  },
+  {
+    "name": "glastrier",
+    "url": "https://pokeapi.co/api/v2/pokemon/896/",
+    "korean_name": "블리자포스"
+  },
+  {
+    "name": "spectrier",
+    "url": "https://pokeapi.co/api/v2/pokemon/897/",
+    "korean_name": "레이스포스"
+  },
+  {
+    "name": "calyrex",
+    "url": "https://pokeapi.co/api/v2/pokemon/898/",
+    "korean_name": "버드렉스"
+  },
+  {
+    "name": "wyrdeer",
+    "url": "https://pokeapi.co/api/v2/pokemon/899/",
+    "korean_name": "신비록"
+  },
+  {
+    "name": "kleavor",
+    "url": "https://pokeapi.co/api/v2/pokemon/900/",
+    "korean_name": "사마자르"
+  },
+  {
+    "name": "ursaluna",
+    "url": "https://pokeapi.co/api/v2/pokemon/901/",
+    "korean_name": "다투곰"
+  },
+  {
+    "name": "basculegion-male",
+    "url": "https://pokeapi.co/api/v2/pokemon/902/",
+    "korean_name": "대쓰여너"
+  },
+  {
+    "name": "sneasler",
+    "url": "https://pokeapi.co/api/v2/pokemon/903/",
+    "korean_name": "포푸니크"
+  },
+  {
+    "name": "overqwil",
+    "url": "https://pokeapi.co/api/v2/pokemon/904/",
+    "korean_name": "장침바루"
+  },
+  {
+    "name": "enamorus-incarnate",
+    "url": "https://pokeapi.co/api/v2/pokemon/905/",
+    "korean_name": "러브로스"
+  },
+  {
+    "name": "sprigatito",
+    "url": "https://pokeapi.co/api/v2/pokemon/906/",
+    "korean_name": "나오하"
+  },
+  {
+    "name": "floragato",
+    "url": "https://pokeapi.co/api/v2/pokemon/907/",
+    "korean_name": "나로테"
+  },
+  {
+    "name": "meowscarada",
+    "url": "https://pokeapi.co/api/v2/pokemon/908/",
+    "korean_name": "마스카나"
+  },
+  {
+    "name": "fuecoco",
+    "url": "https://pokeapi.co/api/v2/pokemon/909/",
+    "korean_name": "뜨아거"
+  },
+  {
+    "name": "crocalor",
+    "url": "https://pokeapi.co/api/v2/pokemon/910/",
+    "korean_name": "악뜨거"
+  },
+  {
+    "name": "skeledirge",
+    "url": "https://pokeapi.co/api/v2/pokemon/911/",
+    "korean_name": "라우드본"
+  },
+  {
+    "name": "quaxly",
+    "url": "https://pokeapi.co/api/v2/pokemon/912/",
+    "korean_name": "꾸왁스"
+  },
+  {
+    "name": "quaxwell",
+    "url": "https://pokeapi.co/api/v2/pokemon/913/",
+    "korean_name": "아꾸왁"
+  },
+  {
+    "name": "quaquaval",
+    "url": "https://pokeapi.co/api/v2/pokemon/914/",
+    "korean_name": "웨이니발"
+  },
+  {
+    "name": "lechonk",
+    "url": "https://pokeapi.co/api/v2/pokemon/915/",
+    "korean_name": "맛보돈"
+  },
+  {
+    "name": "oinkologne",
+    "url": "https://pokeapi.co/api/v2/pokemon/916/",
+    "korean_name": "퍼퓨돈"
+  },
+  {
+    "name": "tarountula",
+    "url": "https://pokeapi.co/api/v2/pokemon/917/",
+    "korean_name": "타랜툴라"
+  },
+  {
+    "name": "spidops",
+    "url": "https://pokeapi.co/api/v2/pokemon/918/",
+    "korean_name": "트래피더"
+  },
+  {
+    "name": "nymble",
+    "url": "https://pokeapi.co/api/v2/pokemon/919/",
+    "korean_name": "콩알뚜기"
+  },
+  {
+    "name": "lokix",
+    "url": "https://pokeapi.co/api/v2/pokemon/920/",
+    "korean_name": "엑스레그"
+  },
+  {
+    "name": "pawmi",
+    "url": "https://pokeapi.co/api/v2/pokemon/921/",
+    "korean_name": "빠모"
+  },
+  {
+    "name": "pawmo",
+    "url": "https://pokeapi.co/api/v2/pokemon/922/",
+    "korean_name": "빠모트"
+  },
+  {
+    "name": "pawmot",
+    "url": "https://pokeapi.co/api/v2/pokemon/923/",
+    "korean_name": "빠르모트"
+  },
+  {
+    "name": "tandemaus",
+    "url": "https://pokeapi.co/api/v2/pokemon/924/",
+    "korean_name": "두리쥐"
+  },
+  {
+    "name": "maushold",
+    "url": "https://pokeapi.co/api/v2/pokemon/925/",
+    "korean_name": "파밀리쥐"
+  },
+  {
+    "name": "fidough",
+    "url": "https://pokeapi.co/api/v2/pokemon/926/",
+    "korean_name": "쫀도기"
+  },
+  {
+    "name": "dachsbun",
+    "url": "https://pokeapi.co/api/v2/pokemon/927/",
+    "korean_name": "바우첼"
+  },
+  {
+    "name": "smoliv",
+    "url": "https://pokeapi.co/api/v2/pokemon/928/",
+    "korean_name": "미니브"
+  },
+  {
+    "name": "dolliv",
+    "url": "https://pokeapi.co/api/v2/pokemon/929/",
+    "korean_name": "올리뇨"
+  },
+  {
+    "name": "arboliva",
+    "url": "https://pokeapi.co/api/v2/pokemon/930/",
+    "korean_name": "올리르바"
+  },
+  {
+    "name": "squawkabilly",
+    "url": "https://pokeapi.co/api/v2/pokemon/931/",
+    "korean_name": "시비꼬"
+  },
+  {
+    "name": "nacli",
+    "url": "https://pokeapi.co/api/v2/pokemon/932/",
+    "korean_name": "베베솔트"
+  },
+  {
+    "name": "naclstack",
+    "url": "https://pokeapi.co/api/v2/pokemon/933/",
+    "korean_name": "스태솔트"
+  },
+  {
+    "name": "garganacl",
+    "url": "https://pokeapi.co/api/v2/pokemon/934/",
+    "korean_name": "콜로솔트"
+  },
+  {
+    "name": "charcadet",
+    "url": "https://pokeapi.co/api/v2/pokemon/935/",
+    "korean_name": "카르본"
+  },
+  {
+    "name": "armarouge",
+    "url": "https://pokeapi.co/api/v2/pokemon/936/",
+    "korean_name": "카디나르마"
+  },
+  {
+    "name": "ceruledge",
+    "url": "https://pokeapi.co/api/v2/pokemon/937/",
+    "korean_name": "파라블레이즈"
+  },
+  {
+    "name": "tadbulb",
+    "url": "https://pokeapi.co/api/v2/pokemon/938/",
+    "korean_name": "빈나두"
+  },
+  {
+    "name": "bellibolt",
+    "url": "https://pokeapi.co/api/v2/pokemon/939/",
+    "korean_name": "찌리배리"
+  },
+  {
+    "name": "wattrel",
+    "url": "https://pokeapi.co/api/v2/pokemon/940/",
+    "korean_name": "찌리비"
+  },
+  {
+    "name": "kilowattrel",
+    "url": "https://pokeapi.co/api/v2/pokemon/941/",
+    "korean_name": "찌리비크"
+  },
+  {
+    "name": "maschiff",
+    "url": "https://pokeapi.co/api/v2/pokemon/942/",
+    "korean_name": "오라티프"
+  },
+  {
+    "name": "mabosstiff",
+    "url": "https://pokeapi.co/api/v2/pokemon/943/",
+    "korean_name": "마피티프"
+  },
+  {
+    "name": "shroodle",
+    "url": "https://pokeapi.co/api/v2/pokemon/944/",
+    "korean_name": "땃쭈르"
+  },
+  {
+    "name": "grafaiai",
+    "url": "https://pokeapi.co/api/v2/pokemon/945/",
+    "korean_name": "태깅구르"
+  },
+  {
+    "name": "bramblin",
+    "url": "https://pokeapi.co/api/v2/pokemon/946/",
+    "korean_name": "그푸리"
+  },
+  {
+    "name": "brambleghast",
+    "url": "https://pokeapi.co/api/v2/pokemon/947/",
+    "korean_name": "공푸리"
+  },
+  {
+    "name": "toedscool",
+    "url": "https://pokeapi.co/api/v2/pokemon/948/",
+    "korean_name": "들눈해"
+  },
+  {
+    "name": "toedscruel",
+    "url": "https://pokeapi.co/api/v2/pokemon/949/",
+    "korean_name": "육파리"
+  },
+  {
+    "name": "klawf",
+    "url": "https://pokeapi.co/api/v2/pokemon/950/",
+    "korean_name": "절벼게"
+  },
+  {
+    "name": "capsakid",
+    "url": "https://pokeapi.co/api/v2/pokemon/951/",
+    "korean_name": "캡싸이"
+  },
+  {
+    "name": "scovillain",
+    "url": "https://pokeapi.co/api/v2/pokemon/952/",
+    "korean_name": "스코빌런"
+  },
+  {
+    "name": "rellor",
+    "url": "https://pokeapi.co/api/v2/pokemon/953/",
+    "korean_name": "구르데"
+  },
+  {
+    "name": "rabsca",
+    "url": "https://pokeapi.co/api/v2/pokemon/954/",
+    "korean_name": "베라카스"
+  },
+  {
+    "name": "flittle",
+    "url": "https://pokeapi.co/api/v2/pokemon/955/",
+    "korean_name": "하느라기"
+  },
+  {
+    "name": "espathra",
+    "url": "https://pokeapi.co/api/v2/pokemon/956/",
+    "korean_name": "클레스퍼트라"
+  },
+  {
+    "name": "tinkatink",
+    "url": "https://pokeapi.co/api/v2/pokemon/957/",
+    "korean_name": "어리짱"
+  },
+  {
+    "name": "tinkatuff",
+    "url": "https://pokeapi.co/api/v2/pokemon/958/",
+    "korean_name": "벼리짱"
+  },
+  {
+    "name": "tinkaton",
+    "url": "https://pokeapi.co/api/v2/pokemon/959/",
+    "korean_name": "두드리짱"
+  },
+  {
+    "name": "wiglett",
+    "url": "https://pokeapi.co/api/v2/pokemon/960/",
+    "korean_name": "바다그다"
+  },
+  {
+    "name": "wugtrio",
+    "url": "https://pokeapi.co/api/v2/pokemon/961/",
+    "korean_name": "바닥트리오"
+  },
+  {
+    "name": "bombirdier",
+    "url": "https://pokeapi.co/api/v2/pokemon/962/",
+    "korean_name": "떨구새"
+  },
+  {
+    "name": "finizen",
+    "url": "https://pokeapi.co/api/v2/pokemon/963/",
+    "korean_name": "맨돌핀"
+  },
+  {
+    "name": "palafin",
+    "url": "https://pokeapi.co/api/v2/pokemon/964/",
+    "korean_name": "돌핀맨"
+  },
+  {
+    "name": "varoom",
+    "url": "https://pokeapi.co/api/v2/pokemon/965/",
+    "korean_name": "부르롱"
+  },
+  {
+    "name": "revavroom",
+    "url": "https://pokeapi.co/api/v2/pokemon/966/",
+    "korean_name": "부르르룸"
+  },
+  {
+    "name": "cyclizar",
+    "url": "https://pokeapi.co/api/v2/pokemon/967/",
+    "korean_name": "모토마"
+  },
+  {
+    "name": "orthworm",
+    "url": "https://pokeapi.co/api/v2/pokemon/968/",
+    "korean_name": "꿈트렁"
+  },
+  {
+    "name": "glimmet",
+    "url": "https://pokeapi.co/api/v2/pokemon/969/",
+    "korean_name": "초롱순"
+  },
+  {
+    "name": "glimmora",
+    "url": "https://pokeapi.co/api/v2/pokemon/970/",
+    "korean_name": "킬라플로르"
+  },
+  {
+    "name": "greavard",
+    "url": "https://pokeapi.co/api/v2/pokemon/971/",
+    "korean_name": "망망이"
+  },
+  {
+    "name": "houndstone",
+    "url": "https://pokeapi.co/api/v2/pokemon/972/",
+    "korean_name": "묘두기"
+  },
+  {
+    "name": "flamigo",
+    "url": "https://pokeapi.co/api/v2/pokemon/973/",
+    "korean_name": "꼬이밍고"
+  },
+  {
+    "name": "cetoddle",
+    "url": "https://pokeapi.co/api/v2/pokemon/974/",
+    "korean_name": "터벅고래"
+  },
+  {
+    "name": "cetitan",
+    "url": "https://pokeapi.co/api/v2/pokemon/975/",
+    "korean_name": "우락고래"
+  },
+  {
+    "name": "veluza",
+    "url": "https://pokeapi.co/api/v2/pokemon/976/",
+    "korean_name": "가비루사"
+  },
+  {
+    "name": "dondozo",
+    "url": "https://pokeapi.co/api/v2/pokemon/977/",
+    "korean_name": "어써러셔"
+  },
+  {
+    "name": "tatsugiri",
+    "url": "https://pokeapi.co/api/v2/pokemon/978/",
+    "korean_name": "싸리용"
+  },
+  {
+    "name": "annihilape",
+    "url": "https://pokeapi.co/api/v2/pokemon/979/",
+    "korean_name": "저승갓숭"
+  },
+  {
+    "name": "clodsire",
+    "url": "https://pokeapi.co/api/v2/pokemon/980/",
+    "korean_name": "토오"
+  },
+  {
+    "name": "farigiraf",
+    "url": "https://pokeapi.co/api/v2/pokemon/981/",
+    "korean_name": "키키링"
+  },
+  {
+    "name": "dudunsparce",
+    "url": "https://pokeapi.co/api/v2/pokemon/982/",
+    "korean_name": "노고고치"
+  },
+  {
+    "name": "kingambit",
+    "url": "https://pokeapi.co/api/v2/pokemon/983/",
+    "korean_name": "대도각참"
+  },
+  {
+    "name": "great-tusk",
+    "url": "https://pokeapi.co/api/v2/pokemon/984/",
+    "korean_name": "위대한엄니"
+  },
+  {
+    "name": "scream-tail",
+    "url": "https://pokeapi.co/api/v2/pokemon/985/",
+    "korean_name": "우렁찬꼬리"
+  },
+  {
+    "name": "brute-bonnet",
+    "url": "https://pokeapi.co/api/v2/pokemon/986/",
+    "korean_name": "사나운버섯"
+  },
+  {
+    "name": "flutter-mane",
+    "url": "https://pokeapi.co/api/v2/pokemon/987/",
+    "korean_name": "날개치는머리"
+  },
+  {
+    "name": "slither-wing",
+    "url": "https://pokeapi.co/api/v2/pokemon/988/",
+    "korean_name": "땅을기는날개"
+  },
+  {
+    "name": "sandy-shocks",
+    "url": "https://pokeapi.co/api/v2/pokemon/989/",
+    "korean_name": "모래털가죽"
+  },
+  {
+    "name": "iron-treads",
+    "url": "https://pokeapi.co/api/v2/pokemon/990/",
+    "korean_name": "무쇠바퀴"
+  },
+  {
+    "name": "iron-bundle",
+    "url": "https://pokeapi.co/api/v2/pokemon/991/",
+    "korean_name": "무쇠보따리"
+  },
+  {
+    "name": "iron-hands",
+    "url": "https://pokeapi.co/api/v2/pokemon/992/",
+    "korean_name": "무쇠손"
+  },
+  {
+    "name": "iron-jugulis",
+    "url": "https://pokeapi.co/api/v2/pokemon/993/",
+    "korean_name": "무쇠머리"
+  },
+  {
+    "name": "iron-moth",
+    "url": "https://pokeapi.co/api/v2/pokemon/994/",
+    "korean_name": "무쇠독나방"
+  },
+  {
+    "name": "iron-thorns",
+    "url": "https://pokeapi.co/api/v2/pokemon/995/",
+    "korean_name": "무쇠가시"
+  },
+  {
+    "name": "frigibax",
+    "url": "https://pokeapi.co/api/v2/pokemon/996/",
+    "korean_name": "드니차"
+  },
+  {
+    "name": "arctibax",
+    "url": "https://pokeapi.co/api/v2/pokemon/997/",
+    "korean_name": "드니꽁"
+  },
+  {
+    "name": "baxcalibur",
+    "url": "https://pokeapi.co/api/v2/pokemon/998/",
+    "korean_name": "드닐레이브"
+  },
+  {
+    "name": "gimmighoul",
+    "url": "https://pokeapi.co/api/v2/pokemon/999/",
+    "korean_name": "모으령"
+  },
+  {
+    "name": "gholdengo",
+    "url": "https://pokeapi.co/api/v2/pokemon/1000/",
+    "korean_name": "타부자고"
+  },
+  {
+    "name": "wo-chien",
+    "url": "https://pokeapi.co/api/v2/pokemon/1001/",
+    "korean_name": "총지엔"
+  },
+  {
+    "name": "chien-pao",
+    "url": "https://pokeapi.co/api/v2/pokemon/1002/",
+    "korean_name": "파오젠"
+  },
+  {
+    "name": "ting-lu",
+    "url": "https://pokeapi.co/api/v2/pokemon/1003/",
+    "korean_name": "딩루"
+  },
+  {
+    "name": "chi-yu",
+    "url": "https://pokeapi.co/api/v2/pokemon/1004/",
+    "korean_name": "위유이"
+  },
+  {
+    "name": "roaring-moon",
+    "url": "https://pokeapi.co/api/v2/pokemon/1005/",
+    "korean_name": "고동치는달"
+  },
+  {
+    "name": "iron-valiant",
+    "url": "https://pokeapi.co/api/v2/pokemon/1006/",
+    "korean_name": "무쇠무인"
+  },
+  {
+    "name": "koraidon",
+    "url": "https://pokeapi.co/api/v2/pokemon/1007/",
+    "korean_name": "코라이돈"
+  },
+  {
+    "name": "miraidon",
+    "url": "https://pokeapi.co/api/v2/pokemon/1008/",
+    "korean_name": "미라이돈"
+  },
+  {
+    "name": "deoxys-attack",
+    "url": "https://pokeapi.co/api/v2/pokemon/10001/",
+    "korean_name": "테오키스"
+  },
+  {
+    "name": "deoxys-defense",
+    "url": "https://pokeapi.co/api/v2/pokemon/10002/",
+    "korean_name": "테오키스"
+  },
+  {
+    "name": "deoxys-speed",
+    "url": "https://pokeapi.co/api/v2/pokemon/10003/",
+    "korean_name": "테오키스"
+  },
+  {
+    "name": "wormadam-sandy",
+    "url": "https://pokeapi.co/api/v2/pokemon/10004/",
+    "korean_name": "도롱마담"
+  },
+  {
+    "name": "wormadam-trash",
+    "url": "https://pokeapi.co/api/v2/pokemon/10005/",
+    "korean_name": "도롱마담"
+  },
+  {
+    "name": "shaymin-sky",
+    "url": "https://pokeapi.co/api/v2/pokemon/10006/",
+    "korean_name": "쉐이미"
+  },
+  {
+    "name": "giratina-origin",
+    "url": "https://pokeapi.co/api/v2/pokemon/10007/",
+    "korean_name": "기라티나 (오리진폼)"
+  },
+  {
+    "name": "rotom-heat",
+    "url": "https://pokeapi.co/api/v2/pokemon/10008/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "rotom-wash",
+    "url": "https://pokeapi.co/api/v2/pokemon/10009/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "rotom-frost",
+    "url": "https://pokeapi.co/api/v2/pokemon/10010/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "rotom-fan",
+    "url": "https://pokeapi.co/api/v2/pokemon/10011/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "rotom-mow",
+    "url": "https://pokeapi.co/api/v2/pokemon/10012/",
+    "korean_name": "로토무"
+  },
+  {
+    "name": "castform-sunny",
+    "url": "https://pokeapi.co/api/v2/pokemon/10013/",
+    "korean_name": "캐스퐁"
+  },
+  {
+    "name": "castform-rainy",
+    "url": "https://pokeapi.co/api/v2/pokemon/10014/",
+    "korean_name": "캐스퐁"
+  },
+  {
+    "name": "castform-snowy",
+    "url": "https://pokeapi.co/api/v2/pokemon/10015/",
+    "korean_name": "캐스퐁"
+  },
+  {
+    "name": "basculin-blue-striped",
+    "url": "https://pokeapi.co/api/v2/pokemon/10016/",
+    "korean_name": "배쓰나이"
+  },
+  {
+    "name": "darmanitan-zen",
+    "url": "https://pokeapi.co/api/v2/pokemon/10017/",
+    "korean_name": "불비달마"
+  },
+  {
+    "name": "meloetta-pirouette",
+    "url": "https://pokeapi.co/api/v2/pokemon/10018/",
+    "korean_name": "메로엣타"
+  },
+  {
+    "name": "tornadus-therian",
+    "url": "https://pokeapi.co/api/v2/pokemon/10019/",
+    "korean_name": "토네로스 (영물폼)"
+  },
+  {
+    "name": "thundurus-therian",
+    "url": "https://pokeapi.co/api/v2/pokemon/10020/",
+    "korean_name": "볼트로스 (영물폼)"
+  },
+  {
+    "name": "landorus-therian",
+    "url": "https://pokeapi.co/api/v2/pokemon/10021/",
+    "korean_name": "랜드로스 (영물폼)"
+  },
+  {
+    "name": "kyurem-black",
+    "url": "https://pokeapi.co/api/v2/pokemon/10022/",
+    "korean_name": "큐레무"
+  },
+  {
+    "name": "kyurem-white",
+    "url": "https://pokeapi.co/api/v2/pokemon/10023/",
+    "korean_name": "큐레무"
+  },
+  {
+    "name": "keldeo-resolute",
+    "url": "https://pokeapi.co/api/v2/pokemon/10024/",
+    "korean_name": "케르디오"
+  },
+  {
+    "name": "meowstic-female",
+    "url": "https://pokeapi.co/api/v2/pokemon/10025/",
+    "korean_name": "냐오닉스"
+  },
+  {
+    "name": "aegislash-blade",
+    "url": "https://pokeapi.co/api/v2/pokemon/10026/",
+    "korean_name": "킬가르도"
+  },
+  {
+    "name": "pumpkaboo-small",
+    "url": "https://pokeapi.co/api/v2/pokemon/10027/",
+    "korean_name": "호바귀"
+  },
+  {
+    "name": "pumpkaboo-large",
+    "url": "https://pokeapi.co/api/v2/pokemon/10028/",
+    "korean_name": "호바귀"
+  },
+  {
+    "name": "pumpkaboo-super",
+    "url": "https://pokeapi.co/api/v2/pokemon/10029/",
+    "korean_name": "호바귀"
+  },
+  {
+    "name": "gourgeist-small",
+    "url": "https://pokeapi.co/api/v2/pokemon/10030/",
+    "korean_name": "펌킨인"
+  },
+  {
+    "name": "gourgeist-large",
+    "url": "https://pokeapi.co/api/v2/pokemon/10031/",
+    "korean_name": "펌킨인"
+  },
+  {
+    "name": "gourgeist-super",
+    "url": "https://pokeapi.co/api/v2/pokemon/10032/",
+    "korean_name": "펌킨인"
+  },
+  {
+    "name": "venusaur-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10033/",
+    "korean_name": "이상해꽃 (메가진화)"
+  },
+  {
+    "name": "charizard-mega-x",
+    "url": "https://pokeapi.co/api/v2/pokemon/10034/",
+    "korean_name": "리자몽 (메가진화 X)"
+  },
+  {
+    "name": "charizard-mega-y",
+    "url": "https://pokeapi.co/api/v2/pokemon/10035/",
+    "korean_name": "리자몽 (메가진화 Y)"
+  },
+  {
+    "name": "blastoise-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10036/",
+    "korean_name": "거북왕 (메가진화)"
+  },
+  {
+    "name": "alakazam-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10037/",
+    "korean_name": "후딘 (메가진화)"
+  },
+  {
+    "name": "gengar-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10038/",
+    "korean_name": "팬텀 (메가진화)"
+  },
+  {
+    "name": "kangaskhan-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10039/",
+    "korean_name": "캥카 (메가진화)"
+  },
+  {
+    "name": "pinsir-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10040/",
+    "korean_name": "쁘사이저 (메가진화)"
+  },
+  {
+    "name": "gyarados-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10041/",
+    "korean_name": "갸라도스 (메가진화)"
+  },
+  {
+    "name": "aerodactyl-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10042/",
+    "korean_name": "프테라 (메가진화)"
+  },
+  {
+    "name": "mewtwo-mega-x",
+    "url": "https://pokeapi.co/api/v2/pokemon/10043/",
+    "korean_name": "뮤츠 (메가진화 X)"
+  },
+  {
+    "name": "mewtwo-mega-y",
+    "url": "https://pokeapi.co/api/v2/pokemon/10044/",
+    "korean_name": "뮤츠 (메가진화 Y)"
+  },
+  {
+    "name": "ampharos-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10045/",
+    "korean_name": "전룡 (메가진화)"
+  },
+  {
+    "name": "scizor-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10046/",
+    "korean_name": "핫삼 (메가진화)"
+  },
+  {
+    "name": "heracross-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10047/",
+    "korean_name": "헤라크로스 (메가진화)"
+  },
+  {
+    "name": "houndoom-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10048/",
+    "korean_name": "헬가 (메가진화)"
+  },
+  {
+    "name": "tyranitar-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10049/",
+    "korean_name": "마기라스 (메가진화)"
+  },
+  {
+    "name": "blaziken-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10050/",
+    "korean_name": "번치코 (메가진화)"
+  },
+  {
+    "name": "gardevoir-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10051/",
+    "korean_name": "가디안 (메가진화)"
+  },
+  {
+    "name": "mawile-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10052/",
+    "korean_name": "입치트 (메가진화)"
+  },
+  {
+    "name": "aggron-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10053/",
+    "korean_name": "보스로라 (메가진화)"
+  },
+  {
+    "name": "medicham-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10054/",
+    "korean_name": "요가램 (메가진화)"
+  },
+  {
+    "name": "manectric-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10055/",
+    "korean_name": "썬더볼트 (메가진화)"
+  },
+  {
+    "name": "banette-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10056/",
+    "korean_name": "다크펫 (메가진화)"
+  },
+  {
+    "name": "absol-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10057/",
+    "korean_name": "앱솔 (메가진화)"
+  },
+  {
+    "name": "garchomp-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10058/",
+    "korean_name": "한카리아스 (메가진화)"
+  },
+  {
+    "name": "lucario-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10059/",
+    "korean_name": "루카리오 (메가진화)"
+  },
+  {
+    "name": "abomasnow-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10060/",
+    "korean_name": "눈설왕 (메가진화)"
+  },
+  {
+    "name": "floette-eternal",
+    "url": "https://pokeapi.co/api/v2/pokemon/10061/",
+    "korean_name": "플라엣테"
+  },
+  {
+    "name": "latias-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10062/",
+    "korean_name": "라티아스 (메가진화)"
+  },
+  {
+    "name": "latios-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10063/",
+    "korean_name": "라티오스 (메가진화)"
+  },
+  {
+    "name": "swampert-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10064/",
+    "korean_name": "대짱이 (메가진화)"
+  },
+  {
+    "name": "sceptile-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10065/",
+    "korean_name": "나무킹 (메가진화)"
+  },
+  {
+    "name": "sableye-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10066/",
+    "korean_name": "깜까미 (메가진화)"
+  },
+  {
+    "name": "altaria-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10067/",
+    "korean_name": "파비코리 (메가진화)"
+  },
+  {
+    "name": "gallade-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10068/",
+    "korean_name": "엘레이드 (메가진화)"
+  },
+  {
+    "name": "audino-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10069/",
+    "korean_name": "다부니 (메가진화)"
+  },
+  {
+    "name": "sharpedo-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10070/",
+    "korean_name": "샤크니아 (메가진화)"
+  },
+  {
+    "name": "slowbro-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10071/",
+    "korean_name": "야도란 (메가진화)"
+  },
+  {
+    "name": "steelix-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10072/",
+    "korean_name": "강철톤 (메가진화)"
+  },
+  {
+    "name": "pidgeot-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10073/",
+    "korean_name": "피죤투 (메가진화)"
+  },
+  {
+    "name": "glalie-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10074/",
+    "korean_name": "얼음귀신 (메가진화)"
+  },
+  {
+    "name": "diancie-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10075/",
+    "korean_name": "디안시 (메가진화)"
+  },
+  {
+    "name": "metagross-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10076/",
+    "korean_name": "메타그로스 (메가진화)"
+  },
+  {
+    "name": "kyogre-primal",
+    "url": "https://pokeapi.co/api/v2/pokemon/10077/",
+    "korean_name": "가이오가"
+  },
+  {
+    "name": "groudon-primal",
+    "url": "https://pokeapi.co/api/v2/pokemon/10078/",
+    "korean_name": "그란돈"
+  },
+  {
+    "name": "rayquaza-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10079/",
+    "korean_name": "레쿠쟈 (메가진화)"
+  },
+  {
+    "name": "pikachu-rock-star",
+    "url": "https://pokeapi.co/api/v2/pokemon/10080/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-belle",
+    "url": "https://pokeapi.co/api/v2/pokemon/10081/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-pop-star",
+    "url": "https://pokeapi.co/api/v2/pokemon/10082/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-phd",
+    "url": "https://pokeapi.co/api/v2/pokemon/10083/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-libre",
+    "url": "https://pokeapi.co/api/v2/pokemon/10084/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-cosplay",
+    "url": "https://pokeapi.co/api/v2/pokemon/10085/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "hoopa-unbound",
+    "url": "https://pokeapi.co/api/v2/pokemon/10086/",
+    "korean_name": "후파"
+  },
+  {
+    "name": "camerupt-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10087/",
+    "korean_name": "폭타 (메가진화)"
+  },
+  {
+    "name": "lopunny-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10088/",
+    "korean_name": "이어롭 (메가진화)"
+  },
+  {
+    "name": "salamence-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10089/",
+    "korean_name": "보만다 (메가진화)"
+  },
+  {
+    "name": "beedrill-mega",
+    "url": "https://pokeapi.co/api/v2/pokemon/10090/",
+    "korean_name": "독침붕 (메가진화)"
+  },
+  {
+    "name": "rattata-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10091/",
+    "korean_name": "꼬렛 (알로라 리전폼)"
+  },
+  {
+    "name": "raticate-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10092/",
+    "korean_name": "레트라 (알로라 리전폼)"
+  },
+  {
+    "name": "raticate-totem-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10093/",
+    "korean_name": "레트라 (알로라 리전폼)"
+  },
+  {
+    "name": "pikachu-original-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10094/",
+    "korean_name": "피카츄 (오리진폼)"
+  },
+  {
+    "name": "pikachu-hoenn-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10095/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-sinnoh-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10096/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-unova-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10097/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-kalos-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10098/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "pikachu-alola-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10099/",
+    "korean_name": "피카츄 (알로라 리전폼)"
+  },
+  {
+    "name": "raichu-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10100/",
+    "korean_name": "라이츄 (알로라 리전폼)"
+  },
+  {
+    "name": "sandshrew-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10101/",
+    "korean_name": "모래두지 (알로라 리전폼)"
+  },
+  {
+    "name": "sandslash-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10102/",
+    "korean_name": "고지 (알로라 리전폼)"
+  },
+  {
+    "name": "vulpix-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10103/",
+    "korean_name": "식스테일 (알로라 리전폼)"
+  },
+  {
+    "name": "ninetales-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10104/",
+    "korean_name": "나인테일 (알로라 리전폼)"
+  },
+  {
+    "name": "diglett-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10105/",
+    "korean_name": "디그다 (알로라 리전폼)"
+  },
+  {
+    "name": "dugtrio-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10106/",
+    "korean_name": "닥트리오 (알로라 리전폼)"
+  },
+  {
+    "name": "meowth-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10107/",
+    "korean_name": "나옹 (알로라 리전폼)"
+  },
+  {
+    "name": "persian-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10108/",
+    "korean_name": "페르시온 (알로라 리전폼)"
+  },
+  {
+    "name": "geodude-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10109/",
+    "korean_name": "꼬마돌 (알로라 리전폼)"
+  },
+  {
+    "name": "graveler-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10110/",
+    "korean_name": "데구리 (알로라 리전폼)"
+  },
+  {
+    "name": "golem-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10111/",
+    "korean_name": "딱구리 (알로라 리전폼)"
+  },
+  {
+    "name": "grimer-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10112/",
+    "korean_name": "질퍽이 (알로라 리전폼)"
+  },
+  {
+    "name": "muk-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10113/",
+    "korean_name": "질뻐기 (알로라 리전폼)"
+  },
+  {
+    "name": "exeggutor-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10114/",
+    "korean_name": "나시 (알로라 리전폼)"
+  },
+  {
+    "name": "marowak-alola",
+    "url": "https://pokeapi.co/api/v2/pokemon/10115/",
+    "korean_name": "텅구리 (알로라 리전폼)"
+  },
+  {
+    "name": "greninja-battle-bond",
+    "url": "https://pokeapi.co/api/v2/pokemon/10116/",
+    "korean_name": "개굴닌자"
+  },
+  {
+    "name": "greninja-ash",
+    "url": "https://pokeapi.co/api/v2/pokemon/10117/",
+    "korean_name": "개굴닌자"
+  },
+  {
+    "name": "zygarde-10-power-construct",
+    "url": "https://pokeapi.co/api/v2/pokemon/10118/",
+    "korean_name": "지가르데"
+  },
+  {
+    "name": "zygarde-50-power-construct",
+    "url": "https://pokeapi.co/api/v2/pokemon/10119/",
+    "korean_name": "지가르데"
+  },
+  {
+    "name": "zygarde-complete",
+    "url": "https://pokeapi.co/api/v2/pokemon/10120/",
+    "korean_name": "지가르데"
+  },
+  {
+    "name": "gumshoos-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10121/",
+    "korean_name": "형사구스"
+  },
+  {
+    "name": "vikavolt-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10122/",
+    "korean_name": "투구뿌논"
+  },
+  {
+    "name": "oricorio-pom-pom",
+    "url": "https://pokeapi.co/api/v2/pokemon/10123/",
+    "korean_name": "춤추새"
+  },
+  {
+    "name": "oricorio-pau",
+    "url": "https://pokeapi.co/api/v2/pokemon/10124/",
+    "korean_name": "춤추새"
+  },
+  {
+    "name": "oricorio-sensu",
+    "url": "https://pokeapi.co/api/v2/pokemon/10125/",
+    "korean_name": "춤추새"
+  },
+  {
+    "name": "lycanroc-midnight",
+    "url": "https://pokeapi.co/api/v2/pokemon/10126/",
+    "korean_name": "루가루암"
+  },
+  {
+    "name": "wishiwashi-school",
+    "url": "https://pokeapi.co/api/v2/pokemon/10127/",
+    "korean_name": "약어리"
+  },
+  {
+    "name": "lurantis-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10128/",
+    "korean_name": "라란티스"
+  },
+  {
+    "name": "salazzle-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10129/",
+    "korean_name": "염뉴트"
+  },
+  {
+    "name": "minior-orange-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10130/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-yellow-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10131/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-green-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10132/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-blue-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10133/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-indigo-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10134/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-violet-meteor",
+    "url": "https://pokeapi.co/api/v2/pokemon/10135/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-red",
+    "url": "https://pokeapi.co/api/v2/pokemon/10136/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-orange",
+    "url": "https://pokeapi.co/api/v2/pokemon/10137/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-yellow",
+    "url": "https://pokeapi.co/api/v2/pokemon/10138/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-green",
+    "url": "https://pokeapi.co/api/v2/pokemon/10139/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-blue",
+    "url": "https://pokeapi.co/api/v2/pokemon/10140/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-indigo",
+    "url": "https://pokeapi.co/api/v2/pokemon/10141/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "minior-violet",
+    "url": "https://pokeapi.co/api/v2/pokemon/10142/",
+    "korean_name": "메테노"
+  },
+  {
+    "name": "mimikyu-busted",
+    "url": "https://pokeapi.co/api/v2/pokemon/10143/",
+    "korean_name": "따라큐"
+  },
+  {
+    "name": "mimikyu-totem-disguised",
+    "url": "https://pokeapi.co/api/v2/pokemon/10144/",
+    "korean_name": "따라큐"
+  },
+  {
+    "name": "mimikyu-totem-busted",
+    "url": "https://pokeapi.co/api/v2/pokemon/10145/",
+    "korean_name": "따라큐"
+  },
+  {
+    "name": "kommo-o-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10146/",
+    "korean_name": "짜랑고우거"
+  },
+  {
+    "name": "magearna-original",
+    "url": "https://pokeapi.co/api/v2/pokemon/10147/",
+    "korean_name": "마기아나 (오리진폼)"
+  },
+  {
+    "name": "pikachu-partner-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10148/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "marowak-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10149/",
+    "korean_name": "텅구리"
+  },
+  {
+    "name": "ribombee-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10150/",
+    "korean_name": "에리본"
+  },
+  {
+    "name": "rockruff-own-tempo",
+    "url": "https://pokeapi.co/api/v2/pokemon/10151/",
+    "korean_name": "암멍이"
+  },
+  {
+    "name": "lycanroc-dusk",
+    "url": "https://pokeapi.co/api/v2/pokemon/10152/",
+    "korean_name": "루가루암"
+  },
+  {
+    "name": "araquanid-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10153/",
+    "korean_name": "깨비물거미"
+  },
+  {
+    "name": "togedemaru-totem",
+    "url": "https://pokeapi.co/api/v2/pokemon/10154/",
+    "korean_name": "토게데마루"
+  },
+  {
+    "name": "necrozma-dusk",
+    "url": "https://pokeapi.co/api/v2/pokemon/10155/",
+    "korean_name": "네크로즈마"
+  },
+  {
+    "name": "necrozma-dawn",
+    "url": "https://pokeapi.co/api/v2/pokemon/10156/",
+    "korean_name": "네크로즈마"
+  },
+  {
+    "name": "necrozma-ultra",
+    "url": "https://pokeapi.co/api/v2/pokemon/10157/",
+    "korean_name": "네크로즈마"
+  },
+  {
+    "name": "pikachu-starter",
+    "url": "https://pokeapi.co/api/v2/pokemon/10158/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "eevee-starter",
+    "url": "https://pokeapi.co/api/v2/pokemon/10159/",
+    "korean_name": "이브이"
+  },
+  {
+    "name": "pikachu-world-cap",
+    "url": "https://pokeapi.co/api/v2/pokemon/10160/",
+    "korean_name": "피카츄"
+  },
+  {
+    "name": "meowth-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10161/",
+    "korean_name": "나옹 (가라르 리전폼)"
+  },
+  {
+    "name": "ponyta-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10162/",
+    "korean_name": "포니타 (가라르 리전폼)"
+  },
+  {
+    "name": "rapidash-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10163/",
+    "korean_name": "날쌩마 (가라르 리전폼)"
+  },
+  {
+    "name": "slowpoke-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10164/",
+    "korean_name": "야돈 (가라르 리전폼)"
+  },
+  {
+    "name": "slowbro-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10165/",
+    "korean_name": "야도란 (가라르 리전폼)"
+  },
+  {
+    "name": "farfetchd-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10166/",
+    "korean_name": "파오리 (가라르 리전폼)"
+  },
+  {
+    "name": "weezing-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10167/",
+    "korean_name": "또도가스 (가라르 리전폼)"
+  },
+  {
+    "name": "mr-mime-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10168/",
+    "korean_name": "마임맨 (가라르 리전폼)"
+  },
+  {
+    "name": "articuno-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10169/",
+    "korean_name": "프리져 (가라르 리전폼)"
+  },
+  {
+    "name": "zapdos-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10170/",
+    "korean_name": "썬더 (가라르 리전폼)"
+  },
+  {
+    "name": "moltres-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10171/",
+    "korean_name": "파이어 (가라르 리전폼)"
+  },
+  {
+    "name": "slowking-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10172/",
+    "korean_name": "야도킹 (가라르 리전폼)"
+  },
+  {
+    "name": "corsola-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10173/",
+    "korean_name": "코산호 (가라르 리전폼)"
+  },
+  {
+    "name": "zigzagoon-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10174/",
+    "korean_name": "지그제구리 (가라르 리전폼)"
+  },
+  {
+    "name": "linoone-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10175/",
+    "korean_name": "직구리 (가라르 리전폼)"
+  },
+  {
+    "name": "darumaka-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10176/",
+    "korean_name": "달막화 (가라르 리전폼)"
+  },
+  {
+    "name": "darmanitan-galar-standard",
+    "url": "https://pokeapi.co/api/v2/pokemon/10177/",
+    "korean_name": "불비달마 (가라르 리전폼)"
+  },
+  {
+    "name": "darmanitan-galar-zen",
+    "url": "https://pokeapi.co/api/v2/pokemon/10178/",
+    "korean_name": "불비달마 (가라르 리전폼)"
+  },
+  {
+    "name": "yamask-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10179/",
+    "korean_name": "데스마스 (가라르 리전폼)"
+  },
+  {
+    "name": "stunfisk-galar",
+    "url": "https://pokeapi.co/api/v2/pokemon/10180/",
+    "korean_name": "메더 (가라르 리전폼)"
+  },
+  {
+    "name": "zygarde-10",
+    "url": "https://pokeapi.co/api/v2/pokemon/10181/",
+    "korean_name": "지가르데"
+  },
+  {
+    "name": "cramorant-gulping",
+    "url": "https://pokeapi.co/api/v2/pokemon/10182/",
+    "korean_name": "윽우지"
+  },
+  {
+    "name": "cramorant-gorging",
+    "url": "https://pokeapi.co/api/v2/pokemon/10183/",
+    "korean_name": "윽우지"
+  },
+  {
+    "name": "toxtricity-low-key",
+    "url": "https://pokeapi.co/api/v2/pokemon/10184/",
+    "korean_name": "스트린더"
+  },
+  {
+    "name": "eiscue-noice",
+    "url": "https://pokeapi.co/api/v2/pokemon/10185/",
+    "korean_name": "빙큐보"
+  },
+  {
+    "name": "indeedee-female",
+    "url": "https://pokeapi.co/api/v2/pokemon/10186/",
+    "korean_name": "에써르"
+  },
+  {
+    "name": "morpeko-hangry",
+    "url": "https://pokeapi.co/api/v2/pokemon/10187/",
+    "korean_name": "모르페코"
+  },
+  {
+    "name": "zacian-crowned",
+    "url": "https://pokeapi.co/api/v2/pokemon/10188/",
+    "korean_name": "자시안"
+  },
+  {
+    "name": "zamazenta-crowned",
+    "url": "https://pokeapi.co/api/v2/pokemon/10189/",
+    "korean_name": "자마젠타"
+  },
+  {
+    "name": "eternatus-eternamax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10190/",
+    "korean_name": "무한다이노"
+  },
+  {
+    "name": "urshifu-rapid-strike",
+    "url": "https://pokeapi.co/api/v2/pokemon/10191/",
+    "korean_name": "우라오스"
+  },
+  {
+    "name": "zarude-dada",
+    "url": "https://pokeapi.co/api/v2/pokemon/10192/",
+    "korean_name": "자루도"
+  },
+  {
+    "name": "calyrex-ice",
+    "url": "https://pokeapi.co/api/v2/pokemon/10193/",
+    "korean_name": "버드렉스"
+  },
+  {
+    "name": "calyrex-shadow",
+    "url": "https://pokeapi.co/api/v2/pokemon/10194/",
+    "korean_name": "버드렉스"
+  },
+  {
+    "name": "venusaur-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10195/",
+    "korean_name": "이상해꽃 (거다이맥스)"
+  },
+  {
+    "name": "charizard-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10196/",
+    "korean_name": "리자몽 (거다이맥스)"
+  },
+  {
+    "name": "blastoise-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10197/",
+    "korean_name": "거북왕 (거다이맥스)"
+  },
+  {
+    "name": "butterfree-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10198/",
+    "korean_name": "버터플 (거다이맥스)"
+  },
+  {
+    "name": "pikachu-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10199/",
+    "korean_name": "피카츄 (거다이맥스)"
+  },
+  {
+    "name": "meowth-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10200/",
+    "korean_name": "나옹 (거다이맥스)"
+  },
+  {
+    "name": "machamp-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10201/",
+    "korean_name": "괴력몬 (거다이맥스)"
+  },
+  {
+    "name": "gengar-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10202/",
+    "korean_name": "팬텀 (거다이맥스)"
+  },
+  {
+    "name": "kingler-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10203/",
+    "korean_name": "킹크랩 (거다이맥스)"
+  },
+  {
+    "name": "lapras-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10204/",
+    "korean_name": "라프라스 (거다이맥스)"
+  },
+  {
+    "name": "eevee-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10205/",
+    "korean_name": "이브이 (거다이맥스)"
+  },
+  {
+    "name": "snorlax-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10206/",
+    "korean_name": "잠만보 (거다이맥스)"
+  },
+  {
+    "name": "garbodor-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10207/",
+    "korean_name": "더스트나 (거다이맥스)"
+  },
+  {
+    "name": "melmetal-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10208/",
+    "korean_name": "멜메탈 (거다이맥스)"
+  },
+  {
+    "name": "rillaboom-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10209/",
+    "korean_name": "고릴타 (거다이맥스)"
+  },
+  {
+    "name": "cinderace-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10210/",
+    "korean_name": "에이스번 (거다이맥스)"
+  },
+  {
+    "name": "inteleon-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10211/",
+    "korean_name": "인텔리레온 (거다이맥스)"
+  },
+  {
+    "name": "corviknight-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10212/",
+    "korean_name": "아머까오 (거다이맥스)"
+  },
+  {
+    "name": "orbeetle-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10213/",
+    "korean_name": "이올브 (거다이맥스)"
+  },
+  {
+    "name": "drednaw-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10214/",
+    "korean_name": "갈가부기 (거다이맥스)"
+  },
+  {
+    "name": "coalossal-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10215/",
+    "korean_name": "석탄산 (거다이맥스)"
+  },
+  {
+    "name": "flapple-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10216/",
+    "korean_name": "애프룡 (거다이맥스)"
+  },
+  {
+    "name": "appletun-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10217/",
+    "korean_name": "단지래플 (거다이맥스)"
+  },
+  {
+    "name": "sandaconda-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10218/",
+    "korean_name": "사다이사 (거다이맥스)"
+  },
+  {
+    "name": "toxtricity-amped-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10219/",
+    "korean_name": "스트린더 (거다이맥스)"
+  },
+  {
+    "name": "centiskorch-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10220/",
+    "korean_name": "다태우지네 (거다이맥스)"
+  },
+  {
+    "name": "hatterene-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10221/",
+    "korean_name": "브리무음 (거다이맥스)"
+  },
+  {
+    "name": "grimmsnarl-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10222/",
+    "korean_name": "오롱털 (거다이맥스)"
+  },
+  {
+    "name": "alcremie-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10223/",
+    "korean_name": "마휘핑 (거다이맥스)"
+  },
+  {
+    "name": "copperajah-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10224/",
+    "korean_name": "대왕끼리동 (거다이맥스)"
+  },
+  {
+    "name": "duraludon-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10225/",
+    "korean_name": "두랄루돈 (거다이맥스)"
+  },
+  {
+    "name": "urshifu-single-strike-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10226/",
+    "korean_name": "우라오스 (거다이맥스)"
+  },
+  {
+    "name": "urshifu-rapid-strike-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10227/",
+    "korean_name": "우라오스 (거다이맥스)"
+  },
+  {
+    "name": "toxtricity-low-key-gmax",
+    "url": "https://pokeapi.co/api/v2/pokemon/10228/",
+    "korean_name": "스트린더 (거다이맥스)"
+  },
+  {
+    "name": "growlithe-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10229/",
+    "korean_name": "가디 (히스이 리전폼)"
+  },
+  {
+    "name": "arcanine-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10230/",
+    "korean_name": "윈디 (히스이 리전폼)"
+  },
+  {
+    "name": "voltorb-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10231/",
+    "korean_name": "찌리리공 (히스이 리전폼)"
+  },
+  {
+    "name": "electrode-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10232/",
+    "korean_name": "붐볼 (히스이 리전폼)"
+  },
+  {
+    "name": "typhlosion-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10233/",
+    "korean_name": "블레이범 (히스이 리전폼)"
+  },
+  {
+    "name": "qwilfish-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10234/",
+    "korean_name": "침바루 (히스이 리전폼)"
+  },
+  {
+    "name": "sneasel-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10235/",
+    "korean_name": "포푸니 (히스이 리전폼)"
+  },
+  {
+    "name": "samurott-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10236/",
+    "korean_name": "대검귀 (히스이 리전폼)"
+  },
+  {
+    "name": "lilligant-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10237/",
+    "korean_name": "드레디어 (히스이 리전폼)"
+  },
+  {
+    "name": "zorua-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10238/",
+    "korean_name": "조로아 (히스이 리전폼)"
+  },
+  {
+    "name": "zoroark-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10239/",
+    "korean_name": "조로아크 (히스이 리전폼)"
+  },
+  {
+    "name": "braviary-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10240/",
+    "korean_name": "워글 (히스이 리전폼)"
+  },
+  {
+    "name": "sliggoo-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10241/",
+    "korean_name": "미끄네일 (히스이 리전폼)"
+  },
+  {
+    "name": "goodra-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10242/",
+    "korean_name": "미끄래곤 (히스이 리전폼)"
+  },
+  {
+    "name": "avalugg-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10243/",
+    "korean_name": "크레베이스 (히스이 리전폼)"
+  },
+  {
+    "name": "decidueye-hisui",
+    "url": "https://pokeapi.co/api/v2/pokemon/10244/",
+    "korean_name": "모크나이퍼 (히스이 리전폼)"
+  },
+  {
+    "name": "dialga-origin",
+    "url": "https://pokeapi.co/api/v2/pokemon/10245/",
+    "korean_name": "디아루가 (오리진폼)"
+  },
+  {
+    "name": "palkia-origin",
+    "url": "https://pokeapi.co/api/v2/pokemon/10246/",
+    "korean_name": "펄기아 (오리진폼)"
+  },
+  {
+    "name": "basculin-white-striped",
+    "url": "https://pokeapi.co/api/v2/pokemon/10247/",
+    "korean_name": "배쓰나이"
+  },
+  {
+    "name": "basculegion-female",
+    "url": "https://pokeapi.co/api/v2/pokemon/10248/",
+    "korean_name": "대쓰여너"
+  },
+  {
+    "name": "enamorus-therian",
+    "url": "https://pokeapi.co/api/v2/pokemon/10249/",
+    "korean_name": "러브로스 (영물폼)"
+  },
+  {
+    "name": "tauros-paldea-combat-breed",
+    "url": "https://pokeapi.co/api/v2/pokemon/10250/",
+    "korean_name": "켄타로스 (팔데아 리전폼)"
+  },
+  {
+    "name": "tauros-paldea-blaze-breed",
+    "url": "https://pokeapi.co/api/v2/pokemon/10251/",
+    "korean_name": "켄타로스 (팔데아 리전폼)"
+  },
+  {
+    "name": "tauros-paldea-aqua-breed",
+    "url": "https://pokeapi.co/api/v2/pokemon/10252/",
+    "korean_name": "켄타로스 (팔데아 리전폼)"
+  },
+  {
+    "name": "wooper-paldea",
+    "url": "https://pokeapi.co/api/v2/pokemon/10253/",
+    "korean_name": "우파 (팔데아 리전폼)"
+  },
+  {
+    "name": "oinkologne-female",
+    "url": "https://pokeapi.co/api/v2/pokemon/10254/",
+    "korean_name": "퍼퓨돈"
+  },
+  {
+    "name": "dudunsparce-three-segment",
+    "url": "https://pokeapi.co/api/v2/pokemon/10255/",
+    "korean_name": "노고고치"
+  },
+  {
+    "name": "palafin-hero",
+    "url": "https://pokeapi.co/api/v2/pokemon/10256/",
+    "korean_name": "돌핀맨"
+  },
+  {
+    "name": "maushold-family-of-three",
+    "url": "https://pokeapi.co/api/v2/pokemon/10257/",
+    "korean_name": "파밀리쥐"
+  },
+  {
+    "name": "tatsugiri-droopy",
+    "url": "https://pokeapi.co/api/v2/pokemon/10258/",
+    "korean_name": "싸리용"
+  },
+  {
+    "name": "tatsugiri-stretchy",
+    "url": "https://pokeapi.co/api/v2/pokemon/10259/",
+    "korean_name": "싸리용"
+  },
+  {
+    "name": "squawkabilly-blue-plumage",
+    "url": "https://pokeapi.co/api/v2/pokemon/10260/",
+    "korean_name": "시비꼬"
+  },
+  {
+    "name": "squawkabilly-yellow-plumage",
+    "url": "https://pokeapi.co/api/v2/pokemon/10261/",
+    "korean_name": "시비꼬"
+  },
+  {
+    "name": "squawkabilly-white-plumage",
+    "url": "https://pokeapi.co/api/v2/pokemon/10262/",
+    "korean_name": "시비꼬"
+  },
+  {
+    "name": "gimmighoul-roaming",
+    "url": "https://pokeapi.co/api/v2/pokemon/10263/",
+    "korean_name": "모으령"
+  },
+  {
+    "name": "koraidon-limited-build",
+    "url": "https://pokeapi.co/api/v2/pokemon/10264/",
+    "korean_name": "코라이돈"
+  },
+  {
+    "name": "koraidon-sprinting-build",
+    "url": "https://pokeapi.co/api/v2/pokemon/10265/",
+    "korean_name": "코라이돈"
+  },
+  {
+    "name": "koraidon-swimming-build",
+    "url": "https://pokeapi.co/api/v2/pokemon/10266/",
+    "korean_name": "코라이돈"
+  },
+  {
+    "name": "koraidon-gliding-build",
+    "url": "https://pokeapi.co/api/v2/pokemon/10267/",
+    "korean_name": "코라이돈"
+  },
+  {
+    "name": "miraidon-low-power-mode",
+    "url": "https://pokeapi.co/api/v2/pokemon/10268/",
+    "korean_name": "미라이돈"
+  },
+  {
+    "name": "miraidon-drive-mode",
+    "url": "https://pokeapi.co/api/v2/pokemon/10269/",
+    "korean_name": "미라이돈"
+  },
+  {
+    "name": "miraidon-aquatic-mode",
+    "url": "https://pokeapi.co/api/v2/pokemon/10270/",
+    "korean_name": "미라이돈"
+  },
+  {
+    "name": "miraidon-glide-mode",
+    "url": "https://pokeapi.co/api/v2/pokemon/10271/",
+    "korean_name": "미라이돈"
+  }
+]

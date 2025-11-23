@@ -83,7 +83,7 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
             <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
           ) : (
             <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full mb-1">
-              Special Form
+              Special
             </div>
           )}
           {/* 포켓몬 이름 */}

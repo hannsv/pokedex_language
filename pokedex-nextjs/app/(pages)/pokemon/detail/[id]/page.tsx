@@ -119,7 +119,7 @@ export default function PokemonDetailPage({
               </span>
             ) : (
               <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
-                Special Form
+                Special
               </span>
             )}
           </div>
