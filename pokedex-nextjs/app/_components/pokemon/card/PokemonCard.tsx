@@ -19,10 +19,14 @@ import { PokemonData } from "@/app/lib/types/types";
 
 interface PokemonCardProps {
   indexId: number;
+  viewMode?: "grid" | "list";
 }
 
 //pokeapi.co/api/v2/pokemon/1/
-export default function PokemonCard({ indexId }: PokemonCardProps) {
+export default function PokemonCard({
+  indexId,
+  viewMode = "grid",
+}: PokemonCardProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   const [pokemonName, setPokemonName] = useState<string>("");
@@ -67,9 +71,15 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
   }, [indexId]);
 
   return (
-    <div className="border border-gray-300 p-2 rounded-lg shadow-lg h-80px flex flex-col items-center justify-center bg-white m-2">
+    <div
+      className={`border border-gray-300 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl ${
+        viewMode === "grid"
+          ? "flex flex-col items-center justify-center p-4 h-full"
+          : "flex flex-row items-center justify-between p-4 w-full h-auto"
+      }`}
+    >
       {isLoading ? (
-        <div className="h-[180px] w-[100px] animate-pulse rounded-md flex items-center justify-center">
+        <div className="h-[180px] w-full animate-pulse rounded-md flex items-center justify-center">
           <img
             src="skeleton-monsterball.png"
             alt="loading"
@@ -78,29 +88,61 @@ export default function PokemonCard({ indexId }: PokemonCardProps) {
         </div>
       ) : (
         <>
-          {/* 도감번호 */}
-          {pokemonNumber <= 10000 ? (
-            <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+          {viewMode === "grid" ? (
+            // Grid View Layout
+            <>
+              {pokemonNumber <= 10000 ? (
+                <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
+              ) : (
+                <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full mb-1">
+                  Special
+                </div>
+              )}
+              <div className="font-bold mb-2 text-center break-keep text-lg">
+                {pokemonName}
+              </div>
+              <Link href={`/pokemon/detail/${indexId}`}>
+                <PokemonImgCard indexId={indexId} />
+              </Link>
+              <div className="text-gray-600 text-sm flex flex-wrap justify-center gap-1 mt-2">
+                {pokemonTypes.map((pokemonType, index) => (
+                  <TypeCard key={index} typeNames={pokemonType} />
+                ))}
+              </div>
+            </>
           ) : (
-            <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full mb-1">
-              Special
-            </div>
+            // List View Layout
+            <>
+              <div className="flex items-center gap-4 flex-1">
+                <Link href={`/pokemon/detail/${indexId}`} className="shrink-0">
+                  <div className="w-16 h-16 relative">
+                    <img
+                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`}
+                      alt={pokemonName}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </Link>
+                <div className="flex flex-col items-start">
+                  {pokemonNumber <= 10000 ? (
+                    <div className="text-xs text-gray-500">
+                      No.{pokemonNumber}
+                    </div>
+                  ) : (
+                    <div className="text-[10px] font-bold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded-full mb-0.5 w-fit">
+                      Special
+                    </div>
+                  )}
+                  <div className="font-bold text-lg">{pokemonName}</div>
+                </div>
+              </div>
+              <div className="flex gap-1">
+                {pokemonTypes.map((pokemonType, index) => (
+                  <TypeCard key={index} typeNames={pokemonType} />
+                ))}
+              </div>
+            </>
           )}
-          {/* 포켓몬 이름 */}
-          <div className=" font-bold mb-2 text-center break-keep">
-            {pokemonName}
-          </div>
-          {/* 포켓몬 이미지 */}
-          <Link href={`/pokemon/detail/${indexId}`}>
-            <PokemonImgCard indexId={indexId} />
-          </Link>
-
-          {/* 포켓몬 타입 */}
-          <div className="text-gray-600 text-sm flex flex-row justify-center">
-            {pokemonTypes.map((pokemonType, index) => (
-              <TypeCard key={index} typeNames={pokemonType} />
-            ))}
-          </div>
         </>
       )}
     </div>

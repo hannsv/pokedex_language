@@ -18,6 +18,7 @@ const pokemonData = pokemonDataRaw as Pokemon[];
 export default function PokemonListPage() {
   const [selectedType, setSelectedType] = useState("all");
   const [itemsPerRow, setItemsPerRow] = useState(3);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [displayedCount, setDisplayedCount] = useState(20);
   const loaderRef = useRef<HTMLDivElement>(null);
 
@@ -68,12 +69,14 @@ export default function PokemonListPage() {
   };
 
   const gridColsClass =
-    {
-      3: "grid-cols-3",
-      4: "grid-cols-4",
-      5: "grid-cols-5",
-      6: "grid-cols-6",
-    }[itemsPerRow] || "grid-cols-3";
+    viewMode === "list"
+      ? "grid-cols-1"
+      : {
+          3: "grid-cols-3",
+          4: "grid-cols-4",
+          5: "grid-cols-5",
+          6: "grid-cols-6",
+        }[itemsPerRow] || "grid-cols-3";
 
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-4">
@@ -83,24 +86,51 @@ export default function PokemonListPage() {
         onSelectType={setSelectedType}
       />
 
-      {/* 보기 설정 (행당 개수) */}
-      <div className="w-full flex justify-end mb-4 gap-2">
-        <span className="text-sm text-gray-600 flex items-center mr-2">
-          행당 개수:
-        </span>
-        {[3, 4, 5, 6].map((num) => (
+      {/* 보기 설정 (행당 개수 및 뷰 모드) */}
+      <div className="w-full flex justify-between items-center mb-4">
+        {/* 뷰 모드 토글 */}
+        <div className="flex gap-2">
           <button
-            key={num}
-            onClick={() => setItemsPerRow(num)}
+            onClick={() => setViewMode("grid")}
             className={`px-3 py-1 text-xs rounded border ${
-              itemsPerRow === num
+              viewMode === "grid"
                 ? "bg-blue-500 text-white border-blue-500"
                 : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
             }`}
           >
-            {num}개
+            카드형
           </button>
-        ))}
+          <button
+            onClick={() => setViewMode("list")}
+            className={`px-3 py-1 text-xs rounded border ${
+              viewMode === "list"
+                ? "bg-blue-500 text-white border-blue-500"
+                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+            }`}
+          >
+            리스트형
+          </button>
+        </div>
+
+        {/* 행당 개수 (그리드 뷰일 때만 표시) */}
+        {viewMode === "grid" && (
+          <div className="flex gap-2 items-center">
+            <span className="text-sm text-gray-600 mr-1">행당 개수:</span>
+            {[3, 4, 5, 6].map((num) => (
+              <button
+                key={num}
+                onClick={() => setItemsPerRow(num)}
+                className={`px-3 py-1 text-xs rounded border ${
+                  itemsPerRow === num
+                    ? "bg-blue-500 text-white border-blue-500"
+                    : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                }`}
+              >
+                {num}개
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 포켓몬 리스트 */}
@@ -109,7 +139,7 @@ export default function PokemonListPage() {
       >
         {displayedPokemon.map((pokemon) => {
           const id = getPokemonId(pokemon.url);
-          return <PokemonCard key={id} indexId={id} />;
+          return <PokemonCard key={id} indexId={id} viewMode={viewMode} />;
         })}
       </div>
 
