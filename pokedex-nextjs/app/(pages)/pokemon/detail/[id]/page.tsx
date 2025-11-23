@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import TypeCard from "@/app/_components/pokemon/type/TypeCard";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
 import React, { useEffect, useState } from "react";

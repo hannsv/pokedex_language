@@ -7,7 +7,7 @@ interface TypeCardProps {
   secondType: string | undefined;
 
   typeNames: string;
-  typeNameKorean: string;
+  typeNameKorean: string | null;
 }
 
 // const typeFilter = (num: number) => {
