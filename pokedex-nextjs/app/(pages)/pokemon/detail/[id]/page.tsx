@@ -2,7 +2,10 @@
 "use client";
 
 import TypeCard from "@/app/_components/pokemon/type/TypeCard";
+import PokemonEvolutionChain from "@/app/_components/pokemon/detail/PokemonEvolutionChain";
+import PokemonMoves from "@/app/_components/pokemon/detail/PokemonMoves";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
+import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
 
 // params 타입을 올바르게 정의
@@ -10,29 +13,6 @@ interface PokeDetailProps {
   params: {
     id: string; // 디렉토리 이름과 일치시키기
   };
-}
-
-interface PokemonData {
-  id: number;
-  name: string;
-  types: Array<{
-    type: {
-      name: string;
-    };
-  }>;
-  height: number;
-  weight: number;
-  abilities: Array<{
-    ability: {
-      name: string;
-    };
-  }>;
-  stats: Array<{
-    base_stat: number;
-    stat: {
-      name: string;
-    };
-  }>;
 }
 
 // 포켓몬 상세페이지 컴포넌트
@@ -190,7 +170,7 @@ export default function PokemonDetailPage({
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full mb-6">
             <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
               특성
             </h2>
@@ -205,6 +185,12 @@ export default function PokemonDetailPage({
               ))}
             </div>
           </div>
+
+          {/* 진화 정보 */}
+          <PokemonEvolutionChain pokemonId={pokemonData.id} />
+
+          {/* 기술 정보 */}
+          <PokemonMoves moves={pokemonData.moves} />
         </div>
       ) : (
         <div className="text-center text-gray-500 py-10">
