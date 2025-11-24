@@ -118,7 +118,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
 
   return (
     <div className="w-full mb-6 bg-gray-50 rounded-lg p-6">
-      <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+      <h2 className="text-xl font-bold mb-3 text-gray-700 border-b border-gray-100 pb-2">
         타입 상성
       </h2>
 
@@ -128,7 +128,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
           <span className="w-1 h-4 bg-blue-500 mr-2 rounded-full"></span>
           방어 상성 (받는 피해)
         </h3>
-        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+        <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
           {sortedMultipliers.length === 0 ? (
             <p className="text-gray-500 text-sm">
               특이 사항 없음 (모든 타입 1배)
@@ -165,9 +165,9 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
           {attackEffectiveness.map((typeData) => (
             <div
               key={typeData.name}
-              className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm"
+              className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm"
             >
-              <div className="mb-3 flex items-center gap-2 border-b pb-2">
+              <div className="mb-3 flex items-center gap-2 border-b border-gray-100 pb-2">
                 <TypeCard typeNames={typeData.name} size="small" />
                 <span className="text-sm font-medium text-gray-600">
                   타입 공격 시
