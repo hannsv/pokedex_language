@@ -48,13 +48,6 @@ export default function PokemonListPage() {
     }
   }, []);
 
-  // Save scroll position on unmount
-  useEffect(() => {
-    return () => {
-      sessionStorage.setItem("pokemon_scroll_pos", window.scrollY.toString());
-    };
-  }, []);
-
   // Save displayed count and filters to session storage
   useEffect(() => {
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());

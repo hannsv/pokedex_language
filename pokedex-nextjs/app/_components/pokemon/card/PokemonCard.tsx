@@ -70,6 +70,11 @@ export default function PokemonCard({
     fetchPokemonData();
   }, [indexId]);
 
+  const handleCardClick = () => {
+    // Save scroll position before navigation
+    sessionStorage.setItem("pokemon_scroll_pos", window.scrollY.toString());
+  };
+
   return (
     <div
       className={`border border-gray-300 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl ${
@@ -106,6 +111,7 @@ export default function PokemonCard({
               <Link
                 href={`/pokemon/detail/${indexId}`}
                 className="w-full flex justify-center"
+                onClick={handleCardClick}
               >
                 <PokemonImgCard indexId={indexId} />
               </Link>
@@ -119,7 +125,11 @@ export default function PokemonCard({
             // List View Layout
             <>
               <div className="flex items-center gap-4 flex-1">
-                <Link href={`/pokemon/detail/${indexId}`} className="shrink-0">
+                <Link
+                  href={`/pokemon/detail/${indexId}`}
+                  className="shrink-0"
+                  onClick={handleCardClick}
+                >
                   <div className="w-16 h-16 relative">
                     <img
                       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`}

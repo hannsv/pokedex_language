@@ -55,6 +55,8 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
   };
 
   useEffect(() => {
+    let isMounted = true;
+
     // 초기화 및 레벨업 기술 필터링
     const levelUpMoves: ProcessedMove[] = moves
       .filter((m) =>
@@ -63,6 +65,9 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
         )
       )
       .map((m) => {
+        // 가장 최신 버전(또는 특정 버전)의 데이터를 가져오는 것이 좋지만,
+        // 여기서는 단순히 첫 번째 level-up 데이터를 가져옵니다.
+        // 실제로는 version_group_details를 순회하며 원하는 버전 그룹을 찾아야 할 수도 있습니다.
         const detail = m.version_group_details.find(
           (d) => d.move_learn_method.name === "level-up"
         );
@@ -75,9 +80,39 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
 
     setAllLevelUpMoves(levelUpMoves);
     setPage(1);
-    setDisplayedMoves([]); // 리셋
-    fetchMoveDetails(levelUpMoves.slice(0, ITEMS_PER_PAGE));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // 초기 데이터 로드
+    const loadInitialMoves = async () => {
+      const initialBatch = levelUpMoves.slice(0, ITEMS_PER_PAGE);
+      const movePromises = initialBatch.map(async (m) => {
+        const res = await fetch(m.move.url);
+        const moveData = await res.json();
+        const koreanName =
+          moveData.names.find(
+            (n: { language: { name: string }; name: string }) =>
+              n.language.name === "ko"
+          )?.name || moveData.name;
+        return {
+          name: koreanName,
+          type: moveData.type.name,
+          power: moveData.power,
+          accuracy: moveData.accuracy,
+          pp: moveData.pp,
+          level: m.level_learned_at,
+        };
+      });
+
+      const newMoves = await Promise.all(movePromises);
+      if (isMounted) {
+        setDisplayedMoves(newMoves);
+      }
+    };
+
+    loadInitialMoves();
+
+    return () => {
+      isMounted = false;
+    };
   }, [moves]);
 
   const handleLoadMore = () => {
@@ -151,7 +186,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
         <div className="flex justify-center">
           <button
             onClick={handleLoadMore}
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors cursor-pointer"
           >
             더보기
           </button>
