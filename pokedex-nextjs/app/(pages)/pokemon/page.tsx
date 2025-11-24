@@ -22,40 +22,45 @@ export default function PokemonListPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [displayedCount, setDisplayedCount] = useState(20);
   const loaderRef = useRef<HTMLDivElement>(null);
+  const [scrollTarget, setScrollTarget] = useState<number | null>(null);
 
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Restore scroll position and displayed count from session storage
   useEffect(() => {
     const savedCount = sessionStorage.getItem("pokemon_list_count");
+    const savedType = sessionStorage.getItem("pokemon_list_type");
+    const savedForm = sessionStorage.getItem("pokemon_list_form");
+    const savedScroll = sessionStorage.getItem("pokemon_scroll_pos");
+
     if (savedCount) {
       setDisplayedCount(parseInt(savedCount, 10));
     }
+    if (savedType) {
+      setSelectedType(savedType);
+    }
+    if (savedForm) {
+      setSelectedForm(savedForm);
+    }
+
+    if (savedScroll) {
+      setScrollTarget(parseInt(savedScroll, 10));
+    }
   }, []);
 
-  // Save displayed count to session storage
+  // Save scroll position on unmount
+  useEffect(() => {
+    return () => {
+      sessionStorage.setItem("pokemon_scroll_pos", window.scrollY.toString());
+    };
+  }, []);
+
+  // Save displayed count and filters to session storage
   useEffect(() => {
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
-  }, [displayedCount]);
-
-  // Scroll to top handler
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Scroll event listener
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    sessionStorage.setItem("pokemon_list_type", selectedType);
+    sessionStorage.setItem("pokemon_list_form", selectedForm);
+  }, [displayedCount, selectedType, selectedForm]);
 
   // Filter pokemon based on selected type and form
   const filteredPokemon = useMemo(() => {
@@ -84,6 +89,38 @@ export default function PokemonListPage() {
 
   // Get the subset of pokemon to display
   const displayedPokemon = filteredPokemon.slice(0, displayedCount);
+
+  // Restore scroll position when data is ready
+  useEffect(() => {
+    if (scrollTarget !== null && displayedPokemon.length > 0) {
+      // Give a small delay for DOM paint
+      const timer = setTimeout(() => {
+        window.scrollTo({
+          top: scrollTarget,
+          behavior: "instant" as ScrollBehavior,
+        });
+        setScrollTarget(null); // Clear target
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [scrollTarget, displayedPokemon.length]);
+
+  // Scroll to top handler
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Infinite scroll observer
   useEffect(() => {
@@ -214,7 +251,7 @@ export default function PokemonListPage() {
 
         {/* 행당 개수 (그리드 뷰일 때만 표시) */}
         {viewMode === "grid" && (
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <span className="text-xs font-medium text-gray-500"></span>
             <div className="flex bg-gray-100 p-1 rounded-lg">
               {[3, 4, 5, 6].map((num) => (
