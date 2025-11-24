@@ -8,14 +8,17 @@ import { getPokemonByNumber } from "@/app/lib/api/pokemon";
 import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
 import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function PokemonDetailClient({ id }: { id: string }) {
+  const router = useRouter();
   const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
   const [pokemonDescription, setPokemonDescription] = useState<string>("");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
   const [pokemonAbilities, setPokemonAbilities] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isShiny, setIsShiny] = useState(false);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -93,26 +96,77 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           />
         </div>
       ) : pokemonData ? (
-        <div className="flex flex-col items-center">
-          <div className="w-full flex justify-between items-center px-4 mb-4">
+        <div className="flex flex-col items-center relative">
+          {/* Back Button */}
+          <button
+            onClick={() => router.back()}
+            className="absolute left-0 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors"
+            aria-label="뒤로 가기"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div className="w-full flex justify-center items-center px-4 mb-4 mt-8 relative">
             <h1 className="text-3xl font-bold text-gray-800">{pokemonName}</h1>
-            {pokemonData.id <= 10000 ? (
-              <span className="text-xl text-gray-500 font-mono">
-                No.{String(pokemonData.id).padStart(4, "0")}
-              </span>
-            ) : (
-              <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
-                Special
-              </span>
-            )}
+            <div className="absolute right-4 flex flex-col items-end gap-1">
+              {pokemonData.id <= 10000 ? (
+                <span className="text-xl text-gray-500 font-mono">
+                  No.{String(pokemonData.id).padStart(4, "0")}
+                </span>
+              ) : (
+                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
+                  Special
+                </span>
+              )}
+            </div>
           </div>
 
-          <div className="relative w-64 h-64 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
+          <div className="relative w-64 h-64 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-inner group">
             <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
+              src={
+                isShiny
+                  ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokemonData.id}.png`
+                  : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`
+              }
               alt={pokemonData.name}
               className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
             />
+            {/* Shiny Toggle Button */}
+            <button
+              onClick={() => setIsShiny(!isShiny)}
+              className={`absolute bottom-2 right-2 p-2 rounded-full shadow-md transition-all ${
+                isShiny
+                  ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
+                  : "bg-white text-gray-400 hover:text-yellow-500"
+              }`}
+              title={isShiny ? "기본 모습 보기" : "이로치(색이 다른) 모습 보기"}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill={isShiny ? "currentColor" : "none"}
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </button>
           </div>
 
           <div className="flex gap-2 mb-6">

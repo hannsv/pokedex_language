@@ -25,6 +25,19 @@ export default function PokemonListPage() {
 
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Restore scroll position and displayed count from session storage
+  useEffect(() => {
+    const savedCount = sessionStorage.getItem("pokemon_list_count");
+    if (savedCount) {
+      setDisplayedCount(parseInt(savedCount, 10));
+    }
+  }, []);
+
+  // Save displayed count to session storage
+  useEffect(() => {
+    sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
+  }, [displayedCount]);
+
   // Scroll to top handler
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
