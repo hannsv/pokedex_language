@@ -3,6 +3,7 @@
 
 import TypeCard from "@/app/_components/pokemon/type/TypeCard";
 import PokemonEvolutionChain from "@/app/_components/pokemon/detail/PokemonEvolutionChain";
+import TypeMatchup from "@/app/_components/pokemon/detail/TypeMatchup";
 import PokemonMoves from "@/app/_components/pokemon/detail/PokemonMoves";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
 import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
@@ -241,6 +242,9 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
           {/* 진화 정보 */}
           <PokemonEvolutionChain speciesUrl={pokemonData.species.url} />
+
+          {/* 방어 상성 */}
+          <TypeMatchup types={pokemonTypes} />
 
           {/* 기술 정보 */}
           <PokemonMoves moves={pokemonData.moves} />
