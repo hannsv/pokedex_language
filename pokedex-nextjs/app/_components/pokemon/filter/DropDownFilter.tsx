@@ -134,7 +134,7 @@ export default function DropDownFilter({
               <h3 className="font-bold text-lg text-gray-800">
                 {activeModal === "type" ? "타입 선택" : "폼 선택"}
               </h3>
-              <button
+              <a
                 onClick={() => setActiveModal("none")}
                 className="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-200 transition-colors"
               >
@@ -151,7 +151,7 @@ export default function DropDownFilter({
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* Modal Content */}
