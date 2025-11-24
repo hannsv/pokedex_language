@@ -56,9 +56,9 @@ export default function RandomPokemonCard() {
   return (
     <div className="flex items-center justify-center">
       <CardSelectButton string="◀" onClick={handlePrevious} />
-      <div className="border border-gray-300 p-4 rounded-lg shadow-lg h-80px max-w-5/12 flex flex-col items-center justify-center bg-white m-2">
+      <div className="border border-gray-300 p-4 rounded-lg shadow-lg w-[200px] h-[320px] flex flex-col items-center justify-center bg-white m-2">
         {isLoading ? (
-          <div className="w-[150px] h-[240px] animate-pulse rounded-md flex items-center justify-center">
+          <div className="w-full h-full animate-pulse rounded-md flex items-center justify-center">
             <img
               src="skeleton-monsterball.png"
               alt="loading"
@@ -67,16 +67,21 @@ export default function RandomPokemonCard() {
           </div>
         ) : (
           <>
-            <Link href={`/pokemon/detail/${pokemonNumber}`}>
-              <div className="w-[150px] h-[240px]">
+            <Link
+              href={`/pokemon/detail/${pokemonNumber}`}
+              className="w-full h-full flex flex-col items-center"
+            >
+              <div className="w-full flex-1 flex flex-col items-center justify-between py-2">
                 <div className="text-sm text-gray-600">No.{pokemonNumber}</div>
-                <div className=" font-bold mb-2">{pokemonName}</div>
-                <img
-                  className="w-full fit-contain"
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
-                  alt="랜덤포켓몬"
-                />
-                <div className="text-gray-600 text-sm flex flex-row justify-center">
+                <div className="font-bold text-lg mb-2">{pokemonName}</div>
+                <div className="relative w-32 h-32 mb-2">
+                  <img
+                    className="w-full h-full object-contain"
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
+                    alt="랜덤포켓몬"
+                  />
+                </div>
+                <div className="text-gray-600 text-sm flex flex-row justify-center gap-1">
                   {pokemonTypes.map((type, index) => (
                     <TypeCard key={index} typeNames={type} />
                   ))}

@@ -66,19 +66,25 @@ export default function TopNavBar() {
 
             {/* Desktop Navigation - Moved to Left Section */}
             <nav className="hidden md:flex space-x-1">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 rounded-full text-sm font-bold transition-all ${
-                    pathname === item.href
-                      ? "bg-white text-red-600 shadow-sm"
-                      : "text-white hover:bg-red-700 hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {menuItems.map((item) => {
+                const isActive =
+                  pathname === item.href ||
+                  (item.href !== "/" && pathname.startsWith(item.href));
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`px-3 py-2 rounded-full text-sm font-bold transition-all ${
+                      isActive
+                        ? "bg-white text-red-600 shadow-sm"
+                        : "text-white hover:bg-red-700 hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
 
@@ -126,20 +132,26 @@ export default function TopNavBar() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-200 shadow-lg z-40 animate-in slide-in-from-top-5 duration-200">
           <div className="flex flex-col p-4 space-y-2">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
-                  pathname === item.href
-                    ? "bg-red-600 text-white shadow-md"
-                    : "text-gray-700 hover:bg-gray-50"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`px-4 py-3 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
+                    isActive
+                      ? "bg-red-600 text-white shadow-md"
+                      : "text-gray-700 hover:bg-gray-50"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
