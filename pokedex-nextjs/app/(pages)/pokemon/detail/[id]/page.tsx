@@ -8,12 +8,16 @@ import { getPokemonByNumber } from "@/app/lib/api/pokemon";
 import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
 import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
+import pokemonDataRaw from "@/data/pokemon.json";
 
-// params 타입을 올바르게 정의
-interface PokeDetailProps {
-  params: {
-    id: string; // 디렉토리 이름과 일치시키기
-  };
+// 정적 파라미터 생성 (빌드 시 실행)
+export async function generateStaticParams() {
+  return (pokemonDataRaw as { url: string }[]).map((pokemon) => {
+    const id = pokemon.url.split("/").filter(Boolean).pop();
+    return {
+      id: id,
+    };
+  });
 }
 
 // 포켓몬 상세페이지 컴포넌트
