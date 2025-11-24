@@ -20,6 +20,7 @@ import { PokemonData } from "@/app/lib/types/types";
 interface PokemonCardProps {
   indexId: number;
   viewMode?: "grid" | "list";
+  isShiny?: boolean;
 }
 
 // Global cache for pokemon card data to prevent re-fetching on navigation
@@ -29,6 +30,7 @@ const pokemonCardCache: Record<number, { name: string; types: string[] }> = {};
 export default function PokemonCard({
   indexId,
   viewMode = "grid",
+  isShiny = false,
 }: PokemonCardProps) {
   // Check cache first
   const cachedData = pokemonCardCache[indexId];
@@ -136,7 +138,7 @@ export default function PokemonCard({
                 className="w-full flex justify-center"
                 onClick={handleCardClick}
               >
-                <PokemonImgCard indexId={indexId} />
+                <PokemonImgCard indexId={indexId} isShiny={isShiny} />
               </Link>
               <div className="flex flex-wrap justify-center gap-1 mt-1 w-full">
                 {pokemonTypes.map((pokemonType, index) => (
@@ -155,7 +157,11 @@ export default function PokemonCard({
                 >
                   <div className="w-16 h-16 relative">
                     <img
-                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`}
+                      src={
+                        isShiny
+                          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${indexId}.png`
+                          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`
+                      }
                       alt={pokemonName}
                       className="w-full h-full object-contain"
                     />

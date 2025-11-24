@@ -109,7 +109,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           {/* Back Button */}
           <button
             onClick={() => router.back()}
-            className="absolute left-0 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors"
+            className="absolute left-0 top-2 p-4 -ml-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors z-10"
             aria-label="뒤로 가기"
           >
             <svg

@@ -7,6 +7,8 @@ interface DropDownFilterProps {
   onSelectType: (type: string) => void;
   selectedForm: string;
   onSelectForm: (form: string) => void;
+  isShiny: boolean;
+  onToggleShiny: () => void;
 }
 
 export default function DropDownFilter({
@@ -14,6 +16,8 @@ export default function DropDownFilter({
   onSelectType,
   selectedForm,
   onSelectForm,
+  isShiny,
+  onToggleShiny,
 }: DropDownFilterProps) {
   const [activeModal, setActiveModal] = useState<"none" | "type" | "form">(
     "none"
@@ -57,7 +61,22 @@ export default function DropDownFilter({
       <div className="hidden md:grid md:grid-cols-2 md:gap-8 w-full mb-4">
         {/* 타입 필터 (Left 50%) */}
         <div className="flex flex-col gap-2">
-          <span className="font-bold text-xs text-gray-500 px-1">타입</span>
+          <div className="flex justify-between items-center px-1">
+            <span className="font-bold text-xs text-gray-500">타입</span>
+            <button
+              onClick={onToggleShiny}
+              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border ${
+                isShiny
+                  ? "bg-yellow-100 text-yellow-700 border-yellow-300"
+                  : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100"
+              }`}
+            >
+              <span className={isShiny ? "text-yellow-500" : "text-gray-300"}>
+                ✨
+              </span>
+              이로치 모드
+            </button>
+          </div>
           <ul className="flex flex-wrap gap-1.5">
             {typeKorean.map((type) => (
               <li
@@ -98,6 +117,17 @@ export default function DropDownFilter({
 
       {/* Mobile Floating Buttons */}
       <div className="md:hidden fixed bottom-6 left-4 z-40 flex flex-col gap-3">
+        <button
+          onClick={onToggleShiny}
+          className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
+            isShiny
+              ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
+              : "bg-white text-gray-400 border border-gray-200"
+          }`}
+          title="이로치 모드"
+        >
+          <span className="text-lg">✨</span>
+        </button>
         <button
           onClick={() => setActiveModal("type")}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${

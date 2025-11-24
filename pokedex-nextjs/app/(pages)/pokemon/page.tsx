@@ -18,6 +18,7 @@ const pokemonData = pokemonDataRaw as Pokemon[];
 export default function PokemonListPage() {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedForm, setSelectedForm] = useState("all");
+  const [isShiny, setIsShiny] = useState(false);
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [displayedCount, setDisplayedCount] = useState(20);
@@ -32,6 +33,7 @@ export default function PokemonListPage() {
     const savedCount = sessionStorage.getItem("pokemon_list_count");
     const savedType = sessionStorage.getItem("pokemon_list_type");
     const savedForm = sessionStorage.getItem("pokemon_list_form");
+    const savedShiny = sessionStorage.getItem("pokemon_list_shiny");
     const savedScroll = sessionStorage.getItem("pokemon_scroll_pos");
 
     // Use a timeout to avoid synchronous state updates in effect
@@ -44,6 +46,9 @@ export default function PokemonListPage() {
       }
       if (savedForm) {
         setSelectedForm(savedForm);
+      }
+      if (savedShiny) {
+        setIsShiny(savedShiny === "true");
       }
 
       if (savedScroll) {
@@ -62,7 +67,8 @@ export default function PokemonListPage() {
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
     sessionStorage.setItem("pokemon_list_type", selectedType);
     sessionStorage.setItem("pokemon_list_form", selectedForm);
-  }, [displayedCount, selectedType, selectedForm, isRestored]);
+    sessionStorage.setItem("pokemon_list_shiny", isShiny.toString());
+  }, [displayedCount, selectedType, selectedForm, isShiny, isRestored]);
 
   // Filter pokemon based on selected type and form
   const filteredPokemon = useMemo(() => {
@@ -189,6 +195,8 @@ export default function PokemonListPage() {
           setSelectedForm(form);
           setDisplayedCount(20);
         }}
+        isShiny={isShiny}
+        onToggleShiny={() => setIsShiny(!isShiny)}
       />
 
       {/* 보기 설정 (행당 개수 및 뷰 모드) */}
@@ -280,7 +288,14 @@ export default function PokemonListPage() {
       >
         {displayedPokemon.map((pokemon) => {
           const id = getPokemonId(pokemon.url);
-          return <PokemonCard key={id} indexId={id} viewMode={viewMode} />;
+          return (
+            <PokemonCard
+              key={id}
+              indexId={id}
+              viewMode={viewMode}
+              isShiny={isShiny}
+            />
+          );
         })}
       </div>
 
