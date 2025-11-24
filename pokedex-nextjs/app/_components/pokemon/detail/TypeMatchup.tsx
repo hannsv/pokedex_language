@@ -117,7 +117,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
     .sort((a, b) => b - a);
 
   return (
-    <div className="w-full mb-6">
+    <div className="w-full mb-6 bg-gray-50 rounded-lg p-6">
       <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
         타입 상성
       </h2>

@@ -15,6 +15,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   const router = useRouter();
   const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
+  const [pokemonEngName, setPokemonEngName] = useState<string>("");
   const [pokemonDescription, setPokemonDescription] = useState<string>("");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
   const [pokemonAbilities, setPokemonAbilities] = useState<string[]>([]);
@@ -63,6 +64,12 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               n.language.name === "ko"
           )?.name || data.name;
 
+        const englishName =
+          speciesData.names.find(
+            (n: { language: { name: string }; name: string }) =>
+              n.language.name === "en"
+          )?.name || "";
+
         // 10000번대 이상인 경우 폼 이름 추가
         if (pokeNum > 10000) {
           const formName = getFormKoreanName(data.name);
@@ -70,6 +77,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
         }
 
         setPokemonName(koreanName);
+        setPokemonEngName(englishName);
 
         const koreanFlavorText =
           speciesData.flavor_text_entries.find(
@@ -87,7 +95,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   }, [id]);
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-white rounded-xl shadow-md mt-10">
+    <div className="max-w-4xl mx-auto p-4 relative">
       {isLoading ? (
         <div className="flex justify-center items-center h-64">
           <img
@@ -120,7 +128,14 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           </button>
 
           <div className="w-full flex justify-center items-center px-4 mb-4 mt-8 relative">
-            <h1 className="text-3xl font-bold text-gray-800">{pokemonName}</h1>
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-gray-800">
+                {pokemonName}
+              </h1>
+              <p className="text-lg text-gray-400 font-medium">
+                {pokemonEngName}
+              </p>
+            </div>
             <div className="absolute right-4 flex flex-col items-end gap-1">
               {pokemonData.id <= 10000 ? (
                 <span className="text-xl text-gray-500 font-mono">
