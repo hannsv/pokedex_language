@@ -22,18 +22,35 @@ interface PokemonCardProps {
   viewMode?: "grid" | "list";
 }
 
+// Global cache for pokemon card data to prevent re-fetching on navigation
+const pokemonCardCache: Record<number, { name: string; types: string[] }> = {};
+
 //pokeapi.co/api/v2/pokemon/1/
 export default function PokemonCard({
   indexId,
   viewMode = "grid",
 }: PokemonCardProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  // Check cache first
+  const cachedData = pokemonCardCache[indexId];
 
-  const [pokemonName, setPokemonName] = useState<string>("");
-  const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(!cachedData);
+  const [pokemonName, setPokemonName] = useState<string>(
+    cachedData?.name || ""
+  );
+  const [pokemonTypes, setPokemonTypes] = useState<string[]>(
+    cachedData?.types || []
+  );
   const [pokemonNumber, setPokemonNumber] = useState<number>(indexId);
 
   useEffect(() => {
+    // If data is already cached, use it and skip fetch
+    if (pokemonCardCache[indexId]) {
+      setPokemonName(pokemonCardCache[indexId].name);
+      setPokemonTypes(pokemonCardCache[indexId].types);
+      setIsLoading(false);
+      return;
+    }
+
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
@@ -55,6 +72,12 @@ export default function PokemonCard({
           const formName = getFormKoreanName(pokemonData.name);
           koname += formName;
         }
+
+        // Save to cache
+        pokemonCardCache[indexId] = {
+          name: koname,
+          types: pokemonData.types.map((typeInfo) => typeInfo.type.name),
+        };
 
         setPokemonName(koname);
         //타입 가져오기

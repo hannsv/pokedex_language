@@ -23,6 +23,7 @@ export default function PokemonListPage() {
   const [displayedCount, setDisplayedCount] = useState(20);
   const loaderRef = useRef<HTMLDivElement>(null);
   const [scrollTarget, setScrollTarget] = useState<number | null>(null);
+  const [isRestored, setIsRestored] = useState(false);
 
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -33,27 +34,35 @@ export default function PokemonListPage() {
     const savedForm = sessionStorage.getItem("pokemon_list_form");
     const savedScroll = sessionStorage.getItem("pokemon_scroll_pos");
 
-    if (savedCount) {
-      setDisplayedCount(parseInt(savedCount, 10));
-    }
-    if (savedType) {
-      setSelectedType(savedType);
-    }
-    if (savedForm) {
-      setSelectedForm(savedForm);
-    }
+    // Use a timeout to avoid synchronous state updates in effect
+    const timer = setTimeout(() => {
+      if (savedCount) {
+        setDisplayedCount(parseInt(savedCount, 10));
+      }
+      if (savedType) {
+        setSelectedType(savedType);
+      }
+      if (savedForm) {
+        setSelectedForm(savedForm);
+      }
 
-    if (savedScroll) {
-      setScrollTarget(parseInt(savedScroll, 10));
-    }
+      if (savedScroll) {
+        setScrollTarget(parseInt(savedScroll, 10));
+      }
+
+      setIsRestored(true);
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Save displayed count and filters to session storage
   useEffect(() => {
+    if (!isRestored) return;
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
     sessionStorage.setItem("pokemon_list_type", selectedType);
     sessionStorage.setItem("pokemon_list_form", selectedForm);
-  }, [displayedCount, selectedType, selectedForm]);
+  }, [displayedCount, selectedType, selectedForm, isRestored]);
 
   // Filter pokemon based on selected type and form
   const filteredPokemon = useMemo(() => {
