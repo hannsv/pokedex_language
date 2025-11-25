@@ -52,20 +52,20 @@ export default function RandomTrivia({ trigger }: RandomTriviaProps) {
   }, [trigger]);
 
   return (
-    <div className="mt-8 text-center px-4 min-h-[60px] flex items-center justify-center">
+    <div className="mt-8 text-center px-4 h-36 flex items-start justify-center">
       {trivia && (
         <div
           key={trigger} // Trigger animation on change
-          className="animate-in fade-in slide-in-from-bottom-2 duration-500 relative inline-block bg-white border-2 border-gray-800 rounded-xl px-6 py-4 shadow-[4px_4px_0px_0px_rgba(31,41,55,1)]"
+          className="animate-in fade-in slide-in-from-bottom-2 duration-500 relative inline-block bg-white dark:bg-[#1E1E1E] border-2 border-gray-800 dark:border-[#FFD700] rounded-xl px-6 py-4 shadow-[4px_4px_0px_0px_rgba(31,41,55,1)] dark:shadow-[4px_4px_0px_0px_#FFD700]"
         >
           {/* Speech Bubble Tail */}
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-800 rotate-45 transform origin-center"></div>
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-[#1E1E1E] border-t-2 border-l-2 border-gray-800 dark:border-[#FFD700] rotate-45 transform origin-center"></div>
 
           <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-bold text-white bg-red-500 px-2 py-0.5 rounded-full border border-gray-800 shadow-sm">
+            <span className="text-xs font-bold text-white bg-red-500 dark:bg-[#FFD700] dark:text-black px-2 py-0.5 rounded-full border border-gray-800 dark:border-[#FFD700] shadow-sm">
               POKÉMON TIP
             </span>
-            <span className="text-gray-800 font-bold text-sm sm:text-base break-keep leading-relaxed">
+            <span className="text-gray-800 dark:text-[#EAEAEA] font-bold text-sm sm:text-base break-keep leading-relaxed">
               {trivia}
             </span>
           </div>

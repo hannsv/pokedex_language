@@ -152,7 +152,7 @@ export default function SearchBar() {
         </div>
         <input
           type="search"
-          className="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+          className="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:focus:border-[#FFD700] dark:focus:ring-[#FFD700]"
           placeholder="이름, 타입..."
           value={searchTerm}
           onChange={handleInputChange}
@@ -163,26 +163,26 @@ export default function SearchBar() {
         />
         <button
           type="submit"
-          className="absolute right-1.5 bottom-1.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md text-xs px-3 py-1.5 transition-colors"
+          className="absolute right-1.5 bottom-1.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md text-xs px-3 py-1.5 transition-colors dark:bg-[#333] dark:text-[#FFD700] dark:hover:bg-[#444] dark:border dark:border-[#FFD700]"
         >
           검색
         </button>
 
         {/* 연관 검색어 목록 */}
         {showSuggestions && suggestions.length > 0 && (
-          <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg top-full mt-1 max-h-60 overflow-y-auto">
+          <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg top-full mt-1 max-h-60 overflow-y-auto dark:bg-[#1E1E1E] dark:border-[#FFD700]">
             {suggestions.map((item, index) => (
               <li
                 key={index}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex justify-between items-center"
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm flex justify-between items-center dark:hover:bg-[#333] dark:text-[#EAEAEA]"
                 onClick={() => handleSuggestionClick(item)}
               >
-                <span className="text-xs text-gray-500 uppercase">
+                <span className="text-xs text-gray-500 uppercase dark:text-gray-400">
                   {item.korean_name
                     ? `${item.korean_name} (${item.name})`
                     : item.name}
                 </span>
-                <span className="text-xs text-gray-500 uppercase">
+                <span className="text-xs text-gray-500 uppercase dark:text-gray-400">
                   {item.type === "type" ? "타입" : "포켓몬"}
                 </span>
               </li>

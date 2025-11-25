@@ -51,7 +51,7 @@ export default function RandomPokemonCard({
   return (
     <div className="flex items-center justify-center gap-4">
       <CardSelectButton string="◀" onClick={onPrev} />
-      <div className="bg-white border-2 border-gray-800 rounded-xl p-4 w-[200px] h-[320px] flex flex-col items-center justify-center m-2 shadow-[4px_4px_0px_0px_rgba(31,41,55,1)] transition-transform hover:-translate-y-1">
+      <div className="bg-white dark:bg-[#1E1E1E] border-2 border-gray-800 dark:border-[#FFD700] rounded-xl p-4 w-[200px] h-[320px] flex flex-col items-center justify-center m-2 shadow-[4px_4px_0px_0px_rgba(31,41,55,1)] dark:shadow-[4px_4px_0px_0px_#FFD700] transition-transform hover:-translate-y-1">
         {isLoading ? (
           <div className="w-full h-full animate-pulse rounded-md flex items-center justify-center">
             <img
@@ -67,8 +67,12 @@ export default function RandomPokemonCard({
               className="w-full h-full flex flex-col items-center"
             >
               <div className="w-full flex-1 flex flex-col items-center justify-between py-2">
-                <div className="text-sm text-gray-600">No.{pokemonId}</div>
-                <div className="font-bold text-lg mb-2">{pokemonName}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  No.{pokemonId}
+                </div>
+                <div className="font-bold text-lg mb-2 dark:text-[#EAEAEA]">
+                  {pokemonName}
+                </div>
                 <div className="relative w-32 h-32 mb-2">
                   <img
                     className="w-full h-full object-contain"
@@ -76,7 +80,7 @@ export default function RandomPokemonCard({
                     alt="랜덤포켓몬"
                   />
                 </div>
-                <div className="text-gray-600 text-sm flex flex-row justify-center gap-1">
+                <div className="text-gray-600 dark:text-gray-400 text-sm flex flex-row justify-center gap-1">
                   {pokemonTypes.map((type, index) => (
                     <TypeCard key={index} typeNames={type} />
                   ))}

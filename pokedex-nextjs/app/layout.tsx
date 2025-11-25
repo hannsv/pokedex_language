@@ -27,18 +27,18 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-100 dark:bg-[#121212] dark:text-[#EAEAEA] transition-colors duration-300`}
       >
         {/* 상단 내비게이션 바 */}
         <TopNavBar />
         {/* 메인 컨텐츠 */}
         <main className="flex justify-center font-sans pt-0 pb-4 px-2 md:pb-10 md:px-4 min-h-[calc(100vh-80px)]">
-          <div className="w-full max-w-7xl rounded-b-2xl rounded-t-none md:rounded-2xl shadow-xl bg-white text-black p-2 md:p-8 border border-gray-100">
+          <div className="w-full max-w-7xl rounded-b-2xl rounded-t-none md:rounded-2xl shadow-xl bg-white dark:bg-[#1E1E1E] text-black dark:text-[#EAEAEA] p-2 md:p-8 border border-gray-100 dark:border-[#FFD700] transition-colors duration-300">
             {children}
           </div>
         </main>
         {/* 저작권 표기 */}
-        <footer className="flex h-24 w-full items-center justify-center bg-slate-100">
+        <footer className="flex h-24 w-full items-center justify-center bg-slate-100 dark:bg-[#121212] transition-colors duration-300">
           <a
             className="flex items-center justify-center gap-2"
             target="_blank"

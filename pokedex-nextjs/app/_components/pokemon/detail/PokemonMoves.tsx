@@ -194,43 +194,43 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
 
   return (
     <div className="w-full">
-      <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+      <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
         기술 정보 (Level Up)
       </h2>
       <div className="overflow-x-auto mb-4">
-        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-          <thead className="bg-gray-50">
+        <table className="min-w-full bg-white dark:bg-[#121212] border border-gray-200 dark:border-gray-700 rounded-lg">
+          <thead className="bg-gray-50 dark:bg-[#121212]">
             <tr>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Lv
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 이름
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 분류
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 타입
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 위력
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 명중률
               </th>
-              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 PP
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {displayedMoves.map((move, index) => (
-              <tr key={index} className="hover:bg-gray-50">
-                <td className="py-2 px-4 text-sm text-gray-900 font-medium">
+              <tr key={index} className="hover:bg-gray-50 dark:hover:bg-[#333]">
+                <td className="py-2 px-4 text-sm text-gray-900 dark:text-[#EAEAEA] font-medium">
                   {move.level}
                 </td>
-                <td className="py-2 px-4 text-sm text-gray-900 font-bold">
+                <td className="py-2 px-4 text-sm text-gray-900 dark:text-[#EAEAEA] font-bold">
                   {move.name}
                 </td>
                 <td className="py-2 px-4 text-sm">
@@ -239,13 +239,15 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
                 <td className="py-2 px-4 text-sm">
                   <TypeCard typeNames={move.type} />
                 </td>
-                <td className="py-2 px-4 text-sm text-gray-600">
+                <td className="py-2 px-4 text-sm text-gray-600 dark:text-gray-400">
                   {move.power || "-"}
                 </td>
-                <td className="py-2 px-4 text-sm text-gray-600">
+                <td className="py-2 px-4 text-sm text-gray-600 dark:text-gray-400">
                   {move.accuracy || "-"}
                 </td>
-                <td className="py-2 px-4 text-sm text-gray-600">{move.pp}</td>
+                <td className="py-2 px-4 text-sm text-gray-600 dark:text-gray-400">
+                  {move.pp}
+                </td>
               </tr>
             ))}
           </tbody>

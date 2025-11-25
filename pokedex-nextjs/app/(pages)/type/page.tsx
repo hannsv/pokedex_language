@@ -45,18 +45,20 @@ export default function TypeCalculatorPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-2 text-center text-gray-800">
+      <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-[#EAEAEA]">
         타입 상성 계산기
       </h1>
-      <p className="text-center text-gray-500 mb-8">
+      <p className="text-center text-gray-500 dark:text-gray-400 mb-8">
         포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Type 1 Selection */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+        <div className="bg-white dark:bg-[#1E1E1E] p-6 rounded-xl shadow-sm border border-gray-200 dark:border-[#FFD700]">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-bold text-gray-700">타입 1 (필수)</h2>
+            <h2 className="text-lg font-bold text-gray-700 dark:text-[#EAEAEA]">
+              타입 1 (필수)
+            </h2>
             {type1 && <TypeCard typeNames={type1} size="medium" />}
           </div>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -76,8 +78,8 @@ export default function TypeCalculatorPage() {
                       isSelected
                         ? `${style.bg} ${style.text} ring-2 ring-offset-1 ring-gray-400 scale-105`
                         : isDisabled
-                        ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        ? "bg-gray-100 text-gray-300 cursor-not-allowed dark:bg-[#333] dark:text-gray-600"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-[#333] dark:text-gray-300 dark:hover:bg-[#444]"
                     }
                   `}
                 >
@@ -89,9 +91,11 @@ export default function TypeCalculatorPage() {
         </div>
 
         {/* Type 2 Selection */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+        <div className="bg-white dark:bg-[#1E1E1E] p-6 rounded-xl shadow-sm border border-gray-200 dark:border-[#FFD700]">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-bold text-gray-700">타입 2 (선택)</h2>
+            <h2 className="text-lg font-bold text-gray-700 dark:text-[#EAEAEA]">
+              타입 2 (선택)
+            </h2>
             {type2 ? (
               <TypeCard typeNames={type2} size="medium" />
             ) : (
@@ -115,8 +119,8 @@ export default function TypeCalculatorPage() {
                       isSelected
                         ? `${style.bg} ${style.text} ring-2 ring-offset-1 ring-gray-400 scale-105`
                         : isDisabled
-                        ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        ? "bg-gray-100 text-gray-300 cursor-not-allowed dark:bg-[#333] dark:text-gray-600"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-[#333] dark:text-gray-300 dark:hover:bg-[#444]"
                     }
                   `}
                 >
@@ -137,8 +141,8 @@ export default function TypeCalculatorPage() {
             px-6 py-2 rounded-full font-bold transition-colors
             ${
               selectedTypes.length > 0
-                ? "bg-red-500 text-white hover:bg-red-600 shadow-md"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                ? "bg-red-500 text-white hover:bg-red-600 shadow-md dark:bg-[#FFD700] dark:text-black dark:hover:bg-[#E6C200]"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-[#333] dark:text-gray-600"
             }
           `}
         >
@@ -151,7 +155,9 @@ export default function TypeCalculatorPage() {
         {selectedTypes.length > 0 ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="flex justify-center items-center gap-2 mb-6">
-              <h2 className="text-2xl font-bold text-gray-800">결과 분석</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-[#EAEAEA]">
+                결과 분석
+              </h2>
               <div className="flex gap-2 ml-4">
                 {selectedTypes.map((t) => (
                   <TypeCard key={`res-${t}`} typeNames={t} size="medium" />
@@ -163,11 +169,11 @@ export default function TypeCalculatorPage() {
             <TypeMatchup types={selectedTypes} />
           </div>
         ) : (
-          <div className="flex-1 flex flex-col justify-center items-center text-center py-12 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
+          <div className="flex-1 flex flex-col justify-center items-center text-center py-12 bg-gray-50 dark:bg-[#121212] rounded-xl border-2 border-dashed border-gray-200 dark:border-gray-700">
             <p className="text-gray-400 text-lg font-medium">
               타입을 선택하면 상성 분석 결과가 여기에 표시됩니다.
             </p>
-            <p className="text-gray-300 text-sm mt-2">
+            <p className="text-gray-300 dark:text-gray-500 text-sm mt-2">
               (최소 1개의 타입을 선택해주세요)
             </p>
           </div>

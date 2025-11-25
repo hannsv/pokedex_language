@@ -72,7 +72,7 @@ export default function PokemonEvolutionChain({
 
   return (
     <div className="w-full mb-6">
-      <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+      <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
         진화 정보
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-4">
@@ -82,19 +82,21 @@ export default function PokemonEvolutionChain({
               href={`/pokemon/detail/${evo.id}`}
               className="flex flex-col items-center group"
             >
-              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-2 border-2 border-transparent group-hover:border-blue-400 transition-all">
+              <div className="w-24 h-24 bg-gray-100 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-full flex items-center justify-center mb-2 border-2 border-transparent group-hover:border-blue-400 transition-all">
                 <img
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${evo.id}.png`}
                   alt={evo.name}
                   className="w-20 h-20 object-contain"
                 />
               </div>
-              <span className="text-sm font-bold text-gray-700 group-hover:text-blue-600">
+              <span className="text-sm font-bold text-gray-700 dark:text-[#EAEAEA] group-hover:text-blue-600 dark:group-hover:text-[#FFD700]">
                 {evo.koreanName || evo.name}
               </span>
             </Link>
             {index < evolutionChain.length - 1 && (
-              <span className="mx-2 text-gray-400 text-2xl">→</span>
+              <span className="mx-2 text-gray-400 dark:text-gray-500 text-2xl">
+                →
+              </span>
             )}
           </div>
         ))}

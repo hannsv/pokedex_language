@@ -117,20 +117,20 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
     .sort((a, b) => b - a);
 
   return (
-    <div className="w-full mb-6 bg-gray-50 rounded-lg p-6">
-      <h2 className="text-xl font-bold mb-3 text-gray-700 border-b border-gray-100 pb-2">
+    <div className="w-full mb-6 bg-gray-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-lg p-6">
+      <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b border-gray-100 dark:border-gray-700 pb-2">
         타입 상성
       </h2>
 
       {/* Defense Section */}
       <div className="mb-6">
-        <h3 className="font-bold text-md mb-3 text-gray-800 flex items-center">
+        <h3 className="font-bold text-md mb-3 text-gray-800 dark:text-[#EAEAEA] flex items-center">
           <span className="w-1 h-4 bg-blue-500 mr-2 rounded-full"></span>
           방어 상성 (받는 피해)
         </h3>
-        <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+        <div className="bg-white dark:bg-[#121212] p-4 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
           {sortedMultipliers.length === 0 ? (
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
               특이 사항 없음 (모든 타입 1배)
             </p>
           ) : (
@@ -140,7 +140,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
                   key={multiplier}
                   className="flex flex-col sm:flex-row sm:items-center gap-2"
                 >
-                  <div className="w-16 shrink-0 font-semibold text-sm text-gray-600">
+                  <div className="w-16 shrink-0 font-semibold text-sm text-gray-600 dark:text-gray-400">
                     {multiplier}배
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -157,7 +157,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
 
       {/* Attack Section */}
       <div>
-        <h3 className="font-bold text-md mb-3 text-gray-800 flex items-center">
+        <h3 className="font-bold text-md mb-3 text-gray-800 dark:text-[#EAEAEA] flex items-center">
           <span className="w-1 h-4 bg-red-500 mr-2 rounded-full"></span>
           공격 상성 (주는 피해)
         </h3>
@@ -165,11 +165,11 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
           {attackEffectiveness.map((typeData) => (
             <div
               key={typeData.name}
-              className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm"
+              className="bg-white dark:bg-[#121212] p-4 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm"
             >
-              <div className="mb-3 flex items-center gap-2 border-b border-gray-100 pb-2">
+              <div className="mb-3 flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-2">
                 <TypeCard typeNames={typeData.name} size="small" />
-                <span className="text-sm font-medium text-gray-600">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                   타입 공격 시
                 </span>
               </div>
@@ -178,7 +178,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
                 {/* 2x Damage */}
                 {typeData.relations.double_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
-                    <span className="text-xs font-semibold text-gray-500">
+                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
                       2배 (효과가 굉장함)
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -196,7 +196,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
                 {/* 0.5x Damage */}
                 {typeData.relations.half_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
-                    <span className="text-xs font-semibold text-gray-500">
+                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
                       0.5배 (효과가 별로)
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -214,7 +214,7 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
                 {/* 0x Damage */}
                 {typeData.relations.no_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
-                    <span className="text-xs font-semibold text-gray-500">
+                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
                       0배 (효과 없음)
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -232,7 +232,9 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
                 {typeData.relations.double_damage_to.length === 0 &&
                   typeData.relations.half_damage_to.length === 0 &&
                   typeData.relations.no_damage_to.length === 0 && (
-                    <p className="text-gray-400 text-xs">특이 사항 없음</p>
+                    <p className="text-gray-400 dark:text-gray-600 text-xs">
+                      특이 사항 없음
+                    </p>
                   )}
               </div>
             </div>

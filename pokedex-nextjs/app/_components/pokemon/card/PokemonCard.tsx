@@ -103,14 +103,14 @@ export default function PokemonCard({
   return (
     <div
       id={`pokemon-card-${indexId}`}
-      className={`border border-gray-300 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl ${
+      className={`border border-gray-300 dark:border-[#FFD700] rounded-lg shadow-lg bg-white dark:bg-[#1E1E1E] transition-all hover:shadow-xl ${
         viewMode === "grid"
           ? "flex flex-col items-center justify-center p-2 h-full"
           : "flex flex-row items-center justify-between p-4 w-full h-auto"
       }`}
     >
       {isLoading ? (
-        <div className="h-[180px] w-full animate-pulse rounded-md flex items-center justify-center">
+        <div className="h-[180px] w-full animate-pulse rounded-md flex items-center justify-center bg-gray-100 dark:bg-gray-800">
           <img
             src="skeleton-monsterball.png"
             alt="loading"
@@ -123,15 +123,15 @@ export default function PokemonCard({
             // Grid View Layout
             <>
               {pokemonNumber <= 10000 ? (
-                <div className="text-xs text-gray-500 mb-1">
+                <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
                   No.{pokemonNumber}
                 </div>
               ) : (
-                <div className="text-[10px] font-bold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded-full mb-1">
+                <div className="text-[10px] font-bold text-blue-600 bg-blue-100 dark:bg-blue-900 dark:text-blue-200 px-1.5 py-0.5 rounded-full mb-1">
                   Special
                 </div>
               )}
-              <div className="font-bold mb-1 text-center break-keep text-sm h-10 flex items-center justify-center w-full leading-tight">
+              <div className="font-bold mb-1 text-center break-keep text-sm h-10 flex items-center justify-center w-full leading-tight text-gray-900 dark:text-[#EAEAEA]">
                 {pokemonName}
               </div>
               <Link
@@ -170,15 +170,17 @@ export default function PokemonCard({
                 </Link>
                 <div className="flex flex-col items-start">
                   {pokemonNumber <= 10000 ? (
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
                       No.{pokemonNumber}
                     </div>
                   ) : (
-                    <div className="text-[10px] font-bold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded-full mb-0.5 w-fit">
+                    <div className="text-[10px] font-bold text-blue-600 bg-blue-100 dark:bg-blue-900 dark:text-blue-200 px-1.5 py-0.5 rounded-full mb-0.5 w-fit">
                       Special
                     </div>
                   )}
-                  <div className="font-bold text-lg">{pokemonName}</div>
+                  <div className="font-bold text-lg text-gray-900 dark:text-[#EAEAEA]">
+                    {pokemonName}
+                  </div>
                 </div>
               </div>
               <div className="flex gap-1">

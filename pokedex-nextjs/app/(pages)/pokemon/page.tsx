@@ -225,13 +225,13 @@ export default function PokemonListPage() {
       {/* 보기 설정 (행당 개수 및 뷰 모드) */}
       <div className="w-full flex justify-between items-center mb-4 px-1">
         {/* 뷰 모드 토글 */}
-        <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
+        <div className="flex gap-1 bg-gray-100 dark:bg-[#121212] p-1 rounded-lg">
           <button
             onClick={() => setViewMode("grid")}
             className={`p-1.5 rounded-md transition-all ${
               viewMode === "grid"
-                ? "bg-white text-blue-600 shadow-sm"
-                : "text-gray-400 hover:text-gray-600"
+                ? "bg-white text-blue-600 shadow-sm dark:bg-[#333] dark:text-[#FFD700]"
+                : "text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-[#FFD700]"
             }`}
             title="카드형 보기"
           >
@@ -256,8 +256,8 @@ export default function PokemonListPage() {
             onClick={() => setViewMode("list")}
             className={`p-1.5 rounded-md transition-all ${
               viewMode === "list"
-                ? "bg-white text-blue-600 shadow-sm"
-                : "text-gray-400 hover:text-gray-600"
+                ? "bg-white text-blue-600 shadow-sm dark:bg-[#333] dark:text-[#FFD700]"
+                : "text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-[#FFD700]"
             }`}
             title="리스트형 보기"
           >
@@ -285,16 +285,16 @@ export default function PokemonListPage() {
         {/* 행당 개수 (그리드 뷰일 때만 표시) */}
         {viewMode === "grid" && (
           <div className="hidden md:flex items-center gap-2">
-            <span className="text-xs font-medium text-gray-500"></span>
-            <div className="flex bg-gray-100 p-1 rounded-lg">
+            <span className="text-xs font-medium text-gray-500 dark:text-gray-400"></span>
+            <div className="flex bg-gray-100 dark:bg-[#121212] p-1 rounded-lg">
               {[3, 4, 5, 6].map((num) => (
                 <button
                   key={num}
                   onClick={() => setItemsPerRow(num)}
                   className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
                     itemsPerRow === num
-                      ? "bg-white text-blue-600 shadow-sm"
-                      : "text-gray-400 hover:text-gray-600"
+                      ? "bg-white text-blue-600 shadow-sm dark:bg-[#333] dark:text-[#FFD700]"
+                      : "text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-[#FFD700]"
                   }`}
                 >
                   {num}
@@ -307,7 +307,7 @@ export default function PokemonListPage() {
 
       {/* 포켓몬 리스트 */}
       <div
-        className={`grid ${gridColsClass} rounded-lg w-full bg-white text-black ${gapClass} p-2 md:p-4`}
+        className={`grid ${gridColsClass} rounded-lg w-full bg-white text-black dark:bg-[#1E1E1E] dark:text-[#EAEAEA] ${gapClass} p-2 md:p-4`}
       >
         {displayedPokemon.map((pokemon) => {
           const id = getPokemonId(pokemon.url);
@@ -325,13 +325,13 @@ export default function PokemonListPage() {
       {/* 로딩 트리거 */}
       {displayedCount < filteredPokemon.length && (
         <div ref={loaderRef} className="w-full py-8 flex justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 dark:border-[#FFD700]"></div>
         </div>
       )}
 
       {/* 결과 없음 메시지 */}
       {filteredPokemon.length === 0 && (
-        <div className="w-full py-20 text-center text-gray-500">
+        <div className="w-full py-20 text-center text-gray-500 dark:text-gray-400">
           해당 타입의 포켓몬이 없습니다.
         </div>
       )}
@@ -339,7 +339,7 @@ export default function PokemonListPage() {
       {/* Scroll To Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 p-3 bg-white text-gray-600 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:bg-gray-50 active:scale-95 ${
+        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 p-3 bg-white text-gray-600 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:bg-gray-50 active:scale-95 dark:bg-[#333] dark:text-[#FFD700] dark:border-[#FFD700] dark:hover:bg-[#444] ${
           showScrollTop
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"

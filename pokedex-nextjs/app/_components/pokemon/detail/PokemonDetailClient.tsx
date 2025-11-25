@@ -145,7 +145,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           {/* Back Button */}
           <button
             onClick={() => router.push("/pokemon")}
-            className="absolute left-2 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors z-10"
+            className="absolute left-2 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-colors z-10"
             aria-label="목록으로"
           >
             <svg
@@ -165,20 +165,20 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
           <div className="w-full flex justify-center items-center px-4 mb-2 mt-14 md:mt-8 relative">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-gray-800">
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-[#EAEAEA]">
                 {pokemonName}
               </h1>
-              <p className="text-lg text-gray-400 font-medium">
+              <p className="text-lg text-gray-400 dark:text-gray-500 font-medium">
                 {pokemonEngName}
               </p>
             </div>
             <div className="absolute right-4 flex flex-col items-end gap-1">
               {pokemonData.id <= 10000 ? (
-                <span className="text-xl text-gray-500 font-mono">
+                <span className="text-xl text-gray-500 dark:text-gray-400 font-mono">
                   No.{String(pokemonData.id).padStart(4, "0")}
                 </span>
               ) : (
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
+                <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-sm font-bold">
                   Special
                 </span>
               )}
@@ -189,7 +189,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             <button
               onClick={handlePrev}
               disabled={pokeNum <= 1}
-              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 dark:text-gray-600 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="이전 포켓몬"
             >
               <svg
@@ -207,7 +207,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               </svg>
             </button>
 
-            <div className="relative w-[60vw] h-[60vw] max-w-64 max-h-64 bg-gray-100 rounded-full flex items-center justify-center shadow-inner group">
+            <div className="relative w-[60vw] h-[60vw] max-w-64 max-h-64 bg-gray-100 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-full flex items-center justify-center shadow-inner group">
               <img
                 src={
                   isShiny
@@ -230,7 +230,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
                 className={`absolute bottom-2 right-2 p-2 rounded-full shadow-md transition-all ${
                   isShiny
                     ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
-                    : "bg-white text-gray-400 hover:text-yellow-500"
+                    : "bg-white text-gray-400 hover:text-yellow-500 dark:bg-[#333] dark:text-gray-500 dark:hover:text-[#FFD700]"
                 }`}
                 title={
                   isShiny ? "기본 모습 보기" : "이로치(색이 다른) 모습 보기"
@@ -258,7 +258,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             <button
               onClick={handleNext}
               disabled={pokeNum >= 1025}
-              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 dark:text-gray-600 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="다음 포켓몬"
             >
               <svg
@@ -283,44 +283,48 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             ))}
           </div>
 
-          <div className="w-full bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
-            <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+          <div className="w-full bg-gray-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-6 rounded-lg shadow-sm mb-6">
+            <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
               특징
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line text-center">
+            <p className="text-gray-700 dark:text-[#EAEAEA] text-lg leading-relaxed whitespace-pre-line text-center">
               {pokemonDescription}
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 w-full mb-6">
-            <div className="bg-blue-50 p-4 rounded-lg text-center">
-              <p className="text-gray-500 text-sm mb-1">키</p>
-              <p className="text-xl font-semibold">
+            <div className="bg-blue-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-4 rounded-lg text-center">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">
+                키
+              </p>
+              <p className="text-xl font-semibold dark:text-[#EAEAEA]">
                 {pokemonData.height / 10} m
               </p>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg text-center">
-              <p className="text-gray-500 text-sm mb-1">몸무게</p>
-              <p className="text-xl font-semibold">
+            <div className="bg-blue-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-4 rounded-lg text-center">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">
+                몸무게
+              </p>
+              <p className="text-xl font-semibold dark:text-[#EAEAEA]">
                 {pokemonData.weight / 10} kg
               </p>
             </div>
           </div>
 
           <div className="w-full mb-6">
-            <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+            <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
               기본 능력치
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {pokemonData.stats.map((stat) => (
                 <div
                   key={stat.stat.name}
-                  className="bg-gray-100 p-3 rounded-md flex flex-col items-center"
+                  className="bg-gray-100 dark:bg-[#2C2C2C] p-3 rounded-md flex flex-col items-center"
                 >
-                  <span className="text-xs text-gray-500 uppercase font-bold">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold">
                     {stat.stat.name}
                   </span>
-                  <span className="text-lg font-bold text-blue-600">
+                  <span className="text-lg font-bold text-blue-600 dark:text-[#FFD700]">
                     {stat.base_stat}
                   </span>
                 </div>
@@ -329,14 +333,14 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           </div>
 
           <div className="w-full mb-6">
-            <h2 className="text-xl font-bold mb-3 text-gray-700 border-b pb-2">
+            <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
               특성
             </h2>
             <div className="flex flex-wrap gap-2">
               {pokemonAbilities.map((ability, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium"
+                  className="px-3 py-1 bg-yellow-100 text-yellow-800 dark:bg-[#333] dark:text-[#FFD700] dark:border dark:border-[#FFD700] rounded-full text-sm font-medium"
                 >
                   {ability}
                 </span>

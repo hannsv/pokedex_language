@@ -62,16 +62,24 @@ export default function DropDownFilter({
         {/* 타입 필터 (Left 50%) */}
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center px-1">
-            <span className="font-bold text-xs text-gray-500">타입</span>
+            <span className="font-bold text-xs text-gray-500 dark:text-gray-400">
+              타입
+            </span>
             <button
               onClick={onToggleShiny}
               className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border ${
                 isShiny
-                  ? "bg-yellow-100 text-yellow-700 border-yellow-300"
-                  : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100"
+                  ? "bg-yellow-100 text-yellow-700 border-yellow-300 dark:bg-[#333] dark:text-[#FFD700] dark:border-[#FFD700]"
+                  : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700 dark:hover:bg-[#333]"
               }`}
             >
-              <span className={isShiny ? "text-yellow-500" : "text-gray-300"}>
+              <span
+                className={
+                  isShiny
+                    ? "text-yellow-500 dark:text-[#FFD700]"
+                    : "text-gray-300 dark:text-gray-600"
+                }
+              >
                 ✨
               </span>
               이로치 모드
@@ -86,8 +94,8 @@ export default function DropDownFilter({
                 }
                 className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
                   selectedType === type.type
-                    ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold"
-                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+                    ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold dark:bg-blue-700 dark:border-blue-500"
+                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
                 }`}
               >
                 {type.korean}
@@ -97,8 +105,10 @@ export default function DropDownFilter({
         </div>
 
         {/* 폼 필터 (Right 50%) */}
-        <div className="flex flex-col gap-2 border-l pl-8 border-gray-200">
-          <span className="font-bold text-xs text-gray-500 px-1">폼</span>
+        <div className="flex flex-col gap-2 border-l pl-8 border-gray-200 dark:border-gray-700">
+          <span className="font-bold text-xs text-gray-500 dark:text-gray-400 px-1">
+            폼
+          </span>
           <ul className="flex flex-wrap gap-1.5">
             {formKorean.map((form) => (
               <li
@@ -108,8 +118,8 @@ export default function DropDownFilter({
                 }
                 className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
                   selectedForm === form.type
-                    ? "bg-purple-500 text-white border-purple-500 shadow-sm font-bold"
-                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+                    ? "bg-purple-500 text-white border-purple-500 shadow-sm font-bold dark:bg-purple-700 dark:border-purple-500"
+                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
                 }`}
               >
                 {form.korean}
@@ -125,8 +135,8 @@ export default function DropDownFilter({
           onClick={onToggleShiny}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
             isShiny
-              ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
-              : "bg-white text-gray-400 border border-gray-200"
+              ? "bg-yellow-400 text-white ring-2 ring-yellow-200 dark:bg-[#FFD700] dark:text-black dark:ring-[#B8860B]"
+              : "bg-white text-gray-400 border border-gray-200 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700"
           }`}
           title="이로치 모드"
         >
@@ -136,8 +146,8 @@ export default function DropDownFilter({
           onClick={() => setActiveModal("type")}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
             selectedType !== "all"
-              ? "bg-blue-500 text-white ring-2 ring-blue-300"
-              : "bg-white text-gray-700 border border-gray-200"
+              ? "bg-blue-500 text-white ring-2 ring-blue-300 dark:bg-blue-700 dark:ring-blue-500"
+              : "bg-white text-gray-700 border border-gray-200 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700"
           }`}
           title="타입 필터"
         >
@@ -147,8 +157,8 @@ export default function DropDownFilter({
           onClick={() => setActiveModal("form")}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
             selectedForm !== "all"
-              ? "bg-purple-500 text-white ring-2 ring-purple-300"
-              : "bg-white text-gray-700 border border-gray-200"
+              ? "bg-purple-500 text-white ring-2 ring-purple-300 dark:bg-purple-700 dark:ring-purple-500"
+              : "bg-white text-gray-700 border border-gray-200 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700"
           }`}
           title="폼 필터"
         >
@@ -160,17 +170,17 @@ export default function DropDownFilter({
       {activeModal !== "none" && (
         <div className="md:hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div
-            className="bg-white w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 duration-300"
+            className="bg-white dark:bg-[#1E1E1E] dark:border dark:border-[#FFD700] w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-gray-50">
-              <h3 className="font-bold text-lg text-gray-800">
+            <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-gray-50 dark:bg-[#121212] dark:border-gray-800">
+              <h3 className="font-bold text-lg text-gray-800 dark:text-[#EAEAEA]">
                 {activeModal === "type" ? "타입 선택" : "폼 선택"}
               </h3>
               <a
                 onClick={() => setActiveModal("none")}
-                className="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-200 transition-colors"
+                className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-200 dark:text-gray-500 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -212,9 +222,9 @@ export default function DropDownFilter({
                           ? selectedType
                           : selectedForm) === item.type
                           ? activeModal === "type"
-                            ? "bg-blue-500 text-white border-blue-500 font-bold shadow-md"
-                            : "bg-purple-500 text-white border-purple-500 font-bold shadow-md"
-                          : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                            ? "bg-blue-500 text-white border-blue-500 font-bold shadow-md dark:bg-blue-700 dark:border-blue-500"
+                            : "bg-purple-500 text-white border-purple-500 font-bold shadow-md dark:bg-purple-700 dark:border-purple-500"
+                          : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
                       }`}
                     >
                       {item.korean}
