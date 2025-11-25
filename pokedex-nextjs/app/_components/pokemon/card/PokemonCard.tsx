@@ -102,6 +102,7 @@ export default function PokemonCard({
 
   return (
     <div
+      id={`pokemon-card-${indexId}`}
       className={`border border-gray-300 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl ${
         viewMode === "grid"
           ? "flex flex-col items-center justify-center p-2 h-full"

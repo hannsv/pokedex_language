@@ -45,6 +45,20 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   }, []);
 
   useEffect(() => {
+    const currentId = parseInt(id, 10);
+    // Save current pokemon ID for scroll restoration
+    sessionStorage.setItem("last_viewed_pokemon_id", currentId.toString());
+
+    // Ensure list count is enough to show this pokemon (heuristic)
+    const savedCount = sessionStorage.getItem("pokemon_list_count");
+    const currentCount = savedCount ? parseInt(savedCount, 10) : 20;
+    if (currentId > currentCount) {
+      sessionStorage.setItem(
+        "pokemon_list_count",
+        Math.max(currentCount, currentId).toString()
+      );
+    }
+
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);
@@ -130,9 +144,9 @@ export default function PokemonDetailClient({ id }: { id: string }) {
         <div className="flex flex-col items-center relative">
           {/* Back Button */}
           <button
-            onClick={() => router.back()}
+            onClick={() => router.push("/pokemon")}
             className="absolute left-2 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors z-10"
-            aria-label="뒤로 가기"
+            aria-label="목록으로"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +219,14 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               />
               {/* Shiny Toggle Button */}
               <button
-                onClick={() => setIsShiny(!isShiny)}
+                onClick={() => {
+                  const newState = !isShiny;
+                  setIsShiny(newState);
+                  sessionStorage.setItem(
+                    "pokemon_list_shiny",
+                    String(newState)
+                  );
+                }}
                 className={`absolute bottom-2 right-2 p-2 rounded-full shadow-md transition-all ${
                   isShiny
                     ? "bg-yellow-400 text-white ring-2 ring-yellow-200"

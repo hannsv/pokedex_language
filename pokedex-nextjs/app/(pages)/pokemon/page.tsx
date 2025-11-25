@@ -100,16 +100,38 @@ export default function PokemonListPage() {
 
   // Restore scroll position when data is ready
   useEffect(() => {
-    if (scrollTarget !== null && displayedPokemon.length > 0) {
-      // Give a small delay for DOM paint
-      const timer = setTimeout(() => {
-        window.scrollTo({
-          top: scrollTarget,
-          behavior: "instant" as ScrollBehavior,
-        });
-        setScrollTarget(null); // Clear target
-      }, 100);
-      return () => clearTimeout(timer);
+    if (displayedPokemon.length > 0) {
+      // 1. Try to scroll to the last viewed pokemon (if any)
+      const lastViewedId = sessionStorage.getItem("last_viewed_pokemon_id");
+      if (lastViewedId) {
+        const targetElement = document.getElementById(
+          `pokemon-card-${lastViewedId}`
+        );
+        if (targetElement) {
+          const timer = setTimeout(() => {
+            targetElement.scrollIntoView({
+              block: "center",
+              behavior: "instant",
+            });
+            sessionStorage.removeItem("last_viewed_pokemon_id");
+            setScrollTarget(null); // Clear generic target since we found specific one
+          }, 100);
+          return () => clearTimeout(timer);
+        }
+      }
+
+      // 2. Fallback to generic scroll position
+      if (scrollTarget !== null) {
+        // Give a small delay for DOM paint
+        const timer = setTimeout(() => {
+          window.scrollTo({
+            top: scrollTarget,
+            behavior: "instant" as ScrollBehavior,
+          });
+          setScrollTarget(null); // Clear target
+        }, 100);
+        return () => clearTimeout(timer);
+      }
     }
   }, [scrollTarget, displayedPokemon.length]);
 
