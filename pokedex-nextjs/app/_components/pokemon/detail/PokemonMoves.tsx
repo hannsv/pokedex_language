@@ -15,6 +15,7 @@ interface MoveDetail {
   accuracy: number;
   pp: number;
   level: number;
+  damage_class: string;
 }
 
 // Define a type for the processed move item
@@ -32,6 +33,66 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
   const [page, setPage] = useState(1);
   const ITEMS_PER_PAGE = 20;
 
+  const getDamageClassIcon = (damageClass: string) => {
+    switch (damageClass) {
+      case "physical":
+        return (
+          <div className="flex items-center justify-center" title="물리">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-gray-400"
+            >
+              <path d="M12 2L14.5 8.5L21 9L16 14L17.5 20.5L12 17L6.5 20.5L8 14L3 9L9.5 8.5L12 2Z" />
+            </svg>
+          </div>
+        );
+      case "special":
+        return (
+          <div className="flex items-center justify-center" title="특수">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="stroke-gray-400 fill-none"
+              strokeWidth="2"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                className="fill-gray-400 stroke-none"
+              />
+            </svg>
+          </div>
+        );
+      case "status":
+        return (
+          <div className="flex items-center justify-center" title="변화">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-gray-400"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                className="fill-none stroke-gray-400"
+                strokeWidth="2"
+              />
+              <path d="M12 3A9 9 0 0 0 12 21A4.5 4.5 0 0 1 12 12A4.5 4.5 0 0 0 12 3Z" />
+            </svg>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   const fetchMoveDetails = async (moveList: ProcessedMove[]) => {
     const movePromises = moveList.map(async (m) => {
       const res = await fetch(m.move.url);
@@ -48,6 +109,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
         accuracy: moveData.accuracy,
         pp: moveData.pp,
         level: m.level_learned_at,
+        damage_class: moveData.damage_class.name,
       };
     });
     const newMoves = await Promise.all(movePromises);
@@ -99,6 +161,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
           accuracy: moveData.accuracy,
           pp: moveData.pp,
           level: m.level_learned_at,
+          damage_class: moveData.damage_class.name,
         };
       });
 
@@ -145,6 +208,9 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
                 이름
               </th>
               <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                분류
+              </th>
+              <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 타입
               </th>
               <th className="py-2 px-4 border-b text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -166,6 +232,9 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
                 </td>
                 <td className="py-2 px-4 text-sm text-gray-900 font-bold">
                   {move.name}
+                </td>
+                <td className="py-2 px-4 text-sm">
+                  {getDamageClassIcon(move.damage_class)}
                 </td>
                 <td className="py-2 px-4 text-sm">
                   <TypeCard typeNames={move.type} />
