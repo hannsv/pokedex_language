@@ -81,7 +81,9 @@ export default function DropDownFilter({
             {typeKorean.map((type) => (
               <li
                 key={type.type}
-                onClick={() => onSelectType(type.type)}
+                onClick={() =>
+                  onSelectType(selectedType === type.type ? "all" : type.type)
+                }
                 className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
                   selectedType === type.type
                     ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold"
@@ -101,7 +103,9 @@ export default function DropDownFilter({
             {formKorean.map((form) => (
               <li
                 key={form.type}
-                onClick={() => onSelectForm(form.type)}
+                onClick={() =>
+                  onSelectForm(selectedForm === form.type ? "all" : form.type)
+                }
                 className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
                   selectedForm === form.type
                     ? "bg-purple-500 text-white border-purple-500 shadow-sm font-bold"
@@ -192,8 +196,15 @@ export default function DropDownFilter({
                     <li
                       key={item.type}
                       onClick={() => {
-                        if (activeModal === "type") onSelectType(item.type);
-                        else onSelectForm(item.type);
+                        if (activeModal === "type") {
+                          onSelectType(
+                            selectedType === item.type ? "all" : item.type
+                          );
+                        } else {
+                          onSelectForm(
+                            selectedForm === item.type ? "all" : item.type
+                          );
+                        }
                         setActiveModal("none");
                       }}
                       className={`cursor-pointer px-4 py-2 text-sm rounded-xl border transition-all w-full text-center ${

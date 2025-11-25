@@ -11,9 +11,9 @@ export default function CardSelectButton({
     <div className="flex items-center justify-center">
       <button
         onClick={onClick}
-        className="text-white-500 font-bold cursor-pointer bg-white border border-gray-300 hover:bg-gray-100 flex items-center justify-center rounded-md mb-4"
+        className="w-10 h-10 text-gray-800 font-bold cursor-pointer bg-white border-2 border-gray-800 hover:bg-gray-50 flex items-center justify-center rounded-xl shadow-[2px_2px_0px_0px_rgba(31,41,55,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
       >
-        <span className="m-3">{string}</span>
+        <span className="text-lg">{string}</span>
       </button>
     </div>
   );

@@ -23,6 +23,14 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   const [isShiny, setIsShiny] = useState(false);
 
   useEffect(() => {
+    // Check session storage for shiny preference
+    const savedShiny = sessionStorage.getItem("pokemon_list_shiny");
+    if (savedShiny === "true") {
+      setIsShiny(true);
+    }
+  }, []);
+
+  useEffect(() => {
     const fetchPokemonData = async () => {
       try {
         setIsLoading(true);

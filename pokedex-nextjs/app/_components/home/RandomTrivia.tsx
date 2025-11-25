@@ -35,7 +35,11 @@ const triviaList = [
   "피카츄는 숲속에서 동료들과 꼬리를 맞대고 전기를 교환합니다.",
 ];
 
-export default function RandomTrivia() {
+interface RandomTriviaProps {
+  trigger: number;
+}
+
+export default function RandomTrivia({ trigger }: RandomTriviaProps) {
   const [trivia, setTrivia] = useState("");
 
   useEffect(() => {
@@ -45,18 +49,28 @@ export default function RandomTrivia() {
       setTrivia(triviaList[randomIndex]);
     }, 0);
     return () => clearTimeout(timer);
-  }, []);
-
-  if (!trivia) return null;
+  }, [trigger]);
 
   return (
-    <div className="mt-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-700 px-4">
-      <div className="inline-block bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
-        <span className="text-blue-500 font-bold mr-2">
-          💡 오늘의 포켓몬 상식:
-        </span>
-        <span className="text-gray-700 font-medium break-keep">{trivia}</span>
-      </div>
+    <div className="mt-8 text-center px-4 min-h-[60px] flex items-center justify-center">
+      {trivia && (
+        <div
+          key={trigger} // Trigger animation on change
+          className="animate-in fade-in slide-in-from-bottom-2 duration-500 relative inline-block bg-white border-2 border-gray-800 rounded-xl px-6 py-4 shadow-[4px_4px_0px_0px_rgba(31,41,55,1)]"
+        >
+          {/* Speech Bubble Tail */}
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t-2 border-l-2 border-gray-800 rotate-45 transform origin-center"></div>
+
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-xs font-bold text-white bg-red-500 px-2 py-0.5 rounded-full border border-gray-800 shadow-sm">
+              POKÉMON TIP
+            </span>
+            <span className="text-gray-800 font-bold text-sm sm:text-base break-keep leading-relaxed">
+              {trivia}
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
