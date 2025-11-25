@@ -11,7 +11,6 @@ export default function TopNavBar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: "홈", href: "/" },
     { name: "포켓몬", href: "/pokemon" },
     { name: "상성계산기", href: "/type" },
   ];

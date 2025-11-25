@@ -35,7 +35,10 @@ export default function TypeCalculatorPage() {
   const resetTypes = () => {
     setType1(null);
     setType2(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // 상태 업데이트 후 렌더링이 완료될 시간을 주기 위해 setTimeout 사용
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   };
 
   const selectedTypes = [type1, type2].filter((t): t is string => t !== null);
