@@ -6,6 +6,7 @@ import { pokemonTypes } from "@/app/lib/api/pokemonTypes";
 
 interface TypeMatchupProps {
   types: string[];
+  onReset?: () => void;
 }
 
 interface DamageRelations {
@@ -22,7 +23,7 @@ interface TypeData {
   relations: DamageRelations;
 }
 
-export default function TypeMatchup({ types }: TypeMatchupProps) {
+export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
   const [defenseEffectiveness, setDefenseEffectiveness] = useState<
     Record<string, number>
   >({});
@@ -118,9 +119,19 @@ export default function TypeMatchup({ types }: TypeMatchupProps) {
 
   return (
     <div className="w-full mb-6 bg-gray-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-lg p-6">
-      <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b border-gray-100 dark:border-gray-700 pb-2">
-        타입 상성
-      </h2>
+      <div className="flex justify-between items-center border-b border-gray-100 dark:border-gray-700 pb-2 mb-3">
+        <h2 className="text-xl font-bold text-gray-700 dark:text-[#EAEAEA]">
+          타입 상성
+        </h2>
+        {onReset && (
+          <button
+            onClick={onReset}
+            className="px-3 py-1 text-xs font-bold text-white bg-red-500 hover:bg-red-600 rounded-full shadow-sm transition-colors dark:bg-[#FFD700] dark:text-black dark:hover:bg-[#E6C200]"
+          >
+            초기화
+          </button>
+        )}
+      </div>
 
       {/* Defense Section */}
       <div className="mb-6">

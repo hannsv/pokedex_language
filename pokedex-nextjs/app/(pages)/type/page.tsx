@@ -45,12 +45,14 @@ export default function TypeCalculatorPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-[#EAEAEA]">
-        타입 상성 계산기
-      </h1>
-      <p className="text-center text-gray-500 dark:text-gray-400 mb-8">
-        포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요.
-      </p>
+      <div className="relative flex flex-col items-center justify-center mb-8">
+        <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-[#EAEAEA]">
+          타입 상성 계산기
+        </h1>
+        <p className="text-center text-gray-500 dark:text-gray-400">
+          포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요.
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Type 1 Selection */}
@@ -132,24 +134,6 @@ export default function TypeCalculatorPage() {
         </div>
       </div>
 
-      {/* Reset Button */}
-      <div className="flex justify-center mb-10">
-        <button
-          onClick={resetTypes}
-          disabled={selectedTypes.length === 0}
-          className={`
-            px-6 py-2 rounded-full font-bold transition-colors
-            ${
-              selectedTypes.length > 0
-                ? "bg-red-500 text-white hover:bg-red-600 shadow-md dark:bg-[#FFD700] dark:text-black dark:hover:bg-[#E6C200]"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-[#333] dark:text-gray-600"
-            }
-          `}
-        >
-          초기화
-        </button>
-      </div>
-
       {/* Result Section */}
       <div className="min-h-[600px] flex flex-col">
         {selectedTypes.length > 0 ? (
@@ -166,7 +150,7 @@ export default function TypeCalculatorPage() {
             </div>
 
             {/* Reusing the TypeMatchup component */}
-            <TypeMatchup types={selectedTypes} />
+            <TypeMatchup types={selectedTypes} onReset={resetTypes} />
           </div>
         ) : (
           <div className="flex-1 flex flex-col justify-center items-center text-center py-12 bg-gray-50 dark:bg-[#121212] rounded-xl border-2 border-dashed border-gray-200 dark:border-gray-700">
