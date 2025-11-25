@@ -211,6 +211,7 @@ export default function PokemonListPage() {
         onSelectType={(type) => {
           setSelectedType(type);
           setDisplayedCount(20);
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         selectedForm={selectedForm}
         onSelectForm={(form) => {

@@ -35,6 +35,7 @@ export default function TypeCalculatorPage() {
   const resetTypes = () => {
     setType1(null);
     setType2(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const selectedTypes = [type1, type2].filter((t): t is string => t !== null);
