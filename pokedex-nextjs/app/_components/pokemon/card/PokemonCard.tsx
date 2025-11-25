@@ -16,6 +16,7 @@ import TypeCard from "../type/TypeCard";
 import Link from "next/link";
 import PokemonImgCard from "./PokemonImgCard";
 import { PokemonData } from "@/app/lib/types/types";
+import PokemonSprite from "./PokemonSprite";
 
 interface PokemonCardProps {
   indexId: number;
@@ -180,14 +181,10 @@ export default function PokemonCard({
                   onClick={handleCardClick}
                 >
                   <div className="w-16 h-16 relative">
-                    <img
-                      src={
-                        isShiny
-                          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${indexId}.png`
-                          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`
-                      }
+                    <PokemonSprite
+                      indexId={indexId}
+                      isShiny={isShiny}
                       alt={pokemonName}
-                      loading="lazy"
                       className="w-full h-full object-contain"
                     />
                   </div>

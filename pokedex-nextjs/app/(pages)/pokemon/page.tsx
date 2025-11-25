@@ -18,6 +18,7 @@ const pokemonData = pokemonDataRaw as Pokemon[];
 export default function PokemonListPage() {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedForm, setSelectedForm] = useState("all");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [isShiny, setIsShiny] = useState(false);
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -33,6 +34,7 @@ export default function PokemonListPage() {
     const savedCount = sessionStorage.getItem("pokemon_list_count");
     const savedType = sessionStorage.getItem("pokemon_list_type");
     const savedForm = sessionStorage.getItem("pokemon_list_form");
+    const savedSort = sessionStorage.getItem("pokemon_list_sort");
     const savedShiny = sessionStorage.getItem("pokemon_list_shiny");
     const savedScroll = sessionStorage.getItem("pokemon_scroll_pos");
 
@@ -46,6 +48,9 @@ export default function PokemonListPage() {
       }
       if (savedForm) {
         setSelectedForm(savedForm);
+      }
+      if (savedSort) {
+        setSortOrder(savedSort as "asc" | "desc");
       }
       if (savedShiny) {
         setIsShiny(savedShiny === "true");
@@ -67,8 +72,16 @@ export default function PokemonListPage() {
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
     sessionStorage.setItem("pokemon_list_type", selectedType);
     sessionStorage.setItem("pokemon_list_form", selectedForm);
+    sessionStorage.setItem("pokemon_list_sort", sortOrder);
     sessionStorage.setItem("pokemon_list_shiny", isShiny.toString());
-  }, [displayedCount, selectedType, selectedForm, isShiny, isRestored]);
+  }, [
+    displayedCount,
+    selectedType,
+    selectedForm,
+    sortOrder,
+    isShiny,
+    isRestored,
+  ]);
 
   // Filter pokemon based on selected type and form
   const filteredPokemon = useMemo(() => {
@@ -92,8 +105,13 @@ export default function PokemonListPage() {
       });
     }
 
+    // 3. Sort
+    if (sortOrder === "desc") {
+      filtered = [...filtered].reverse();
+    }
+
     return filtered;
-  }, [selectedType, selectedForm]);
+  }, [selectedType, selectedForm, sortOrder]);
 
   // Get the subset of pokemon to display
   const displayedPokemon = filteredPokemon.slice(0, displayedCount);
@@ -220,6 +238,12 @@ export default function PokemonListPage() {
         }}
         isShiny={isShiny}
         onToggleShiny={() => setIsShiny(!isShiny)}
+        sortOrder={sortOrder}
+        onToggleSortOrder={() => {
+          setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+          setDisplayedCount(20);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       />
 
       {/* 보기 설정 (행당 개수 및 뷰 모드) */}

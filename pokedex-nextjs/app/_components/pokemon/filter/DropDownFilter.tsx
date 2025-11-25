@@ -9,6 +9,8 @@ interface DropDownFilterProps {
   onSelectForm: (form: string) => void;
   isShiny: boolean;
   onToggleShiny: () => void;
+  sortOrder: "asc" | "desc";
+  onToggleSortOrder: () => void;
 }
 
 export default function DropDownFilter({
@@ -18,6 +20,8 @@ export default function DropDownFilter({
   onSelectForm,
   isShiny,
   onToggleShiny,
+  sortOrder,
+  onToggleSortOrder,
 }: DropDownFilterProps) {
   const [activeModal, setActiveModal] = useState<"none" | "type" | "form">(
     "none"
@@ -65,25 +69,46 @@ export default function DropDownFilter({
             <span className="font-bold text-xs text-gray-500 dark:text-gray-400">
               타입
             </span>
-            <button
-              onClick={onToggleShiny}
-              className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border ${
-                isShiny
-                  ? "bg-yellow-100 text-yellow-700 border-yellow-300 dark:bg-[#333] dark:text-[#FFD700] dark:border-[#FFD700]"
-                  : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700 dark:hover:bg-[#333]"
-              }`}
-            >
-              <span
-                className={
-                  isShiny
-                    ? "text-yellow-500 dark:text-[#FFD700]"
-                    : "text-gray-300 dark:text-gray-600"
-                }
+            <div className="flex gap-2">
+              <button
+                onClick={onToggleSortOrder}
+                className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border ${
+                  sortOrder === "desc"
+                    ? "bg-red-100 text-red-700 border-red-300 dark:bg-[#333] dark:text-red-400 dark:border-red-400"
+                    : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700 dark:hover:bg-[#333]"
+                }`}
               >
-                ✨
-              </span>
-              이로치 모드
-            </button>
+                <span
+                  className={
+                    sortOrder === "desc"
+                      ? "text-red-500 dark:text-red-400"
+                      : "text-gray-300 dark:text-gray-600"
+                  }
+                >
+                  {sortOrder === "desc" ? "▼" : "▲"}
+                </span>
+                {sortOrder === "desc" ? "역순 정렬" : "번호순"}
+              </button>
+              <button
+                onClick={onToggleShiny}
+                className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border ${
+                  isShiny
+                    ? "bg-yellow-100 text-yellow-700 border-yellow-300 dark:bg-[#333] dark:text-[#FFD700] dark:border-[#FFD700]"
+                    : "bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700 dark:hover:bg-[#333]"
+                }`}
+              >
+                <span
+                  className={
+                    isShiny
+                      ? "text-yellow-500 dark:text-[#FFD700]"
+                      : "text-gray-300 dark:text-gray-600"
+                  }
+                >
+                  ✨
+                </span>
+                이로치 모드
+              </button>
+            </div>
           </div>
           <ul className="flex flex-wrap gap-1.5">
             {typeKorean.map((type) => (
@@ -131,6 +156,19 @@ export default function DropDownFilter({
 
       {/* Mobile Floating Buttons */}
       <div className="md:hidden fixed bottom-6 left-4 z-40 flex flex-col gap-3">
+        <button
+          onClick={onToggleSortOrder}
+          className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
+            sortOrder === "desc"
+              ? "bg-red-500 text-white ring-2 ring-red-300 dark:bg-red-700 dark:ring-red-500"
+              : "bg-white text-gray-400 border border-gray-200 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700"
+          }`}
+          title="정렬 변경"
+        >
+          <span className="text-xs font-bold">
+            {sortOrder === "desc" ? "역순" : "번호"}
+          </span>
+        </button>
         <button
           onClick={onToggleShiny}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
