@@ -6,7 +6,7 @@
  * @description 포켓몬 메인페이지 카드 컴포넌트. 도감번호, 이름, 이미지, 타입 순으로 세로 정렬 배치
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import {
   getPokemonKoreanName,
@@ -43,6 +43,26 @@ export default function PokemonCard({
     cachedData?.types || []
   );
   const [pokemonNumber, setPokemonNumber] = useState<number>(indexId);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // If data is already cached, use it and skip fetch
@@ -52,6 +72,8 @@ export default function PokemonCard({
       setIsLoading(false);
       return;
     }
+
+    if (!isVisible) return;
 
     const fetchPokemonData = async () => {
       try {
@@ -93,7 +115,7 @@ export default function PokemonCard({
       }
     };
     fetchPokemonData();
-  }, [indexId]);
+  }, [indexId, isVisible]);
 
   const handleCardClick = () => {
     // Save scroll position before navigation
@@ -102,6 +124,7 @@ export default function PokemonCard({
 
   return (
     <div
+      ref={cardRef}
       id={`pokemon-card-${indexId}`}
       className={`border border-gray-300 dark:border-[#FFD700] rounded-lg shadow-lg bg-white dark:bg-[#1E1E1E] transition-all hover:shadow-xl ${
         viewMode === "grid"
@@ -164,6 +187,7 @@ export default function PokemonCard({
                           : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${indexId}.png`
                       }
                       alt={pokemonName}
+                      loading="lazy"
                       className="w-full h-full object-contain"
                     />
                   </div>

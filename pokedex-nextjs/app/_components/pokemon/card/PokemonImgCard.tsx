@@ -17,6 +17,7 @@ export default function PokemonImgCard({
     <img
       src={imageUrl}
       alt="Pokémon Image"
+      loading="lazy"
       className="h-32 mb-2 border border-gray-200 rounded-lg cursor-pointer object-contain p-2 dark:border-gray-700 dark:bg-[#2C2C2C]"
     />
   );
