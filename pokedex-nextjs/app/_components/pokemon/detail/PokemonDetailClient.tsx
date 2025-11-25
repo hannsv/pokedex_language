@@ -22,6 +22,20 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isShiny, setIsShiny] = useState(false);
 
+  const pokeNum = parseInt(id, 10);
+
+  const handlePrev = () => {
+    if (pokeNum > 1) {
+      router.push(`/pokemon/detail/${pokeNum - 1}`);
+    }
+  };
+
+  const handleNext = () => {
+    if (pokeNum < 1025) {
+      router.push(`/pokemon/detail/${pokeNum + 1}`);
+    }
+  };
+
   useEffect(() => {
     // Check session storage for shiny preference
     const savedShiny = sessionStorage.getItem("pokemon_list_shiny");
@@ -103,7 +117,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
   }, [id]);
 
   return (
-    <div className="max-w-4xl mx-auto p-4 relative">
+    <div className="max-w-4xl mx-auto p-0 md:p-4 relative">
       {isLoading ? (
         <div className="flex justify-center items-center h-64">
           <img
@@ -117,7 +131,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           {/* Back Button */}
           <button
             onClick={() => router.back()}
-            className="absolute left-0 top-2 p-4 -ml-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors z-10"
+            className="absolute left-2 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors z-10"
             aria-label="뒤로 가기"
           >
             <svg
@@ -135,7 +149,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             </svg>
           </button>
 
-          <div className="w-full flex justify-center items-center px-4 mb-4 mt-8 relative">
+          <div className="w-full flex justify-center items-center px-4 mb-2 mt-14 md:mt-8 relative">
             <div className="text-center">
               <h1 className="text-3xl font-bold text-gray-800">
                 {pokemonName}
@@ -157,30 +171,17 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             </div>
           </div>
 
-          <div className="relative w-64 h-64 bg-gray-100 rounded-full flex items-center justify-center mb-6 shadow-inner group">
-            <img
-              src={
-                isShiny
-                  ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokemonData.id}.png`
-                  : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`
-              }
-              alt={pokemonData.name}
-              className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
-            />
-            {/* Shiny Toggle Button */}
+          <div className="flex items-center justify-between md:justify-center gap-2 md:gap-6 w-full mb-6 px-4 md:px-0">
             <button
-              onClick={() => setIsShiny(!isShiny)}
-              className={`absolute bottom-2 right-2 p-2 rounded-full shadow-md transition-all ${
-                isShiny
-                  ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
-                  : "bg-white text-gray-400 hover:text-yellow-500"
-              }`}
-              title={isShiny ? "기본 모습 보기" : "이로치(색이 다른) 모습 보기"}
+              onClick={handlePrev}
+              disabled={pokeNum <= 1}
+              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="이전 포켓몬"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -188,10 +189,69 @@ export default function PokemonDetailClient({ id }: { id: string }) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                <path d="M3 3v5h5" />
-                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
-                <path d="M16 21h5v-5" />
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            <div className="relative w-[60vw] h-[60vw] max-w-64 max-h-64 bg-gray-100 rounded-full flex items-center justify-center shadow-inner group">
+              <img
+                src={
+                  isShiny
+                    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokemonData.id}.png`
+                    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`
+                }
+                alt={pokemonData.name}
+                className="w-[75%] h-[75%] object-contain hover:scale-110 transition-transform duration-300"
+              />
+              {/* Shiny Toggle Button */}
+              <button
+                onClick={() => setIsShiny(!isShiny)}
+                className={`absolute bottom-2 right-2 p-2 rounded-full shadow-md transition-all ${
+                  isShiny
+                    ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
+                    : "bg-white text-gray-400 hover:text-yellow-500"
+                }`}
+                title={
+                  isShiny ? "기본 모습 보기" : "이로치(색이 다른) 모습 보기"
+                }
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+                  <path d="M16 21h5v-5" />
+                </svg>
+              </button>
+            </div>
+
+            <button
+              onClick={handleNext}
+              disabled={pokeNum >= 1025}
+              className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="다음 포켓몬"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
           </div>
