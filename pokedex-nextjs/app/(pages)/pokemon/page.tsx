@@ -15,6 +15,12 @@ interface Pokemon {
 
 const pokemonData = pokemonDataRaw as Pokemon[];
 
+// Helper to extract ID from URL
+const getPokemonId = (url: string) => {
+  const parts = url.split("/");
+  return parseInt(parts[parts.length - 2]);
+};
+
 export default function PokemonListPage() {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedForm, setSelectedForm] = useState("all");
@@ -107,7 +113,34 @@ export default function PokemonListPage() {
 
     // 3. Sort
     if (sortOrder === "desc") {
-      filtered = [...filtered].reverse();
+      filtered = [...filtered].sort((a, b) => {
+        const idA = getPokemonId(a.url);
+        const idB = getPokemonId(b.url);
+
+        const isSpecialA = idA >= 10000;
+        const isSpecialB = idB >= 10000;
+
+        // 특수 폼(10000번대)은 항상 뒤로 보냄
+        if (isSpecialA && !isSpecialB) return 1;
+        if (!isSpecialA && isSpecialB) return -1;
+
+        // 같은 그룹 내에서는 역순 정렬
+        return idB - idA;
+      });
+    } else {
+      // 정방향 정렬 (기본 JSON 순서가 ID 순이지만, 명시적으로 정렬)
+      filtered = [...filtered].sort((a, b) => {
+        const idA = getPokemonId(a.url);
+        const idB = getPokemonId(b.url);
+
+        const isSpecialA = idA >= 10000;
+        const isSpecialB = idB >= 10000;
+
+        if (isSpecialA && !isSpecialB) return 1;
+        if (!isSpecialA && isSpecialB) return -1;
+
+        return idA - idB;
+      });
     }
 
     return filtered;
@@ -195,12 +228,6 @@ export default function PokemonListPage() {
     };
   }, [filteredPokemon.length]);
 
-  // Helper to extract ID from URL
-  const getPokemonId = (url: string) => {
-    const parts = url.split("/");
-    return parseInt(parts[parts.length - 2]);
-  };
-
   const gridColsClass =
     viewMode === "list"
       ? "grid-cols-1"
@@ -222,7 +249,7 @@ export default function PokemonListPage() {
       : "gap-4";
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-2 md:px-4">
+    <div className="flex flex-col items-center justify-center w-full mx-auto px-2 md:px-4">
       {/* 필터 메뉴 */}
       <DropDownFilter
         selectedType={selectedType}

@@ -48,7 +48,7 @@ export default function TopNavBar() {
     <header className="sticky top-0 z-50 w-full shadow-md">
       {/* Red Top Section */}
       <div className="bg-red-600 dark:bg-[#121212] dark:border-b dark:border-[#FFD700] w-full h-16 relative flex items-center justify-center px-4 transition-colors duration-300">
-        <div className="max-w-7xl w-full flex justify-between items-center">
+        <div className="max-w-screen-2xl w-full flex justify-between items-center">
           {/* Left Section: Mobile Menu & Logo & Desktop Nav */}
           <div className="flex items-center gap-2 z-30">
             <div className="flex items-center gap-2">

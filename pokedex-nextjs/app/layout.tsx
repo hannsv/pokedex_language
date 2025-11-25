@@ -33,7 +33,7 @@ export default function RootLayout({
         <TopNavBar />
         {/* 메인 컨텐츠 */}
         <main className="flex justify-center font-sans pt-0 pb-4 px-2 md:pb-10 md:px-4 min-h-[calc(100vh-80px)]">
-          <div className="w-full max-w-7xl rounded-b-2xl rounded-t-none md:rounded-2xl shadow-xl bg-white dark:bg-[#1E1E1E] text-black dark:text-[#EAEAEA] p-2 md:p-8 border border-gray-100 dark:border-[#FFD700] transition-colors duration-300">
+          <div className="w-full max-w-screen-2xl rounded-b-2xl rounded-t-none md:rounded-2xl shadow-xl bg-white dark:bg-[#1E1E1E] text-black dark:text-[#EAEAEA] p-2 md:p-8 border border-gray-100 dark:border-[#FFD700] transition-colors duration-300">
             {children}
           </div>
         </main>
