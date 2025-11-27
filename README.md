@@ -2,6 +2,7 @@
 
 포켓몬 도감 다국어 버전
 
-# 사용 API
+# import
 
-https://pokeapi.co/
+- https://pokeapi.co/
+- Gmarket Sans
