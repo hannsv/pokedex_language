@@ -5,7 +5,15 @@ import { pokemonTypes, typeStyleMap } from "@/app/lib/api/pokemonTypes";
 import TypeMatchup from "@/app/_components/pokemon/detail/TypeMatchup";
 import TypeCard from "@/app/_components/pokemon/type/TypeCard";
 
-export default function TypeCalculatorPage() {
+interface TypeCalculatorClientProps {
+  dict: any;
+  lang: "ko" | "en" | "zh";
+}
+
+export default function TypeCalculatorClient({
+  dict,
+  lang,
+}: TypeCalculatorClientProps) {
   const [type1, setType1] = useState<string | null>(null);
   const [type2, setType2] = useState<string | null>(null);
 
@@ -47,10 +55,11 @@ export default function TypeCalculatorPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="relative flex flex-col items-center justify-center mb-8">
         <h1 className="text-3xl font-bold mb-2 text-center text-gray-800 dark:text-[#EAEAEA]">
-          타입 상성 계산기
+          {dict?.type_calc?.title || "타입 상성 계산기"}
         </h1>
         <p className="text-center text-gray-500 dark:text-gray-400">
-          포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요.
+          {dict?.type_calc?.description ||
+            "포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요."}
         </p>
       </div>
 
@@ -59,15 +68,18 @@ export default function TypeCalculatorPage() {
         <div className="bg-white dark:bg-[#1E1E1E] p-6 rounded-xl shadow-sm border border-gray-200 dark:border-[#FFD700]">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-gray-700 dark:text-[#EAEAEA]">
-              타입 1 (필수)
+              {dict?.type_calc?.type1 || "타입 1 (필수)"}
             </h2>
-            {type1 && <TypeCard typeNames={type1} size="medium" />}
+            {type1 && <TypeCard typeNames={type1} size="medium" lang={lang} />}
           </div>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
             {pokemonTypes.map((t) => {
               const isSelected = type1 === t.en;
               const isDisabled = type2 === t.en;
               const style = typeStyleMap[t.en];
+              let displayName = t.en.charAt(0).toUpperCase() + t.en.slice(1);
+              if (lang === "ko") displayName = t.name;
+              if (lang === "zh") displayName = t.zh;
 
               return (
                 <button
@@ -85,7 +97,7 @@ export default function TypeCalculatorPage() {
                     }
                   `}
                 >
-                  {t.name}
+                  {displayName}
                 </button>
               );
             })}
@@ -96,12 +108,14 @@ export default function TypeCalculatorPage() {
         <div className="bg-white dark:bg-[#1E1E1E] p-6 rounded-xl shadow-sm border border-gray-200 dark:border-[#FFD700]">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-gray-700 dark:text-[#EAEAEA]">
-              타입 2 (선택)
+              {dict?.type_calc?.type2 || "타입 2 (선택)"}
             </h2>
             {type2 ? (
-              <TypeCard typeNames={type2} size="medium" />
+              <TypeCard typeNames={type2} size="medium" lang={lang} />
             ) : (
-              <span className="text-sm text-gray-400">선택 안함</span>
+              <span className="text-sm text-gray-400">
+                {dict?.type_calc?.none || "선택 안함"}
+              </span>
             )}
           </div>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -109,6 +123,9 @@ export default function TypeCalculatorPage() {
               const isSelected = type2 === t.en;
               const isDisabled = type1 === t.en;
               const style = typeStyleMap[t.en];
+              let displayName = t.en.charAt(0).toUpperCase() + t.en.slice(1);
+              if (lang === "ko") displayName = t.name;
+              if (lang === "zh") displayName = t.zh;
 
               return (
                 <button
@@ -126,7 +143,7 @@ export default function TypeCalculatorPage() {
                     }
                   `}
                 >
-                  {t.name}
+                  {displayName}
                 </button>
               );
             })}
@@ -140,25 +157,37 @@ export default function TypeCalculatorPage() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="flex justify-center items-center gap-2 mb-6">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-[#EAEAEA]">
-                결과 분석
+                {dict?.type_calc?.result || "결과 분석"}
               </h2>
               <div className="flex gap-2 ml-4">
                 {selectedTypes.map((t) => (
-                  <TypeCard key={`res-${t}`} typeNames={t} size="medium" />
+                  <TypeCard
+                    key={`res-${t}`}
+                    typeNames={t}
+                    size="medium"
+                    lang={lang}
+                  />
                 ))}
               </div>
             </div>
 
             {/* Reusing the TypeMatchup component */}
-            <TypeMatchup types={selectedTypes} onReset={resetTypes} />
+            <TypeMatchup
+              types={selectedTypes}
+              onReset={resetTypes}
+              lang={lang}
+              dict={dict}
+            />
           </div>
         ) : (
           <div className="flex-1 flex flex-col justify-center items-center text-center py-12 bg-gray-50 dark:bg-[#121212] rounded-xl border-2 border-dashed border-gray-200 dark:border-gray-700">
             <p className="text-gray-400 text-lg font-medium">
-              타입을 선택하면 상성 분석 결과가 여기에 표시됩니다.
+              {dict?.type_calc?.placeholder_1 ||
+                "타입을 선택하면 상성 분석 결과가 여기에 표시됩니다."}
             </p>
             <p className="text-gray-300 dark:text-gray-500 text-sm mt-2">
-              (최소 1개의 타입을 선택해주세요)
+              {dict?.type_calc?.placeholder_2 ||
+                "(최소 1개의 타입을 선택해주세요)"}
             </p>
           </div>
         )}

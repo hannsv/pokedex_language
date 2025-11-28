@@ -21,7 +21,15 @@ const getPokemonId = (url: string) => {
   return parseInt(parts[parts.length - 2]);
 };
 
-export default function PokemonListPage() {
+interface PokemonListClientProps {
+  dict: any;
+  lang: "ko" | "en" | "zh";
+}
+
+export default function PokemonListClient({
+  dict,
+  lang,
+}: PokemonListClientProps) {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedForm, setSelectedForm] = useState("all");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
@@ -289,6 +297,7 @@ export default function PokemonListPage() {
           setDisplayedCount(20);
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
+        dict={dict}
       />
 
       {/* 보기 설정 (행당 개수 및 뷰 모드) */}
@@ -386,6 +395,7 @@ export default function PokemonListPage() {
               indexId={id}
               viewMode={viewMode}
               isShiny={isShiny}
+              lang={lang}
             />
           );
         })}
@@ -401,7 +411,7 @@ export default function PokemonListPage() {
       {/* 결과 없음 메시지 */}
       {filteredPokemon.length === 0 && (
         <div className="w-full py-20 text-center text-gray-500 dark:text-gray-400">
-          해당 타입의 포켓몬이 없습니다.
+          {dict?.pokemon_list?.no_result || "해당 타입의 포켓몬이 없습니다."}
         </div>
       )}
 
@@ -413,7 +423,7 @@ export default function PokemonListPage() {
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"
         }`}
-        title="맨 위로"
+        title={dict?.common?.scroll_to_top || "맨 위로"}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "pokemon": "Pokemon",
+    "type_calc": "Type Calc",
+    "search_placeholder": "Name or Number...",
+    "search_label": "Search Pokemon",
+    "menu_open": "Open Menu",
+    "search_open": "Open Search",
+    "close": "Close",
+    "light_mode": "Switch to Light Mode",
+    "dark_mode": "Switch to Dark Mode"
+  },
+  "home": {
+    "random_card_title": "Pokemon of the Day",
+    "trivia_title": "Did you know?"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred.",
+    "load_more": "Load More"
+  },
+  "type_calc": {
+    "title": "Type Calculator",
+    "description": "Select 1 or 2 types to check defense/attack matchups.",
+    "type1": "Type 1 (Required)",
+    "type2": "Type 2 (Optional)",
+    "none": "None",
+    "result": "Analysis Result",
+    "placeholder_1": "Select types to see matchup analysis here.",
+    "placeholder_2": "(Please select at least 1 type)"
+  },
+  "type_matchup": {
+    "title": "Type Matchups",
+    "reset": "Reset",
+    "defense_title": "Defense (Incoming Damage)",
+    "attack_title": "Attack (Outgoing Damage)",
+    "attack_label": "Attacking with this type",
+    "no_defense_notes": "No special notes (1x damage from all types)",
+    "x2": "2x (Super Effective)",
+    "x05": "0.5x (Not Very Effective)",
+    "x0": "0x (No Effect)",
+    "no_notes": "No special notes",
+    "loading": "Loading type matchups..."
+  },
+  "pokemon_list": {
+    "no_result": "No Pokemon found for this type."
+  },
+  "detail": {
+    "features": "Features",
+    "height": "Height",
+    "weight": "Weight",
+    "stats": "Base Stats",
+    "abilities": "Abilities",
+    "evolution": "Evolution Chain",
+    "matchup": "Type Matchup",
+    "moves": "Moves",
+    "no_description": "No description available.",
+    "error": "Could not load Pokemon data.",
+    "prev": "Previous Pokemon",
+    "next": "Next Pokemon",
+    "shiny_on": "Show Shiny Form",
+    "shiny_off": "Show Default Form",
+    "special": "Special",
+    "back": "Back to List"
+  },
+  "moves": {
+    "name": "Name",
+    "class": "Class",
+    "type": "Type",
+    "power": "Power",
+    "accuracy": "Accuracy"
+  },
+  "filter": {
+    "type": "Type",
+    "form": "Form",
+    "sort_asc": "Number",
+    "sort_desc": "Reverse",
+    "shiny": "Shiny Mode",
+    "select_type": "Select Type",
+    "select_form": "Select Form",
+    "all": "All",
+    "normal": "Normal",
+    "fighting": "Fighting",
+    "flying": "Flying",
+    "poison": "Poison",
+    "ground": "Ground",
+    "rock": "Rock",
+    "bug": "Bug",
+    "ghost": "Ghost",
+    "steel": "Steel",
+    "fire": "Fire",
+    "water": "Water",
+    "grass": "Grass",
+    "electric": "Electric",
+    "psychic": "Psychic",
+    "ice": "Ice",
+    "dragon": "Dragon",
+    "dark": "Dark",
+    "fairy": "Fairy",
+    "default": "Default",
+    "mega": "Mega",
+    "gmax": "G-Max",
+    "alola": "Alola",
+    "galar": "Galar",
+    "hisui": "Hisui",
+    "paldea": "Paldea"
+  }
+}

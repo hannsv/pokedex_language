@@ -1,10 +1,37 @@
-export const getPokemonKoreanName = async (id: number) => {
+export const getPokemonName = async (
+  id: number,
+  lang: "ko" | "en" | "zh" = "ko"
+) => {
   const resp = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
   const data = await resp.json();
-  const koreanNameItem = data.names.find(
-    (n: { language: { name: string } }) => n.language.name === "ko"
+
+  const targetLang = lang === "zh" ? "zh-Hans" : lang;
+
+  const nameItem = data.names.find(
+    (n: { language: { name: string } }) => n.language.name === targetLang
   );
-  return koreanNameItem ? koreanNameItem.name : data.name; // 한글이 없으면 영문 이름 fallback
+
+  // Fallback logic
+  if (nameItem) return nameItem.name;
+
+  // If zh-Hans not found, try zh-Hant
+  if (lang === "zh") {
+    const hantItem = data.names.find(
+      (n: { language: { name: string } }) => n.language.name === "zh-Hant"
+    );
+    if (hantItem) return hantItem.name;
+  }
+
+  // Fallback to English name if target language not found, or capitalize name from data
+  const enItem = data.names.find(
+    (n: { language: { name: string } }) => n.language.name === "en"
+  );
+
+  return enItem ? enItem.name : data.name;
+};
+
+export const getPokemonKoreanName = async (id: number) => {
+  return getPokemonName(id, "ko");
 };
 
 export const getFormKoreanName = (name: string): string => {

@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "pokemon": "포켓몬",
+    "type_calc": "상성계산기",
+    "search_placeholder": "포켓몬 이름 또는 번호...",
+    "search_label": "포켓몬 검색",
+    "menu_open": "메뉴 열기",
+    "search_open": "검색 열기",
+    "close": "닫기",
+    "light_mode": "라이트 모드로 전환",
+    "dark_mode": "다크 모드로 전환"
+  },
+  "home": {
+    "random_card_title": "오늘의 포켓몬",
+    "trivia_title": "알고 계셨나요?"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다.",
+    "load_more": "더보기"
+  },
+  "type_calc": {
+    "title": "타입 상성 계산기",
+    "description": "포켓몬의 타입을 1개 또는 2개 선택하여 방어/공격 상성을 확인하세요.",
+    "type1": "타입 1 (필수)",
+    "type2": "타입 2 (선택)",
+    "none": "선택 안함",
+    "result": "결과 분석",
+    "placeholder_1": "타입을 선택하면 상성 분석 결과가 여기에 표시됩니다.",
+    "placeholder_2": "(최소 1개의 타입을 선택해주세요)"
+  },
+  "type_matchup": {
+    "title": "타입 상성",
+    "reset": "초기화",
+    "defense_title": "방어 상성 (받는 피해)",
+    "attack_title": "공격 상성 (주는 피해)",
+    "attack_label": "타입 공격 시",
+    "no_defense_notes": "특이 사항 없음 (모든 타입 1배)",
+    "x2": "2배 (효과가 굉장함)",
+    "x05": "0.5배 (효과가 별로)",
+    "x0": "0배 (효과 없음)",
+    "no_notes": "특이 사항 없음",
+    "loading": "타입 상성 로딩 중..."
+  },
+  "pokemon_list": {
+    "no_result": "해당 타입의 포켓몬이 없습니다."
+  },
+  "detail": {
+    "features": "특징",
+    "height": "키",
+    "weight": "몸무게",
+    "stats": "기본 능력치",
+    "abilities": "특성",
+    "evolution": "진화 정보",
+    "matchup": "방어 상성",
+    "moves": "기술 정보",
+    "no_description": "설명이 없습니다.",
+    "error": "포켓몬 데이터를 불러올 수 없습니다.",
+    "prev": "이전 포켓몬",
+    "next": "다음 포켓몬",
+    "shiny_on": "이로치(색이 다른) 모습 보기",
+    "shiny_off": "기본 모습 보기",
+    "special": "Special",
+    "back": "목록으로"
+  },
+  "moves": {
+    "name": "이름",
+    "class": "분류",
+    "type": "타입",
+    "power": "위력",
+    "accuracy": "명중률"
+  },
+  "filter": {
+    "type": "타입",
+    "form": "폼",
+    "sort_asc": "번호순",
+    "sort_desc": "역순 정렬",
+    "shiny": "이로치 모드",
+    "select_type": "타입 선택",
+    "select_form": "폼 선택",
+    "all": "전체",
+    "normal": "노말",
+    "fighting": "격투",
+    "flying": "비행",
+    "poison": "독",
+    "ground": "땅",
+    "rock": "바위",
+    "bug": "벌레",
+    "ghost": "고스트",
+    "steel": "강철",
+    "fire": "불꽃",
+    "water": "물",
+    "grass": "풀",
+    "electric": "전기",
+    "psychic": "에스퍼",
+    "ice": "얼음",
+    "dragon": "드래곤",
+    "dark": "악",
+    "fairy": "페어리",
+    "default": "기본",
+    "mega": "메가진화",
+    "gmax": "거다이맥스",
+    "alola": "알로라",
+    "galar": "가라르",
+    "hisui": "히스이",
+    "paldea": "팔데아"
+  }
+}

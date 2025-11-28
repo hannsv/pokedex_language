@@ -6,12 +6,25 @@ import PokemonEvolutionChain from "@/app/_components/pokemon/detail/PokemonEvolu
 import TypeMatchup from "@/app/_components/pokemon/detail/TypeMatchup";
 import PokemonMoves from "@/app/_components/pokemon/detail/PokemonMoves";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
-import { getFormKoreanName } from "@/app/lib/api/pokemon-to-language";
+import {
+  getFormKoreanName,
+  getPokemonName,
+} from "@/app/lib/api/pokemon-to-language";
 import { PokemonData } from "@/app/lib/types/types";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function PokemonDetailClient({ id }: { id: string }) {
+interface PokemonDetailClientProps {
+  id: string;
+  lang: "ko" | "en" | "zh";
+  dict: any;
+}
+
+export default function PokemonDetailClient({
+  id,
+  lang,
+  dict,
+}: PokemonDetailClientProps) {
   const router = useRouter();
   const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
   const [pokemonName, setPokemonName] = useState<string>("");
@@ -26,13 +39,13 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
   const handlePrev = () => {
     if (pokeNum > 1) {
-      router.push(`/pokemon/detail/${pokeNum - 1}`);
+      router.push(`/${lang}/pokemon/detail/${pokeNum - 1}`);
     }
   };
 
   const handleNext = () => {
     if (pokeNum < 1025) {
-      router.push(`/pokemon/detail/${pokeNum + 1}`);
+      router.push(`/${lang}/pokemon/detail/${pokeNum + 1}`);
     }
   };
 
@@ -73,17 +86,24 @@ export default function PokemonDetailClient({ id }: { id: string }) {
         console.log("포켓몬 타입:", types);
         setPokemonTypes(types);
 
-        // 특성 한글 이름 가져오기
+        // 특성 이름 가져오기
         const abilityPromises = data.abilities.map(
           async (abilityInfo: { ability: { url: string } }) => {
             const res = await fetch(abilityInfo.ability.url);
             const abilityData = await res.json();
-            const koreanAbility =
-              abilityData.names.find(
+            let abilityName = abilityData.names.find(
+              (n: { language: { name: string }; name: string }) =>
+                n.language.name === (lang === "zh" ? "zh-Hans" : lang)
+            )?.name;
+
+            if (!abilityName && lang === "zh") {
+              abilityName = abilityData.names.find(
                 (n: { language: { name: string }; name: string }) =>
-                  n.language.name === "ko"
-              )?.name || abilityData.name;
-            return koreanAbility;
+                  n.language.name === "zh-Hant"
+              )?.name;
+            }
+
+            return abilityName || abilityData.name;
           }
         );
         const abilities = await Promise.all(abilityPromises);
@@ -94,11 +114,19 @@ export default function PokemonDetailClient({ id }: { id: string }) {
         const speciesResponse = await fetch(data.species.url);
         const speciesData = await speciesResponse.json();
 
-        let koreanName =
-          speciesData.names.find(
+        let displayName = speciesData.names.find(
+          (n: { language: { name: string }; name: string }) =>
+            n.language.name === (lang === "zh" ? "zh-Hans" : lang)
+        )?.name;
+
+        if (!displayName && lang === "zh") {
+          displayName = speciesData.names.find(
             (n: { language: { name: string }; name: string }) =>
-              n.language.name === "ko"
-          )?.name || data.name;
+              n.language.name === "zh-Hant"
+          )?.name;
+        }
+
+        displayName = displayName || data.name;
 
         const englishName =
           speciesData.names.find(
@@ -106,21 +134,28 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               n.language.name === "en"
           )?.name || "";
 
-        // 10000번대 이상인 경우 폼 이름 추가
-        if (pokeNum > 10000) {
+        // 10000번대 이상인 경우 폼 이름 추가 (Korean only logic for now, or adapt)
+        if (pokeNum > 10000 && lang === "ko") {
           const formName = getFormKoreanName(data.name);
-          koreanName += formName;
+          displayName += formName;
         }
 
-        setPokemonName(koreanName);
+        setPokemonName(displayName);
         setPokemonEngName(englishName);
 
-        const koreanFlavorText =
-          speciesData.flavor_text_entries.find(
+        let flavorText = speciesData.flavor_text_entries.find(
+          (f: { language: { name: string }; flavor_text: string }) =>
+            f.language.name === (lang === "zh" ? "zh-Hans" : lang)
+        )?.flavor_text;
+
+        if (!flavorText && lang === "zh") {
+          flavorText = speciesData.flavor_text_entries.find(
             (f: { language: { name: string }; flavor_text: string }) =>
-              f.language.name === "ko"
-          )?.flavor_text || "설명이 없습니다.";
-        setPokemonDescription(koreanFlavorText);
+              f.language.name === "zh-Hant"
+          )?.flavor_text;
+        }
+
+        setPokemonDescription(flavorText || dict.detail.no_description);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
       } finally {
@@ -128,7 +163,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
       }
     };
     fetchPokemonData();
-  }, [id]);
+  }, [id, lang]);
 
   return (
     <div className="max-w-4xl mx-auto p-0 md:p-4 relative">
@@ -144,9 +179,9 @@ export default function PokemonDetailClient({ id }: { id: string }) {
         <div className="flex flex-col items-center relative">
           {/* Back Button */}
           <button
-            onClick={() => router.push("/pokemon")}
+            onClick={() => router.push(`/${lang}/pokemon`)}
             className="absolute left-2 top-2 p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-colors z-10"
-            aria-label="목록으로"
+            aria-label={dict.detail.back}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +214,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
                 </span>
               ) : (
                 <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-sm font-bold">
-                  Special
+                  {dict.detail.special}
                 </span>
               )}
             </div>
@@ -190,7 +225,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               onClick={handlePrev}
               disabled={pokeNum <= 1}
               className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 dark:text-gray-600 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="이전 포켓몬"
+              aria-label={dict.detail.prev}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -232,9 +267,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
                     ? "bg-yellow-400 text-white ring-2 ring-yellow-200"
                     : "bg-white text-gray-400 hover:text-yellow-500 dark:bg-[#333] dark:text-gray-500 dark:hover:text-[#FFD700]"
                 }`}
-                title={
-                  isShiny ? "기본 모습 보기" : "이로치(색이 다른) 모습 보기"
-                }
+                title={isShiny ? dict.detail.shiny_off : dict.detail.shiny_on}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -259,7 +292,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
               onClick={handleNext}
               disabled={pokeNum >= 1025}
               className="p-2 text-gray-300 hover:text-gray-500 hover:bg-gray-100 dark:text-gray-600 dark:hover:text-[#FFD700] dark:hover:bg-[#333] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="다음 포켓몬"
+              aria-label={dict.detail.next}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +318,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
           <div className="w-full bg-gray-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-6 rounded-lg shadow-sm mb-6">
             <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
-              특징
+              {dict.detail.features}
             </h2>
             <p className="text-gray-700 dark:text-[#EAEAEA] text-lg leading-relaxed whitespace-pre-line text-center">
               {pokemonDescription}
@@ -295,7 +328,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           <div className="grid grid-cols-2 gap-4 w-full mb-6">
             <div className="bg-blue-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-4 rounded-lg text-center">
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">
-                키
+                {dict.detail.height}
               </p>
               <p className="text-xl font-semibold dark:text-[#EAEAEA]">
                 {pokemonData.height / 10} m
@@ -303,7 +336,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
             </div>
             <div className="bg-blue-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] p-4 rounded-lg text-center">
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">
-                몸무게
+                {dict.detail.weight}
               </p>
               <p className="text-xl font-semibold dark:text-[#EAEAEA]">
                 {pokemonData.weight / 10} kg
@@ -313,7 +346,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
           <div className="w-full mb-6">
             <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
-              기본 능력치
+              {dict.detail.stats}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {pokemonData.stats.map((stat) => (
@@ -334,7 +367,7 @@ export default function PokemonDetailClient({ id }: { id: string }) {
 
           <div className="w-full mb-6">
             <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
-              특성
+              {dict.detail.abilities}
             </h2>
             <div className="flex flex-wrap gap-2">
               {pokemonAbilities.map((ability, index) => (
@@ -349,17 +382,21 @@ export default function PokemonDetailClient({ id }: { id: string }) {
           </div>
 
           {/* 진화 정보 */}
-          <PokemonEvolutionChain speciesUrl={pokemonData.species.url} />
+          <PokemonEvolutionChain
+            speciesUrl={pokemonData.species.url}
+            lang={lang}
+            dict={dict}
+          />
 
           {/* 방어 상성 */}
-          <TypeMatchup types={pokemonTypes} />
+          <TypeMatchup types={pokemonTypes} lang={lang} dict={dict} />
 
           {/* 기술 정보 */}
-          <PokemonMoves moves={pokemonData.moves} />
+          <PokemonMoves moves={pokemonData.moves} lang={lang} dict={dict} />
         </div>
       ) : (
         <div className="text-center text-gray-500 py-10">
-          포켓몬 데이터를 불러올 수 없습니다.
+          {dict.detail.error}
         </div>
       )}
     </div>

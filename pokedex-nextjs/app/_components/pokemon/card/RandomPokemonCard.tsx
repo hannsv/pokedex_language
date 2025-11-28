@@ -7,13 +7,14 @@ import CardSelectButton from "./CardSelectButton";
 
 import { PokemonData } from "@/app/lib/types/types";
 import { getPokemonByNumber } from "@/app/lib/api/pokemon";
-import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
+import { getPokemonName } from "@/app/lib/api/pokemon-to-language";
 import Link from "next/link";
 
 interface RandomPokemonCardProps {
   pokemonId: number;
   onNext: () => void;
   onPrev: () => void;
+  lang: "ko" | "en" | "zh";
 }
 
 /**
@@ -25,8 +26,9 @@ export default function RandomPokemonCard({
   pokemonId,
   onNext,
   onPrev,
+  lang,
 }: RandomPokemonCardProps) {
-  const [pokemonName, setPokemonName] = useState("로딩 중...");
+  const [pokemonName, setPokemonName] = useState("...");
   const [pokemonTypes, setPokemonTypes] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,8 +39,9 @@ export default function RandomPokemonCard({
         const pokemonData: PokemonData = await getPokemonByNumber(pokemonId);
         const types = pokemonData.types.map((typeInfo) => typeInfo.type.name);
         setPokemonTypes(types);
-        const koreanName = await getPokemonKoreanName(pokemonId);
-        setPokemonName(koreanName);
+
+        const name = await getPokemonName(pokemonId, lang);
+        setPokemonName(name);
       } catch (error) {
         console.error("포켓몬 데이터를 가져오는 중 오류 발생:", error);
       } finally {
@@ -46,7 +49,7 @@ export default function RandomPokemonCard({
       }
     };
     fetchPokemonData();
-  }, [pokemonId]);
+  }, [pokemonId, lang]);
 
   return (
     <div className="flex items-center justify-center gap-4">
@@ -55,7 +58,7 @@ export default function RandomPokemonCard({
         {isLoading ? (
           <div className="w-full h-full animate-pulse rounded-md flex items-center justify-center">
             <img
-              src="skeleton-monsterball.png"
+              src="/skeleton-monsterball.png"
               alt="loading"
               className="h-[50px] w-[50px]"
             />
@@ -63,7 +66,7 @@ export default function RandomPokemonCard({
         ) : (
           <>
             <Link
-              href={`/pokemon/detail/${pokemonId}`}
+              href={`/${lang}/pokemon/detail/${pokemonId}`}
               className="w-full h-full flex flex-col items-center"
             >
               <div className="w-full flex-1 flex flex-col items-center justify-between py-2">
@@ -77,12 +80,12 @@ export default function RandomPokemonCard({
                   <img
                     className="w-full h-full object-contain"
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
-                    alt="랜덤포켓몬"
+                    alt={pokemonName}
                   />
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 text-sm flex flex-row justify-center gap-1">
                   {pokemonTypes.map((type, index) => (
-                    <TypeCard key={index} typeNames={type} />
+                    <TypeCard key={index} typeNames={type} lang={lang} />
                   ))}
                 </div>
               </div>

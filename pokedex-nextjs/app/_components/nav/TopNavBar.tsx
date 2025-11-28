@@ -2,14 +2,20 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import SearchBar from "./SearchBar";
 
-export default function TopNavBar() {
+interface TopNavBarProps {
+  dict: any;
+  lang: "ko" | "en" | "zh";
+}
+
+export default function TopNavBar({ dict, lang }: TopNavBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     // Check local storage or system preference
@@ -39,9 +45,19 @@ export default function TopNavBar() {
     }
   };
 
+  const toggleLanguage = () => {
+    let newLang = "ko";
+    if (lang === "ko") newLang = "en";
+    else if (lang === "en") newLang = "zh";
+    else newLang = "ko";
+
+    const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
+    router.push(newPath);
+  };
+
   const menuItems = [
-    { name: "포켓몬", href: "/pokemon" },
-    { name: "상성계산기", href: "/type" },
+    { name: dict.pokemon, href: `/${lang}/pokemon` },
+    { name: dict.type_calc, href: `/${lang}/type` },
   ];
 
   return (
@@ -56,7 +72,7 @@ export default function TopNavBar() {
               <button
                 className="md:hidden text-white dark:text-[#FFD700] p-2 hover:bg-red-700 dark:hover:bg-[#333] rounded-lg transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="메뉴 열기"
+                aria-label={dict.menu_open}
               >
                 <svg
                   className="w-6 h-6"
@@ -79,7 +95,10 @@ export default function TopNavBar() {
 
               {/* Logo */}
               <div className="shrink-0 flex items-center">
-                <Link href="/" className="flex items-center gap-2 group">
+                <Link
+                  href={`/${lang}`}
+                  className="flex items-center gap-2 group"
+                >
                   <div className="relative w-8 h-8 bg-white rounded-full border-4 border-gray-800 dark:border-[#FFD700] flex items-center justify-center overflow-hidden shadow-sm group-hover:rotate-12 transition-transform duration-300">
                     <div className="absolute top-0 w-full h-1/2 bg-red-500 dark:bg-[#121212]"></div>
                     <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-800 dark:bg-[#FFD700] -translate-y-1/2"></div>
@@ -97,7 +116,7 @@ export default function TopNavBar() {
               {menuItems.map((item) => {
                 const isActive =
                   pathname === item.href ||
-                  (item.href !== "/" && pathname.startsWith(item.href));
+                  (item.href !== `/${lang}` && pathname.startsWith(item.href));
 
                 return (
                   <Link
@@ -118,13 +137,19 @@ export default function TopNavBar() {
 
           {/* Right Section: Search */}
           <div className="flex items-center z-10 gap-2">
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="px-2 py-1 rounded-md bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors dark:text-[#FFD700] dark:bg-[#333] dark:hover:bg-[#444]"
+            >
+              {lang === "ko" ? "EN" : lang === "en" ? "ZH" : "KO"}
+            </button>
+
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-red-700 dark:hover:bg-[#333] transition-colors text-white dark:text-[#FFD700]"
-              aria-label={
-                isDarkMode ? "라이트 모드로 전환" : "다크 모드로 전환"
-              }
+              aria-label={isDarkMode ? dict.light_mode : dict.dark_mode}
             >
               {isDarkMode ? (
                 // Sun Icon (Click to switch to Light Mode)
@@ -171,14 +196,14 @@ export default function TopNavBar() {
 
             {/* Desktop Search */}
             <div className="hidden md:flex items-center w-[300px]">
-              <SearchBar />
+              <SearchBar dict={dict} lang={lang} />
             </div>
 
             {/* Mobile Search Button (Right) */}
             <button
               className="md:hidden text-white dark:text-[#FFD700] p-2 hover:bg-red-700 dark:hover:bg-[#333] rounded-lg transition-colors"
               onClick={() => setIsSearchOpen(true)}
-              aria-label="검색 열기"
+              aria-label={dict.search_open}
             >
               <svg
                 className="w-6 h-6"
@@ -190,7 +215,7 @@ export default function TopNavBar() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  d="M21 21l-6-6m2-5a7 7 0 1 1 1 14 0 7 7 0 0 1 0-14z"
                 />
               </svg>
             </button>
@@ -214,7 +239,7 @@ export default function TopNavBar() {
             {menuItems.map((item) => {
               const isActive =
                 pathname === item.href ||
-                (item.href !== "/" && pathname.startsWith(item.href));
+                (item.href !== `/${lang}` && pathname.startsWith(item.href));
 
               return (
                 <Link
@@ -240,11 +265,13 @@ export default function TopNavBar() {
         <div className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-24 px-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-200 relative">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-lg text-gray-800">포켓몬 검색</h3>
+              <h3 className="font-bold text-lg text-gray-800">
+                {dict.search_label}
+              </h3>
               <button
                 onClick={() => setIsSearchOpen(false)}
                 className="p-2 rounded-full hover:bg-gray-100 text-gray-500 transition-colors"
-                aria-label="닫기"
+                aria-label={dict.close}
               >
                 <svg
                   className="w-6 h-6"
@@ -261,7 +288,7 @@ export default function TopNavBar() {
                 </svg>
               </button>
             </div>
-            <SearchBar />
+            <SearchBar dict={dict} lang={lang} />
           </div>
           <div
             className="absolute inset-0 -z-10"

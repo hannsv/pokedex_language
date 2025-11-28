@@ -11,6 +11,7 @@ import { useEffect, useState, useRef } from "react";
 import {
   getPokemonKoreanName,
   getFormKoreanName,
+  getPokemonName,
 } from "@/app/lib/api/pokemon-to-language";
 import TypeCard from "../type/TypeCard";
 import Link from "next/link";
@@ -22,19 +23,22 @@ interface PokemonCardProps {
   indexId: number;
   viewMode?: "grid" | "list";
   isShiny?: boolean;
+  lang?: "ko" | "en" | "zh";
 }
 
 // Global cache for pokemon card data to prevent re-fetching on navigation
-const pokemonCardCache: Record<number, { name: string; types: string[] }> = {};
+const pokemonCardCache: Record<string, { name: string; types: string[] }> = {};
 
 //pokeapi.co/api/v2/pokemon/1/
 export default function PokemonCard({
   indexId,
   viewMode = "grid",
   isShiny = false,
+  lang = "ko",
 }: PokemonCardProps) {
   // Check cache first
-  const cachedData = pokemonCardCache[indexId];
+  const cacheKey = `${lang}-${indexId}`;
+  const cachedData = pokemonCardCache[cacheKey];
 
   const [isLoading, setIsLoading] = useState(!cachedData);
   const [pokemonName, setPokemonName] = useState<string>(
@@ -67,9 +71,10 @@ export default function PokemonCard({
 
   useEffect(() => {
     // If data is already cached, use it and skip fetch
-    if (pokemonCardCache[indexId]) {
-      setPokemonName(pokemonCardCache[indexId].name);
-      setPokemonTypes(pokemonCardCache[indexId].types);
+    const cacheKey = `${lang}-${indexId}`;
+    if (pokemonCardCache[cacheKey]) {
+      setPokemonName(pokemonCardCache[cacheKey].name);
+      setPokemonTypes(pokemonCardCache[cacheKey].types);
       setIsLoading(false);
       return;
     }
@@ -86,25 +91,35 @@ export default function PokemonCard({
         );
         const pokemonData: PokemonData = await data.json();
 
-        // species url에서 id 추출하여 한글 이름 가져오기
+        let displayName = pokemonData.name;
         const speciesUrl = pokemonData.species.url;
         const speciesId = speciesUrl.split("/").filter(Boolean).pop();
 
-        let koname = await getPokemonKoreanName(Number(speciesId));
+        if (lang === "ko") {
+          let koname = await getPokemonKoreanName(Number(speciesId));
 
-        // 10000번대 이상인 경우 폼 이름 추가
-        if (indexId > 10000) {
-          const formName = getFormKoreanName(pokemonData.name);
-          koname += formName;
+          // 10000번대 이상인 경우 폼 이름 추가
+          if (indexId > 10000) {
+            const formName = getFormKoreanName(pokemonData.name);
+            koname += formName;
+          }
+          displayName = koname;
+        } else if (lang === "zh") {
+          displayName = await getPokemonName(Number(speciesId), "zh");
+        } else {
+          // English formatting (capitalize)
+          displayName =
+            pokemonData.name.charAt(0).toUpperCase() +
+            pokemonData.name.slice(1);
         }
 
         // Save to cache
-        pokemonCardCache[indexId] = {
-          name: koname,
+        pokemonCardCache[cacheKey] = {
+          name: displayName,
           types: pokemonData.types.map((typeInfo) => typeInfo.type.name),
         };
 
-        setPokemonName(koname);
+        setPokemonName(displayName);
         //타입 가져오기
         const types = pokemonData.types.map((typeInfo) => typeInfo.type.name);
         setPokemonTypes(types);
@@ -116,7 +131,7 @@ export default function PokemonCard({
       }
     };
     fetchPokemonData();
-  }, [indexId, isVisible]);
+  }, [indexId, isVisible, lang]);
 
   const handleCardClick = () => {
     // Save scroll position before navigation
@@ -136,7 +151,7 @@ export default function PokemonCard({
       {isLoading ? (
         <div className="h-[180px] w-full animate-pulse rounded-md flex items-center justify-center bg-gray-100 dark:bg-gray-800">
           <img
-            src="skeleton-monsterball.png"
+            src="/skeleton-monsterball.png"
             alt="loading"
             className="h-12 w-[50px]"
           />
@@ -159,7 +174,7 @@ export default function PokemonCard({
                 {pokemonName}
               </div>
               <Link
-                href={`/pokemon/detail/${indexId}`}
+                href={`/${lang}/pokemon/detail/${indexId}`}
                 className="w-full flex justify-center"
                 onClick={handleCardClick}
               >
@@ -167,7 +182,12 @@ export default function PokemonCard({
               </Link>
               <div className="flex flex-wrap justify-center gap-1 mt-1 w-full">
                 {pokemonTypes.map((pokemonType, index) => (
-                  <TypeCard key={index} typeNames={pokemonType} size="small" />
+                  <TypeCard
+                    key={index}
+                    typeNames={pokemonType}
+                    size="small"
+                    lang={lang}
+                  />
                 ))}
               </div>
             </>
@@ -176,7 +196,7 @@ export default function PokemonCard({
             <>
               <div className="flex items-center gap-4 flex-1">
                 <Link
-                  href={`/pokemon/detail/${indexId}`}
+                  href={`/${lang}/pokemon/detail/${indexId}`}
                   className="shrink-0"
                   onClick={handleCardClick}
                 >
@@ -206,7 +226,12 @@ export default function PokemonCard({
               </div>
               <div className="flex gap-1">
                 {pokemonTypes.map((pokemonType, index) => (
-                  <TypeCard key={index} typeNames={pokemonType} size="medium" />
+                  <TypeCard
+                    key={index}
+                    typeNames={pokemonType}
+                    size="medium"
+                    lang={lang}
+                  />
                 ))}
               </div>
             </>

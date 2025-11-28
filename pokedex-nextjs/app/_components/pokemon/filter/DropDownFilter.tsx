@@ -12,6 +12,7 @@ interface DropDownFilterProps {
   onToggleShiny: () => void;
   sortOrder: "asc" | "desc";
   onToggleSortOrder: () => void;
+  dict: any;
 }
 
 export default function DropDownFilter({
@@ -23,41 +24,42 @@ export default function DropDownFilter({
   onToggleShiny,
   sortOrder,
   onToggleSortOrder,
+  dict,
 }: DropDownFilterProps) {
   const [activeModal, setActiveModal] = useState<"none" | "type" | "form">(
     "none"
   );
 
   const typeKorean = [
-    { type: "all", korean: "전체" },
-    { type: "normal", korean: "노말" },
-    { type: "fighting", korean: "격투" },
-    { type: "flying", korean: "비행" },
-    { type: "poison", korean: "독" },
-    { type: "ground", korean: "땅" },
-    { type: "rock", korean: "바위" },
-    { type: "bug", korean: "벌레" },
-    { type: "ghost", korean: "고스트" },
-    { type: "steel", korean: "강철" },
-    { type: "fire", korean: "불꽃" },
-    { type: "water", korean: "물" },
-    { type: "grass", korean: "풀" },
-    { type: "electric", korean: "전기" },
-    { type: "psychic", korean: "에스퍼" },
-    { type: "ice", korean: "얼음" },
-    { type: "dragon", korean: "드래곤" },
-    { type: "dark", korean: "악" },
-    { type: "fairy", korean: "페어리" },
+    { type: "all", korean: dict?.filter?.all || "전체" },
+    { type: "normal", korean: dict?.filter?.normal || "노말" },
+    { type: "fighting", korean: dict?.filter?.fighting || "격투" },
+    { type: "flying", korean: dict?.filter?.flying || "비행" },
+    { type: "poison", korean: dict?.filter?.poison || "독" },
+    { type: "ground", korean: dict?.filter?.ground || "땅" },
+    { type: "rock", korean: dict?.filter?.rock || "바위" },
+    { type: "bug", korean: dict?.filter?.bug || "벌레" },
+    { type: "ghost", korean: dict?.filter?.ghost || "고스트" },
+    { type: "steel", korean: dict?.filter?.steel || "강철" },
+    { type: "fire", korean: dict?.filter?.fire || "불꽃" },
+    { type: "water", korean: dict?.filter?.water || "물" },
+    { type: "grass", korean: dict?.filter?.grass || "풀" },
+    { type: "electric", korean: dict?.filter?.electric || "전기" },
+    { type: "psychic", korean: dict?.filter?.psychic || "에스퍼" },
+    { type: "ice", korean: dict?.filter?.ice || "얼음" },
+    { type: "dragon", korean: dict?.filter?.dragon || "드래곤" },
+    { type: "dark", korean: dict?.filter?.dark || "악" },
+    { type: "fairy", korean: dict?.filter?.fairy || "페어리" },
   ];
 
   const formKorean = [
-    { type: "all", korean: "기본" },
-    { type: "mega", korean: "메가진화" },
-    { type: "gmax", korean: "거다이맥스" },
-    { type: "alola", korean: "알로라" },
-    { type: "galar", korean: "가라르" },
-    { type: "hisui", korean: "히스이" },
-    { type: "paldea", korean: "팔데아" },
+    { type: "all", korean: dict?.filter?.default || "기본" },
+    { type: "mega", korean: dict?.filter?.mega || "메가진화" },
+    { type: "gmax", korean: dict?.filter?.gmax || "거다이맥스" },
+    { type: "alola", korean: dict?.filter?.alola || "알로라" },
+    { type: "galar", korean: dict?.filter?.galar || "가라르" },
+    { type: "hisui", korean: dict?.filter?.hisui || "히스이" },
+    { type: "paldea", korean: dict?.filter?.paldea || "팔데아" },
   ];
 
   return (
@@ -68,7 +70,7 @@ export default function DropDownFilter({
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center px-1">
             <span className="font-bold text-xs text-gray-500 dark:text-gray-400">
-              타입
+              {dict?.filter?.type || "타입"}
             </span>
             <div className="flex gap-2">
               <button
@@ -88,7 +90,9 @@ export default function DropDownFilter({
                 >
                   {sortOrder === "desc" ? "▼" : "▲"}
                 </span>
-                {sortOrder === "desc" ? "역순 정렬" : "번호순"}
+                {sortOrder === "desc"
+                  ? dict?.filter?.sort_desc || "역순 정렬"
+                  : dict?.filter?.sort_asc || "번호순"}
               </button>
               <button
                 onClick={onToggleShiny}
@@ -107,7 +111,7 @@ export default function DropDownFilter({
                 >
                   ✨
                 </span>
-                이로치 모드
+                {dict?.filter?.shiny || "이로치 모드"}
               </button>
             </div>
           </div>
@@ -149,7 +153,7 @@ export default function DropDownFilter({
         {/* 폼 필터 (Right 50%) */}
         <div className="flex flex-col gap-2 border-l pl-8 border-gray-200 dark:border-gray-700">
           <span className="font-bold text-xs text-gray-500 dark:text-gray-400 px-1">
-            폼
+            {dict?.filter?.form || "폼"}
           </span>
           <ul className="flex flex-wrap gap-1.5">
             {formKorean.map((form) => (
@@ -180,10 +184,12 @@ export default function DropDownFilter({
               ? "bg-red-500 text-white ring-2 ring-red-300 dark:bg-red-700 dark:ring-red-500"
               : "bg-white text-gray-400 border border-gray-200 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700"
           }`}
-          title="정렬 변경"
+          title={dict?.filter?.sort_desc || "정렬 변경"}
         >
           <span className="text-xs font-bold">
-            {sortOrder === "desc" ? "역순" : "번호"}
+            {sortOrder === "desc"
+              ? dict?.filter?.sort_desc?.slice(0, 2) || "역순"
+              : dict?.filter?.sort_asc?.slice(0, 2) || "번호"}
           </span>
         </button>
         <button
@@ -193,7 +199,7 @@ export default function DropDownFilter({
               ? "bg-yellow-400 text-white ring-2 ring-yellow-200 dark:bg-[#FFD700] dark:text-black dark:ring-[#B8860B]"
               : "bg-white text-gray-400 border border-gray-200 dark:bg-[#1E1E1E] dark:text-gray-500 dark:border-gray-700"
           }`}
-          title="이로치 모드"
+          title={dict?.filter?.shiny || "이로치 모드"}
         >
           <span className="text-lg">✨</span>
         </button>
@@ -204,9 +210,11 @@ export default function DropDownFilter({
               ? "bg-blue-500 text-white ring-2 ring-blue-300 dark:bg-blue-700 dark:ring-blue-500"
               : "bg-white text-gray-700 border border-gray-200 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700"
           }`}
-          title="타입 필터"
+          title={dict?.filter?.type || "타입 필터"}
         >
-          <span className="text-xs font-bold">타입</span>
+          <span className="text-xs font-bold">
+            {dict?.filter?.type || "타입"}
+          </span>
         </button>
         <button
           onClick={() => setActiveModal("form")}
@@ -215,9 +223,11 @@ export default function DropDownFilter({
               ? "bg-purple-500 text-white ring-2 ring-purple-300 dark:bg-purple-700 dark:ring-purple-500"
               : "bg-white text-gray-700 border border-gray-200 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700"
           }`}
-          title="폼 필터"
+          title={dict?.filter?.form || "폼 필터"}
         >
-          <span className="text-xs font-bold">폼</span>
+          <span className="text-xs font-bold">
+            {dict?.filter?.form || "폼"}
+          </span>
         </button>
       </div>
 
@@ -231,7 +241,9 @@ export default function DropDownFilter({
             {/* Modal Header */}
             <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-gray-50 dark:bg-[#121212] dark:border-gray-800">
               <h3 className="font-bold text-lg text-gray-800 dark:text-[#EAEAEA]">
-                {activeModal === "type" ? "타입 선택" : "폼 선택"}
+                {activeModal === "type"
+                  ? dict?.filter?.select_type || "타입 선택"
+                  : dict?.filter?.select_form || "폼 선택"}
               </h3>
               <a
                 onClick={() => setActiveModal("none")}

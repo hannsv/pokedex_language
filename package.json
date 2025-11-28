@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hannsv/pokedex_language/issues"
   },
-  "homepage": "https://github.com/hannsv/pokedex_language#readme"
+  "homepage": "https://github.com/hannsv/pokedex_language#readme",
+  "dependencies": {
+    "server-only": "^0.0.1"
+  }
 }

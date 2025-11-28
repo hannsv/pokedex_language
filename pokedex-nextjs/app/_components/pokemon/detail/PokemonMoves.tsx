@@ -6,6 +6,8 @@ import { PokemonData } from "@/app/lib/types/types";
 
 interface PokemonMovesProps {
   moves: PokemonData["moves"];
+  lang: "ko" | "en" | "zh";
+  dict: any;
 }
 
 interface MoveDetail {
@@ -27,7 +29,7 @@ interface ProcessedMove {
   level_learned_at: number;
 }
 
-export default function PokemonMoves({ moves }: PokemonMovesProps) {
+export default function PokemonMoves({ moves, lang, dict }: PokemonMovesProps) {
   const [displayedMoves, setDisplayedMoves] = useState<MoveDetail[]>([]);
   const [allLevelUpMoves, setAllLevelUpMoves] = useState<ProcessedMove[]>([]);
   const [page, setPage] = useState(1);
@@ -97,13 +99,20 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
     const movePromises = moveList.map(async (m) => {
       const res = await fetch(m.move.url);
       const moveData = await res.json();
-      const koreanName =
-        moveData.names.find(
+      let moveName = moveData.names.find(
+        (n: { language: { name: string }; name: string }) =>
+          n.language.name === (lang === "zh" ? "zh-Hans" : lang)
+      )?.name;
+
+      if (!moveName && lang === "zh") {
+        moveName = moveData.names.find(
           (n: { language: { name: string }; name: string }) =>
-            n.language.name === "ko"
-        )?.name || moveData.name;
+            n.language.name === "zh-Hant"
+        )?.name;
+      }
+
       return {
-        name: koreanName,
+        name: moveName || moveData.name,
         type: moveData.type.name,
         power: moveData.power,
         accuracy: moveData.accuracy,
@@ -149,13 +158,20 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
       const movePromises = initialBatch.map(async (m) => {
         const res = await fetch(m.move.url);
         const moveData = await res.json();
-        const koreanName =
-          moveData.names.find(
+        let moveName = moveData.names.find(
+          (n: { language: { name: string }; name: string }) =>
+            n.language.name === (lang === "zh" ? "zh-Hans" : lang)
+        )?.name;
+
+        if (!moveName && lang === "zh") {
+          moveName = moveData.names.find(
             (n: { language: { name: string }; name: string }) =>
-              n.language.name === "ko"
-          )?.name || moveData.name;
+              n.language.name === "zh-Hant"
+          )?.name;
+        }
+
         return {
-          name: koreanName,
+          name: moveName || moveData.name,
           type: moveData.type.name,
           power: moveData.power,
           accuracy: moveData.accuracy,
@@ -176,7 +192,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
     return () => {
       isMounted = false;
     };
-  }, [moves]);
+  }, [moves, lang]);
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
@@ -195,7 +211,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
   return (
     <div className="w-full">
       <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
-        기술 정보 (Level Up)
+        {dict.detail.moves} (Level Up)
       </h2>
       <div className="overflow-x-auto mb-4">
         <table className="min-w-full bg-white dark:bg-[#121212] border border-gray-200 dark:border-gray-700 rounded-lg">
@@ -205,19 +221,19 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
                 Lv
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                이름
+                {dict.moves.name}
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                분류
+                {dict.moves.class}
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                타입
+                {dict.moves.type}
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                위력
+                {dict.moves.power}
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                명중률
+                {dict.moves.accuracy}
               </th>
               <th className="py-2 px-4 border-b dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 PP
@@ -259,7 +275,7 @@ export default function PokemonMoves({ moves }: PokemonMovesProps) {
             onClick={handleLoadMore}
             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors cursor-pointer"
           >
-            더보기
+            {dict.common.load_more}
           </button>
         </div>
       )}

@@ -7,12 +7,14 @@ import {
   getEvolutionChain,
   getEvolutionChainBySpeciesUrl,
 } from "@/app/lib/api/pokemon";
-import { getPokemonKoreanName } from "@/app/lib/api/pokemon-to-language";
+import { getPokemonName } from "@/app/lib/api/pokemon-to-language";
 import { EvolutionNode } from "@/app/lib/types/types";
 
 interface PokemonEvolutionChainProps {
   pokemonId?: number;
   speciesUrl?: string;
+  lang: "ko" | "en" | "zh";
+  dict: any;
 }
 
 function getEvolutionSpecies(
@@ -33,9 +35,11 @@ function getEvolutionSpecies(
 export default function PokemonEvolutionChain({
   pokemonId,
   speciesUrl,
+  lang,
+  dict,
 }: PokemonEvolutionChainProps) {
   const [evolutionChain, setEvolutionChain] = useState<
-    { name: string; id: string; koreanName?: string }[]
+    { name: string; id: string; displayName?: string }[]
   >([]);
 
   useEffect(() => {
@@ -51,20 +55,20 @@ export default function PokemonEvolutionChain({
         }
 
         const evoList = getEvolutionSpecies(evoData.chain);
-        const evoListWithKorean = await Promise.all(
+        const evoListWithLang = await Promise.all(
           evoList.map(async (p) => {
-            const kName = await getPokemonKoreanName(parseInt(p.id));
-            return { ...p, koreanName: kName };
+            const dName = await getPokemonName(parseInt(p.id), lang);
+            return { ...p, displayName: dName };
           })
         );
-        setEvolutionChain(evoListWithKorean);
+        setEvolutionChain(evoListWithLang);
       } catch (e) {
         console.error("진화 정보를 가져오는 중 오류:", e);
       }
     };
 
     fetchEvolutionData();
-  }, [pokemonId, speciesUrl]);
+  }, [pokemonId, speciesUrl, lang]);
 
   if (evolutionChain.length === 0) {
     return null;
@@ -73,13 +77,13 @@ export default function PokemonEvolutionChain({
   return (
     <div className="w-full mb-6">
       <h2 className="text-xl font-bold mb-3 text-gray-700 dark:text-[#EAEAEA] border-b dark:border-gray-700 pb-2">
-        진화 정보
+        {dict.detail.evolution}
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-4">
         {evolutionChain.map((evo, index) => (
           <div key={index} className="flex items-center">
             <Link
-              href={`/pokemon/detail/${evo.id}`}
+              href={`/${lang}/pokemon/detail/${evo.id}`}
               className="flex flex-col items-center group"
             >
               <div className="w-24 h-24 bg-gray-100 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-full flex items-center justify-center mb-2 border-2 border-transparent group-hover:border-blue-400 transition-all">
@@ -90,7 +94,7 @@ export default function PokemonEvolutionChain({
                 />
               </div>
               <span className="text-sm font-bold text-gray-700 dark:text-[#EAEAEA] group-hover:text-blue-600 dark:group-hover:text-[#FFD700]">
-                {evo.koreanName || evo.name}
+                {evo.displayName || evo.name}
               </span>
             </Link>
             {index < evolutionChain.length - 1 && (

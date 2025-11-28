@@ -7,6 +7,8 @@ import { pokemonTypes } from "@/app/lib/api/pokemonTypes";
 interface TypeMatchupProps {
   types: string[];
   onReset?: () => void;
+  lang?: "ko" | "en" | "zh";
+  dict?: any;
 }
 
 interface DamageRelations {
@@ -23,7 +25,12 @@ interface TypeData {
   relations: DamageRelations;
 }
 
-export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
+export default function TypeMatchup({
+  types,
+  onReset,
+  lang = "ko",
+  dict,
+}: TypeMatchupProps) {
   const [defenseEffectiveness, setDefenseEffectiveness] = useState<
     Record<string, number>
   >({});
@@ -33,73 +40,63 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const calculateEffectiveness = async () => {
+    const fetchTypeData = async () => {
       setIsLoading(true);
-
-      // Initialize all types with 1x effectiveness for defense
-      const typeMultipliers: Record<string, number> = {};
-      pokemonTypes.forEach((t) => {
-        typeMultipliers[t.en] = 1;
-      });
-
       try {
-        // Fetch data for each type of the pokemon
-        const promises = types.map((type) =>
+        const typeDataPromises = types.map((type) =>
           fetch(`https://pokeapi.co/api/v2/type/${type}`).then((res) =>
             res.json()
           )
         );
+        const results = await Promise.all(typeDataPromises);
 
-        const results = await Promise.all(promises);
-        const attackData: TypeData[] = [];
+        // 1. Calculate Defense Effectiveness (Incoming Damage)
+        const defense: Record<string, number> = {};
+        pokemonTypes.forEach((t) => {
+          defense[t.en] = 1;
+        });
 
-        results.forEach(
-          (data: { name: string; damage_relations: DamageRelations }) => {
-            const relations = data.damage_relations;
+        results.forEach((data: any) => {
+          const relations: DamageRelations = data.damage_relations;
 
-            // Calculate Defense (Incoming Damage)
-            relations.double_damage_from.forEach((t) => {
-              if (typeMultipliers[t.name] !== undefined) {
-                typeMultipliers[t.name] *= 2;
-              }
-            });
+          relations.double_damage_from.forEach((t) => {
+            if (defense[t.name]) defense[t.name] *= 2;
+          });
+          relations.half_damage_from.forEach((t) => {
+            if (defense[t.name]) defense[t.name] *= 0.5;
+          });
+          relations.no_damage_from.forEach((t) => {
+            if (defense[t.name]) defense[t.name] *= 0;
+          });
+        });
+        setDefenseEffectiveness(defense);
 
-            relations.half_damage_from.forEach((t) => {
-              if (typeMultipliers[t.name] !== undefined) {
-                typeMultipliers[t.name] *= 0.5;
-              }
-            });
-
-            relations.no_damage_from.forEach((t) => {
-              if (typeMultipliers[t.name] !== undefined) {
-                typeMultipliers[t.name] *= 0;
-              }
-            });
-
-            // Store Attack Data (Outgoing Damage)
-            attackData.push({
-              name: data.name,
-              relations: relations,
-            });
-          }
-        );
-
-        setDefenseEffectiveness(typeMultipliers);
+        // 2. Calculate Attack Effectiveness (Outgoing Damage)
+        const attackData: TypeData[] = results.map((data: any) => ({
+          name: data.name,
+          relations: data.damage_relations,
+        }));
         setAttackEffectiveness(attackData);
       } catch (error) {
-        console.error("Failed to fetch type effectiveness:", error);
+        console.error("Error fetching type data:", error);
       } finally {
         setIsLoading(false);
       }
     };
 
     if (types.length > 0) {
-      calculateEffectiveness();
+      fetchTypeData();
+    } else {
+      setIsLoading(false);
     }
   }, [types]);
-
   if (isLoading) {
-    return <div className="w-full p-4 text-center">타입 상성 로딩 중...</div>;
+    return (
+      <div className="w-full p-4 text-center">
+        {dict?.type_matchup?.loading ||
+          (lang === "ko" ? "타입 상성 로딩 중..." : "Loading type matchups...")}
+      </div>
+    );
   }
 
   // --- Defense Logic ---
@@ -116,19 +113,19 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
   const sortedMultipliers = Object.keys(groupedByMultiplier)
     .map(Number)
     .sort((a, b) => b - a);
-
   return (
     <div className="w-full mb-6 bg-gray-50 dark:bg-[#121212] dark:border dark:border-[#FFD700] rounded-lg p-6">
       <div className="flex justify-between items-center border-b border-gray-100 dark:border-gray-700 pb-2 mb-3">
         <h2 className="text-xl font-bold text-gray-700 dark:text-[#EAEAEA]">
-          타입 상성
+          {dict?.type_matchup?.title ||
+            (lang === "ko" ? "타입 상성" : "Type Matchups")}
         </h2>
         {onReset && (
           <button
             onClick={onReset}
             className="px-3 py-1 text-xs font-bold text-white bg-red-500 hover:bg-red-600 rounded-full shadow-sm transition-colors dark:bg-[#FFD700] dark:text-black dark:hover:bg-[#E6C200]"
           >
-            초기화
+            {dict?.type_matchup?.reset || (lang === "ko" ? "초기화" : "Reset")}
           </button>
         )}
       </div>
@@ -137,12 +134,18 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
       <div className="mb-6">
         <h3 className="font-bold text-md mb-3 text-gray-800 dark:text-[#EAEAEA] flex items-center">
           <span className="w-1 h-4 bg-blue-500 mr-2 rounded-full"></span>
-          방어 상성 (받는 피해)
+          {dict?.type_matchup?.defense_title ||
+            (lang === "ko"
+              ? "방어 상성 (받는 피해)"
+              : "Defense (Incoming Damage)")}
         </h3>
         <div className="bg-white dark:bg-[#121212] p-4 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
           {sortedMultipliers.length === 0 ? (
             <p className="text-gray-500 dark:text-gray-400 text-sm">
-              특이 사항 없음 (모든 타입 1배)
+              {dict?.type_matchup?.no_defense_notes ||
+                (lang === "ko"
+                  ? "특이 사항 없음 (모든 타입 1배)"
+                  : "No special notes (1x damage from all types)")}
             </p>
           ) : (
             <div className="space-y-3">
@@ -152,11 +155,17 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                   className="flex flex-col sm:flex-row sm:items-center gap-2"
                 >
                   <div className="w-16 shrink-0 font-semibold text-sm text-gray-600 dark:text-gray-400">
-                    {multiplier}배
+                    {multiplier}
+                    {lang === "ko" ? "배" : lang === "zh" ? "倍" : "x"}
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {groupedByMultiplier[multiplier].map((type) => (
-                      <TypeCard key={type} typeNames={type} size="small" />
+                      <TypeCard
+                        key={type}
+                        typeNames={type}
+                        size="small"
+                        lang={lang}
+                      />
                     ))}
                   </div>
                 </div>
@@ -170,7 +179,10 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
       <div>
         <h3 className="font-bold text-md mb-3 text-gray-800 dark:text-[#EAEAEA] flex items-center">
           <span className="w-1 h-4 bg-red-500 mr-2 rounded-full"></span>
-          공격 상성 (주는 피해)
+          {dict?.type_matchup?.attack_title ||
+            (lang === "ko"
+              ? "공격 상성 (주는 피해)"
+              : "Attack (Outgoing Damage)")}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {attackEffectiveness.map((typeData) => (
@@ -179,9 +191,12 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
               className="bg-white dark:bg-[#121212] p-4 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm"
             >
               <div className="mb-3 flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-2">
-                <TypeCard typeNames={typeData.name} size="small" />
+                <TypeCard typeNames={typeData.name} size="small" lang={lang} />
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                  타입 공격 시
+                  {dict?.type_matchup?.attack_label ||
+                    (lang === "ko"
+                      ? "타입 공격 시"
+                      : "Attacking with this type")}
                 </span>
               </div>
 
@@ -190,7 +205,10 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                 {typeData.relations.double_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
                     <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
-                      2배 (효과가 굉장함)
+                      {dict?.type_matchup?.x2 ||
+                        (lang === "ko"
+                          ? "2배 (효과가 굉장함)"
+                          : "2x (Super Effective)")}
                     </span>
                     <div className="flex flex-wrap gap-1">
                       {typeData.relations.double_damage_to.map((t) => (
@@ -198,6 +216,7 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                           key={t.name}
                           typeNames={t.name}
                           size="small"
+                          lang={lang}
                         />
                       ))}
                     </div>
@@ -208,7 +227,10 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                 {typeData.relations.half_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
                     <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
-                      0.5배 (효과가 별로)
+                      {dict?.type_matchup?.x05 ||
+                        (lang === "ko"
+                          ? "0.5배 (효과가 별로)"
+                          : "0.5x (Not Very Effective)")}
                     </span>
                     <div className="flex flex-wrap gap-1">
                       {typeData.relations.half_damage_to.map((t) => (
@@ -216,6 +238,7 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                           key={t.name}
                           typeNames={t.name}
                           size="small"
+                          lang={lang}
                         />
                       ))}
                     </div>
@@ -226,7 +249,8 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                 {typeData.relations.no_damage_to.length > 0 && (
                   <div className="flex flex-col gap-1">
                     <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
-                      0배 (효과 없음)
+                      {dict?.type_matchup?.x0 ||
+                        (lang === "ko" ? "0배 (효과 없음)" : "0x (No Effect)")}
                     </span>
                     <div className="flex flex-wrap gap-1">
                       {typeData.relations.no_damage_to.map((t) => (
@@ -234,6 +258,7 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                           key={t.name}
                           typeNames={t.name}
                           size="small"
+                          lang={lang}
                         />
                       ))}
                     </div>
@@ -244,7 +269,8 @@ export default function TypeMatchup({ types, onReset }: TypeMatchupProps) {
                   typeData.relations.half_damage_to.length === 0 &&
                   typeData.relations.no_damage_to.length === 0 && (
                     <p className="text-gray-400 dark:text-gray-600 text-xs">
-                      특이 사항 없음
+                      {dict?.type_matchup?.no_notes ||
+                        (lang === "ko" ? "특이 사항 없음" : "No special notes")}
                     </p>
                   )}
               </div>

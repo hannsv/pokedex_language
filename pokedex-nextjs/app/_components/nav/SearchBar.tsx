@@ -11,7 +11,12 @@ interface Pokemon {
   korean_name?: string;
 }
 
-export default function SearchBar() {
+interface SearchBarProps {
+  dict?: any;
+  lang?: "ko" | "en" | "zh";
+}
+
+export default function SearchBar({ dict, lang = "ko" }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<
     {
@@ -20,6 +25,7 @@ export default function SearchBar() {
       type?: string;
       en?: string;
       korean_name?: string;
+      original?: any;
     }[]
   >([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -58,13 +64,26 @@ export default function SearchBar() {
         .slice(0, 5)
         .map((p) => ({ ...p, type: "pokemon" }));
 
-      // 타입 검색 (한글 또는 영문)
+      // 타입 검색 (한글, 영문, 중국어)
       const filteredTypes = pokemonTypes
         .filter(
           (t) =>
-            t.name.includes(value) || t.en.toLowerCase().includes(lowerValue)
+            t.name.includes(value) ||
+            t.en.toLowerCase().includes(lowerValue) ||
+            t.zh.includes(value)
         )
-        .map((t) => ({ name: `${t.name} (${t.en})`, en: t.en, type: "type" }));
+        .map((t) => {
+          let displayName = `${t.name} (${t.en})`;
+          if (lang === "zh") displayName = `${t.zh} (${t.en})`;
+          else if (lang === "en") displayName = `${t.en} (${t.name})`;
+
+          return {
+            name: displayName,
+            en: t.en,
+            type: "type",
+            original: t,
+          };
+        });
 
       setSuggestions([...filteredTypes, ...filteredPokemon]);
       setShowSuggestions(true);
@@ -80,16 +99,26 @@ export default function SearchBar() {
     type?: string;
     en?: string;
     korean_name?: string;
+    original?: any;
   }) => {
     if (item.type === "pokemon" && item.url) {
       const id = item.url.split("/").filter(Boolean).pop();
-      setSearchTerm(item.korean_name || item.name);
+      // Use current language for name if available, otherwise fallback
+      let displayName = item.name;
+      if (lang === "ko") displayName = item.korean_name || item.name;
+      else if (lang === "zh") displayName = item.name; // Fallback to English as we don't have Chinese in json
+
+      setSearchTerm(displayName);
       setShowSuggestions(false);
-      router.push(`/pokemon/detail/${id}`);
+      router.push(`/${lang}/pokemon/detail/${id}`);
     } else if (item.type === "type" && item.en) {
-      setSearchTerm(item.name);
+      let term = item.en;
+      if (lang === "ko" && item.original) term = item.original.name;
+      else if (lang === "zh" && item.original) term = item.original.zh;
+
+      setSearchTerm(term);
       setShowSuggestions(false);
-      router.push(`/type?type=${item.en}`);
+      router.push(`/${lang}/type?type=${item.en}`);
     }
   };
 
@@ -98,13 +127,13 @@ export default function SearchBar() {
     if (searchTerm.trim()) {
       const term = searchTerm.trim();
 
-      // 타입 검색 확인 (한글 이름 또는 영문 이름)
+      // 타입 검색 확인 (한글, 영문, 중국어)
       const matchedType = pokemonTypes.find(
-        (t) => t.name === term || t.en === term.toLowerCase()
+        (t) => t.name === term || t.en === term.toLowerCase() || t.zh === term
       );
 
       if (matchedType) {
-        router.push(`/type?type=${matchedType.en}`);
+        router.push(`/${lang}/type?type=${matchedType.en}`);
         setShowSuggestions(false);
         return;
       }
@@ -117,10 +146,10 @@ export default function SearchBar() {
 
       if (matchedPokemon) {
         const id = matchedPokemon.url.split("/").filter(Boolean).pop();
-        router.push(`/pokemon/detail/${id}`);
+        router.push(`/${lang}/pokemon/detail/${id}`);
       } else {
         // 검색어가 있으면 상세 페이지로 이동 (fallback)
-        router.push(`/pokemon/detail/${term.toLowerCase()}`);
+        router.push(`/${lang}/pokemon/detail/${term.toLowerCase()}`);
       }
       setShowSuggestions(false);
     }
@@ -153,7 +182,7 @@ export default function SearchBar() {
         <input
           type="search"
           className="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:focus:border-[#FFD700] dark:focus:ring-[#FFD700]"
-          placeholder="이름, 타입..."
+          placeholder={dict?.search_placeholder || "이름, 타입..."}
           value={searchTerm}
           onChange={handleInputChange}
           onFocus={() => {
@@ -165,7 +194,7 @@ export default function SearchBar() {
           type="submit"
           className="absolute right-1.5 bottom-1.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md text-xs px-3 py-1.5 transition-colors dark:bg-[#333] dark:text-[#FFD700] dark:hover:bg-[#444] dark:border dark:border-[#FFD700]"
         >
-          검색
+          {lang === "en" ? "Search" : "검색"}
         </button>
 
         {/* 연관 검색어 목록 */}

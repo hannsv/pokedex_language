@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Link from "next/link";
-import TopNavBar from "./_components/nav/TopNavBar";
+import TopNavBar from "@/app/_components/nav/TopNavBar";
+import { getDictionary } from "@/app/lib/dictionaries/get-dictionary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Poketic - Global Pokedex | 포켓몬도감",
+  title: "Poketic - Global Pokedex",
   description:
     "전 세계 트레이너를 위한 다국어 지원 포켓몬 도감 및 타입 상성 계산기. 모든 세대의 포켓몬 정보와 이로치 폼을 확인하세요.",
   icons: {
@@ -23,18 +24,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: "ko" | "en" | "zh" }>;
 }>) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+
   return (
-    <html lang="ko">
+    <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-100 dark:bg-[#121212] dark:text-[#EAEAEA] transition-colors duration-300`}
       >
         {/* 상단 내비게이션 바 */}
-        <TopNavBar />
+        <TopNavBar dict={dict.nav} lang={lang} />
         {/* 메인 컨텐츠 */}
         <main className="flex justify-center font-sans pt-0 pb-4 px-2 md:pb-10 md:px-4 min-h-[calc(100vh-80px)]">
           <div className="w-full max-w-screen-2xl rounded-b-2xl rounded-t-none md:rounded-2xl shadow-xl bg-white dark:bg-[#1E1E1E] text-black dark:text-[#EAEAEA] p-2 md:p-8 border border-gray-100 dark:border-[#FFD700] transition-colors duration-300">
