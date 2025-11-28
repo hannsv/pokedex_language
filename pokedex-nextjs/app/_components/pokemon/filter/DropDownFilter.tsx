@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { typeStyleMap } from "@/app/lib/api/pokemonTypes";
 
 interface DropDownFilterProps {
   selectedTypes: string[];
@@ -117,13 +118,24 @@ export default function DropDownFilter({
                   ? selectedTypes.length === 0
                   : selectedTypes.includes(type.type);
 
+              let selectedStyle =
+                "bg-blue-500 text-white border-blue-500 shadow-sm font-bold dark:bg-blue-700 dark:border-blue-500";
+              if (
+                isSelected &&
+                type.type !== "all" &&
+                typeStyleMap[type.type]
+              ) {
+                const style = typeStyleMap[type.type];
+                selectedStyle = `${style.bg} ${style.text} border-transparent shadow-sm font-bold`;
+              }
+
               return (
                 <li
                   key={type.type}
                   onClick={() => onSelectType(type.type)}
                   className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
                     isSelected
-                      ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold dark:bg-blue-700 dark:border-blue-500"
+                      ? selectedStyle
                       : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
                   }`}
                 >
@@ -253,6 +265,22 @@ export default function DropDownFilter({
                           : selectedTypes.includes(item.type)
                         : selectedForm === item.type;
 
+                    let selectedStyle =
+                      "bg-blue-500 text-white border-blue-500 font-bold shadow-md dark:bg-blue-700 dark:border-blue-500";
+
+                    if (
+                      activeModal === "type" &&
+                      isSelected &&
+                      item.type !== "all" &&
+                      typeStyleMap[item.type]
+                    ) {
+                      const style = typeStyleMap[item.type];
+                      selectedStyle = `${style.bg} ${style.text} border-transparent font-bold shadow-md`;
+                    } else if (activeModal === "form" && isSelected) {
+                      selectedStyle =
+                        "bg-purple-500 text-white border-purple-500 font-bold shadow-md dark:bg-purple-700 dark:border-purple-500";
+                    }
+
                     return (
                       <li
                         key={item.type}
@@ -268,9 +296,7 @@ export default function DropDownFilter({
                         }}
                         className={`cursor-pointer px-4 py-2 text-sm rounded-xl border transition-all w-full text-center ${
                           isSelected
-                            ? activeModal === "type"
-                              ? "bg-blue-500 text-white border-blue-500 font-bold shadow-md dark:bg-blue-700 dark:border-blue-500"
-                              : "bg-purple-500 text-white border-purple-500 font-bold shadow-md dark:bg-purple-700 dark:border-purple-500"
+                            ? selectedStyle
                             : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
                         }`}
                       >
