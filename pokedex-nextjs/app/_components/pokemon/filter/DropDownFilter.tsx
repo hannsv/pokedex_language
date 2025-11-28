@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 interface DropDownFilterProps {
-  selectedType: string;
+  selectedTypes: string[];
   onSelectType: (type: string) => void;
   selectedForm: string;
   onSelectForm: (form: string) => void;
@@ -14,7 +14,7 @@ interface DropDownFilterProps {
 }
 
 export default function DropDownFilter({
-  selectedType,
+  selectedTypes,
   onSelectType,
   selectedForm,
   onSelectForm,
@@ -111,21 +111,26 @@ export default function DropDownFilter({
             </div>
           </div>
           <ul className="flex flex-wrap gap-1.5">
-            {typeKorean.map((type) => (
-              <li
-                key={type.type}
-                onClick={() =>
-                  onSelectType(selectedType === type.type ? "all" : type.type)
-                }
-                className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
-                  selectedType === type.type
-                    ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold dark:bg-blue-700 dark:border-blue-500"
-                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
-                }`}
-              >
-                {type.korean}
-              </li>
-            ))}
+            {typeKorean.map((type) => {
+              const isSelected =
+                type.type === "all"
+                  ? selectedTypes.length === 0
+                  : selectedTypes.includes(type.type);
+
+              return (
+                <li
+                  key={type.type}
+                  onClick={() => onSelectType(type.type)}
+                  className={`cursor-pointer px-2.5 py-1 text-[11px] rounded-full border transition-all ${
+                    isSelected
+                      ? "bg-blue-500 text-white border-blue-500 shadow-sm font-bold dark:bg-blue-700 dark:border-blue-500"
+                      : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
+                  }`}
+                >
+                  {type.korean}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -183,7 +188,7 @@ export default function DropDownFilter({
         <button
           onClick={() => setActiveModal("type")}
           className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-transform active:scale-95 ${
-            selectedType !== "all"
+            selectedTypes.length > 0
               ? "bg-blue-500 text-white ring-2 ring-blue-300 dark:bg-blue-700 dark:ring-blue-500"
               : "bg-white text-gray-700 border border-gray-200 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700"
           }`}
@@ -240,34 +245,39 @@ export default function DropDownFilter({
             <div className="p-4 max-h-[60vh] overflow-y-auto">
               <ul className="flex flex-wrap gap-2 justify-center">
                 {(activeModal === "type" ? typeKorean : formKorean).map(
-                  (item) => (
-                    <li
-                      key={item.type}
-                      onClick={() => {
-                        if (activeModal === "type") {
-                          onSelectType(
-                            selectedType === item.type ? "all" : item.type
-                          );
-                        } else {
-                          onSelectForm(
-                            selectedForm === item.type ? "all" : item.type
-                          );
-                        }
-                        setActiveModal("none");
-                      }}
-                      className={`cursor-pointer px-4 py-2 text-sm rounded-xl border transition-all w-full text-center ${
-                        (activeModal === "type"
-                          ? selectedType
-                          : selectedForm) === item.type
-                          ? activeModal === "type"
-                            ? "bg-blue-500 text-white border-blue-500 font-bold shadow-md dark:bg-blue-700 dark:border-blue-500"
-                            : "bg-purple-500 text-white border-purple-500 font-bold shadow-md dark:bg-purple-700 dark:border-purple-500"
-                          : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
-                      }`}
-                    >
-                      {item.korean}
-                    </li>
-                  )
+                  (item) => {
+                    const isSelected =
+                      activeModal === "type"
+                        ? item.type === "all"
+                          ? selectedTypes.length === 0
+                          : selectedTypes.includes(item.type)
+                        : selectedForm === item.type;
+
+                    return (
+                      <li
+                        key={item.type}
+                        onClick={() => {
+                          if (activeModal === "type") {
+                            onSelectType(item.type);
+                          } else {
+                            onSelectForm(
+                              selectedForm === item.type ? "all" : item.type
+                            );
+                          }
+                          setActiveModal("none");
+                        }}
+                        className={`cursor-pointer px-4 py-2 text-sm rounded-xl border transition-all w-full text-center ${
+                          isSelected
+                            ? activeModal === "type"
+                              ? "bg-blue-500 text-white border-blue-500 font-bold shadow-md dark:bg-blue-700 dark:border-blue-500"
+                              : "bg-purple-500 text-white border-purple-500 font-bold shadow-md dark:bg-purple-700 dark:border-purple-500"
+                            : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-[#1E1E1E] dark:text-[#EAEAEA] dark:border-gray-700 dark:hover:bg-[#333] dark:hover:border-[#FFD700]"
+                        }`}
+                      >
+                        {item.korean}
+                      </li>
+                    );
+                  }
                 )}
               </ul>
             </div>

@@ -22,7 +22,7 @@ const getPokemonId = (url: string) => {
 };
 
 export default function PokemonListPage() {
-  const [selectedType, setSelectedType] = useState("all");
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedForm, setSelectedForm] = useState("all");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [isShiny, setIsShiny] = useState(false);
@@ -38,7 +38,7 @@ export default function PokemonListPage() {
   // Restore scroll position and displayed count from session storage
   useEffect(() => {
     const savedCount = sessionStorage.getItem("pokemon_list_count");
-    const savedType = sessionStorage.getItem("pokemon_list_type");
+    const savedTypes = sessionStorage.getItem("pokemon_list_types");
     const savedForm = sessionStorage.getItem("pokemon_list_form");
     const savedSort = sessionStorage.getItem("pokemon_list_sort");
     const savedShiny = sessionStorage.getItem("pokemon_list_shiny");
@@ -49,8 +49,12 @@ export default function PokemonListPage() {
       if (savedCount) {
         setDisplayedCount(parseInt(savedCount, 10));
       }
-      if (savedType) {
-        setSelectedType(savedType);
+      if (savedTypes) {
+        try {
+          setSelectedTypes(JSON.parse(savedTypes));
+        } catch (e) {
+          setSelectedTypes([]);
+        }
       }
       if (savedForm) {
         setSelectedForm(savedForm);
@@ -76,13 +80,13 @@ export default function PokemonListPage() {
   useEffect(() => {
     if (!isRestored) return;
     sessionStorage.setItem("pokemon_list_count", displayedCount.toString());
-    sessionStorage.setItem("pokemon_list_type", selectedType);
+    sessionStorage.setItem("pokemon_list_types", JSON.stringify(selectedTypes));
     sessionStorage.setItem("pokemon_list_form", selectedForm);
     sessionStorage.setItem("pokemon_list_sort", sortOrder);
     sessionStorage.setItem("pokemon_list_shiny", isShiny.toString());
   }, [
     displayedCount,
-    selectedType,
+    selectedTypes,
     selectedForm,
     sortOrder,
     isShiny,
@@ -94,8 +98,10 @@ export default function PokemonListPage() {
     let filtered = pokemonData;
 
     // 1. Type Filter
-    if (selectedType !== "all") {
-      filtered = filtered.filter((p) => p.types?.includes(selectedType));
+    if (selectedTypes.length > 0) {
+      filtered = filtered.filter((p) =>
+        selectedTypes.every((t) => p.types?.includes(t))
+      );
     }
 
     // 2. Form Filter
@@ -144,7 +150,7 @@ export default function PokemonListPage() {
     }
 
     return filtered;
-  }, [selectedType, selectedForm, sortOrder]);
+  }, [selectedTypes, selectedForm, sortOrder]);
 
   // Get the subset of pokemon to display
   const displayedPokemon = filteredPokemon.slice(0, displayedCount);
@@ -252,9 +258,21 @@ export default function PokemonListPage() {
     <div className="flex flex-col items-center justify-center w-full mx-auto px-2 md:px-4">
       {/* 필터 메뉴 */}
       <DropDownFilter
-        selectedType={selectedType}
+        selectedTypes={selectedTypes}
         onSelectType={(type) => {
-          setSelectedType(type);
+          if (type === "all") {
+            setSelectedTypes([]);
+          } else {
+            if (selectedTypes.includes(type)) {
+              setSelectedTypes((prev) => prev.filter((t) => t !== type));
+            } else {
+              if (selectedTypes.length >= 2) {
+                setSelectedTypes((prev) => [prev[1], type]);
+              } else {
+                setSelectedTypes((prev) => [...prev, type]);
+              }
+            }
+          }
           setDisplayedCount(20);
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
