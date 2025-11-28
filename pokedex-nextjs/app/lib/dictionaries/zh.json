@@ -2,6 +2,7 @@
   "nav": {
     "pokemon": "宝可梦",
     "type_calc": "属性相克计算器",
+    "tech_info": "技术信息",
     "search_placeholder": "名称或编号...",
     "search_label": "搜索宝可梦",
     "menu_open": "打开菜单",

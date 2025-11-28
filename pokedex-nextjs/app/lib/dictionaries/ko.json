@@ -2,6 +2,7 @@
   "nav": {
     "pokemon": "포켓몬",
     "type_calc": "상성계산기",
+    "tech_info": "기술정보",
     "search_placeholder": "포켓몬 이름 또는 번호...",
     "search_label": "포켓몬 검색",
     "menu_open": "메뉴 열기",

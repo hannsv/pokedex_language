@@ -14,6 +14,7 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -45,28 +46,25 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
     }
   };
 
-  const toggleLanguage = () => {
-    let newLang = "ko";
-    if (lang === "ko") newLang = "en";
-    else if (lang === "en") newLang = "zh";
-    else newLang = "ko";
-
+  const changeLanguage = (newLang: "ko" | "en" | "zh") => {
     const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
     router.push(newPath);
+    setIsLangMenuOpen(false);
   };
 
   const menuItems = [
     { name: dict.pokemon, href: `/${lang}/pokemon` },
     { name: dict.type_calc, href: `/${lang}/type` },
+    { name: dict.tech_info, href: `/${lang}/tech` },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
       {/* Red Top Section */}
-      <div className="bg-red-600 dark:bg-[#121212] dark:border-b dark:border-[#FFD700] w-full h-16 relative flex items-center justify-center px-4 transition-colors duration-300">
+      <div className="bg-red-600 dark:bg-[#121212] dark:border-b dark:border-[#FFD700] w-full min-h-16 py-2 relative flex items-center justify-center px-4 transition-colors duration-300">
         <div className="max-w-screen-2xl w-full flex justify-between items-center">
           {/* Left Section: Mobile Menu & Logo & Desktop Nav */}
-          <div className="flex items-center gap-2 z-30">
+          <div className="flex items-center gap-4 z-30">
             <div className="flex items-center gap-2">
               {/* Mobile Menu Button (Left) */}
               <button
@@ -105,14 +103,14 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
                     <div className="absolute w-2 h-2 bg-white dark:bg-[#FFD700] rounded-full border-2 border-gray-800 dark:border-[#FFD700] z-10"></div>
                   </div>
                   <span className="hidden md:block font-bold text-lg tracking-tight text-white dark:text-[#FFD700] drop-shadow-md group-hover:text-yellow-300 transition-colors">
-                    Pokedex
+                    Poketic
                   </span>
                 </Link>
               </div>
             </div>
 
             {/* Desktop Navigation - Moved to Left Section */}
-            <nav className="hidden md:flex space-x-1">
+            <nav className="hidden md:grid grid-cols-2 gap-1">
               {menuItems.map((item) => {
                 const isActive =
                   pathname === item.href ||
@@ -122,10 +120,10 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-2 rounded-full text-sm font-bold transition-all ${
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-center flex items-center justify-center ${
                       isActive
                         ? "bg-white text-red-600 shadow-sm dark:bg-[#FFD700] dark:text-[#121212]"
-                        : "text-white hover:bg-red-700 hover:text-white dark:text-[#EAEAEA] dark:hover:bg-[#333] dark:hover:text-[#FFD700]"
+                        : "bg-red-500 text-white hover:bg-red-400 dark:bg-[#333] dark:text-[#EAEAEA] dark:hover:bg-[#444] dark:hover:text-[#FFD700]"
                     }`}
                   >
                     {item.name}
@@ -138,12 +136,73 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
           {/* Right Section: Search */}
           <div className="flex items-center z-10 gap-2">
             {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="px-2 py-1 rounded-md bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors dark:text-[#FFD700] dark:bg-[#333] dark:hover:bg-[#444]"
-            >
-              {lang === "ko" ? "EN" : lang === "en" ? "ZH" : "KO"}
-            </button>
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="p-2 rounded-full hover:bg-red-700 dark:hover:bg-[#333] transition-colors text-white dark:text-[#FFD700]"
+                aria-label="Change Language"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </button>
+
+              {/* Language Dropdown Modal */}
+              {isLangMenuOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setIsLangMenuOpen(false)}
+                  ></div>
+                  <div className="absolute top-full right-0 mt-2 w-32 bg-white dark:bg-[#1E1E1E] rounded-lg shadow-xl border border-gray-200 dark:border-[#FFD700] overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
+                    <div className="flex flex-col py-1">
+                      <button
+                        onClick={() => changeLanguage("ko")}
+                        className={`px-4 py-2 text-sm text-left hover:bg-gray-100 dark:hover:bg-[#333] transition-colors ${
+                          lang === "ko"
+                            ? "font-bold text-red-600 dark:text-[#FFD700]"
+                            : "text-gray-700 dark:text-[#EAEAEA]"
+                        }`}
+                      >
+                        한국어
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("en")}
+                        className={`px-4 py-2 text-sm text-left hover:bg-gray-100 dark:hover:bg-[#333] transition-colors ${
+                          lang === "en"
+                            ? "font-bold text-red-600 dark:text-[#FFD700]"
+                            : "text-gray-700 dark:text-[#EAEAEA]"
+                        }`}
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("zh")}
+                        className={`px-4 py-2 text-sm text-left hover:bg-gray-100 dark:hover:bg-[#333] transition-colors ${
+                          lang === "zh"
+                            ? "font-bold text-red-600 dark:text-[#FFD700]"
+                            : "text-gray-700 dark:text-[#EAEAEA]"
+                        }`}
+                      >
+                        中文
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
 
             {/* Dark Mode Toggle */}
             <button
@@ -262,7 +321,7 @@ export default function TopNavBar({ dict, lang }: TopNavBarProps) {
 
       {/* Mobile Search Modal */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-24 px-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-start justify-center pt-24 px-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-200 relative">
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-lg text-gray-800">

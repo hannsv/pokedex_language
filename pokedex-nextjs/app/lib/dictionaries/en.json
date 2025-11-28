@@ -2,6 +2,7 @@
   "nav": {
     "pokemon": "Pokemon",
     "type_calc": "Type Calc",
+    "tech_info": "Tech Info",
     "search_placeholder": "Name or Number...",
     "search_label": "Search Pokemon",
     "menu_open": "Open Menu",
