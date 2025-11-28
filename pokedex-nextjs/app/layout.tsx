@@ -15,8 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "포켓몬 도감",
-  description: "Pokedex",
+  title: "Poketic - Global Pokedex | 포켓몬도감",
+  description:
+    "전 세계 트레이너를 위한 다국어 지원 포켓몬 도감 및 타입 상성 계산기. 모든 세대의 포켓몬 정보와 이로치 폼을 확인하세요.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
