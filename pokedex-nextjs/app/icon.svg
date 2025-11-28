@@ -1,0 +1,26 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Body: Red Rounded Square with thick outline for cartoon feel -->
+  <rect x="5" y="5" width="90" height="90" rx="20" fill="#FF3A3A" stroke="#4A0000" stroke-width="4"/>
+  
+  <!-- Hinge Line -->
+  <path d="M5 35 H95" stroke="#4A0000" stroke-width="4"/>
+  
+  <!-- Blue Lens (Camera) -->
+  <circle cx="25" cy="20" r="11" fill="#3B4CCA" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="21" cy="16" r="4" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Status Lights (Red, Yellow, Green) -->
+  <circle cx="58" cy="15" r="4" fill="#FF0000" stroke="#4A0000" stroke-width="1"/>
+  <circle cx="73" cy="15" r="4" fill="#FFCC00" stroke="#4A0000" stroke-width="1"/>
+  <circle cx="88" cy="15" r="4" fill="#32CD32" stroke="#4A0000" stroke-width="1"/>
+  
+  <!-- Screen Area -->
+  <rect x="15" y="45" width="70" height="40" rx="6" fill="#232323" stroke="#4A0000" stroke-width="3"/>
+  <rect x="20" y="50" width="60" height="30" rx="4" fill="#5AC2CE"/>
+  
+  <!-- Screen Glare/Reflection -->
+  <path d="M20 80 L35 50 H55 L40 80 Z" fill="white" fill-opacity="0.3"/>
+  
+  <!-- Small button below screen -->
+  <circle cx="50" cy="90" r="3" fill="#4A0000"/>
+</svg>
